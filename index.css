@@ -1,3 +1,46 @@
+@font-face {
+  font-family: "Comfortaa bold";
+  src: url(/assets/Comfortaa-Bold.ttf)
+}
+
+body{
+  font-family: "Comfortaa bold"!important;
+}
+
+.navbar-style{
+  background-color: black;
+
+}
+
 .image-background{
   width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+.mate-pc-code{
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.png{
+  width: 200px;
+  height: 200px;
+}
+
+.mate-png{
+  width: 150px;
+  height: 150px;
+}
+
+.suma-png{
+  width: 70px;
+  height: 70px;
+}
+
+.igual-png{
+  width: 90px;
+  height: 90px;
 }
