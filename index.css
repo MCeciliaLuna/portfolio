@@ -26,25 +26,34 @@ body{
 }
 
 .png{
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 .mate-png{
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
 }
 
 .suma-png{
-  width: 70px;
-  height: 70px;
+  width: 85px;
+  height: 85px;
 }
 
 .igual-png{
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
 }
 
 .card-aboutme{
+  background-color: black !important;
+}
+
+.card-languajes-and-tools{
+  width: 100px;
+  height: 100px;
+}
+
+.jobs{
   background-color: black !important;
 }
