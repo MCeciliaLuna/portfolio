@@ -94,10 +94,12 @@
       </div>
     </section>
 
-    <section class="jobs mb-5 d-flex flex-wrap">
+    <section class="jobs-contact mb-5 d-flex flex-wrap">
     <h4 class="w-100 mx-3 mt-4 mb-1 text-light">algunos trabajos</h4>
     <div class="p-3 w-50">
-      <img src="/assets/golosineria.png" class="sitio-web w-100" alt="sitio web">
+      <a href="https://la-golosineria.netlify.app" target="_blank">
+       <img src="/assets/golosineria.png" class="sitio-web w-100" alt="sitio web">
+      </a>
       <h5 class="pt-3 mb-0 text-light text-center">La Golosinería</h5>
     </div>
     <div class="p-3 w-50">
@@ -106,55 +108,41 @@
     </div>
     </section>
 
-    <section class="contact">
-      <div class="card-group">
-        <div class="card">
-          <img src="https://picsum.photos/200?random=8" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/200?random=9" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/200?random=10" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
+    <section class="jobs-contact mb-5 d-flex flex-wrap justify-content-evenly">
+      <h4 class="w-100 mx-3 mt-4 mb-3 text-light text-end">contacto</h4>
+      <div class="w-100 d-flex justify-content-around mb-5">
+      <div class="contact-png">
+      <a href="https://github.com/MCeciliaLuna" target="_blank">
+      <img src="/assets/github.png" class="image-contact-png" alt="git">
+      </a>
       </div>
-      <form class="email-contact">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <div class="contact-png">
+      <a href="https://www.linkedin.com/in/mcecilialuna1/" target="_blank">
+      <img src="/assets/linkedin.png" class="image-contact-png" alt="linkedin">
+      </a>
+      </div>
+      <div class="contact-png">
+        <a href="https://app.netlify.com/teams/mcecilialuna/overview" target="_blank">
+      <img src="/assets/netlify.png" class="image-contact-png" alt="netlify">
+    </a>
+      </div>
+     </div>
+     <form class="d-flex">
+      <div class="w-50 p-5">
+      <div>
+         <label class="text-light">nombre</label><br>
+         <input type="text" class="input-form p-2">
+       </div>
+       <div class="">
+       <label class="text-light d-inline-block">email:</label><br>
+       <input class="input-form d-inline-block p-2" type="email" placeholder="nombre@email.com">
+       </div>
+      </div> 
+       <div class="p-5">
+        <label class="text-light">mensaje:</label><br>
+        <textarea name="message" class="input-form p-2" id="messaje" cols="40" rows="10"></textarea>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+    </form>
     </section>
 
   </main>

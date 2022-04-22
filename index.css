@@ -54,6 +54,15 @@ body{
   height: 100px;
 }
 
-.jobs{
+.jobs-contact{
   background-color: black !important;
+}
+
+.image-contact-png{
+  width: 100px;
+  height: 100px;
+}
+
+.input-form{
+  width: 350px;
 }
