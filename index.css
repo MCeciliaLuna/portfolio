@@ -64,7 +64,7 @@ body{
   height: 100px;
 }
 
-@media (min-width: 576px) and (max-width: 768px){
+@media (max-width: 768px){
   .mate-pc-code{
     height: 450px;
   }
