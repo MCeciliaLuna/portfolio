@@ -16,8 +16,11 @@
   <div class="background">
     <img src="/assets/background.jpg" class="image-background" alt="background">
   </div>
+  <div class="background d-none d-md-block d-lg-none">
+    <img src="/assets/tablet.jpg" class="image-background" alt="background">
+  </div>
 
-  <header class="">
+  <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 m-0">
       <div class="container-fluid p-0">
         <div class="navbar-style collapse navbar-collapse d-flex justify-content-end p-3" id="navbarNav d-inline-sm">
@@ -52,7 +55,7 @@
 
 
     <section class="about-me" id="sobremi">
-      <div class="card-aboutme card rounded-0">
+      <div class="card-aboutme card rounded d-sm-block">
         <div class="row g-0 justify-content-center">
           <div class="col-md-8 w-50 d-flex align-items-center justify-content-center">
             <div class="card-body">
@@ -60,7 +63,7 @@
               <h5 class="card-text text-light text-end">FRONT-END DEVELOPER graduada de Rolling Code School Academy. Vivo en Tucumán (Argentina), y me apasiona la idea de hacer realidad tus proyectos.</h5>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 d-sm-block">
         <img src="/assets/profile.jpg" class="img-fluid rounded-circle p-3" alt="profile">
       </div>
         </div>
@@ -68,7 +71,7 @@
     </section>
 
     <section class="languajes-and-tools d-flex flex-wrap justify-content-evenly m-5 px-2 py-5 m-sm-0" id="herramientas">
-      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
+      <div class="card-languajes-and-tools col-sm-1 col-md-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" class="card-img-top" alt="html">
       </div>
       <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
@@ -113,7 +116,7 @@
 
     <section class="jobs-contact pb-4 d-flex flex-wrap justify-content-evenly" id="contacto">
       <h4 class="w-100 mx-3 mt-4 mb-3 text-light text-end">contacto</h4>
-      <div class="w-100 d-flex justify-content-around mb-3">
+      <div class="w-100 d-flex justify-content-around mb-4">
       <div class="contact-png">
       <a href="https://github.com/MCeciliaLuna" target="_blank">
       <img src="/assets/github.png" class="image-contact-png" alt="git">
@@ -130,6 +133,19 @@
     </a>
       </div>
      </div>
+     <form class="d-flex inline-block">
+       <div class="datos-solicitante pe-3">
+         <label class="text-light">nombre:</label> <br>
+         <input type="text" name="nombre-solicitante" id="nombre-solicitante" class="input-datos p-1" required> <br>
+         <label class="text-light">email:</label><br>
+         <input type="email" name="email-solicitante" id="email-solicitante" class="input-datos p-1" placeholder="nombre@email.com" required>
+       </div>
+       <div class="caja-mensaje">
+         <label class="text-light">mensaje:</label><br>
+         <textarea name="mensaje" id="mensaje" cols="30" rows="5" class="cuadro-mensaje p-1" required></textarea>
+         <br><button class="border border-0 p-2 bg-light">enviar</button>
+        </div>
+     </form>
     </section>
 
   </main>

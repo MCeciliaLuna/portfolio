@@ -6,7 +6,6 @@
 body{
   font-family: "Comfortaa bold"!important;
   background-color: black;
-
 }
 
 .navbar-style{
@@ -85,5 +84,40 @@ body{
     width: 80px;
     height: 80px;
   }
+}
 
+@media (max-width: 576px) {
+  .mate-pc-code{
+    height: 250px;
+  }
+  .mate-png{
+    width: 65px;
+    height: 65px;
+  }
+  .suma-png{
+    width: 40px;
+    height: 40px;
+  }
+  .png{
+    width: 85px;
+    height: 85px;
+  }
+  .igual-png{
+    width: 55px;
+    height: 55px;
+  }
+  .navbar-nav{
+    flex-direction: row !important;
+  }
+  .img-fluid{
+    width: 300px;
+    height: 300px;
+  }
+
+  .input-datos{
+    width: 150px;
+  }
+  .cuadro-mensaje{
+    width: 150px;
+  }
 }
