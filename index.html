@@ -20,18 +20,18 @@
   <header class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 m-0">
       <div class="container-fluid p-0">
-        <div class="navbar-style collapse navbar-collapse d-flex justify-content-end p-3" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
+        <div class="navbar-style collapse navbar-collapse d-flex justify-content-end p-3" id="navbarNav d-inline-sm">
+          <ul class="navbar-nav flex-sm-row">
+            <li class="nav-item px-sm-2">
               <a class="nav-link active text-light" aria-current="page" href="#sobremi">sobre mí</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item px-sm-2">
               <a class="nav-link text-light" href="#herramientas">herramientas</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item px-sm-2">
               <a class="nav-link text-light" href="#trabajos">trabajos</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item px-sm-2">
               <a class="nav-link text-light" href="#contacto">contacto</a>
             </li>
           </ul>
@@ -52,7 +52,7 @@
 
 
     <section class="about-me" id="sobremi">
-      <div class="card-aboutme card mb-3 rounded-0">
+      <div class="card-aboutme card rounded-0">
         <div class="row g-0 justify-content-center">
           <div class="col-md-8 w-50 d-flex align-items-center justify-content-center">
             <div class="card-body">
@@ -67,37 +67,37 @@
       </div>
     </section>
 
-    <section class="languajes-and-tools d-flex flex-wrap justify-content-between m-5 pt-2 pb-4" id="herramientas">
-      <div class="card-languajes-and-tools">
+    <section class="languajes-and-tools d-flex flex-wrap justify-content-evenly m-5 px-2 py-5 m-sm-0" id="herramientas">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" class="card-img-top" alt="html">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" class="card-img-top" alt="css">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" class="card-img-top" alt="javascript">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="card-img-top" alt="react">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="card-img-top" alt="nodejs">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="card-img-top" alt="git">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" class="card-img-top" alt="bootstrap">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" class="card-img-top" alt="xd">
       </div>
-      <div class="card-languajes-and-tools">
+      <div class="card-languajes-and-tools col-sm-1 d-flex align-items-sm-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" class="card-img-top" alt="canva">
       </div>
     </section>
 
-    <section class="jobs-contact mb-5 d-flex flex-wrap" id="trabajos">
+    <section class="jobs-contact mb-5 mt-3 d-flex flex-wrap" id="trabajos">
     <h4 class="w-100 mx-3 mt-4 mb-1 text-light">algunos trabajos</h4>
     <div class="p-3 w-50">
       <a href="https://la-golosineria.netlify.app" target="_blank">
@@ -111,7 +111,7 @@
     </div>
     </section>
 
-    <section class="jobs-contact mb-5 d-flex flex-wrap justify-content-evenly" id="contacto">
+    <section class="jobs-contact pb-4 d-flex flex-wrap justify-content-evenly" id="contacto">
       <h4 class="w-100 mx-3 mt-4 mb-3 text-light text-end">contacto</h4>
       <div class="w-100 d-flex justify-content-around mb-3">
       <div class="contact-png">
@@ -130,30 +130,13 @@
     </a>
       </div>
      </div>
-     <form class="d-flex">
-      <div class="w-50 p-5">
-      <div>
-         <label class="text-light">nombre</label><br>
-         <input type="text" class="input-form p-2">
-       </div>
-       <div class="">
-       <label class="text-light d-inline-block">email:</label><br>
-       <input class="input-form d-inline-block p-2" type="email" placeholder="nombre@email.com">
-       </div>
-      </div> 
-       <div class="p-5">
-        <label class="text-light">mensaje:</label><br>
-        <textarea name="message" class="input-form p-2" id="messaje" cols="20" rows="5"></textarea>
-        <button class="boton-enviar border border-0 p-2">Enviar</button>
-        </div>
-    </form>
     </section>
 
   </main>
 
   <footer>
-    <div>
-      <p class="text-light text-center pb-2">© 2022 | Luna María Cecilia | Todos los derechos reservados</p>
+    <div class="py-5">
+      <p class="text-light text-center p-0 m-0">© 2022 | Luna María Cecilia | Todos los derechos reservados</p>
     </div>
   </footer>
   
