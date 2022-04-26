@@ -133,7 +133,7 @@
     </a>
       </div>
      </div>
-     <form class="d-flex inline-block">
+     <form action="https://formsubmit.co/9f69aa06e9804b8be276362caff44599" method="POST" class="d-flex inline-block">
        <div class="datos-solicitante pe-3">
          <label class="text-light">nombre:</label> <br>
          <input type="text" name="nombre-solicitante" id="nombre-solicitante" class="input-datos p-1" required> <br>
@@ -143,8 +143,11 @@
        <div class="caja-mensaje">
          <label class="text-light">mensaje:</label><br>
          <textarea name="mensaje" id="mensaje" cols="30" rows="5" class="cuadro-mensaje p-1" required></textarea>
-         <br><button class="border border-0 p-2 bg-light">enviar</button>
+         <br><input type="submit" value="enviar" class="border border-0 p-2 bg-light"></input>
         </div>
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
      </form>
     </section>
 
