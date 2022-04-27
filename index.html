@@ -16,18 +16,18 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 m-0">
       <div class="container-fluid p-0">
         <div class="navbar-style collapse navbar-collapse d-flex justify-content-end p-3" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#sobremi">sobre mí</a>
+              <a class="nav-link active text-light px-1" aria-current="page" href="#sobremi">sobre mí</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="#herramientas">herramientas</a>
+              <a class="nav-link text-light px-1" href="#herramientas">herramientas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="#trabajos">trabajos</a>
+              <a class="nav-link text-light px-1" href="#trabajos">trabajos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="#contacto">contacto</a>
+              <a class="nav-link text-light px-1" href="#contacto">contacto</a>
             </li>
           </ul>
         </div>
@@ -46,24 +46,18 @@
     </section>
 
 
-    <section class="about-me" id="sobremi">
-      <div class="card-aboutme card rounded">
-        <div class="row g-0 justify-content-center">
-          <div class="w-50 d-flex align-items-center justify-content-center">
-            <div class="card-body">
-              <h1 class="card-title text-light text-end">¡Hola! Soy Cecilia,</h1>
-              <h5 class="card-text text-light text-end">FRONT-END DEVELOPER graduada de Rolling Code School Academy. Vivo en Tucumán (Argentina), y me apasiona la idea de hacer realidad tus proyectos.</h5>
-            </div>
-          </div>
-          <div class="col-md-4">
-        <img src="/assets/profile.jpg" class="img-fluid rounded-circle p-3" alt="profile">
+    <section class="card-aboutme p-4 d-flex align-items-center justify-content-evenly" id="sobremi">
+      <div class="texto-aboutme p-0">
+        <h1 class="card-title text-light text-end">¡Hola! Soy Cecilia,</h1>
+        <h5 class="card-text text-light text-end">FRONT-END DEVELOPER graduada de Rolling Code School Academy. Vivo en Tucumán (Argentina), y me apasiona la idea de hacer realidad tus proyectos.</h5>
       </div>
-        </div>
+      <div>
+        <img src="/assets/profile.jpg" class="img-perfil img-fluid rounded-circle p-0" alt="profile">
       </div>
     </section>
 
     <section class="languajes-and-tools d-flex flex-wrap justify-content-evenly my-5 p-0" id="herramientas">
-      <div class="card-languajes-and-tools col-md-1 d-flex">
+      <div class="card-languajes-and-tools d-flex">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" class="card-img-top" alt="html">
       </div>
       <div class="card-languajes-and-tools d-flex">
@@ -125,14 +119,14 @@
     </a>
       </div>
      </div>
-     <form action="https://formsubmit.co/9f69aa06e9804b8be276362caff44599" method="POST" class="d-flex inline-block">
-       <div class="datos-solicitante pe-3">
+     <form action="https://formsubmit.co/9f69aa06e9804b8be276362caff44599" method="POST" class="formulario d-flex justify-content-evenly">
+       <div class="datos-solicitante p-1">
          <label class="text-light">nombre:</label> <br>
          <input type="text" name="nombre-solicitante" id="nombre-solicitante" class="input-datos p-1" required> <br>
          <label class="text-light">email:</label><br>
          <input type="email" name="email-solicitante" id="email-solicitante" class="input-datos p-1" placeholder="nombre@email.com" required>
        </div>
-       <div class="caja-mensaje">
+       <div class="caja-mensaje p-1">
          <label class="text-light">mensaje:</label><br>
          <textarea name="mensaje" id="mensaje" cols="30" rows="5" class="cuadro-mensaje p-1" required></textarea>
          <br><input type="submit" value="enviar" class="border border-0 p-2 bg-light"></input>
