@@ -73,11 +73,13 @@ body{
 .input-datos{
   background-color: whitesmoke;
   color: black;
+  width: 330px;
 }
 
 .cuadro-mensaje{
   background-color: whitesmoke;
   color: black;
+  width: 350px;
 }
 
 .boton{
@@ -85,13 +87,16 @@ body{
   color: black;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
+  .navbar{
+    font-size: 13px;
+  }
   .mate-pc-code{
     height: 45vh;
   }
   .mate-png{
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
   }
   .suma-png{
     width: 40px;
@@ -127,5 +132,50 @@ body{
   }
   .cuadro-mensaje{
     width: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px){
+  .mate-pc-code{
+    height: 50vh;
+  }
+  .mate-png{
+    width: 110px;
+    height: 110px;
+  }
+  .suma-png{
+    width: 70px;
+    height: 70px;
+  }
+  .png{
+    width: 150px;
+    height: 150px;
+  }
+  .igual-png{
+    width: 95px;
+    height: 95px;
+  }
+  .card-aboutme{
+    display: inline-flex;
+  }
+  .img-perfil{
+    width: 300px;
+    height: 300px;
+  }
+  .texto-aboutme{
+    width: 50%;
+    padding-left: 10px;
+  }  
+  .card-languajes-and-tools{
+    width: 10%;
+  }
+  .formulario{
+    flex-wrap: wrap;
+  }
+  .input-datos{
+    width: 390px;
+  }
+  .cuadro-mensaje{
+    width: 390px;
   }
 }
