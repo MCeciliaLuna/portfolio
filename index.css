@@ -5,7 +5,7 @@
 
 body{
   font-family: "Comfortaa bold"!important;
-  background-color: whitesmoke;
+  background-color: black;
   background-image: url(/assets/background.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -109,10 +109,10 @@ body{
   }
   .input-datos{
     width: 300px;
-    background-color: aliceblue;
+    z-index: 1;
   }
   .cuadro-mensaje{
-    background-color: aliceblue;
     width: 300px;
+    z-index: 1;
   }
 }
