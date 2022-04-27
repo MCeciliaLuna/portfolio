@@ -5,7 +5,7 @@
 
 body{
   font-family: "Comfortaa bold"!important;
-  background-color: whitesmoke;
+  background-color: black;
   background-image: url(/assets/background.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -61,7 +61,7 @@ body{
 }
 
 .jobs-contact{
-  background-color: black !important;
+  background-color: black;
   margin-top: 90px;
 }
 
@@ -109,8 +109,10 @@ body{
   }
   .input-datos{
     width: 300px;
+    z-index: 1;
   }
   .cuadro-mensaje{
     width: 300px;
+    z-index: 1;
   }
 }
