@@ -70,6 +70,21 @@ body{
   height: 100px;
 }
 
+.input-datos{
+  background-color: aliceblue;
+  color: black;
+}
+
+.cuadro-mensaje{
+  background-color: aliceblue;
+  color: black;
+}
+
+.boton{
+  background-color: aliceblue;
+  color: black;
+}
+
 @media (max-width: 575.98px) {
   .mate-pc-code{
     height: 45vh;
@@ -109,10 +124,8 @@ body{
   }
   .input-datos{
     width: 300px;
-    z-index: 1;
   }
   .cuadro-mensaje{
     width: 300px;
-    z-index: 1;
   }
 }
