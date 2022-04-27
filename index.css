@@ -46,6 +46,15 @@ body{
   background-color: black !important;
 }
 
+.img-perfil{
+  width: 370px;
+  height: 370px;
+}
+
+.texto-aboutme{
+  width: 50%;
+}
+
 .card-languajes-and-tools{
   width: 100px;
   height: 100px;
@@ -59,4 +68,49 @@ body{
 .image-contact-png{
   width: 100px;
   height: 100px;
+}
+
+@media (max-width: 575.98px) {
+  .mate-pc-code{
+    height: 45vh;
+  }
+  .mate-png{
+    width: 70px;
+    height: 70px;
+  }
+  .suma-png{
+    width: 40px;
+    height: 40px;
+  }
+  .png{
+    width: 90px;
+    height: 90px;
+  }
+  .igual-png{
+    width: 50px;
+    height: 50px;
+  }
+  .card-aboutme{
+    flex-wrap: wrap;
+  }
+  .img-perfil{
+    width: 300px;
+    height: 300px;
+    margin-top: 20px !important;
+  }
+  .texto-aboutme{
+    width: 100%;
+  }  
+  .card-languajes-and-tools{
+    width: 10%;
+  }
+  .formulario{
+    flex-wrap: wrap;
+  }
+  .input-datos{
+    width: 300px;
+  }
+  .cuadro-mensaje{
+    width: 300px;
+  }
 }
