@@ -110,8 +110,8 @@ body{
 }
 
 .boton:hover{
-  background-color: #190028 !important;
-  color:aliceblue ;
+  background-color: #ced4da !important;
+  color: #212529;
 }
 
 @media (max-width: 767.98px) {
