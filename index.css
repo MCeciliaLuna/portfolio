@@ -74,7 +74,7 @@ body{
 }
 
 .sitio-web{
-  transition: transform .2s;
+  transition: transform .1s;
 }
 
 .sitio-web:hover{
@@ -84,7 +84,7 @@ body{
 .image-contact-png{
   width: 100px;
   height: 100px;
-  transition: transform .2s;
+  transition: transform .1s;
 }
 
 .image-contact-png:hover{
