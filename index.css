@@ -64,8 +64,13 @@ body{
 }
 
 .card-languajes-and-tools{
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
+}
+
+.card-others-languajes-and-tools{
+  width: 65px;
+  height: 65px;
 }
 
 .jobs-contact{
@@ -149,8 +154,14 @@ body{
     width: 100%;
   }  
   .card-languajes-and-tools{
-    width: 10%;
+    width: 9%;
   }
+
+  .card-others-languajes-and-tools{
+    width: 8%;
+    height: 8%;
+  }
+  
   .formulario{
     flex-wrap: wrap;
   }
@@ -194,7 +205,12 @@ body{
     padding-left: 10px;
   }  
   .card-languajes-and-tools{
-    width: 10%;
+    width: 9%;
+  }
+
+  .card-others-languajes-and-tools{
+    width: 8%;
+    height: 8%;
   }
   .formulario{
     flex-wrap: wrap;
