@@ -4,12 +4,7 @@ Este repositorio contiene el código perteneciente a mi _portfolio web_ donde ha
 
 ## Instalación ✅
 
-Este proyecto corre con
-
-```bash
-  Open with Live Server
-```
-dado que está hecho con solamente **HTML y CSS**, más las herramientas de *efectos visuales* con [Animate.css](https://animate.style/), *tooltips* en imágenes y links de [CSS Portal](https://www.cssportal.com/css-tooltip-generator/) y un sistema de *envío de emails* de [Form Submit](https://formsubmit.co/)
+Este proyecto corre con **"Open with Live Server"** de Visual Code dado que está hecho con solamente **HTML y CSS**, más las herramientas de *efectos visuales* con [Animate.css](https://animate.style/), *tooltips* en imágenes y links de [CSS Portal](https://www.cssportal.com/css-tooltip-generator/) y un sistema de *envío de emails* de [Form Submit](https://formsubmit.co/)
 
 ## Sitio Web 💻
 
