@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Comfortaa bold";
-  src: url(/assets/Comfortaa-Bold.ttf)
+  src: url(/assets/Comfortaa-Bold.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -37,8 +37,8 @@
   background: transparent;
 }
 
-body{
-  font-family: "Comfortaa bold"!important;
+body {
+  font-family: "Comfortaa bold" !important;
   background-color: black;
   background-image: url(/assets/background.jpg);
   background-attachment: fixed;
@@ -46,77 +46,81 @@ body{
   background-size: cover;
 }
 
-.navbar-style{
+.navbar-style {
   background-color: black;
 }
 
-.link-navbar{
+.link-navbar {
   transition: transform 1s;
 }
 
-.link-navbar:hover{
+.link-navbar:hover {
   transform: scale(1.1);
 }
 
-.mate-pc-code{
+.mate-pc-code {
   width: 100%;
   height: 100vh;
   z-index: 1;
 }
 
-.png{
+.png {
   width: 250px;
   height: 250px;
 }
 
-.mate-png{
+.mate-png {
   width: 180px;
   height: 180px;
 }
 
-.suma-png{
+.suma-png {
   width: 85px;
   height: 85px;
 }
 
-.igual-png{
+.igual-png {
   width: 110px;
   height: 110px;
 }
 
-.presentation-icons{
-  transition: transform .5s
+.presentation-icons {
+  transition: transform 0.5s;
 }
 
-.presentation-icons:hover{
-  transform: scale(1.10);
+.presentation-icons:hover {
+  transform: scale(1.1);
 }
 
-.card-aboutme{
+.card-aboutme {
   background-color: black !important;
 }
 
-.img-perfil{
+.img-perfil {
   width: 370px;
   height: 370px;
-  transition: transform .5s
+  transition: transform 0.5s;
 }
 
-.img-perfil:hover{
+.img-perfil:hover {
   transform: scale(1.05);
 }
 
-.texto-aboutme{
+.texto-aboutme {
   width: 50%;
 }
 
-.link-certificate{
-  transition: transform .5s;
+.link-certificate {
+  transition: transform 0.5s;
   color: #e5009d;
-  cursor: pointer
+  cursor: pointer;
 }
-.link-certificate:hover{
+.link-certificate:hover {
   transform: scale(1.01);
+}
+
+.image-modal {
+  width: 100%;
 }
 
 .parpadea {
@@ -125,56 +129,74 @@ body{
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 
-  -webkit-animation-name:parpadeo;
+  -webkit-animation-name: parpadeo;
   -webkit-animation-duration: 1.5s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
 }
 
-@-moz-keyframes parpadeo{  
-  0% { opacity: 1.0; }
-  50% { opacity: 0.7; }
-  100% { opacity: 1.0; }
+@-moz-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@-webkit-keyframes parpadeo {  
-  0% { opacity: 1.0; }
-  50% { opacity: 0.7; }
-   100% { opacity: 1.0; }
+@-webkit-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes parpadeo {  
-  0% { opacity: 1.0; }
-   50% { opacity: 0.7; }
-  100% { opacity: 1.0; }
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.card-languajes-and-tools{
+.card-languajes-and-tools {
   width: 90px;
   height: 90px;
-  transition: transform .5s
+  transition: transform 0.5s;
 }
 
-.card-languajes-and-tools:hover{
+.card-languajes-and-tools:hover {
   transform: scale(1.05);
 }
 
-.card-others-languajes-and-tools{
+.card-others-languajes-and-tools {
   width: 65px;
   height: 65px;
-  transition: transform .5s
+  transition: transform 0.5s;
 }
 
-.card-others-languajes-and-tools:hover{
+.card-others-languajes-and-tools:hover {
   transform: scale(1.1);
 }
 
-.scrum-icon{
+.scrum-icon {
   width: 90px;
-  transition: transform .5s
+  transition: transform 0.5s;
 }
 
-.scrum-icon:hover{
+.scrum-icon:hover {
   transform: scale(1.1);
 }
 
@@ -184,7 +206,7 @@ body{
 [data-tooltip]:before,
 [data-tooltip]:after {
   line-height: 1;
-  font-size: .9em;
+  font-size: 0.9em;
   pointer-events: none;
   position: absolute;
   box-sizing: border-box;
@@ -207,7 +229,7 @@ body{
   padding: 13px 15px;
   border-radius: 0px;
   background: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   z-index: 1;
 }
 [data-tooltip]:hover:before,
@@ -225,12 +247,13 @@ body{
 [data-tooltip][data-flow="top"]::after {
   bottom: calc(100% + 5px);
 }
-[data-tooltip]:not([data-flow])::before, [tooltip]:not([data-flow])::after,
+[data-tooltip]:not([data-flow])::before,
+[tooltip]:not([data-flow])::after,
 [data-tooltip][data-flow="top"]::before,
 [data-tooltip][data-flow="top"]::after {
   left: 50%;
   -webkit-transform: translate(-50%, -4px);
-          transform: translate(-50%, -4px);
+  transform: translate(-50%, -4px);
 }
 [data-tooltip][data-flow="bottom"]::before {
   top: 100%;
@@ -240,10 +263,11 @@ body{
 [data-tooltip][data-flow="bottom"]::after {
   top: calc(100% + 5px);
 }
-[data-tooltip][data-flow="bottom"]::before, [data-tooltip][data-flow="bottom"]::after {
+[data-tooltip][data-flow="bottom"]::before,
+[data-tooltip][data-flow="bottom"]::after {
   left: 50%;
   -webkit-transform: translate(-50%, 8px);
-          transform: translate(-50%, 8px);
+  transform: translate(-50%, 8px);
 }
 [data-tooltip][data-flow="left"]::before {
   top: 50%;
@@ -251,13 +275,13 @@ body{
   border-left-color: #000000;
   left: calc(0em - 5px);
   -webkit-transform: translate(-8px, -50%);
-          transform: translate(-8px, -50%);
+  transform: translate(-8px, -50%);
 }
 [data-tooltip][data-flow="left"]::after {
   top: 50%;
   right: calc(100% + 5px);
   -webkit-transform: translate(-8px, -50%);
-          transform: translate(-8px, -50%);
+  transform: translate(-8px, -50%);
 }
 [data-tooltip][data-flow="right"]::before {
   top: 50%;
@@ -265,217 +289,218 @@ body{
   border-right-color: #000000;
   right: calc(0em - 5px);
   -webkit-transform: translate(8px, -50%);
-          transform: translate(8px, -50%);
+  transform: translate(8px, -50%);
 }
 [data-tooltip][data-flow="right"]::after {
   top: 50%;
   left: calc(100% + 5px);
   -webkit-transform: translate(8px, -50%);
-          transform: translate(8px, -50%);
+  transform: translate(8px, -50%);
 }
-[data-tooltip=""]::after, [data-tooltip=""]::before {
+[data-tooltip=""]::after,
+[data-tooltip=""]::before {
   display: none !important;
 }
 
-.jobs-contact{
+.jobs-contact {
   background-color: black;
   margin-top: 90px;
 }
 
-.sitio-web{
-  transition: transform .5s;
-  cursor: pointer
+.sitio-web {
+  transition: transform 0.5s;
+  cursor: pointer;
 }
 
-.projects{
+.projects {
   width: 50%;
 }
 
-.sitio-web:hover{
+.sitio-web:hover {
   transform: scale(1.03);
 }
 
-.image-contact-png{
+.image-contact-png {
   width: 100px;
   height: 100px;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
-.image-contact-png:hover{
-  transform: scale(1.20);
+.image-contact-png:hover {
+  transform: scale(1.2);
 }
 
-.image-web-png{
+.image-web-png {
   width: 90px;
   height: 90px;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
-.image-web-png:hover{
-  transform: scale(1.10);
+.image-web-png:hover {
+  transform: scale(1.1);
 }
 
-.input-datos{
+.input-datos {
   background-color: whitesmoke;
   color: black;
   width: 330px;
 }
 
-.cuadro-mensaje{
+.cuadro-mensaje {
   background-color: whitesmoke;
   color: black;
   width: 350px;
 }
 
-.boton{
+.boton {
   background-color: whitesmoke;
   color: black;
-  transition: background-color .1s;
-  cursor: pointer
+  transition: background-color 0.1s;
+  cursor: pointer;
 }
 
-.boton:hover{
+.boton:hover {
   background-color: #ced4da !important;
   color: #212529;
 }
 
-.modal-body{
+.modal-body {
   background-color: black;
 }
 
 @media (max-width: 767.98px) {
-  .navbar{
+  .navbar {
     font-size: 13px;
   }
-  .mate-pc-code{
+  .mate-pc-code {
     height: 90vh;
   }
-  .mate-png{
+  .mate-png {
     width: 65px;
     height: 65px;
   }
-  .suma-png{
+  .suma-png {
     width: 40px;
     height: 40px;
   }
-  .png{
+  .png {
     width: 90px;
     height: 90px;
   }
-  .igual-png{
+  .igual-png {
     width: 50px;
     height: 50px;
   }
-  .card-aboutme{
+  .card-aboutme {
     flex-wrap: wrap;
   }
-  .link-certificate{
+  .link-certificate {
     margin-top: 7px;
     padding-bottom: 8px;
     font-size: 20px;
   }
 
-  .description{
+  .description {
     font-size: 15px;
   }
-  .img-perfil{
+  .img-perfil {
     width: 300px;
     height: 300px;
     margin-top: 20px !important;
   }
-  .texto-aboutme{
+  .texto-aboutme {
     width: 100%;
-  }  
+  }
 
-  .card-languajes-and-tools{
+  .card-languajes-and-tools {
     width: 19%;
     margin-top: 20px;
   }
 
-  .card-others-languajes-and-tools{
+  .card-others-languajes-and-tools {
     width: 15%;
   }
 
-  .scrum-icon{
+  .scrum-icon {
     width: 85px;
   }
 
-  .projects{
+  .projects {
     width: 90% !important;
   }
-  
-  .formulario{
+
+  .formulario {
     flex-wrap: wrap;
   }
-  .input-datos{
+  .input-datos {
     width: 300px;
   }
-  .cuadro-mensaje{
+  .cuadro-mensaje {
     width: 300px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px){
-  .mate-pc-code{
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .mate-pc-code {
     height: 90vh;
   }
-  .mate-png{
+  .mate-png {
     width: 110px;
     height: 110px;
   }
-  .suma-png{
+  .suma-png {
     width: 70px;
     height: 70px;
   }
-  .png{
+  .png {
     width: 150px;
     height: 150px;
   }
-  .igual-png{
+  .igual-png {
     width: 95px;
     height: 95px;
   }
-  .card-aboutme{
+  .card-aboutme {
     display: inline-flex;
   }
 
-  .link-certificate{
+  .link-certificate {
     margin-top: 7px;
     padding-bottom: 8px;
     font-size: 24px;
   }
 
-  .description{
+  .description {
     font-size: 17px;
   }
 
-  .img-perfil{
+  .img-perfil {
     width: 300px;
     height: 300px;
   }
-  .texto-aboutme{
+  .texto-aboutme {
     width: 50%;
     padding-left: 10px;
-  }  
-  .card-languajes-and-tools{
+  }
+  .card-languajes-and-tools {
     width: 19%;
     margin-top: 20px;
   }
 
-  .card-others-languajes-and-tools{
+  .card-others-languajes-and-tools {
     width: 8%;
     height: 8%;
   }
-  .projects{
+  .projects {
     width: 90% !important;
   }
-  .formulario{
+  .formulario {
     flex-wrap: wrap;
   }
-  .input-datos{
+  .input-datos {
     width: 390px;
   }
-  .cuadro-mensaje{
+  .cuadro-mensaje {
     width: 390px;
   }
 }
