@@ -7,7 +7,7 @@
   <meta name="author" content="María Cecilia Luna">
   <meta name="description" content="En esta página web presento mi perfil, mis trabajos y datos de contacto como desarrolladora de software">
   <link rel="stylesheet" href="/index.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="shortcut icon" href="/assets/icono.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <title>María Cecilia Dev</title>
@@ -25,7 +25,7 @@
               <a class="link-navbar nav-link text-light px-2" href="#herramientas">herramientas</a>
             </li>
             <li class="nav-item">
-              <a class="link-navbar nav-link text-light px-2" href="#trabajos">trabajos</a>
+              <a class="link-navbar nav-link text-light px-2" href="#trabajos">proyectos</a>
             </li>
             <li class="nav-item">
               <a class="link-navbar nav-link text-light px-2" href="#contacto">contacto</a>
@@ -39,86 +39,175 @@
   <main>
 
     <section class="animate__animated animate__backInDown animate__delay-1s mate-pc-code d-flex justify-content-center align-items-center">
-        <img src="/assets/mate.png" class="mate-png" alt="mate">
+      <div data-tooltip="Nada como un buen MATE" data-flow="bottom">
+      <img src="/assets/mate.png" class="mate-png presentation-icons" alt="mate">
+    </div>  
         <img src="/assets/mas.png" class="suma-png" alt="suma">
-        <img src="/assets/pc.png" class="png" alt="laptop">
+        <img src="/assets/pc.png" class="png presentation-icons" alt="laptop">
         <img src="/assets/igual.png" class="igual-png" alt="igual">
-        <img src="/assets/code.png" class="png" alt="code">
+        <img src="/assets/code.png" class="png presentation-icons ms-2" alt="code">
     </section>
 
 
     <section class="animate__animated animate__fadeIn animate__delay-2s card-aboutme p-4 d-flex align-items-center justify-content-evenly" id="sobremi">
       <div class="texto-aboutme p-0">
         <h1 class="card-title text-light text-end">¡Hola! Soy Cecilia,</h1>
-        <h5 class="card-text text-light text-end">FRONT-END DEVELOPER pronta a graduarme de Rolling Code School Academy. Vivo en Tucumán (Argentina), y me apasiona la idea de hacer realidad tus proyectos.</h5>
+        <div data-tooltip="Checkeá con un clic" data-flow="right">
+        <h4 class="card-text text-end link-certificate mb-0 parpadea" data-bs-toggle="modal" data-bs-target="#exampleModal3">FULL STACK DEVELOPER graduada de Rolling Code School Academy</h4>
       </div>
-      <div>
+        <h5 class="description text-light text-end">Entusiasta, adaptativa, creativa y con un buen desempeño al trabajar en equipo, me apasiona la idea de ser parte de proyectos creativos y desafiantes. Soy de Tucumán, Argentina.</h5>
+      </div>
+      <div data-tooltip="¡HEY! ¡HOLA!" data-flow="top">
         <img src="/assets/profile.jpg" class="img-perfil img-fluid rounded-circle p-0" alt="profile">
+      </div>
+    </section>
+
+    <section>
+      <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content border-0 rounded-0">
+            <div class="modal-body m-0 p-0">
+              <img src="https://media.licdn.com/dms/image/C4D22AQF9-vpW4X_XVA/feedshare-shrink_2048_1536/0/1672675369977?e=1677110400&v=beta&t=fNQTfV86aw9J3Xjj_3jkB2e88vOj1PWSaz0EeGQpJS4" alt="certificado" class="w-100">
+               </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     
     <section class="languajes-and-tools d-flex flex-wrap justify-content-evenly mt-5 mb-3 p-0" id="herramientas">
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="HTML5" data-flow="top">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" class="card-img-top" alt="html">
       </div>
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="CSS" data-flow="top">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" class="card-img-top" alt="css">
       </div>
-      <div class="card-languajes-and-tools d-flex">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" class="card-img-top"/>
+      <div class="card-languajes-and-tools d-flex" data-tooltip="BOOTSTRAP" data-flow="top">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" class="card-img-top" alt="boostrap"/>
     </div>
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="JAVASCRIPT" data-flow="top">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" class="card-img-top" alt="javascript">
       </div>
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="REACT" data-flow="top">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="card-img-top" alt="react">
       </div>
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="NODE JS" data-flow="bottom">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" class="card-img-top" alt="nodejs">
       </div>
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="MONGO DB" data-flow="bottom">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg" class="card-img-top" alt="mondoDB" />
     </div>
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="EXPRESS" data-flow="bottom">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="card-img-top" alt="express" />
     </div>
-    <div class="card-languajes-and-tools d-flex" class="card-img-top" alt="heroku">
+    <div class="card-languajes-and-tools d-flex" data-tooltip="HEROKU/RENDER" data-flow="bottom">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-plain.svg" class="card-img-top" alt="heroku" />
   </div>
-      <div class="card-languajes-and-tools d-flex">
+      <div class="card-languajes-and-tools d-flex" data-tooltip="GIT HUB" data-flow="bottom">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="card-img-top" alt="git">
     </div>
   </section>
-  <h6 class="text-center text-light">y también:</h6>
-  <section class="languajes-and-tools d-flex flex-wrap justify-content-center mt-3 mb-5 p-0" id="herramientas">
-      <div class="card-others-languajes-and-tools d-flex me-1">
+  <h6 class="text-center text-light mb-3 fs-5">y también:</h6>
+  <section class="languajes-and-tools d-flex flex-wrap justify-content-center mt-1 mb-5 p-0" id="herramientas">
+      <div class="card-others-languajes-and-tools d-flex mt-2 me-4" data-tooltip="Figma" data-flow="top">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-plain.svg" class="card-img-top" alt="figma">
       </div>
-      <div class="card-others-languajes-and-tools d-flex ms-1">
+      <div class="scrum-icon d-flex m-0 p-0" data-tooltip="Metodología Scrum" data-flow="top">
+        <img src="/assets/scrum.png" class="card-img-top" alt="scrum">
+      </div>
+      <div class="card-others-languajes-and-tools d-flex mt-2 ms-4" data-tooltip="Slack" data-flow="top">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-plain.svg" class="card-img-top" alt="slack">
       </div>
     </section>
 
     <section class="animate__animated animate__fadeIn jobs-contact animate__delay-2s mb-5 mt-3 d-flex justify-content-center flex-wrap" id="trabajos">
-    <h4 class="w-100 mx-3 mt-4 mb-1 text-light">algunos trabajos</h4>
-    <div class="p-3 w-50">
-      <a href="https://burgercode.netlify.app/" target="_blank">
+    <h4 class="w-100 mx-3 mt-4 mb-1 text-light">proyectos</h4>
+    <div class="projects p-3">
+      <div data-bs-toggle="modal" data-bs-target="#exampleModal">
         <img src="/assets/burgercode.jpg" class="sitio-web w-100" alt="sitio web">
-      </a>
+      </div>
+      <h5 class="pt-3 mb-0 text-light text-center">BurgerCode</h5>
+    </div>
+    <div class="projects p-3">
+      <div data-bs-toggle="modal" data-bs-target="#exampleModal1">
+        <img src="/assets/migo-community.jpg" class="sitio-web w-100" alt="sitio web">
       <h5 class="pt-3 mb-0 text-light text-center">Migo Community</h5>
     </div>
-    <div class="p-3 w-50">
-      <a href="https://migo-community.netlify.app/" target="_blank">
-        <img src="/assets/migo-community.png" class="sitio-web w-100" alt="sitio web">
-      </a>
-      <h5 class="pt-3 mb-0 text-light text-center">Migo Community</h5>
-    </div>
-    <div class="p-3 w-50">
-      <a href="https://la-golosineria.netlify.app" target="_blank">
+  </div>
+    <div class="projects p-3">
+      <div data-bs-toggle="modal" data-bs-target="#exampleModal2">
        <img src="/assets/golosineria.png" class="sitio-web w-100" alt="sitio web">
-      </a>
+      </div>
       <h5 class="pt-3 mb-0 text-light text-center">La Golosinería</h5>
     </div>
+    </section>
+
+    <section>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content border-0 rounded-0">
+            <div class="modal-body p-5">
+              <div class="w-100 d-flex justify-content-around align-items-center">
+              <div class="contact-png">
+                <a href="https://github.com/nahueldelavega/burgerCode-DB" target="_blank" data-tooltip="REPOSITORIO" data-flow="bottom">
+                <img src="/assets/github.png" class="image-web-png" alt="git">
+                </a>
+                </div>
+                <div class="contact-png">
+                  <a href="https://burgercode.netlify.app/" target="_blank" data-tooltip="WEB" data-flow="top">
+                <img src="/assets/netlify.png" class="image-web-png" alt="netlify">
+              </a>
+            </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content border-0 rounded-0">
+            <div class="modal-body p-5">
+              <div class="w-100 d-flex justify-content-around align-items-center">
+              <div class="contact-png">
+                <a href="https://github.com/" target="_blank" data-tooltip="REPOSITORIO" data-flow="bottom">
+                <img src="/assets/github.png" class="image-web-png" alt="git">
+                </a>
+                </div>
+                <div class="contact-png">
+                  <a href="https://migo-community.netlify.app/" target="_blank" data-tooltip="WEB" data-flow="top">
+                <img src="/assets/netlify.png" class="image-web-png" alt="netlify">
+              </a>
+            </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content border-0 rounded-0">
+            <div class="modal-body p-5">
+              <div class="w-100 d-flex justify-content-around align-items-center">
+              <div class="contact-png">
+                <a href="https://github.com/MCeciliaLuna/la-golosineria-proyecto-rc" target="_blank" data-tooltip="REPOSITORIO" data-flow="bottom">
+                <img src="/assets/github.png" class="image-web-png" alt="git">
+                </a>
+                </div>
+                <div class="contact-png">
+                  <a href="https://la-golosineria.netlify.app/" target="_blank" data-tooltip="WEB" data-flow="top">
+                <img src="/assets/netlify.png" class="image-web-png" alt="netlify">
+              </a>
+            </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="animate__animated animate__fadeIn animate__delay-2s jobs-contact pb-4 d-flex flex-wrap justify-content-evenly" id="contacto">
@@ -143,17 +232,17 @@
      <form action="https://formsubmit.co/9f69aa06e9804b8be276362caff44599" method="POST" class="formulario d-flex justify-content-evenly">
        <div class="datos-solicitante p-1">
          <label class="text-light">nombre:</label> <br>
-         <input type="text" name="nombre-solicitante" id="nombre-solicitante" class="input-datos p-1" required> <br>
+         <input type="text" name="nombre" id="nombre-solicitante" class="input-datos p-1" required> <br>
          <label class="text-light">email:</label><br>
-         <input type="email" name="email-solicitante" id="email-solicitante" class="input-datos p-1" placeholder="nombre@email.com" required>
-       </div>
-       <div class="caja-mensaje p-1">
-         <label class="text-light">mensaje:</label><br>
-         <textarea name="mensaje" id="mensaje" cols="30" rows="5" class="cuadro-mensaje p-1" required></textarea>
-         <br><input type="submit" value="enviar" class="animate__animated animate__fadeIn animate__delay-4s boton border border-0 p-2 bg-light"></input>
+         <input type="email" name="email" id="email-solicitante" class="input-datos p-1" placeholder="nombre@email.com" required>
         </div>
-        <input type="hidden" name="_next" value="https://mariacecilia-dev.netlify.app/">
-        <input type="hidden" name="_captcha" value="false">
+        <div class="caja-mensaje p-1">
+          <label class="text-light">mensaje:</label><br>
+          <textarea name="mensaje" id="mensaje" cols="30" rows="5" class="cuadro-mensaje p-1" required></textarea>
+          <br><input type="submit" value="enviar" class="animate__animated animate__fadeIn animate__delay-4s boton border border-0 p-2 bg-light"></input>
+        </div>
+        <input type="hidden" name="_autoresponse" value="¡Hola! Soy Cecilia y he recibido tu mensaje! Me contactaré a la brevedad. Guarda este mail como comprobante :)">
+        <input type="hidden" name="_subject" value="NUEVO MENSAJE" >
         <input type="hidden" name="_template" value="table">
      </form>
     </section>
@@ -166,6 +255,6 @@
     </div>
   </footer>
   
-  <script src="/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
