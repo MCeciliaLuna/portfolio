@@ -514,4 +514,7 @@ body {
   .cuadro-mensaje {
     width: 390px;
   }
+  .code-qr{
+    width: 20%;
+  }
 }
