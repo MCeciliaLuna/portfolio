@@ -313,7 +313,7 @@ body {
 }
 
 .projects {
-  width: 50%;
+  width: 33%;
 }
 
 .sitio-web:hover {
@@ -503,7 +503,7 @@ body {
     height: 8%;
   }
   .projects {
-    width: 90% !important;
+    width: 50% !important;
   }
   .formulario {
     flex-wrap: wrap;
