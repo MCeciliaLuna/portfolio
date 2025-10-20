@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "Cecilia",
-    "nickname":"Ceci",
+    "nickname": "Ceci",
     "tagline": "programadora web frontend",
     "description": "Soy curiosa y creativa, me encanta aprender y colaborar en equipo. Me apasionan los proyectos desafiantes, el diseño cuidado al detalle y encontrar soluciones a todo. Siempre estoy buscando crecer, por lo que me capacito constantemente. También amo explorar cómo aplicar la IA para potenciar todo mi desarrollo.",
     "profileImage": "/images/profile.webp",
@@ -20,27 +20,67 @@
   "projects": [
     {
       "id": 1,
-      "title": "E-commerce Platform",
+      "title": "To Do List",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
-      "imageUrl": "/images/proyecto1.jpg",
-      "liveUrl": "https://ecommerce-demo.com",
-      "repoUrl": "https://github.com/cecilia-dev/ecommerce-platform"
+      "imageUrl": "/public/images/projects/todolist-web.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
     },
     {
       "id": 2,
-      "title": "Task Management App",
-      "description": "Aplicación de gestión de tareas con funcionalidades avanzadas",
-      "imageUrl": "/images/proyecto2.jpg",
-      "liveUrl": "https://tasks-app-demo.com",
-      "repoUrl": "https://github.com/cecilia-dev/task-management"
+      "title": "Phrases API",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/public/images/projects/phrases-api.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
     },
     {
       "id": 3,
-      "title": "Weather Dashboard",
-      "description": "Dashboard del clima con APIs integradas y visualización de datos",
-      "imageUrl": "/images/proyecto3.jpg",
-      "liveUrl": "https://weather-dashboard-demo.com",
-      "repoUrl": "https://github.com/cecilia-dev/weather-dashboard"
+      "title": "We Learn Web",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/public/images/projects/welearn-web.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+    },
+    {
+      "id": 4,
+      "title": "ACVA Mockup",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/public/images/projects/va-mockup.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+    },
+    {
+      "id": 5,
+      "title": "La Quiaqueña Drugstore E-Commerce",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/public/images/projects/laquiaquena-web.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+    },
+    {
+      "id": 6,
+      "title": "La Quiaqueña Herboristería E-Commerce",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/public/images/projects/laquiaquena-ii-web.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+    },
+    {
+      "id": 7,
+      "title": "FilmFav Js",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/public/images/projects/filmfav-web.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+    },
+    {
+      "id": 8,
+      "title": "Contacto Profesional Web",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/public/images/projects/mclsd-mockup.webp",
+      "liveUrl": "https://todo-list-app-gl.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
     }
   ],
   "skills": [
