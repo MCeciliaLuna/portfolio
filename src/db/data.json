@@ -69,9 +69,9 @@
       "tooltip": "Framework de React para aplicaciones web de producción"
     },
     {
-      "name": "Tailwind CSS",
-      "icon": "SiTailwindcss",
-      "tooltip": "Framework de CSS utilitario para diseño rápido"
+      "name": "Diseño UX/UI",
+      "icon": "MdDesignServices",
+      "tooltip": "Diseño de experiencia de usuario e interfaces intuitivas"
     },
     {
       "name": "Scrum",
@@ -79,9 +79,9 @@
       "tooltip": "Metodología ágil para gestión de proyectos"
     },
     {
-      "name": "Management 3.0",
-      "icon": "MdTrendingUp",
-      "tooltip": "Enfoque moderno de liderazgo y gestión de equipos"
+      "name": "Metodologías Ágiles",
+      "icon": "MdSpeed",
+      "tooltip": "Enfoques iterativos para desarrollo de software eficiente"
     },
     {
       "name": "Docencia",
@@ -92,24 +92,31 @@
   "certifications": [
     {
       "id": 1,
-      "title": "React Developer Certification",
-      "institution": "Meta",
-      "year": "2023",
-      "imageUrl": "/images/cert1.jpg"
+      "title": "Diplomatura en Diseño UX-UI",
+      "institution": "Centro de E-Learning UTN-BA",
+      "year": "2025",
+      "imageUrl": "/images/certificates/ux-ui-certificado.webp"
     },
     {
       "id": 2,
-      "title": "JavaScript Advanced Concepts",
-      "institution": "FreeCodeCamp",
-      "year": "2022",
-      "imageUrl": "/images/cert2.jpg"
+      "title": "Diplomatura en Agile Managment",
+      "institution": "Agencia I",
+      "year": "2024",
+      "imageUrl": "/images/certificates/agile-managment-certificado.webp"
     },
     {
       "id": 3,
-      "title": "Scrum Master Certification",
-      "institution": "Scrum Alliance",
+      "title": "JS y React Avanzado",
+      "institution": "Global Learning",
       "year": "2023",
-      "imageUrl": "/images/cert3.jpg"
+      "imageUrl": "/images/certificates/global-learning-certificado.webp"
+    },
+    {
+      "id": 4,
+      "title": "Full Stack Web Developer",
+      "institution": "Rolling Code School",
+      "year": "2022",
+      "imageUrl": "/images/certificates/Certificado.webp"
     }
   ],
   "companies": [

@@ -10,54 +10,65 @@
   font-family: var(--font-title);
 }
 
-.certifications-carousel-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
+.certifications-grid {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0 2rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
-.certifications-carousel .ant-carousel .ant-carousel-dots {
-  bottom: -50px;
+.certifications-grid::-webkit-scrollbar {
+  height: 8px;
 }
 
-.certifications-carousel .ant-carousel .ant-carousel-dots li button {
-  background: var(--secondary-purple);
-  opacity: 0.4;
+.certifications-grid::-webkit-scrollbar-track {
+  background: rgba(111, 45, 189, 0.1);
+  border-radius: 10px;
 }
 
-.certifications-carousel .ant-carousel .ant-carousel-dots li.ant-carousel-dots-active button {
+.certifications-grid::-webkit-scrollbar-thumb {
   background: var(--primary-purple);
-  opacity: 1;
+  border-radius: 10px;
+  opacity: 0.7;
 }
 
-.certification-slide {
-  padding: 0 20px;
+.certifications-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-purple);
 }
 
 .certification-card {
+  min-width: 380px;
+  flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(111, 45, 189, 0.12);
   transition: all 0.3s ease;
   border: none;
+  background: var(--white);
 }
 
 .certification-card:hover {
-  box-shadow: 0 15px 40px rgba(111, 45, 189, 0.2);
-  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(111, 45, 189, 0.25);
+  transform: translateY(-8px);
 }
 
 .certification-image-wrapper {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  height: 300px;
+  height: 280px;
+  background: #f8f9fa;
 }
 
 .certification-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: all 0.3s ease;
+  padding: 10px;
 }
 
 .image-overlay {
@@ -66,15 +77,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(111, 45, 189, 0.8);
+  background: rgba(111, 45, 189, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: all 0.3s ease;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.1rem;
+  font-family: var(--font-body);
 }
 
 .certification-image-wrapper:hover .image-overlay {
@@ -82,12 +94,12 @@
 }
 
 .certification-image-wrapper:hover .certification-image {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .certification-info {
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .certification-info .institution {
@@ -95,18 +107,21 @@
   color: var(--primary-purple);
   font-weight: 500;
   margin: 0.5rem 0;
+  font-family: var(--font-body);
 }
 
 .certification-info .year {
   font-size: 1rem;
   color: var(--text-light);
   margin: 0;
+  font-family: var(--font-body);
 }
 
 /* Modal Styles */
 .certification-modal .ant-modal-content {
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 20px 50px rgba(111, 45, 189, 0.3);
 }
 
 .modal-content {
@@ -119,13 +134,16 @@
   object-fit: contain;
   border-radius: 10px;
   margin-bottom: 1rem;
+  background: #f8f9fa;
+  padding: 10px;
 }
 
 .modal-info h3 {
-  font-family: var(--font-title);
+  font-family: var(--font-body) !important;
   color: var(--primary-purple);
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .modal-institution {
@@ -133,12 +151,14 @@
   color: var(--secondary-purple);
   font-weight: 500;
   margin-bottom: 0.5rem;
+  font-family: var(--font-body);
 }
 
 .modal-year {
   font-size: 1rem;
   color: var(--text-light);
   margin: 0;
+  font-family: var(--font-body);
 }
 
 @media (max-width: 768px) {
@@ -147,16 +167,17 @@
     margin-bottom: 2rem;
   }
   
-  .certifications-carousel-wrapper {
-    max-width: 100%;
+  .certifications-grid {
+    gap: 1.5rem;
+    padding: 0.5rem 0 1.5rem 0;
   }
   
-  .certification-slide {
-    padding: 0 10px;
+  .certification-card {
+    min-width: 320px;
   }
   
   .certification-image-wrapper {
-    height: 250px;
+    height: 240px;
   }
   
   .certification-modal {
@@ -173,8 +194,12 @@
     font-size: 2rem;
   }
   
-  .certification-slide {
-    padding: 0 5px;
+  .certifications-grid {
+    gap: 1rem;
+  }
+  
+  .certification-card {
+    min-width: 280px;
   }
   
   .certification-image-wrapper {

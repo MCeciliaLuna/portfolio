@@ -8,12 +8,12 @@ import {
   FaChalkboardTeacher 
 } from 'react-icons/fa';
 import { 
-  SiNextdotjs, 
-  SiTailwindcss 
+  SiNextdotjs
 } from 'react-icons/si';
 import { 
   MdGroup, 
-  MdTrendingUp 
+  MdDesignServices,
+  MdSpeed
 } from 'react-icons/md';
 import data from '../db/data.json';
 import './Skills.css';
@@ -28,9 +28,9 @@ const Skills = () => {
       'FaJs': <FaJs />,
       'FaReact': <FaReact />,
       'SiNextdotjs': <SiNextdotjs />,
-      'SiTailwindcss': <SiTailwindcss />,
+      'MdDesignServices': <MdDesignServices />,
       'MdGroup': <MdGroup />,
-      'MdTrendingUp': <MdTrendingUp />,
+      'MdSpeed': <MdSpeed />,
       'FaChalkboardTeacher': <FaChalkboardTeacher />
     };
     

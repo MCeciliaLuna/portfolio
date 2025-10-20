@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Carousel, Modal, Card } from 'antd';
+import { Modal, Card } from 'antd';
 import data from '../db/data.json';
 import './Certifications.css';
 
@@ -23,52 +23,43 @@ const Certifications = () => {
       <div className="container">
         <h2 className="section-title">Certificaciones</h2>
         
-        <div className="certifications-carousel-wrapper">
-          <Carousel 
-            dots={true} 
-            autoplay 
-            autoplaySpeed={4000}
-            className="certifications-carousel"
-            dotPosition="bottom"
-          >
-            {certifications.map((cert) => (
-              <div key={cert.id} className="certification-slide">
-                <Card 
-                  className="certification-card"
-                  cover={
-                    <div 
-                      className="certification-image-wrapper"
-                      onClick={() => handleImageClick(cert)}
-                    >
-                      <img
-                        src={cert.imageUrl}
-                        alt={cert.title}
-                        className="certification-image"
-                        loading="lazy"
-                        onError={(e) => {
-                          e.target.src = `https://via.placeholder.com/400x300/6f2dbd/ffffff?text=${encodeURIComponent(cert.title)}`;
-                        }}
-                      />
-                      <div className="image-overlay">
-                        <span>Ver certificado</span>
-                      </div>
-                    </div>
-                  }
-                  styles={{ body: { padding: '16px' } }}
+        <div className="certifications-grid">
+          {certifications.map((cert) => (
+            <Card 
+              key={cert.id}
+              className="certification-card"
+              cover={
+                <div 
+                  className="certification-image-wrapper"
+                  onClick={() => handleImageClick(cert)}
                 >
-                  <Card.Meta
-                    title={cert.title}
-                    description={
-                      <div className="certification-info">
-                        <p className="institution">{cert.institution}</p>
-                        <p className="year">{cert.year}</p>
-                      </div>
-                    }
+                  <img
+                    src={cert.imageUrl}
+                    alt={cert.title}
+                    className="certification-image"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src = `https://via.placeholder.com/500x350/6f2dbd/ffffff?text=${encodeURIComponent(cert.title)}`;
+                    }}
                   />
-                </Card>
-              </div>
-            ))}
-          </Carousel>
+                  <div className="image-overlay">
+                    <span>Ver certificado</span>
+                  </div>
+                </div>
+              }
+              styles={{ body: { padding: '16px' } }}
+            >
+              <Card.Meta
+                title={cert.title}
+                description={
+                  <div className="certification-info">
+                    <p className="institution">{cert.institution}</p>
+                    <p className="year">{cert.year}</p>
+                  </div>
+                }
+              />
+            </Card>
+          ))}
         </div>
 
         <Modal
