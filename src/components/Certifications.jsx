@@ -44,6 +44,7 @@ const Certifications = () => {
                         src={cert.imageUrl}
                         alt={cert.title}
                         className="certification-image"
+                        loading="lazy"
                         onError={(e) => {
                           e.target.src = `https://via.placeholder.com/400x300/6f2dbd/ffffff?text=${encodeURIComponent(cert.title)}`;
                         }}
@@ -53,7 +54,7 @@ const Certifications = () => {
                       </div>
                     </div>
                   }
-                  bordered={false}
+                  styles={{ body: { padding: '16px' } }}
                 >
                   <Card.Meta
                     title={cert.title}

@@ -48,7 +48,11 @@ const Skills = () => {
               <Tooltip 
                 title={skill.tooltip} 
                 placement="bottom"
-                overlayClassName="skill-tooltip"
+                overlayStyle={{ 
+                  fontSize: '14px',
+                  backgroundColor: '#6f2dbd',
+                  borderRadius: '8px'
+                }}
               >
                 <div className="skill-item hover-scale">
                   <div className="skill-icon">

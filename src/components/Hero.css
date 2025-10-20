@@ -95,7 +95,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 8px solid var(--white);
+  border: 2px solid var(--white);
   box-shadow: 0 20px 40px rgba(111, 45, 189, 0.2);
   transition: all 0.3s ease;
 }

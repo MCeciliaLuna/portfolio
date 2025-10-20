@@ -21,6 +21,7 @@ const Hero = () => {
           src={profile.backgroundImage} 
           alt="Background" 
           className="hero-bg-image"
+          loading="eager"
           onError={(e) => {
             e.target.style.display = 'none';
           }}
@@ -32,7 +33,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              HOLA! SOY <span className="hero-name">{profile.name.toUpperCase()}</span>
+              Hola! Soy <span className="hero-name">{profile.name}</span>
             </h1>
             <p className="hero-tagline">{profile.tagline}</p>
           </div>
@@ -43,6 +44,7 @@ const Hero = () => {
                 src={profile.profileImage} 
                 alt={`${profile.name} - Perfil`} 
                 className="hero-profile-image"
+                loading="eager"
                 onError={(e) => {
                   e.target.src = `https://ui-avatars.com/api/?name=${profile.name}&size=300&background=6f2dbd&color=ffffff&font-size=0.4`;
                 }}

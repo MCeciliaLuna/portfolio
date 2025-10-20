@@ -1,20 +1,20 @@
 {
   "profile": {
     "name": "Cecilia",
-    "tagline": "Programadora Web Front End",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "profileImage": "/images/profile.jpg",
+    "tagline": "programadora web frontend",
+    "description": "Soy curiosa y creativa, me encanta aprender y colaborar en equipo. Me apasionan los proyectos desafiantes, el diseño cuidado al detalle y encontrar soluciones a todo. Siempre estoy buscando crecer, por lo que me capacito constantemente. También amo explorar cómo aplicar la IA para potenciar todo mi desarrollo.",
+    "profileImage": "/images/profile.webp",
     "backgroundImage": "/images/hero-bg.jpg",
     "linkedin": "https://linkedin.com/in/cecilia-dev",
     "github": "https://github.com/cecilia-dev",
     "email": "cecilia@ejemplo.com"
   },
   "tags": [
-    "Creativa",
-    "Responsable", 
-    "Innovadora",
-    "Colaborativa",
-    "Apasionada"
+    "Creatividad",
+    "Adaptabilidad",
+    "Curiosidad",
+    "Colaboración",
+    "Detallismo"
   ],
   "projects": [
     {
@@ -140,7 +140,7 @@
       "href": "#hero"
     },
     {
-      "label": "Sobre mí", 
+      "label": "Sobre mí",
       "href": "#about"
     },
     {

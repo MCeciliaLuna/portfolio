@@ -27,6 +27,37 @@
   box-sizing: border-box;
 }
 
+/* Optimizaciones de rendimiento */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevenir layout shifts */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optimización de animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Forzar aceleración por hardware en elementos críticos */
+.hero-profile-image,
+.certification-image,
+.skill-item {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
 html {
   scroll-behavior: smooth;
 }
