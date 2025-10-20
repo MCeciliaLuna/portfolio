@@ -21,7 +21,9 @@ const Companies = () => {
                     alt={company.name}
                     className="company-logo"
                     onError={(e) => {
-                      e.target.src = `https://via.placeholder.com/200x100/6f2dbd/ffffff?text=${encodeURIComponent(company.name)}`;
+                      e.target.style.display = 'none';
+                      e.target.parentElement.style.backgroundColor = '#6f2dbd';
+                      e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1rem; text-align: center; padding: 10px;">${company.name}</div>`;
                     }}
                   />
                 </div>

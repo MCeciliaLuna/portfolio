@@ -14,7 +14,7 @@ const Footer = () => {
         <Row gutter={[30, 30]} justify="space-between" align="top">
           <Col xs={24} sm={12} lg={8}>
             <div className="footer-brand">
-              <h3 className="footer-title">{profile.name}</h3>
+              <h3 className="footer-title">{profile.name} :)</h3>
               <p className="footer-tagline">{profile.tagline}</p>
             </div>
           </Col>

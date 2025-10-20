@@ -17,15 +17,17 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-background">
-        <img 
-          src={profile.backgroundImage} 
-          alt="Background" 
-          className="hero-bg-image"
-          loading="eager"
-          onError={(e) => {
-            e.target.style.display = 'none';
-          }}
-        />
+        {profile.backgroundImage && (
+          <img 
+            src={profile.backgroundImage} 
+            alt="Background" 
+            className="hero-bg-image"
+            loading="eager"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        )}
         <div className="hero-overlay"></div>
       </div>
       

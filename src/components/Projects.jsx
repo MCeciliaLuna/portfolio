@@ -24,7 +24,9 @@ const Projects = () => {
                       src={project.imageUrl}
                       className="project-image"
                       onError={(e) => {
-                        e.target.src = `https://via.placeholder.com/400x250/6f2dbd/ffffff?text=${encodeURIComponent(project.title)}`;
+                        e.target.style.display = 'none';
+                        e.target.parentElement.style.backgroundColor = '#6f2dbd';
+                        e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.1rem; text-align: center; padding: 20px;">${project.title}</div>`;
                       }}
                     />
                     <div className="project-overlay">
@@ -51,7 +53,7 @@ const Projects = () => {
                     </div>
                   </div>
                 }
-                bordered={false}
+                styles={{ body: { padding: '16px' } }}
               >
                 <Card.Meta
                   title={<span className="project-title">{project.title}</span>}

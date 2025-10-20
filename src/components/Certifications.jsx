@@ -39,7 +39,9 @@ const Certifications = () => {
                     className="certification-image"
                     loading="lazy"
                     onError={(e) => {
-                      e.target.src = `https://via.placeholder.com/500x350/6f2dbd/ffffff?text=${encodeURIComponent(cert.title)}`;
+                      e.target.style.display = 'none';
+                      e.target.parentElement.style.backgroundColor = '#6f2dbd';
+                      e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem;">${cert.title}</div>`;
                     }}
                   />
                   <div className="image-overlay">
@@ -77,7 +79,9 @@ const Certifications = () => {
                 alt={selectedCert.title}
                 className="modal-image"
                 onError={(e) => {
-                  e.target.src = `https://via.placeholder.com/600x400/6f2dbd/ffffff?text=${encodeURIComponent(selectedCert.title)}`;
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.backgroundColor = '#6f2dbd';
+                  e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem; text-align: center; padding: 20px;">${selectedCert.title}</div>`;
                 }}
               />
               <div className="modal-info">

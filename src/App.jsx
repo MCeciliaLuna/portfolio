@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { ConfigProvider } from 'antd'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -13,13 +13,13 @@ import FloatingContact from './components/FloatingContact'
 import './App.css'
 
 function App() {
-  const antTheme = {
+  const antTheme = useMemo(() => ({
     token: {
       colorPrimary: '#6f2dbd',
       borderRadius: 10,
       fontFamily: "'Wix Madefor Text', sans-serif",
     },
-  };
+  }), []);
 
   return (
     <ConfigProvider theme={antTheme}>

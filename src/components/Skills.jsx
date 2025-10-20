@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Tooltip, Row, Col } from 'antd';
 import { 
   FaHtml5, 
@@ -21,19 +21,19 @@ import './Skills.css';
 const Skills = () => {
   const { skills } = data;
 
+  const iconMap = useMemo(() => ({
+    'FaHtml5': <FaHtml5 />,
+    'FaCss3Alt': <FaCss3Alt />,
+    'FaJs': <FaJs />,
+    'FaReact': <FaReact />,
+    'SiNextdotjs': <SiNextdotjs />,
+    'MdDesignServices': <MdDesignServices />,
+    'MdGroup': <MdGroup />,
+    'MdSpeed': <MdSpeed />,
+    'FaChalkboardTeacher': <FaChalkboardTeacher />
+  }), []);
+
   const getIcon = (iconName) => {
-    const iconMap = {
-      'FaHtml5': <FaHtml5 />,
-      'FaCss3Alt': <FaCss3Alt />,
-      'FaJs': <FaJs />,
-      'FaReact': <FaReact />,
-      'SiNextdotjs': <SiNextdotjs />,
-      'MdDesignServices': <MdDesignServices />,
-      'MdGroup': <MdGroup />,
-      'MdSpeed': <MdSpeed />,
-      'FaChalkboardTeacher': <FaChalkboardTeacher />
-    };
-    
     return iconMap[iconName] || <div className="default-icon">?</div>;
   };
 
@@ -48,11 +48,7 @@ const Skills = () => {
               <Tooltip 
                 title={skill.tooltip} 
                 placement="bottom"
-                overlayStyle={{ 
-                  fontSize: '14px',
-                  backgroundColor: '#6f2dbd',
-                  borderRadius: '8px'
-                }}
+                color="#6f2dbd"
               >
                 <div className="skill-item hover-scale">
                   <div className="skill-icon">
