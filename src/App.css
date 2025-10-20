@@ -1,0 +1,40 @@
+.App {
+  text-align: left;
+}
+
+main {
+  position: relative;
+}
+
+/* Smooth scrolling para toda la aplicación */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Configuración específica para Ant Design */
+.ant-layout {
+  background: var(--background-main);
+}
+
+.ant-menu {
+  background: transparent !important;
+}
+
+/* Override de algunos estilos de Ant Design para que coincidan con nuestro tema */
+.ant-btn-primary {
+  background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)) !important;
+  border: none !important;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple)) !important;
+}
+
+.ant-form-item-label > label {
+  font-weight: 600 !important;
+}
+
+/* Estilos para secciones alternadas */
+section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.3);
+}

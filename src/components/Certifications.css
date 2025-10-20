@@ -1,0 +1,191 @@
+.certifications-section {
+  background: var(--background-main);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: var(--primary-purple);
+  font-family: var(--font-title);
+}
+
+.certifications-carousel-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.certifications-carousel .ant-carousel .ant-carousel-dots {
+  bottom: -50px;
+}
+
+.certifications-carousel .ant-carousel .ant-carousel-dots li button {
+  background: var(--secondary-purple);
+  opacity: 0.4;
+}
+
+.certifications-carousel .ant-carousel .ant-carousel-dots li.ant-carousel-dots-active button {
+  background: var(--primary-purple);
+  opacity: 1;
+}
+
+.certification-slide {
+  padding: 0 20px;
+}
+
+.certification-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.certification-card:hover {
+  box-shadow: 0 15px 40px rgba(111, 45, 189, 0.2);
+  transform: translateY(-5px);
+}
+
+.certification-image-wrapper {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  height: 300px;
+}
+
+.certification-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(111, 45, 189, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.certification-image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+.certification-image-wrapper:hover .certification-image {
+  transform: scale(1.05);
+}
+
+.certification-info {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.certification-info .institution {
+  font-size: 1.1rem;
+  color: var(--primary-purple);
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.certification-info .year {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Modal Styles */
+.certification-modal .ant-modal-content {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.modal-info h3 {
+  font-family: var(--font-title);
+  color: var(--primary-purple);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-institution {
+  font-size: 1.2rem;
+  color: var(--secondary-purple);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.modal-year {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .certifications-carousel-wrapper {
+    max-width: 100%;
+  }
+  
+  .certification-slide {
+    padding: 0 10px;
+  }
+  
+  .certification-image-wrapper {
+    height: 250px;
+  }
+  
+  .certification-modal {
+    margin: 0;
+  }
+  
+  .modal-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .certification-slide {
+    padding: 0 5px;
+  }
+  
+  .certification-image-wrapper {
+    height: 200px;
+  }
+  
+  .certification-info .institution {
+    font-size: 1rem;
+  }
+  
+  .certification-info .year {
+    font-size: 0.9rem;
+  }
+}

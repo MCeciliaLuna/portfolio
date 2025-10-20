@@ -1,27 +1,16 @@
-# PORTFOLIO 📱💻💡
+# React + Vite
 
-Este repositorio contiene el código perteneciente a mi _portfolio web_ donde hago una presentación personal de mi carrera y mis herramientas como **Full Stack Developer**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Instalación ✅
+Currently, two official plugins are available:
 
-Este proyecto corre con **"Open with Live Server"** de Visual Code dado que está hecho con solamente **HTML y CSS**, más las herramientas de _efectos visuales_ con [Animate.css](https://animate.style/), _tooltips_ en imágenes y links de [CSS Portal](https://www.cssportal.com/css-tooltip-generator/) y un sistema de _envío de emails_ de [Form Submit](https://formsubmit.co/)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Sitio Web 💻
+## React Compiler
 
-[MCeciliaLuna-dev.netlify.app](https://MCeciliaLuna-dev.netlify.app/)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## ¿Alguna duda o sugerencia? ❓
+## Expanding the ESLint configuration
 
-Por dudas o sugerencias, contactarse a lunama.cecilia@mail.com
-
-## Autora 🖌️
-
-- [Cecilia Luna 👩‍💻](https://github.com/MCeciliaLuna)
-
-## Licencia 🤝
-
-Este repositorio es _PÚBLICO_.
-
-## Estado 📈
-
-**TERMINADO**
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

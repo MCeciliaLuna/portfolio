@@ -1,0 +1,163 @@
+{
+  "profile": {
+    "name": "Cecilia",
+    "tagline": "Programadora Web Front End",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "profileImage": "/images/profile.jpg",
+    "backgroundImage": "/images/hero-bg.jpg",
+    "linkedin": "https://linkedin.com/in/cecilia-dev",
+    "github": "https://github.com/cecilia-dev",
+    "email": "cecilia@ejemplo.com"
+  },
+  "tags": [
+    "Creativa",
+    "Responsable", 
+    "Innovadora",
+    "Colaborativa",
+    "Apasionada"
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-commerce Platform",
+      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "imageUrl": "/images/proyecto1.jpg",
+      "liveUrl": "https://ecommerce-demo.com",
+      "repoUrl": "https://github.com/cecilia-dev/ecommerce-platform"
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "Aplicación de gestión de tareas con funcionalidades avanzadas",
+      "imageUrl": "/images/proyecto2.jpg",
+      "liveUrl": "https://tasks-app-demo.com",
+      "repoUrl": "https://github.com/cecilia-dev/task-management"
+    },
+    {
+      "id": 3,
+      "title": "Weather Dashboard",
+      "description": "Dashboard del clima con APIs integradas y visualización de datos",
+      "imageUrl": "/images/proyecto3.jpg",
+      "liveUrl": "https://weather-dashboard-demo.com",
+      "repoUrl": "https://github.com/cecilia-dev/weather-dashboard"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "icon": "FaHtml5",
+      "tooltip": "Lenguaje de marcado para estructurar contenido web"
+    },
+    {
+      "name": "CSS",
+      "icon": "FaCss3Alt",
+      "tooltip": "Hojas de estilo para diseño y presentación web"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "FaJs",
+      "tooltip": "Lenguaje de programación dinámico para web interactiva"
+    },
+    {
+      "name": "React",
+      "icon": "FaReact",
+      "tooltip": "Librería para construir interfaces de usuario interactivas"
+    },
+    {
+      "name": "Next.js",
+      "icon": "SiNextdotjs",
+      "tooltip": "Framework de React para aplicaciones web de producción"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "SiTailwindcss",
+      "tooltip": "Framework de CSS utilitario para diseño rápido"
+    },
+    {
+      "name": "Scrum",
+      "icon": "MdGroup",
+      "tooltip": "Metodología ágil para gestión de proyectos"
+    },
+    {
+      "name": "Management 3.0",
+      "icon": "MdTrendingUp",
+      "tooltip": "Enfoque moderno de liderazgo y gestión de equipos"
+    },
+    {
+      "name": "Docencia",
+      "icon": "FaChalkboardTeacher",
+      "tooltip": "Experiencia en enseñanza y transferencia de conocimientos"
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "React Developer Certification",
+      "institution": "Meta",
+      "year": "2023",
+      "imageUrl": "/images/cert1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Advanced Concepts",
+      "institution": "FreeCodeCamp",
+      "year": "2022",
+      "imageUrl": "/images/cert2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Scrum Master Certification",
+      "institution": "Scrum Alliance",
+      "year": "2023",
+      "imageUrl": "/images/cert3.jpg"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "TechCorp",
+      "logo": "/images/company1.png"
+    },
+    {
+      "id": 2,
+      "name": "InnovateSoft",
+      "logo": "/images/company2.png"
+    },
+    {
+      "id": 3,
+      "name": "WebSolutions",
+      "logo": "/images/company3.png"
+    },
+    {
+      "id": 4,
+      "name": "StartupHub",
+      "logo": "/images/company4.png"
+    }
+  ],
+  "navigation": [
+    {
+      "label": "Inicio",
+      "href": "#hero"
+    },
+    {
+      "label": "Sobre mí", 
+      "href": "#about"
+    },
+    {
+      "label": "Certificaciones",
+      "href": "#certifications"
+    },
+    {
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
+      "label": "Proyectos",
+      "href": "#projects"
+    },
+    {
+      "label": "Contacto",
+      "href": "#contact"
+    }
+  ]
+}

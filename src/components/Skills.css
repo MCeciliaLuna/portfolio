@@ -1,0 +1,132 @@
+.skills-section {
+  background: linear-gradient(135deg, var(--tertiary-purple) 0%, var(--accent-blue) 100%);
+  position: relative;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.skills-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.skill-item {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-item:hover {
+  border-color: var(--primary-purple);
+  background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+  color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(111, 45, 189, 0.3);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  color: var(--primary-purple);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.skill-item:hover .skill-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-name {
+  color: white;
+}
+
+.default-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--primary-purple);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Tooltip personalizado */
+.skill-tooltip .ant-tooltip-inner {
+  background: var(--primary-purple);
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  max-width: 200px;
+}
+
+.skill-tooltip .ant-tooltip-arrow::before {
+  background: var(--primary-purple);
+}
+
+@media (max-width: 768px) {
+  .skill-item {
+    padding: 1.5rem 0.8rem;
+    height: 120px;
+    gap: 0.8rem;
+  }
+  
+  .skill-icon {
+    font-size: 2.5rem;
+    min-height: 50px;
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-item {
+    padding: 1rem 0.5rem;
+    height: 100px;
+    gap: 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+    min-height: 40px;
+  }
+  
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
