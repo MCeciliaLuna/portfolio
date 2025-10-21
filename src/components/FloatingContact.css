@@ -23,6 +23,7 @@
 }
 
 .floating-contact-modal .ant-modal-title {
+  font-weight: 10;
   color: white;
   font-family: var(--font-title);
   font-size: 1.5rem;

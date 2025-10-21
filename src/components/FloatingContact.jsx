@@ -81,7 +81,7 @@ const FloatingContact = () => {
       />
 
       <Modal
-        title="¡Quiero conocer tus ideas!"
+        title="¡Quiero hacer realidad tus ideas!"
         open={modalVisible}
         onCancel={handleCloseModal}
         footer={null}
