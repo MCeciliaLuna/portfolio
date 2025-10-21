@@ -48,7 +48,7 @@ const Skills = () => {
               <Tooltip 
                 title={skill.tooltip} 
                 placement="bottom"
-                color="#6f2dbd"
+                color="#e3fdfc"
               >
                 <div className="skill-item hover-scale">
                   <div className="skill-icon">

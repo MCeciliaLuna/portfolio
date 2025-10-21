@@ -110,11 +110,10 @@ const Contact = () => {
 
           <Col xs={24} lg={12}>
             <div className="contact-info">
-              <h3>¡Conectemos!</h3>
+              <h3>¡Trabajemos juntos!</h3>
               <p className="contact-description">
-                ¿Tienes un proyecto en mente? ¿Quieres colaborar? 
-                No dudes en contactarme. Estoy siempre abierta a nuevas 
-                oportunidades y desafíos interesantes.
+                ¿Tenés un proyecto en mente?
+                Contame. Me encantaría hacer realidad tu idea :)
               </p>
               
               <div className="social-links">

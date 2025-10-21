@@ -36,7 +36,7 @@
 }
 
 .skill-item:hover {
-  background: linear-gradient(135deg, var(--accent-cyan-light), var(--accent-cyan));
+  background: var(--background-main);
   color: var(--text-dark);
   transform: translateY(-8px);
 }

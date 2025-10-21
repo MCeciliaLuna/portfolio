@@ -77,13 +77,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(111, 45, 189, 0.9);
+  background: var(--accent-cyan-light);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: all 0.3s ease;
-  color: white;
+  color: var(--secondary-purple);
   font-weight: 600;
   font-size: 1.1rem;
   font-family: var(--font-body);

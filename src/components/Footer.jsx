@@ -51,39 +51,6 @@ const Footer = () => {
               </div>
             </div>
           </Col>
-
-          <Col xs={24} lg={8}>
-            <div className="footer-social">
-              <h4 className="footer-section-title">Sígueme</h4>
-              <div className="social-icons">
-                <a 
-                  href={`mailto:${profile.email}`}
-                  className="social-icon-link"
-                  aria-label="Email"
-                >
-                  <MailOutlined className="social-icon-footer" />
-                </a>
-                <a 
-                  href={profile.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon-link"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedinOutlined className="social-icon-footer" />
-                </a>
-                <a 
-                  href={profile.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon-link"
-                  aria-label="GitHub"
-                >
-                  <GithubOutlined className="social-icon-footer" />
-                </a>
-              </div>
-            </div>
-          </Col>
         </Row>
 
         <Divider className="footer-divider" />
