@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
-import { GlobalOutlined, GithubOutlined } from '@ant-design/icons';
+import { GlobalOutlined, GithubOutlined, YoutubeOutlined } from '@ant-design/icons';
+import { FaFigma } from 'react-icons/fa';
 import data from '../db/data.json';
 import './Projects.css';
 
@@ -31,24 +32,53 @@ const Projects = () => {
                     />
                     <div className="project-overlay">
                       <div className="project-links">
-                        <a 
-                          href={project.liveUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="project-link"
-                          aria-label="Ver demo en vivo"
-                        >
-                          <GlobalOutlined className="link-icon" />
-                        </a>
-                        <a 
-                          href={project.repoUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="project-link"
-                          aria-label="Ver repositorio en GitHub"
-                        >
-                          <GithubOutlined className="link-icon" />
-                        </a>
+                        {project.figmaUrl ? (
+                          <a 
+                            href={project.figmaUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="project-link figma-link"
+                            aria-label="Ver diseño en Figma"
+                          >
+                            <FaFigma className="link-icon" />
+                          </a>
+                        ) : (
+                          <>
+                            {project.liveUrl && (
+                              <a 
+                                href={project.liveUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="project-link"
+                                aria-label="Ver demo en vivo"
+                              >
+                                <GlobalOutlined className="link-icon" />
+                              </a>
+                            )}
+                            {project.repoUrl && (
+                              <a 
+                                href={project.repoUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="project-link"
+                                aria-label="Ver repositorio en GitHub"
+                              >
+                                <GithubOutlined className="link-icon" />
+                              </a>
+                            )}
+                            {project.youtubeUrl && (
+                              <a 
+                                href={project.youtubeUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="project-link youtube-link"
+                                aria-label="Ver video en YouTube"
+                              >
+                                <YoutubeOutlined className="link-icon" />
+                              </a>
+                            )}
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>

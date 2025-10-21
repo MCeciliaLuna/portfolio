@@ -19,68 +19,69 @@
   ],
   "projects": [
     {
+      "id": 0,
+      "title": "Plan Go APP",
+      "description": "Diseño de aplicación en Figma",
+      "imageUrl": "/public/images/projects/PlanGO-app.webp",
+      "figmaUrl": "https://www.figma.com/proto/PIE5e4ga4ndZ4NrSnD9VOz/Pantallas-Finales?page-id=0%3A1&node-id=9-1100&p=f&viewport=261%2C173%2C0.28&t=VLgMJdHNW4zjYtsD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A1115"
+    },
+    {
       "id": 1,
       "title": "To Do List",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
       "imageUrl": "/public/images/projects/todolist-web.webp",
       "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL",
+      "youtubeUrl": "https://youtu.be/CraOi6X3zLM?si=7KlX0O6uivIIo7oO"
     },
     {
       "id": 2,
       "title": "Phrases API",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
       "imageUrl": "/public/images/projects/phrases-api.webp",
-      "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+      "repoUrl": "https://github.com/MCeciliaLuna/phrases-API"
     },
     {
       "id": 3,
       "title": "We Learn Web",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
       "imageUrl": "/public/images/projects/welearn-web.webp",
-      "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+      "liveUrl": "https://welearnweb.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/EvaluativoReact-GL-MYB"
     },
     {
       "id": 4,
       "title": "ACVA Mockup",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
       "imageUrl": "/public/images/projects/va-mockup.webp",
-      "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+      "liveUrl": "https://iglesiavidaabundante.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/redes-VA"
     },
     {
       "id": 5,
       "title": "La Quiaqueña Drugstore E-Commerce",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
       "imageUrl": "/public/images/projects/laquiaquena-web.webp",
-      "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+      "liveUrl": "https://laquiaquenadrugstores.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/laquiaquena-drugstores",
+      "youtubeUrl": "https://youtu.be/eZHqys0oeVI?si=-E7wKCQLom-QgO5O"
     },
     {
       "id": 6,
       "title": "La Quiaqueña Herboristería E-Commerce",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
       "imageUrl": "/public/images/projects/laquiaquena-ii-web.webp",
-      "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+      "liveUrl": "https://laquiaquenaherboristeria.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/laquiaquena-herboristeria",
+      "youtubeUrl": "https://youtu.be/J1vSzS8Q2f0?si=smmlQNSsjfu64ybU"
     },
     {
       "id": 7,
-      "title": "FilmFav Js",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
-      "imageUrl": "/public/images/projects/filmfav-web.webp",
-      "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
-    },
-    {
-      "id": 8,
       "title": "Contacto Profesional Web",
       "description": "Plataforma de comercio electrónico completa con React y Node.js",
       "imageUrl": "/public/images/projects/mclsd-mockup.webp",
-      "liveUrl": "https://todo-list-app-gl.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL"
+      "liveUrl": "https://mclds-muestra-base.netlify.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/MCLDS-muestra-base"
     }
   ],
   "skills": [

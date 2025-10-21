@@ -31,7 +31,7 @@ function App() {
           <Certifications />
           <Skills />
           {/* <Companies /> */}
-          {/* <Projects /> */}
+          <Projects />
           <Contact />
         </main>
         <Footer />

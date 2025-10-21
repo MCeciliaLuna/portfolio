@@ -21,7 +21,7 @@
 
 .skill-item {
   /* background: linear-gradient(135deg, var(--white) 0%, var(--accent-cyan-light) 100%); */
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 2rem 1rem;
   text-align: center;
   cursor: pointer;

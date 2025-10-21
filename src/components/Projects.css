@@ -20,7 +20,7 @@
 }
 
 .project-card {
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   border: none;
   transition: all 0.3s ease;
@@ -103,8 +103,37 @@
   transform: scale(1.1);
 }
 
+.youtube-link {
+  background: #ff0000 !important;
+}
+
+.youtube-link .link-icon {
+  color: white !important;
+}
+
+.youtube-link:hover {
+  background: #cc0000 !important;
+  transform: scale(1.15);
+}
+
+.figma-link {
+  background: var(--accent-cyan);
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.figma-link .link-icon {
+  color: white !important;
+  font-size: 2rem !important;
+}
+
+.figma-link:hover {
+  transform: scale(1.2);
+  box-shadow: 0 15px 30px rgba(247, 78, 30, 0.4);
+}
+
 .project-title {
-  font-family: var(--font-title);
+  font-family: var(--font-body);
   font-size: 1.3rem;
   color: var(--primary-purple);
   font-weight: 600;
@@ -147,6 +176,15 @@
     font-size: 1.3rem;
   }
   
+  .figma-link {
+    width: 65px !important;
+    height: 65px !important;
+  }
+  
+  .figma-link .link-icon {
+    font-size: 1.6rem !important;
+  }
+  
   .project-title {
     font-size: 1.2rem;
   }
@@ -176,6 +214,15 @@
   
   .link-icon {
     font-size: 1.2rem;
+  }
+  
+  .figma-link {
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  .figma-link .link-icon {
+    font-size: 1.4rem !important;
   }
   
   .project-title {

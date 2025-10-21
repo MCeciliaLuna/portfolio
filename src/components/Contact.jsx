@@ -42,8 +42,6 @@ const Contact = () => {
   return (
     <section id="contact" className="section contact-section">
       <div className="container">
-        <h2 className="section-title">Contacto</h2>
-        
         <Row gutter={[40, 40]} align="middle">
           <Col xs={24} lg={12}>
             <div className="contact-form-container">
