@@ -1,20 +1,43 @@
-import React from 'react';
-import { Row, Col, Card } from 'antd';
-import { GlobalOutlined, GithubOutlined, YoutubeOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Row, Col, Card, Button } from 'antd';
+import { GlobalOutlined, GithubOutlined, YoutubeOutlined, DownOutlined, UpOutlined } from '@ant-design/icons';
 import { FaFigma } from 'react-icons/fa';
 import data from '../db/data.json';
 import './Projects.css';
 
 const Projects = () => {
   const { projects } = data;
+  const [visibleCount, setVisibleCount] = useState(3);
+  
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev + 3);
+  };
+  
+  const handleShowLess = () => {
+    setVisibleCount(3);
+    setTimeout(() => {
+      scrollToProjects();
+    }, 100);
+  };
+
+  const visibleProjects = projects.slice(0, visibleCount);
+  const hasMore = visibleCount < projects.length;
+  const showingAll = visibleCount >= projects.length && projects.length > 3;
 
   return (
     <section id="projects" className="section projects-section">
       <div className="container">
-        <h2 className="section-title">Trabajos</h2>
+        <h2 className="section-title">Proyectos</h2>
         
-        <Row gutter={[30, 30]}>
-          {projects.map((project) => (
+        <Row gutter={[30, 30]} style={{justifyContent:"center"}}>
+          {visibleProjects.map((project) => (
             <Col key={project.id} xs={24} sm={12} lg={8}>
               <Card
                 className="project-card"
@@ -97,6 +120,32 @@ const Projects = () => {
             </Col>
           ))}
         </Row>
+        
+        <div style={{ textAlign: 'center', marginTop: '40px' }}>
+          {hasMore && (
+            <Button
+              type="primary"
+              size="large"
+              icon={<DownOutlined />}
+              onClick={handleShowMore}
+              className="show-more-button"
+            >
+              Ver más proyectos
+            </Button>
+          )}
+          
+          {showingAll && (
+            <Button
+              type="primary"
+              size="large"
+              icon={<UpOutlined />}
+              onClick={handleShowLess}
+              className="show-more-button"
+            >
+              Ocultar proyectos
+            </Button>
+          )}
+        </div>
       </div>
     </section>
   );

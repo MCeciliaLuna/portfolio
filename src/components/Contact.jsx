@@ -116,15 +116,6 @@ const Contact = () => {
               
               <div className="social-links">
                 <a 
-                  href={`mailto:${profile.email}`}
-                  className="social-link email-link"
-                  aria-label="Enviar email"
-                >
-                  <MailOutlined className="social-icon" />
-                  <span>Email</span>
-                </a>
-                
-                <a 
                   href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -132,7 +123,6 @@ const Contact = () => {
                   aria-label="LinkedIn"
                 >
                   <LinkedinOutlined className="social-icon" />
-                  <span>LinkedIn</span>
                 </a>
                 
                 <a 
@@ -143,7 +133,6 @@ const Contact = () => {
                   aria-label="GitHub"
                 >
                   <GithubOutlined className="social-icon" />
-                  <span>GitHub</span>
                 </a>
               </div>
             </div>

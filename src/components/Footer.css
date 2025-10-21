@@ -1,5 +1,9 @@
 .footer {
-  background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--secondary-purple)
+  );
   color: var(--white);
   padding: 3rem 0 1rem 0;
   margin-top: 2rem;
@@ -14,6 +18,7 @@
   font-size: 2.5rem;
   color: var(--white);
   margin-bottom: 0.5rem;
+  font-weight: 10;
 }
 
 .footer-tagline {
@@ -123,10 +128,13 @@
 }
 
 @keyframes heartbeat {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     transform: scale(1);
   }
-  25%, 75% {
+  25%,
+  75% {
     transform: scale(1.1);
   }
 }
@@ -135,28 +143,28 @@
   .footer {
     padding: 2rem 0 1rem 0;
   }
-  
+
   .footer-brand,
   .footer-links,
   .footer-social {
     text-align: center;
     margin-bottom: 2rem;
   }
-  
+
   .footer-title {
     font-size: 2rem;
   }
-  
+
   .social-icons {
     justify-content: center;
   }
-  
+
   .made-with-love {
     justify-content: center;
     text-align: center;
     margin-top: 1rem;
   }
-  
+
   .copyright {
     text-align: center;
   }
@@ -166,24 +174,24 @@
   .footer-title {
     font-size: 1.8rem;
   }
-  
+
   .footer-tagline {
     font-size: 1rem;
   }
-  
+
   .footer-section-title {
     font-size: 1.1rem;
   }
-  
+
   .footer-link {
     font-size: 0.9rem;
   }
-  
+
   .social-icon-link {
     width: 45px;
     height: 45px;
   }
-  
+
   .social-icon-footer {
     font-size: 1.2rem;
   }

@@ -1,4 +1,6 @@
 .floating-contact-button {
+  height: 70px;
+  width: 70px;
   box-shadow: 0 8px 25px rgba(111, 45, 189, 0.3) !important;
   transition: all 0.3s ease !important;
 }
@@ -9,10 +11,15 @@
 }
 
 .floating-contact-modal .ant-modal-header {
-  background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
-  border-radius: 15px 15px 0 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--secondary-purple)
+  );
+  border-radius: 10px 10px 0 0;
   border-bottom: none;
   padding: 1.5rem 2rem;
+  margin: 0;
 }
 
 .floating-contact-modal .ant-modal-title {
@@ -23,8 +30,9 @@
 }
 
 .floating-contact-modal .ant-modal-content {
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
+  padding: 0 !important;
 }
 
 .floating-contact-modal .ant-modal-body {
@@ -58,7 +66,11 @@
 }
 
 .floating-submit-button {
-  background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--secondary-purple)
+  ) !important;
   border: none !important;
   border-radius: 10px !important;
   height: 45px !important;
@@ -68,7 +80,11 @@
 }
 
 .floating-submit-button:hover {
-  background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-purple),
+    var(--primary-purple)
+  ) !important;
   transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(111, 45, 189, 0.3) !important;
 }
@@ -77,13 +93,6 @@
   border-top: 1px solid rgba(111, 45, 189, 0.1);
   padding-top: 1.5rem;
   text-align: center;
-}
-
-.floating-social-links h4 {
-  font-family: var(--font-body);
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-  font-size: 1rem;
 }
 
 .floating-social-buttons {
@@ -106,17 +115,6 @@
   border: 2px solid transparent;
   color: white;
   font-family: var(--font-body);
-}
-
-.email-btn {
-  background: #ea4335;
-}
-
-.email-btn:hover {
-  background: #d93025;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(234, 67, 53, 0.3);
-  color: white;
 }
 
 .linkedin-btn {
@@ -145,12 +143,12 @@
   .floating-contact-modal .ant-modal-body {
     padding: 1.5rem;
   }
-  
+
   .floating-social-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .floating-social-btn {
     width: 200px;
     justify-content: center;
@@ -161,11 +159,11 @@
   .floating-contact-modal .ant-modal-body {
     padding: 1rem;
   }
-  
+
   .floating-modal-content {
     gap: 1.5rem;
   }
-  
+
   .floating-contact-modal .ant-modal-title {
     font-size: 1.3rem;
   }
