@@ -164,23 +164,21 @@
   "companies": [
     {
       "id": 1,
-      "name": "TechCorp",
-      "logo": "/images/company1.png"
+      "name": "Sigmma.Net",
+      "logo": "/public/images/companies/sigmma.webp",
+      "url": "https://sigmma.net/"
     },
     {
       "id": 2,
-      "name": "InnovateSoft",
-      "logo": "/images/company2.png"
+      "name": "Conti Latam",
+      "logo": "/public/images/companies/conti.webp",
+      "url": "https://contilatam.com/"
     },
     {
       "id": 3,
-      "name": "WebSolutions",
-      "logo": "/images/company3.png"
-    },
-    {
-      "id": 4,
-      "name": "StartupHub",
-      "logo": "/images/company4.png"
+      "name": "Instituto NOA",
+      "logo": "/public/images/companies/instituto-noa.webp",
+      "url": "https://institutonoa.com.ar/"
     }
   ],
   "navigation": [
