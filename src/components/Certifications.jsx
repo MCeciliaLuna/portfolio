@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Modal, Card, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { motion } from 'motion/react';
 import data from '../db/data.json';
 import './Certifications.css';
 
@@ -38,9 +39,23 @@ const Certifications = () => {
   return (
     <section id="certifications" className="section certifications-section">
       <div className="container">
-        <h2 className="section-title">Certificaciones</h2>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          Certificaciones
+        </motion.h2>
         
-        <div className="certifications-wrapper">
+        <motion.div 
+          className="certifications-wrapper"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <Button
             className="scroll-button scroll-button-left"
             icon={<LeftOutlined />}
@@ -50,43 +65,54 @@ const Certifications = () => {
           />
           
           <div className="certifications-grid" ref={scrollContainerRef}>
-            {certifications.map((cert) => (
-            <Card 
-              key={cert.id}
-              className="certification-card"
-              cover={
-                <div 
-                  className="certification-image-wrapper"
-                  onClick={() => handleImageClick(cert)}
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, x: 100, rotate: 5 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.4 + (index * 0.2), 
+                  ease: "easeOut" 
+                }}
+              >
+                <Card 
+                  className="certification-card"
+                  cover={
+                    <div 
+                      className="certification-image-wrapper"
+                      onClick={() => handleImageClick(cert)}
+                    >
+                      <img
+                        src={cert.imageUrl}
+                        alt={cert.title}
+                        className="certification-image"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.parentElement.style.backgroundColor = '#6f2dbd';
+                          e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem;">${cert.title}</div>`;
+                        }}
+                      />
+                      <div className="image-overlay">
+                        <span>Ver certificado</span>
+                      </div>
+                    </div>
+                  }
+                  styles={{ body: { padding: '16px' } }}
                 >
-                  <img
-                    src={cert.imageUrl}
-                    alt={cert.title}
-                    className="certification-image"
-                    loading="lazy"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.style.backgroundColor = '#6f2dbd';
-                      e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem;">${cert.title}</div>`;
-                    }}
+                  <Card.Meta
+                    title={cert.title}
+                    description={
+                      <div className="certification-info">
+                        <p className="institution">{cert.institution}</p>
+                        <p className="year">{cert.year}</p>
+                      </div>
+                    }
                   />
-                  <div className="image-overlay">
-                    <span>Ver certificado</span>
-                  </div>
-                </div>
-              }
-              styles={{ body: { padding: '16px' } }}
-            >
-              <Card.Meta
-                title={cert.title}
-                description={
-                  <div className="certification-info">
-                    <p className="institution">{cert.institution}</p>
-                    <p className="year">{cert.year}</p>
-                  </div>
-                }
-              />
-            </Card>
+                </Card>
+              </motion.div>
             ))}
           </div>
           
@@ -97,7 +123,7 @@ const Certifications = () => {
             shape="circle"
             size="large"
           />
-        </div>
+        </motion.div>
 
         <Modal
           open={modalVisible}

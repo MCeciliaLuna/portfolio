@@ -26,8 +26,8 @@
 
 .contact-form-container {
   background: var(--white);
-  padding: 3rem;
-  border-radius: 25px;
+  padding: 3rem 3rem 1rem 3rem;
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
 
@@ -45,17 +45,19 @@
 }
 
 .submit-button {
+  width: 50% !important;
   background-color: var(--primary-purple) !important;
   border: none !important;
-  border-radius: 15px !important;
+  border-radius: 50px !important;
   height: 50px !important;
   font-size: 1.1rem !important;
   font-weight: 600 !important;
+  display: block !important;
+  margin: 0 auto !important;
 }
 
 .submit-button:hover {
   background-color: var(--secondary-purple) !important;
-
 }
 
 .contact-info {

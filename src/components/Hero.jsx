@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
+import { motion } from 'motion/react';
 import data from '../db/data.json';
 import './Hero.css';
 
@@ -33,14 +34,36 @@ const Hero = () => {
       
       <div className="container">
         <div className="hero-content">
-          <div className="hero-text">
-            <h1 className="hero-title">
+          <motion.div 
+            className="hero-text"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.h1 
+              className="hero-title"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
               Hola! Soy <span className="hero-name">{profile.name}</span>
-            </h1>
-            <p className="hero-tagline">{profile.tagline}</p>
-          </div>
+            </motion.h1>
+            <motion.p 
+              className="hero-tagline"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              {profile.tagline}
+            </motion.p>
+          </motion.div>
           
-          <div className="hero-image-container">
+          <motion.div 
+            className="hero-image-container"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          >
             <div className="hero-image-wrapper">
               <img 
                 src={profile.profileImage} 
@@ -52,18 +75,23 @@ const Hero = () => {
                 }}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
         
-        <Button 
-          type="text" 
-          icon={<DownOutlined />} 
-          className="scroll-down-btn"
-          onClick={scrollToNext}
-          size="large"
+        <motion.div
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
         >
-          Conoce más
-        </Button>
+          <Button 
+            type="text" 
+            icon={<DownOutlined />} 
+            className="scroll-down-btn"
+            onClick={scrollToNext}
+            size="large"
+          >
+            Conocé más
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

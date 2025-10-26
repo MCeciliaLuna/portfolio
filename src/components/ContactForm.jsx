@@ -5,7 +5,7 @@ import data from '../db/data.json';
 
 const { TextArea } = Input;
 
-const ContactForm = ({ onSuccess, className = "contact-form", buttonText = "Enviar idea" }) => {
+const ContactForm = ({ onSuccess, className = "contact-form", buttonText = "Envíame tu idea" }) => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const { profile } = data;

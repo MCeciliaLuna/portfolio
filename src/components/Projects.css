@@ -4,7 +4,7 @@
 }
 
 .projects-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -14,8 +14,8 @@
   backdrop-filter: blur(5px);
 }
 
-.title-projects{
-  color: var(--primary-purple)
+.title-projects {
+  color: var(--primary-purple);
 }
 
 .projects-section .container {
@@ -56,7 +56,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(111, 45, 189, 0.9);
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,58 +83,22 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--primary-purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.project-link:hover {
-  background: var(--accent-cyan);
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .link-icon {
   font-size: 1.5rem;
-  color: var(--primary-purple);
+  color: var(--white);
   transition: all 0.3s ease;
-}
-
-.project-link:hover .link-icon {
-  color: var(--primary-purple);
-  transform: scale(1.1);
-}
-
-.youtube-link {
-  background: #ff0000 !important;
-}
-
-.youtube-link .link-icon {
-  color: white !important;
-}
-
-.youtube-link:hover {
-  background: #cc0000 !important;
-  transform: scale(1.15);
 }
 
 .figma-link {
   background: var(--accent-cyan);
   width: 80px !important;
   height: 80px !important;
-}
-
-.figma-link .link-icon {
-  color: white !important;
-  font-size: 2rem !important;
-}
-
-.figma-link:hover {
-  transform: scale(1.2);
-  box-shadow: 0 15px 30px rgba(247, 78, 30, 0.4);
 }
 
 .project-title {
@@ -165,10 +130,9 @@
 .show-more-button {
   background-color: var(--primary-purple) !important;
   border: none !important;
-  border-radius: 10px !important;
+  border-radius: 50px !important;
   height: 50px !important;
   font-size: 1.1rem !important;
-  font-weight: 600 !important;
   padding: 0 2.5rem !important;
   transition: all 0.3s ease !important;
 }
@@ -193,41 +157,41 @@
   .project-image-container {
     height: 200px;
   }
-  
+
   .project-links {
     gap: 1rem;
   }
-  
+
   .project-link {
     width: 50px;
     height: 50px;
   }
-  
+
   .link-icon {
     font-size: 1.3rem;
   }
-  
+
   .figma-link {
     width: 65px !important;
     height: 65px !important;
   }
-  
+
   .figma-link .link-icon {
     font-size: 1.6rem !important;
   }
-  
+
   .project-title {
     font-size: 1.2rem;
   }
-  
+
   .project-description {
     font-size: 0.9rem;
   }
-  
+
   .ant-card-body {
     padding: 1rem;
   }
-  
+
   .show-more-button {
     height: 45px !important;
     font-size: 1rem !important;
@@ -239,37 +203,37 @@
   .project-image-container {
     height: 180px;
   }
-  
+
   .project-links {
     gap: 0.8rem;
   }
-  
+
   .project-link {
     width: 45px;
     height: 45px;
   }
-  
+
   .link-icon {
     font-size: 1.2rem;
   }
-  
+
   .figma-link {
     width: 55px !important;
     height: 55px !important;
   }
-  
+
   .figma-link .link-icon {
     font-size: 1.4rem !important;
   }
-  
+
   .project-title {
     font-size: 1.1rem;
   }
-  
+
   .project-description {
     font-size: 0.85rem;
   }
-  
+
   .show-more-button {
     height: 42px !important;
     font-size: 0.95rem !important;
