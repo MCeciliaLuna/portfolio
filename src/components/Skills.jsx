@@ -57,11 +57,6 @@ const Skills = () => {
                     delay: index * 0.1, 
                     ease: "easeOut" 
                   }}
-                  whileHover={{ 
-                    scale: 1.05, 
-                    rotate: 2,
-                    transition: { duration: 0.2 }
-                  }}
                 >
                   <div className="skill-icon">{getIcon(skill.icon)}</div>
                   <span className="skill-name">{skill.name}</span>

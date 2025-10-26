@@ -21,14 +21,14 @@
     {
       "id": 0,
       "title": "Plan Go APP",
-      "description": "Diseño de aplicación en Figma",
+      "description": "Diseño de aplicación para agenda de eventos.",
       "imageUrl": "/images/projects/PlanGO-app.webp",
       "figmaUrl": "https://www.figma.com/proto/PIE5e4ga4ndZ4NrSnD9VOz/Pantallas-Finales?page-id=0%3A1&node-id=9-1100&p=f&viewport=261%2C173%2C0.28&t=VLgMJdHNW4zjYtsD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A1115"
     },
     {
       "id": 1,
       "title": "To Do List",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "description": "WebApp checklist para gestionar tareas desarrollada con ReactJs",
       "imageUrl": "/images/projects/todolist-web.webp",
       "liveUrl": "https://todo-list-app-gl.netlify.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/to-do-list-GL",
@@ -37,14 +37,14 @@
     {
       "id": 2,
       "title": "Phrases API",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "description": "API de frases de autor temáticas desarrollada con Express",
       "imageUrl": "/images/projects/phrases-api.webp",
       "repoUrl": "https://github.com/MCeciliaLuna/phrases-API"
     },
     {
       "id": 3,
       "title": "We Learn Web",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "description": "Foro web con temáticas educativas desarrollada con ReactJs",
       "imageUrl": "/images/projects/welearn-web.webp",
       "liveUrl": "https://welearnweb.netlify.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/EvaluativoReact-GL-MYB"
@@ -52,7 +52,7 @@
     {
       "id": 4,
       "title": "ACVA Mockup",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "description": "Web estilo Linktree para iglesia evangélica desarrollada con Reactjs",
       "imageUrl": "/images/projects/va-mockup.webp",
       "liveUrl": "https://iglesiavidaabundante.netlify.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/redes-VA"
@@ -60,7 +60,7 @@
     {
       "id": 5,
       "title": "La Quiaqueña Drugstore E-Commerce",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "description": "Plataforma de comercio electrónico completa con React y DB propia",
       "imageUrl": "/images/projects/laquiaquena-web.webp",
       "liveUrl": "https://laquiaquenadrugstores.netlify.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/laquiaquena-drugstores",
@@ -69,7 +69,7 @@
     {
       "id": 6,
       "title": "La Quiaqueña Herboristería E-Commerce",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "description": "Plataforma de comercio electrónico completa con React y DB propia",
       "imageUrl": "/images/projects/laquiaquena-ii-web.webp",
       "liveUrl": "https://laquiaquenaherboristeria.netlify.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/laquiaquena-herboristeria",
@@ -78,7 +78,7 @@
     {
       "id": 7,
       "title": "Contacto Profesional Web",
-      "description": "Plataforma de comercio electrónico completa con React y Node.js",
+      "description": "Web estilo linktree de ejemplo para profesionales desarrollada con ReactJs",
       "imageUrl": "/images/projects/mclsd-mockup.webp",
       "liveUrl": "https://mclds-muestra-base.netlify.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/MCLDS-muestra-base"
