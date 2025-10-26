@@ -12,7 +12,7 @@ const Companies = () => {
       <div className="container">
         <motion.h2 
           className="section-title companies-title"
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}

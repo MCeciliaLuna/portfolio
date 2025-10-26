@@ -28,7 +28,7 @@ const Contact = () => {
           <Col xs={24} lg={12}>
             <motion.div 
               className="contact-info"
-              initial={{ opacity: 0, x: 100 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}

@@ -38,6 +38,8 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  overflow: hidden;
+  width: 100%;
 }
 
 .scroll-button {
@@ -73,6 +75,8 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  width: 100%;
+  max-width: calc(100vw - 140px); /* Restamos el espacio de los botones */
 }
 
 .certifications-grid::-webkit-scrollbar {
@@ -212,7 +216,12 @@
   }
 
   .certifications-wrapper {
-    gap: 1rem;
+    gap: 0.5rem;
+    padding: 0 10px;
+  }
+
+  .certifications-grid {
+    max-width: calc(100vw - 100px);
   }
 
   .scroll-button {
@@ -252,7 +261,13 @@
   }
 
   .certifications-wrapper {
-    gap: 0.5rem;
+    gap: 0.25rem;
+    padding: 0 5px;
+  }
+
+  .certifications-grid {
+    max-width: calc(100vw - 80px);
+    gap: 1.5rem;
   }
 
   .scroll-button {

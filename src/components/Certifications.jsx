@@ -68,7 +68,7 @@ const Certifications = () => {
             {certifications.map((cert, index) => (
               <motion.div
                 key={cert.id}
-                initial={{ opacity: 0, x: 100, rotate: 5 }}
+                initial={{ opacity: 0, x: 50, rotate: 5 }}
                 whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ 

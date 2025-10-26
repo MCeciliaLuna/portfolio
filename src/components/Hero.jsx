@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="hero-content">
           <motion.div 
             className="hero-text"
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
@@ -47,7 +47,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               Hola! Soy <span className="hero-name">{profile.name}</span>
-            </motion.h1>
+       0.5rem     </motion.h1>
             <motion.p 
               className="hero-tagline"
               initial={{ opacity: 0, y: 20 }}
