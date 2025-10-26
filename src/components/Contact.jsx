@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
 import { LinkedinOutlined, GithubOutlined } from "@ant-design/icons";
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
 import ContactForm from "./ContactForm";
 import data from "../db/data.json";
 import "./Contact.css";
@@ -14,19 +14,7 @@ const Contact = () => {
       <div className="container">
         <Row gutter={[40, 40]} align="middle">
           <Col xs={24} lg={12}>
-            <motion.div 
-              className="contact-form-container"
-              initial={{ opacity: 0, filter: "blur(10px)" }}
-              whileInView={{ opacity: 1, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <ContactForm className="contact-form" />
-            </motion.div>
-          </Col>
-
-          <Col xs={24} lg={12}>
-            <motion.div 
+            <motion.div
               className="contact-info"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -41,7 +29,7 @@ const Contact = () => {
               >
                 ¡Trabajemos juntos!
               </motion.h3>
-              <motion.p 
+              <motion.p
                 className="contact-description"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +40,7 @@ const Contact = () => {
                 realidad tu idea :)
               </motion.p>
 
-              <motion.div 
+              <motion.div
                 className="social-links"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -89,6 +77,17 @@ const Contact = () => {
                   <GithubOutlined className="social-icon" />
                 </motion.a>
               </motion.div>
+            </motion.div>
+          </Col>
+          <Col xs={24} lg={12}>
+            <motion.div
+              className="contact-form-container"
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <ContactForm className="contact-form" />
             </motion.div>
           </Col>
         </Row>

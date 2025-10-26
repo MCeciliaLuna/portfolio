@@ -37,6 +37,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.5rem;
   overflow: hidden;
   width: 100%;
@@ -49,34 +50,98 @@
   background: transparent !important;
   border: none !important;
   color: white !important;
-  transition: all 0.3s ease !important;
   z-index: 10;
+  /* Desactivar todos los efectos visuales */
+  transition: none !important;
+  box-shadow: none !important;
 }
 
-.scroll-button:hover {
-  transform: scale(1.1) !important;
-}
-
+.scroll-button:hover,
+.scroll-button:focus,
 .scroll-button:active {
-  transform: scale(0.95) !important;
+  background: transparent !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: none !important;
+  transform: none !important;
+  outline: none !important;
+}
+
+/* Desactivar el efecto ripple de Ant Design */
+.scroll-button::after,
+.scroll-button .ant-wave,
+.scroll-button .ant-click-animating-node {
+  display: none !important;
+}
+
+/* Desactivar animaciones wave globalmente para estos botones */
+.scroll-button.ant-btn {
+  overflow: hidden !important;
+}
+
+/* Asegurar que no hay efectos de click */
+.scroll-button,
+.scroll-button.ant-btn,
+.scroll-button:not(.ant-btn-dangerous) {
+  animation: none !important;
 }
 
 .scroll-button .anticon {
   font-size: 1.3rem !important;
 }
 
+/* Embla Carousel Styles */
+.embla {
+  display:flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: calc(100vw - 80px);
+}
+
+.embla__container {
+  display: flex;
+  padding: 1rem 0 2rem 0;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 400px;
+  max-width: 400px;
+  margin-right: 2rem; /* Usar margin en lugar de gap para mejor control */
+}
+
+/* Asegurar que el último slide también tenga margen para el loop */
+.embla__slide:last-child {
+  margin-right: 2rem;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (min-width: 1400px) {
+  .embla__slide {
+    min-width: 380px;
+    max-width: 380px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .embla__slide {
+    min-width: 360px;
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .embla__slide {
+    min-width: 340px;
+    max-width: 340px;
+  }
+}
+
+/* Mantener estilos existentes para compatibilidad */
 .certifications-grid {
   display: flex;
   gap: 2rem;
-  overflow-x: auto;
-  overflow-y: hidden;
   padding: 1rem 0 2rem 0;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  width: 100%;
-  max-width: calc(100vw - 140px); /* Restamos el espacio de los botones */
 }
 
 .certifications-grid::-webkit-scrollbar {
@@ -84,13 +149,15 @@
 }
 
 .certification-card {
-  min-width: 380px;
+  min-width: 400px;
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(111, 45, 189, 0.12);
   border: none;
   background: var(--white);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .certification-image-wrapper {
@@ -104,7 +171,7 @@
 .certification-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: all 0.3s ease;
   padding: 10px;
 }
@@ -216,30 +283,31 @@
   }
 
   .certifications-wrapper {
-    gap: 0.5rem;
-    padding: 0 10px;
+    gap: 0;
+    padding: 0;
+    justify-content: center;
   }
 
-  .certifications-grid {
-    max-width: calc(100vw - 100px);
-  }
-
+  /* Ocultar botones en tablets y móviles */
   .scroll-button {
-    width: 40px !important;
-    height: 40px !important;
+    display: none !important;
   }
 
-  .scroll-button .anticon {
-    font-size: 1.1rem !important;
+  .embla {
+    max-width: calc(100vw - 40px);
   }
 
-  .certifications-grid {
-    gap: 1.5rem;
+  .embla__container {
     padding: 0.5rem 0 1.5rem 0;
   }
 
+  .embla__slide {
+    min-width: 340px;
+    margin-right: 1.5rem;
+  }
+
   .certification-card {
-    min-width: 320px;
+    min-width: 340px;
   }
 
   .certification-image-wrapper {
@@ -261,30 +329,27 @@
   }
 
   .certifications-wrapper {
-    gap: 0.25rem;
-    padding: 0 5px;
+    gap: 0;
+    padding: 0;
   }
 
-  .certifications-grid {
-    max-width: calc(100vw - 80px);
-    gap: 1.5rem;
+  .embla {
+    max-width: calc(100vw - 20px);
   }
 
-  .scroll-button {
-    width: 35px !important;
-    height: 35px !important;
+  .embla__container {
+    padding: 0 10px;
   }
 
-  .scroll-button .anticon {
-    font-size: 1rem !important;
-  }
-
-  .certifications-grid {
-    gap: 1rem;
+  .embla__slide {
+    min-width: calc(100vw - 60px);
+    max-width: calc(100vw - 60px);
+    margin-right: 1rem;
   }
 
   .certification-card {
-    min-width: 280px;
+    min-width: calc(100vw - 60px);
+    max-width: calc(100vw - 60px);
   }
 
   .certification-image-wrapper {
@@ -297,5 +362,48 @@
 
   .certification-info .year {
     font-size: 0.9rem;
+  }
+}
+
+/* iPhone SE y dispositivos extra pequeños */
+@media (max-width: 375px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .embla {
+    max-width: calc(100vw - 10px);
+  }
+
+  .embla__container {
+    padding: 0 5px;
+  }
+
+  .embla__slide {
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+    margin-right: 0.8rem;
+  }
+
+  .certification-card {
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+  }
+
+  .certification-image-wrapper {
+    height: 180px;
+  }
+
+  .certification-info {
+    padding: 1rem;
+  }
+
+  .certification-info .institution {
+    font-size: 0.9rem;
+  }
+
+  .certification-info .year {
+    font-size: 0.8rem;
   }
 }

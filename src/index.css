@@ -52,6 +52,15 @@ img {
   overflow: hidden;
 }
 
+.container{
+  display:flex;
+  justify-content: center;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
 /* Optimización de animaciones */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

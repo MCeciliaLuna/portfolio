@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "antd";
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
 import data from "../db/data.json";
 import "./Companies.css";
 
@@ -9,8 +9,8 @@ const Companies = () => {
 
   return (
     <section id="companies" className="section companies-section">
-      <div className="container">
-        <motion.h2 
+      <div className="container flex-column">
+        <motion.h2
           className="section-title companies-title"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -38,26 +38,22 @@ const Companies = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.4 + (index * 0.2), 
-                    ease: "easeOut" 
-                  }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    transition: { duration: 0.2 }
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.4 + index * 0.2,
+                    ease: "easeOut",
                   }}
                 >
-                    <img
-                      src={company.logo}
-                      alt={company.name}
-                      className="company-logo"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                        e.target.parentElement.style.backgroundColor = "#6f2dbd";
-                        e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1rem; text-align: center; padding: 10px;">${company.name}</div>`;
-                      }}
-                    />
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="company-logo"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.style.backgroundColor = "#6f2dbd";
+                      e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1rem; text-align: center; padding: 10px;">${company.name}</div>`;
+                    }}
+                  />
                 </motion.a>
               </Col>
             ))}

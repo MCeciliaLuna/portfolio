@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="container flex-column">
         <Row gutter={[30, 30]} justify="space-between" align="top">
           <Col xs={24} sm={12} lg={8}>
             <div className="footer-brand">

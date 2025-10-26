@@ -91,54 +91,6 @@
   box-shadow: 0 8px 20px rgba(111, 45, 189, 0.3) !important;
 }
 
-.floating-social-links {
-  text-align: center;
-}
-
-.floating-social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.floating-social-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  color: white;
-  font-family: var(--font-body);
-}
-
-.linkedin-btn {
-  background: #0077b5;
-}
-
-.linkedin-btn:hover {
-  background: #005885;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
-  color: white;
-}
-
-.github-btn {
-  background: #333;
-}
-
-.github-btn:hover {
-  background: #1a1a1a;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(51, 51, 51, 0.3);
-  color: white;
-}
-
 @media (max-width: 768px) {
   .floating-contact-modal .ant-modal-body {
     padding: 1.5rem;

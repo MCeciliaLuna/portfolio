@@ -64,6 +64,11 @@
   font-weight: bold;
 }
 
+.ant-row{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  
+}
 
 @media (max-width: 768px) {
   .skill-item {

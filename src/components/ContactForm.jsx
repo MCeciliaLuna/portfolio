@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
-import { SendOutlined } from '@ant-design/icons';
 import data from '../db/data.json';
 
 const { TextArea } = Input;
 
-const ContactForm = ({ onSuccess, className = "contact-form", buttonText = "Env√≠ame tu idea" }) => {
+const ContactForm = ({ onSuccess, className = "contact-form", buttonText = "Enviar" }) => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const { profile } = data;
@@ -105,7 +104,6 @@ const ContactForm = ({ onSuccess, className = "contact-form", buttonText = "Env√
           htmlType="submit"
           size="large"
           loading={loading}
-          icon={<SendOutlined />}
           className="submit-button"
           block
         >

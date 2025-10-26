@@ -51,40 +51,11 @@ const FloatingContact = () => {
         footer={null}
         width={600}
         className="floating-contact-modal"
+        closable={false}
         centered
       >
         <div className="floating-modal-content">
           <ContactForm className="contact-form" onSuccess={handleFormSuccess} />
-
-          <div className="floating-social-links">
-            <div className="floating-social-buttons">
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link linkedin-link"
-                aria-label="LinkedIn"
-              >
-                <LinkedinOutlined
-                  className="social-icon"
-                  style={{ fontSize: "28px" }}
-                />
-              </a>
-
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link github-link"
-                aria-label="GitHub"
-              >
-                <GithubOutlined
-                  className="social-icon"
-                  style={{ fontSize: "28px" }}
-                />
-              </a>
-            </div>
-          </div>
         </div>
       </Modal>
     </>
