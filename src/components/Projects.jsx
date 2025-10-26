@@ -34,7 +34,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section projects-section">
       <div className="container">
-        <h2 className="section-title">Proyectos</h2>
+        <h2 className="section-title title-projects">Proyectos</h2>
         
         <Row gutter={[30, 30]} style={{justifyContent:"center"}}>
           {visibleProjects.map((project) => (

@@ -113,18 +113,12 @@
   color: var(--primary-purple) !important;
   font-size: 1.1rem;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.9) !important;
+  background-color:var(--white) !important;
   backdrop-filter: blur(10px);
   border-radius: 25px !important;
   padding: 0.5rem 1.5rem !important;
   height: auto !important;
   animation: bounce 2s infinite;
-}
-
-.scroll-down-btn:hover {
-  background: var(--white) !important;
-  transform: translateX(-50%) translateY(-2px);
-  box-shadow: 0 10px 25px rgba(111, 45, 189, 0.2);
 }
 
 @keyframes bounce {

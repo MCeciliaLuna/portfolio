@@ -9,7 +9,7 @@ const Companies = () => {
   return (
     <section id="companies" className="section companies-section">
       <div className="container">
-        <h2 className="section-title">Empresas</h2>
+        <h2 className="section-title companies-title">Empresas</h2>
 
         <Row gutter={[40, 40]} justify="center" align="middle">
           {companies.map((company) => (
@@ -21,7 +21,6 @@ const Companies = () => {
                 className="company-link"
                 aria-label={`Visitar sitio web de ${company.name}`}
               >
-                <div className="company-item hover-scale">
                   <img
                     src={company.logo}
                     alt={company.name}
@@ -32,7 +31,6 @@ const Companies = () => {
                       e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1rem; text-align: center; padding: 10px;">${company.name}</div>`;
                     }}
                   />
-                </div>
               </a>
             </Col>
           ))}

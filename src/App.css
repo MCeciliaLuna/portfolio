@@ -22,12 +22,7 @@ main {
 
 /* Override de algunos estilos de Ant Design para que coincidan con nuestro tema */
 .ant-btn-primary {
-  background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)) !important;
   border: none !important;
-}
-
-.ant-btn-primary:hover {
-  background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple)) !important;
 }
 
 .ant-form-item-label > label {

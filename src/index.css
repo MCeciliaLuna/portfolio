@@ -1,7 +1,7 @@
 :root {
   /* Paleta de colores */
   --background-main: #f3fae1;
-  --primary-purple: #6f2dbd;
+  --primary-purple: #8242cb;
   --secondary-purple: #a663cc;
   --tertiary-purple: #b298dc;
   --accent-blue: #b8d0eb;
@@ -123,7 +123,7 @@ a:hover {
 
 .hover-scale:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px var(--shadow);
+  /* box-shadow: 0 10px 25px var(--shadow); */
 }
 
 /* Cards y contenedores */

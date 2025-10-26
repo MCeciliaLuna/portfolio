@@ -1,5 +1,5 @@
 .projects-section {
-  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--tertiary-purple) 100%);
+  background-color: var(--white) !important;
   position: relative;
 }
 
@@ -14,6 +14,10 @@
   backdrop-filter: blur(5px);
 }
 
+.title-projects{
+  color: var(--primary-purple)
+}
+
 .projects-section .container {
   position: relative;
   z-index: 2;
@@ -23,14 +27,14 @@
   border-radius: 10px;
   overflow: hidden;
   border: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   height: 100%;
+  transition: none !important;
 }
 
 .project-card:hover {
-  box-shadow: 0 20px 50px rgba(111, 45, 189, 0.2);
-  transform: translateY(-10px);
+  transform: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 }
 
 .project-image-container {
@@ -159,7 +163,7 @@
 }
 
 .show-more-button {
-  background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)) !important;
+  background-color: var(--primary-purple) !important;
   border: none !important;
   border-radius: 10px !important;
   height: 50px !important;
@@ -167,13 +171,10 @@
   font-weight: 600 !important;
   padding: 0 2.5rem !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 8px 20px rgba(111, 45, 189, 0.3);
 }
 
 .show-more-button:hover {
-  background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple)) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(111, 45, 189, 0.4) !important;
+  background-color: var(--secondary-purple) !important;
 }
 
 .show-more-button .anticon {

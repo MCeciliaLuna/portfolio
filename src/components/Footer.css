@@ -1,12 +1,7 @@
 .footer {
-  background: linear-gradient(
-    135deg,
-    var(--primary-purple),
-    var(--secondary-purple)
-  );
+  background: var(--primary-purple);
   color: var(--white);
   padding: 3rem 0 1rem 0;
-  margin-top: 2rem;
 }
 
 .footer-brand {

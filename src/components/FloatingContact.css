@@ -1,20 +1,21 @@
 .floating-contact-button {
   height: 70px;
   width: 70px;
-  box-shadow: 0 8px 25px rgba(111, 45, 189, 0.3) !important;
   transition: all 0.3s ease !important;
 }
 
 .floating-contact-button:hover {
   box-shadow: 0 12px 35px rgba(111, 45, 189, 0.4) !important;
-  transform: translateY(-2px) !important;
 }
 
 .floating-contact-modal .ant-modal-header {
   background: linear-gradient(
     135deg,
-    var(--primary-purple),
-    var(--secondary-purple)
+    rgba(185, 250, 248, 0.9) 0%,
+    rgba(147, 197, 253, 0.8) 25%,
+    rgba(129, 140, 248, 0.7) 50%,
+    rgba(167, 139, 250, 0.8) 75%,
+    rgba(196, 181, 253, 0.9) 100%
   );
   border-radius: 10px 10px 0 0;
   border-bottom: none;
@@ -91,8 +92,6 @@
 }
 
 .floating-social-links {
-  border-top: 1px solid rgba(111, 45, 189, 0.1);
-  padding-top: 1.5rem;
   text-align: center;
 }
 
