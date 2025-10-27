@@ -66,9 +66,9 @@ const Certifications = () => {
     <section id="certifications" className="section certifications-section">
       <div className="container flex-column">
         <motion.h2 
-          className="section-title"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="section-title companies-title"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >

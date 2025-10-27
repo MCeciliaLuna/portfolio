@@ -41,7 +41,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section projects-section">
       <div className="container flex-column">
-        <motion.h2 
+        <motion.h2
           className="section-title title-projects"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
