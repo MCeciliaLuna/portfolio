@@ -85,21 +85,6 @@
   ],
   "skills": [
     {
-      "name": "HTML",
-      "icon": "FaHtml5",
-      "tooltip": "Lenguaje de marcado para estructurar contenido web"
-    },
-    {
-      "name": "CSS",
-      "icon": "FaCss3Alt",
-      "tooltip": "Hojas de estilo para diseño y presentación web"
-    },
-    {
-      "name": "JavaScript",
-      "icon": "FaJs",
-      "tooltip": "Lenguaje de programación dinámico para web interactiva"
-    },
-    {
       "name": "React",
       "icon": "FaReact",
       "tooltip": "Librería para construir interfaces de usuario interactivas"
@@ -115,7 +100,7 @@
       "tooltip": "Diseño de experiencia de usuario e interfaces intuitivas"
     },
     {
-      "name": "Metodologías Ágiles (Scrum)",
+      "name": "Metodologías Ágiles",
       "icon": "MdSpeed",
       "tooltip": "Enfoques iterativos para desarrollo de software eficiente"
     },

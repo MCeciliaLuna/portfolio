@@ -47,6 +47,7 @@
   font-family: var(--font-body);
   color: var(--text-dark);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 

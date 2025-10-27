@@ -46,7 +46,7 @@ const Skills = () => {
         >
           <Row gutter={[30, 30]} justify="center">
             {skills.map((skill, index) => (
-              <Col key={index} xs={12} sm={8} md={6} lg={6} xl={4}>
+              <Col key={index} xs={12} sm={8} md={6} lg={6} xl={8}>
                 <motion.div 
                   className="skill-item"
                   initial={{ opacity: 0, rotate: -10, scale: 0.8 }}
