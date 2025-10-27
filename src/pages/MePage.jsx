@@ -31,7 +31,7 @@ const MePage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h1 className="me-page-name">{profile.name}</h1>
+        <h1 className="me-page-name">{profile.name} :)</h1>
       </motion.section>
 
       <motion.section

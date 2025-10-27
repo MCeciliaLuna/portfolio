@@ -22,6 +22,7 @@
 .me-page-name {
   margin: 0.5em 0;
   font-weight: normal;
+  font-size: 2.8em;
   background: transparent !important;
 }
 
@@ -38,10 +39,13 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  border: none;
 }
+
 
 .icon-button .anticon {
   font-size: 2em !important;
+  color: var(--text-dark)
 }
 
 .me-links-section {
@@ -57,8 +61,10 @@
 
 .website-button {
   margin-bottom: 0.5rem;
+  padding:1.3rem 0rem
 }
 
 .me-span-section {
   color: var(--text-dark);
+  font-family: var(--font-title);
 }
