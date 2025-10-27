@@ -116,12 +116,7 @@
       "tooltip": "Diseño de experiencia de usuario e interfaces intuitivas"
     },
     {
-      "name": "Scrum",
-      "icon": "MdGroup",
-      "tooltip": "Metodología ágil para gestión de proyectos"
-    },
-    {
-      "name": "Metodologías Ágiles",
+      "name": "Metodologías Ágiles (Scrum)",
       "icon": "MdSpeed",
       "tooltip": "Enfoques iterativos para desarrollo de software eficiente"
     },
