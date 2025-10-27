@@ -1,0 +1,64 @@
+.me-page {
+  background: linear-gradient(
+    135deg,
+    rgba(243, 250, 225, 0.9) 0%,
+    rgba(184, 208, 235, 0.8) 50%,
+    rgba(185, 250, 248, 0.9) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.me-name-section,
+.me-buttons-section,
+.me-links-section,
+.me-span-section {
+  background: transparent !important;
+}
+
+.me-page-name {
+  margin: 0.5em 0;
+  font-weight: normal;
+  background: transparent !important;
+}
+
+.me-social-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 200px;
+}
+
+.icon-button {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.icon-button .anticon {
+  font-size: 2em !important;
+}
+
+.me-links-section {
+  margin: 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.website-buttons {
+  width: 80%;
+}
+
+.website-button {
+  margin-bottom: 0.5rem;
+}
+
+.me-span-section {
+  color: var(--text-dark);
+}

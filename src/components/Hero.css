@@ -93,13 +93,8 @@
   height: 300px;
 }
 
-.hero-profile-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--white);
-  transition: all 0.3s ease;
+.hero-profile-image-wrapper {
+  position: relative;
 }
 
 .scroll-down-btn {
@@ -159,9 +154,9 @@
     font-size: 1.3rem;
   }
 
-  .hero-image-wrapper {
-    width: 250px;
-    height: 250px;
+  .hero-profile-image-wrapper {
+    width: 250px !important;
+    height: 250px !important;
   }
 }
 
@@ -182,9 +177,9 @@
     font-size: 1.2rem;
   }
 
-  .hero-image-wrapper {
-    width: 200px;
-    height: 200px;
+  .hero-profile-image-wrapper {
+    width: 200px !important;
+    height: 200px !important;
   }
 }
 
@@ -197,9 +192,9 @@
     font-size: 1rem;
   }
 
-  .hero-image-wrapper {
-    width: 180px;
-    height: 180px;
+  .hero-profile-image-wrapper {
+    width: 180px !important;
+    height: 180px !important;
   }
 
   .scroll-down-btn {

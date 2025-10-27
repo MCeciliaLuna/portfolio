@@ -1,44 +1,34 @@
-import React, { useMemo } from 'react'
-import { ConfigProvider } from 'antd'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Certifications from './components/Certifications'
-import Skills from './components/Skills'
-import Companies from './components/Companies'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import FloatingContact from './components/FloatingContact'
-import './App.css'
+import { useMemo } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ConfigProvider } from "antd";
+import PortfolioPage from "./pages/PortfolioPage";
+import MePage from "./pages/MePage";
+import "./App.css";
 
 function App() {
-  const antTheme = useMemo(() => ({
-    token: {
-      colorPrimary: '#6f2dbd',
-      borderRadius: 10,
-      fontFamily: "'Wix Madefor Text', sans-serif",
-    },
-  }), []);
+  const antTheme = useMemo(
+    () => ({
+      token: {
+        colorPrimary: "#6f2dbd",
+        borderRadius: 10,
+        fontFamily: "'Wix Madefor Text', sans-serif",
+      },
+    }),
+    []
+  );
 
   return (
     <ConfigProvider theme={antTheme}>
-      <div className="App">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Certifications />
-          <Skills />
-          <Companies />
-          <Projects />
-          <Contact />
-        </main>
-        <Footer />
-        <FloatingContact />
-      </div>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<PortfolioPage />} />
+            <Route path="/me" element={<MePage />} />
+          </Routes>
+        </div>
+      </Router>
     </ConfigProvider>
-  )
+  );
 }
 
-export default App
+export default App;

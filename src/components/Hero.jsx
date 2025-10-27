@@ -3,6 +3,7 @@ import { Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { motion } from "motion/react";
 import data from "../db/data.json";
+import ProfileAvatar from "./ProfileAvatar";
 import "./Hero.css";
 
 const Hero = () => {
@@ -17,20 +18,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero-section">
-      <div className="hero-background">
-        {profile.backgroundImage && (
-          <img
-            src={profile.backgroundImage}
-            alt="Background"
-            className="hero-bg-image"
-            loading="eager"
-            onError={(e) => {
-              e.target.style.display = "none";
-            }}
-          />
-        )}
-        <div className="hero-overlay"></div>
-      </div>
+      <div className="hero-overlay"></div>
 
       <div className="container">
         <div className="hero-content">
@@ -64,17 +52,12 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            <div className="hero-image-wrapper">
-              <img
-                src={profile.profileImage}
-                alt={`${profile.name} - Perfil`}
-                className="hero-profile-image"
-                loading="eager"
-                onError={(e) => {
-                  e.target.src = `https://ui-avatars.com/api/?name=${profile.name}&size=300&background=6f2dbd&color=ffffff&font-size=0.4`;
-                }}
-              />
-            </div>
+            <ProfileAvatar
+              src={profile.profileImage}
+              name={profile.name}
+              size={300}
+              className="hero-profile-image"
+            />
           </motion.div>
         </div>
 

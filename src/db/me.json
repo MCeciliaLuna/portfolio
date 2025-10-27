@@ -1,0 +1,36 @@
+{
+  "socialMedia": [
+    {
+      "id": "instagram",
+      "url": "https://instagram.com/mcecilialuna_",
+      "icon": "InstagramOutlined",
+      "title": "Instagram"
+    },
+    {
+      "id": "twitter", 
+      "url": "https://twitter.com/mcecilialuna_",
+      "icon": "TwitterOutlined",
+      "title": "Twitter"
+    }
+  ],
+  "websites": [
+    {
+      "id": 1,
+      "title": "Blog personal",
+      "url": "https://imperfectamentefiel.blogspot.com",
+      "icon": "EditOutlined"
+    },
+    {
+      "id": 2,
+      "title": "Blog de opinión",
+      "url": "https://cavernaluzypreguntas.blogspot.com",
+      "icon": "BulbOutlined"
+    },
+    {
+      "id": 3,
+      "title": "Portfolio dev",
+      "url": "https://mcecilialuna-dev.netlify.app",
+      "icon": "CodeOutlined"
+    }
+  ]
+}
