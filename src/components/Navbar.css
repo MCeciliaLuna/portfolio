@@ -55,7 +55,7 @@
 .navbar-menu .ant-menu-item:hover,
 .navbar-menu .ant-menu-item-selected {
   color: var(--primary-purple) !important;
-  background: transparent !important;
+  background: var(--white) !important;
 }
 
 .navbar-menu .ant-menu-item::after {
@@ -115,5 +115,50 @@
   
   .navbar-menu .ant-menu-item::after {
     bottom: -1px;
+  }
+}
+
+/* Sobrescribir estilos específicos de Ant Design para el navbar */
+.navbar .ant-menu,
+.navbar .ant-menu-submenu,
+.navbar .ant-menu-submenu-popup,
+:where(.css-dev-only-do-not-override-emoei6).ant-menu-submenu-popup.ant-menu-submenu {
+  background: var(--white) !important;
+}
+
+/* Desktop - permitir transparencia */
+@media (min-width: 769px) {
+  .navbar .ant-menu {
+    background: transparent !important;
+  }
+}
+
+/* Mobile - forzar fondo blanco */
+@media (max-width: 768px) {
+  .navbar .ant-menu,
+  .navbar .ant-menu-submenu,
+  .navbar .ant-menu-submenu-popup,
+  .navbar-menu,
+  :where(.css-dev-only-do-not-override-emoei6).ant-menu-submenu-popup.ant-menu-submenu {
+    background: var(--white) !important;
+  }
+  
+  /* Asegurar que el contenedor del navbar también tenga fondo */
+  .navbar {
+    background: var(--white) !important;
+  }
+  
+  .navbar-container {
+    background: var(--white);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .ant-menu,
+  .navbar .ant-menu-submenu,
+  .navbar .ant-menu-submenu-popup,
+  .navbar-menu,
+  :where(.css-dev-only-do-not-override-emoei6).ant-menu-submenu-popup.ant-menu-submenu {
+    background: var(--white) !important;
   }
 }
