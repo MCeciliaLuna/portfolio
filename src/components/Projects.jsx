@@ -154,7 +154,7 @@ const Projects = () => {
               onClick={handleShowMore}
               className="show-more-button"
             >
-              <strong>Ver más</strong> proyectos
+              <strong>Ver más</strong>
             </Button>
           )}
 
@@ -165,7 +165,7 @@ const Projects = () => {
               onClick={handleShowLess}
               className="show-more-button"
             >
-              <strong>Ocultar</strong> proyectos
+              <strong>Ocultar</strong>
             </Button>
           )}
         </div>
