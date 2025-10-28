@@ -184,11 +184,6 @@
     {
       "label": "Contacto",
       "href": "#contact"
-    },
-    {
-      "label": "Me",
-      "href": "/me",
-      "isRoute": true
     }
   ]
 }
