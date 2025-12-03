@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "antd";
-import { motion } from "motion/react";
 import "./MePage.css";
 import data from "../db/data.json";
 import meData from "../db/me.json";
@@ -13,41 +12,22 @@ const MePage = () => {
 
   return (
     <div className="me-page">
-      <motion.section
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <section>
         <ProfileAvatar
           src={profile.profileImage}
           name={profile.name}
           size={200}
         />
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="me-name-section"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
+      <section className="me-name-section">
         <h1 className="me-page-name">{profile.name} :)</h1>
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="me-buttons-section"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
+      <section className="me-buttons-section">
         <div className="me-social-buttons">
           {socialMedia.map((social, index) => (
-            <motion.div
-              key={social.id}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-            >
+            <div key={social.id}>
               <Button
                 icon={<DynamicIcon iconName={social.icon} />}
                 href={social.url}
@@ -55,25 +35,15 @@ const MePage = () => {
                 rel="noopener noreferrer"
                 className="icon-button"
               ></Button>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="me-links-section"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-      >
+      <section className="me-links-section">
         <div className="website-buttons">
           {websites.map((website, index) => (
-            <motion.div
-              key={website.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-            >
+            <div key={website.id}>
               <Button
                 type="default"
                 size="large"
@@ -85,21 +55,16 @@ const MePage = () => {
               >
                 {website.title}
               </Button>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="me-span-section"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
+      <section className="me-span-section">
         <span>
           ¿Sabías que todo esto está hecho por <strong>mí</strong>?
         </span>
-      </motion.section>
+      </section>
     </div>
   );
 };
