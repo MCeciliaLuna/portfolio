@@ -3,12 +3,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ContactForm from "../ContactForm";
 
-// Mock de fetch
 global.fetch = vi.fn();
 
 describe("ContactForm", () => {
   beforeEach(() => {
-    // Limpiar mocks antes de cada test
     vi.clearAllMocks();
   });
 
@@ -39,7 +37,6 @@ describe("ContactForm", () => {
     const user = userEvent.setup();
     const mockOnSuccess = vi.fn();
 
-    // Mock de respuesta exitosa
     global.fetch.mockResolvedValueOnce({
       ok: true,
       json: async () => ({ success: true }),
@@ -47,7 +44,6 @@ describe("ContactForm", () => {
 
     render(<ContactForm onSuccess={mockOnSuccess} />);
 
-    // Llenar el formulario
     await user.type(screen.getByLabelText(/nombre/i), "Juan Pérez");
     await user.type(screen.getByLabelText(/email/i), "juan@example.com");
     await user.type(
@@ -55,19 +51,16 @@ describe("ContactForm", () => {
       "Este es un mensaje de prueba"
     );
 
-    // Enviar
     const submitButton = screen.getByRole("button", { name: /enviar/i });
     await user.click(submitButton);
 
-    // Verificar que se llamó a fetch
     await waitFor(() => {
       expect(global.fetch).toHaveBeenCalledTimes(1);
     });
 
-    // Verificar mensaje de éxito
     await waitFor(
       () => {
-        expect(screen.getByText(/mensaje enviado/i)).toBeInTheDocument();
+        expect(screen.getByText(/¡Mensaje Enviado!/i)).toBeInTheDocument();
       },
       { timeout: 2000 }
     );
@@ -76,21 +69,17 @@ describe("ContactForm", () => {
   it("muestra error cuando falla el envío", async () => {
     const user = userEvent.setup();
 
-    // Mock de respuesta con error
     global.fetch.mockRejectedValueOnce(new Error("Error de red"));
 
     render(<ContactForm />);
 
-    // Llenar el formulario
     await user.type(screen.getByLabelText(/nombre/i), "Juan Pérez");
     await user.type(screen.getByLabelText(/email/i), "juan@example.com");
     await user.type(screen.getByLabelText(/mensaje/i), "Test mensaje");
 
-    // Enviar
     const submitButton = screen.getByRole("button", { name: /enviar/i });
     await user.click(submitButton);
 
-    // Verificar mensaje de error
     await waitFor(
       () => {
         expect(screen.getByText(/ocurrió un error/i)).toBeInTheDocument();
@@ -102,38 +91,39 @@ describe("ContactForm", () => {
   it("permite copiar el email cuando hay error", async () => {
     const user = userEvent.setup();
 
-    // Mock clipboard API
-    Object.assign(navigator, {
-      clipboard: {
+    Object.defineProperty(navigator, "clipboard", {
+      value: {
         writeText: vi.fn().mockResolvedValue(undefined),
       },
+      writable: true,
+      configurable: true,
     });
 
-    // Mock de respuesta con error
     global.fetch.mockRejectedValueOnce(new Error("Error"));
 
     render(<ContactForm />);
 
-    // Llenar y enviar formulario
     await user.type(screen.getByLabelText(/nombre/i), "Test");
     await user.type(screen.getByLabelText(/email/i), "test@test.com");
     await user.type(screen.getByLabelText(/mensaje/i), "Test");
     await user.click(screen.getByRole("button", { name: /enviar/i }));
 
-    // Esperar a que aparezca el botón de copiar
-    const copyButton = await screen.findByRole("button", {
-      name: /copiar email/i,
-    });
+    await waitFor(
+      () => {
+        expect(screen.getByText(/Ups, ocurrió un error/i)).toBeInTheDocument();
+      },
+      { timeout: 2000 }
+    );
+
+    const copyButton = await screen.findByText(/copiar email/i);
     await user.click(copyButton);
 
-    // Verificar que se intentó copiar
     expect(navigator.clipboard.writeText).toHaveBeenCalled();
   });
 
   it("deshabilita el botón cuando está cargando", async () => {
     const user = userEvent.setup();
 
-    // Mock que tarda en resolver
     global.fetch.mockImplementation(
       () =>
         new Promise((resolve) =>
@@ -150,7 +140,6 @@ describe("ContactForm", () => {
 
     render(<ContactForm />);
 
-    // Llenar formulario
     await user.type(screen.getByLabelText(/nombre/i), "Test");
     await user.type(screen.getByLabelText(/email/i), "test@test.com");
     await user.type(screen.getByLabelText(/mensaje/i), "Test");
@@ -158,7 +147,6 @@ describe("ContactForm", () => {
     const submitButton = screen.getByRole("button", { name: /enviar/i });
     await user.click(submitButton);
 
-    // El botón debería estar deshabilitado mientras carga
     expect(submitButton).toBeDisabled();
   });
 
@@ -176,22 +164,25 @@ describe("ContactForm", () => {
     const emailInput = screen.getByLabelText(/email/i);
     const messageInput = screen.getByLabelText(/mensaje/i);
 
-    // Llenar formulario
     await user.type(nameInput, "Test User");
     await user.type(emailInput, "test@example.com");
     await user.type(messageInput, "Test message");
 
-    // Verificar que los campos tienen valores
     expect(nameInput).toHaveValue("Test User");
 
-    // Enviar
     await user.click(screen.getByRole("button", { name: /enviar/i }));
 
-    // Verificar que los campos se limpiaron
     await waitFor(() => {
-      expect(nameInput).toHaveValue("");
-      expect(emailInput).toHaveValue("");
-      expect(messageInput).toHaveValue("");
+      expect(global.fetch).toHaveBeenCalled();
     });
+
+    await waitFor(
+      () => {
+        expect(screen.getByLabelText(/nombre/i)).toHaveValue("");
+        expect(screen.getByLabelText(/email/i)).toHaveValue("");
+        expect(screen.getByLabelText(/mensaje/i)).toHaveValue("");
+      },
+      { timeout: 3000 }
+    );
   });
 });

@@ -1,4 +1,3 @@
-import React from "react";
 import SkipNavigation from "../components/SkipNavigation";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";

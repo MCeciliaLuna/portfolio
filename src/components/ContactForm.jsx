@@ -17,7 +17,7 @@ const ContactForm = ({
 }) => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [errorDetails, setErrorDetails] = useState("");
   const { profile } = data;
 
@@ -31,8 +31,6 @@ const ContactForm = ({
       formData.append("name", values.name);
       formData.append("email", values.email);
       formData.append("message", values.message);
-
-      // Campos adicionales para FormSubmit
       formData.append(
         "_subject",
         `Nuevo mensaje de ${values.name} desde Portfolio`
@@ -58,7 +56,7 @@ const ContactForm = ({
         message.success("¡Mensaje enviado exitosamente! Te responderé pronto.");
         form.resetFields();
         if (onSuccess) {
-          setTimeout(() => onSuccess(), 1500); // Delay para mostrar el mensaje de éxito
+          setTimeout(() => onSuccess(), 1500);
         }
       } else {
         throw new Error(
@@ -85,7 +83,7 @@ const ContactForm = ({
         onFinish={handleSubmit}
         className={className}
         requiredMark={false}
-        onChange={resetStatus} // Reset status cuando el usuario modifica el formulario
+        onChange={resetStatus}
       >
         <Form.Item
           name="name"
@@ -132,7 +130,6 @@ const ContactForm = ({
           />
         </Form.Item>
 
-        {/* Alert de Estado */}
         <div role="status" aria-live="polite" aria-atomic="true">
           {submitStatus === "success" && (
             <Alert
@@ -209,7 +206,7 @@ const ContactForm = ({
             loading={loading}
             className="submit-button"
             block
-            disabled={submitStatus === "success"}
+            disabled={loading || submitStatus === "success"}
           >
             {loading
               ? ""

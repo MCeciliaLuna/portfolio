@@ -5,4 +5,4 @@ Allow: /
 # Disallow: /admin/
 
 # Sitemap location
-Sitemap: https://tudominio.com/sitemap.xml
+Sitemap: https://mcecilialuna-dev.netlify.app/sitemap.xml

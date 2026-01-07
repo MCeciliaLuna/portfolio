@@ -220,4 +220,4 @@ Este proyecto es personal y privado.
 
 ## 🙏 Créditos
 
-Desarrollado con ❤️ por Cecilia Luna
+Desarrollado por Cecilia Luna

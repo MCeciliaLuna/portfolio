@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Row, Col, Card, Button } from "antd";
 import {
   GlobalOutlined,
   GithubOutlined,
   YoutubeOutlined,
-  DownOutlined,
-  UpOutlined,
 } from "@ant-design/icons";
 import { FaFigma } from "react-icons/fa";
 import data from "../db/data.json";
