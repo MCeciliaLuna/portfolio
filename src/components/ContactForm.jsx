@@ -92,15 +92,28 @@ const ContactForm = ({
           label="Nombre"
           rules={[{ required: true, message: "Ingresa tu nombre" }]}
         >
-          <Input size="large" placeholder="Tu nombre completo" />
+          <Input
+            size="large"
+            placeholder="Tu nombre completo"
+            aria-label="Nombre completo"
+            aria-required="true"
+          />
         </Form.Item>
 
         <Form.Item
           name="email"
           label="Email"
-          rules={[{ required: true, message: "Ingresa tu email" }]}
+          rules={[
+            { required: true, message: "Ingresa tu email" },
+            { type: "email", message: "Ingresa un email válido" },
+          ]}
         >
-          <Input size="large" placeholder="tu.email@ejemplo.com" />
+          <Input
+            size="large"
+            placeholder="tu.email@ejemplo.com"
+            aria-label="Dirección de correo electrónico"
+            aria-required="true"
+          />
         </Form.Item>
 
         <Form.Item
@@ -113,26 +126,32 @@ const ContactForm = ({
             placeholder="Escribe tu idea aquí..."
             maxLength={500}
             showCount
+            aria-label="Mensaje"
+            aria-required="true"
+            aria-describedby="message-counter"
           />
         </Form.Item>
 
         {/* Alert de Estado */}
-        {submitStatus === "success" && (
-          <Alert
-            message="¡Mensaje Enviado!"
-            description="Tu mensaje ha sido enviado exitosamente. Te responderé a la brevedad."
-            type="success"
-            icon={<CheckCircleOutlined />}
-            showIcon
-            closable
-            onClose={resetStatus}
-            style={{
-              marginBottom: "1rem",
-              borderRadius: "8px",
-              border: "1px solid #52c41a",
-            }}
-          />
-        )}
+        <div role="status" aria-live="polite" aria-atomic="true">
+          {submitStatus === "success" && (
+            <Alert
+              message="¡Mensaje Enviado!"
+              description="Tu mensaje ha sido enviado exitosamente. Te responderé a la brevedad."
+              type="success"
+              icon={<CheckCircleOutlined />}
+              showIcon
+              closable
+              onClose={resetStatus}
+              role="alert"
+              style={{
+                marginBottom: "1rem",
+                borderRadius: "8px",
+                border: "1px solid #52c41a",
+              }}
+            />
+          )}
+        </div>
 
         {submitStatus === "error" && (
           <Alert
@@ -158,6 +177,7 @@ const ContactForm = ({
                           );
                         });
                     }}
+                    aria-label="Copiar dirección de email al portapapeles"
                     style={{
                       backgroundColor: "var(--primary-purple)",
                       color: "var(--white)",
@@ -171,6 +191,7 @@ const ContactForm = ({
               </div>
             }
             type="error"
+            role="alert"
             closable={false}
             style={{
               marginBottom: "1rem",

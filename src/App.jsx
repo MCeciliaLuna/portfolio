@@ -1,8 +1,10 @@
 import { useMemo } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ConfigProvider } from "antd";
+import ErrorBoundary from "./components/ErrorBoundary";
 import PortfolioPage from "./pages/PortfolioPage";
 import MePage from "./pages/MePage";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 
 function App() {
@@ -18,16 +20,19 @@ function App() {
   );
 
   return (
-    <ConfigProvider theme={antTheme}>
-      <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<PortfolioPage />} />
-            <Route path="/me" element={<MePage />} />
-          </Routes>
-        </div>
-      </Router>
-    </ConfigProvider>
+    <ErrorBoundary>
+      <ConfigProvider theme={antTheme}>
+        <Router>
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<PortfolioPage />} />
+              <Route path="/me" element={<MePage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </Router>
+      </ConfigProvider>
+    </ErrorBoundary>
   );
 }
 

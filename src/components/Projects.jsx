@@ -38,13 +38,24 @@ const Projects = () => {
   const showingAll = visibleCount >= projects.length && projects.length > 3;
 
   return (
-    <section id="projects" className="section projects-section">
+    <section
+      id="projects"
+      className="section projects-section"
+      aria-labelledby="projects-heading"
+    >
       <div className="container flex-column">
-        <h2 className="section-title title-projects">Proyectos</h2>
+        <h2 id="projects-heading" className="section-title title-projects">
+          Proyectos
+        </h2>
 
-        <Row gutter={[30, 30]} style={{ justifyContent: "center" }}>
+        <Row
+          gutter={[30, 30]}
+          style={{ justifyContent: "center" }}
+          role="list"
+          aria-label="Lista de proyectos"
+        >
           {visibleProjects.map((project, index) => (
-            <Col key={project.id} xs={24} sm={12} lg={8}>
+            <Col key={project.id} xs={24} sm={12} lg={8} role="listitem">
               <div>
                 <Card
                   className="project-card"
@@ -132,13 +143,19 @@ const Projects = () => {
           ))}
         </Row>
 
-        <div style={{ textAlign: "center", marginTop: "40px" }}>
+        <div
+          style={{ textAlign: "center", marginTop: "40px" }}
+          role="region"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           {hasMore && (
             <Button
               type="primary"
               size="large"
               onClick={handleShowMore}
               className="show-more-button"
+              aria-label={`Ver más proyectos. Mostrando ${visibleCount} de ${projects.length}`}
             >
               <strong>Ver más</strong>
             </Button>
@@ -150,6 +167,7 @@ const Projects = () => {
               size="large"
               onClick={handleShowLess}
               className="show-more-button"
+              aria-label="Ocultar proyectos adicionales"
             >
               <strong>Ocultar</strong>
             </Button>

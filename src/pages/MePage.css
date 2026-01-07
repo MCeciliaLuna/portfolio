@@ -5,7 +5,7 @@
     rgba(184, 208, 235, 0.8) 50%,
     rgba(185, 250, 248, 0.9) 100%
   );
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,10 +42,9 @@
   border: none;
 }
 
-
 .icon-button .anticon {
   font-size: 2em !important;
-  color: var(--text-dark)
+  color: var(--text-dark);
 }
 
 .me-links-section {
@@ -60,8 +59,21 @@
 }
 
 .website-button {
-  margin-bottom: 0.5rem;
-  padding:1.3rem 0rem
+  background-color: var(--primary-purple) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  height: 50px !important;
+  font-size: 1.1rem !important;
+  padding: 0 2.5rem !important;
+  margin-bottom: 1rem !important;
+  transition: all 0.3s ease !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.website-button:hover {
+  background-color: var(--secondary-purple) !important;
+  color: white !important;
 }
 
 .me-span-section {

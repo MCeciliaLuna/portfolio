@@ -62,11 +62,6 @@ const Footer = () => {
                 © {currentYear} {profile.name}. Todos los derechos reservados.
               </p>
             </Col>
-            <Col xs={24} sm={12}>
-              <p className="made-with-love">
-                Hecho con <HeartFilled className="heart-icon" /> y React
-              </p>
-            </Col>
           </Row>
         </div>
       </div>
