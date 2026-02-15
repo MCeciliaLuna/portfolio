@@ -19,13 +19,21 @@
   "projects": [
     {
       "id": 0,
+      "title": "Procrastinant APP",
+      "description": "Diseño de aplicación para agenda de eventos desarrollada en Figma",
+      "imageUrl": "/images/projects/procrastinant-app.webp",
+      "liveUrl": "https://procrastinant-app.vercel.app/",
+      "repoUrl": "https://github.com/MCeciliaLuna/procrastinant-app"
+    },
+    {
+      "id": 1,
       "title": "Plan Go APP",
       "description": "Diseño de aplicación para agenda de eventos desarrollada en Figma",
       "imageUrl": "/images/projects/PlanGO-app.webp",
       "figmaUrl": "https://www.figma.com/proto/PIE5e4ga4ndZ4NrSnD9VOz/Pantallas-Finales?page-id=0%3A1&node-id=9-1100&p=f&viewport=261%2C173%2C0.28&t=VLgMJdHNW4zjYtsD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A1115"
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "To Do List",
       "description": "WebApp checklist para gestionar tareas desarrollada con ReactJs",
       "imageUrl": "/images/projects/todolist-web.webp",
@@ -34,14 +42,14 @@
       "youtubeUrl": "https://youtu.be/CraOi6X3zLM?si=7KlX0O6uivIIo7oO"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Phrases API",
       "description": "API de frases de autor temáticas desarrollada con Express",
       "imageUrl": "/images/projects/phrases-api.webp",
       "repoUrl": "https://github.com/MCeciliaLuna/phrases-API"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "We Learn Web",
       "description": "Foro web con temáticas educativas desarrollada con ReactJs",
       "imageUrl": "/images/projects/welearn-web.webp",
@@ -49,7 +57,7 @@
       "repoUrl": "https://github.com/MCeciliaLuna/EvaluativoReact-GL-MYB"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "ACVA Mockup",
       "description": "Web estilo Linktree para iglesia evangélica desarrollada con Reactjs",
       "imageUrl": "/images/projects/va-mockup.webp",
@@ -57,7 +65,7 @@
       "repoUrl": "https://github.com/MCeciliaLuna/redes-VA"
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "La Quiaqueña Drugstore E-Commerce",
       "description": "Plataforma de comercio electrónico completa con React y DB propia",
       "imageUrl": "/images/projects/laquiaquena-web.webp",
@@ -66,7 +74,7 @@
       "youtubeUrl": "https://youtu.be/eZHqys0oeVI?si=-E7wKCQLom-QgO5O"
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "La Quiaqueña Herboristería E-Commerce",
       "description": "Plataforma de comercio electrónico completa con React y DB propia",
       "imageUrl": "/images/projects/laquiaquena-ii-web.webp",
@@ -75,7 +83,7 @@
       "youtubeUrl": "https://youtu.be/J1vSzS8Q2f0?si=smmlQNSsjfu64ybU"
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "Contacto Profesional Web",
       "description": "Web estilo linktree de ejemplo para profesionales desarrollada con ReactJs",
       "imageUrl": "/images/projects/mclsd-mockup.webp",
