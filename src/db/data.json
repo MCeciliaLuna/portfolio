@@ -113,27 +113,34 @@
   "certifications": [
     {
       "id": 1,
+      "title": "Curso de Prompt Engineering",
+      "institution": "Centro de E-Learning UTN-BA",
+      "year": "2026",
+      "imageUrl": "/images/certificates/prompt-engineering.webp"
+    },
+    {
+      "id": 2,
       "title": "Diplomatura en Diseño UX-UI",
       "institution": "Centro de E-Learning UTN-BA",
       "year": "2025",
       "imageUrl": "/images/certificates/ux-ui-certificado.webp"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Diplomatura en Agile Managment",
       "institution": "Agencia I",
       "year": "2024",
       "imageUrl": "/images/certificates/agile-managment-certificado.webp"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "JS y React Avanzado",
       "institution": "Global Learning",
       "year": "2023",
       "imageUrl": "/images/certificates/global-learning-certificado.webp"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Full Stack Web Developer",
       "institution": "Rolling Code School",
       "year": "2022",
