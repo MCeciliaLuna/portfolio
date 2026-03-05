@@ -200,7 +200,7 @@ const data = {
       id: uuidv4(),
       "name": "Iglesia de Cristo Tucumán",
       "logo": "/images/companies/idc.webp",
-      "url": "https://blessinmobiliaria.com/"
+      "url": "https://iglesiadecristotuc.org/"
     },
     {
       id: uuidv4(),
