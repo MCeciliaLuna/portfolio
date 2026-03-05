@@ -1,6 +1,6 @@
 import React from "react";
 import { Tag, Row, Col } from "antd";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import "./About.css";
 
 const About = () => {

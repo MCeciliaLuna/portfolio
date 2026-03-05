@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Divider } from 'antd';
 import { MailOutlined, LinkedinOutlined, GithubOutlined, HeartFilled } from '@ant-design/icons';
-import data from '../db/data.json';
+import data from '../db/data.js';
 import './Footer.css';
 
 const Footer = () => {

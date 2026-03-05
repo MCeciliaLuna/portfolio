@@ -6,7 +6,7 @@ import {
   MailOutlined,
   CopyOutlined,
 } from "@ant-design/icons";
-import data from "../db/data.json";
+import data from "../db/data.js";
 
 const { TextArea } = Input;
 

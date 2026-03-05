@@ -6,7 +6,7 @@ import {
   GithubOutlined,
 } from "@ant-design/icons";
 import ContactForm from "./ContactForm";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import "./FloatingContact.css";
 
 const FloatingContact = () => {

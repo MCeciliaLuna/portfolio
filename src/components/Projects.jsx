@@ -6,12 +6,12 @@ import {
   YoutubeOutlined,
 } from "@ant-design/icons";
 import { FaFigma } from "react-icons/fa";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import "./Projects.css";
 
 const Projects = () => {
   const { projects } = data;
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("projects");
@@ -25,7 +25,7 @@ const Projects = () => {
   };
 
   const handleShowLess = () => {
-    setVisibleCount(3);
+    setVisibleCount(6);
     setTimeout(() => {
       scrollToProjects();
     }, 100);
@@ -33,7 +33,7 @@ const Projects = () => {
 
   const visibleProjects = projects.slice(0, visibleCount);
   const hasMore = visibleCount < projects.length;
-  const showingAll = visibleCount >= projects.length && projects.length > 3;
+  const showingAll = visibleCount >= projects.length && projects.length > 6;
 
   return (
     <section

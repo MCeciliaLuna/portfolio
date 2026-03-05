@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import "./MePage.css";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import meData from "../db/me.json";
 import ProfileAvatar from "../components/ProfileAvatar";
 import DynamicIcon from "../components/DynamicIcon";

@@ -3,7 +3,7 @@ import { Modal, Card, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import "./Certifications.css";
 
 const Certifications = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import ProfileAvatar from "./ProfileAvatar";
 import "./Hero.css";
 

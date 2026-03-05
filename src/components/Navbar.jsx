@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Menu } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import "./Navbar.css";
 
 const Navbar = () => {

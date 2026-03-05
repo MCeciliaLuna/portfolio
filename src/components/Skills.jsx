@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { MdGroup, MdDesignServices, MdSpeed } from "react-icons/md";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import "./Skills.css";
 
 const Skills = () => {

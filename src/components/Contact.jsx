@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 import { LinkedinOutlined, GithubOutlined } from "@ant-design/icons";
 import ContactForm from "./ContactForm";
-import data from "../db/data.json";
+import data from "../db/data.js";
 import "./Contact.css";
 
 const Contact = () => {
