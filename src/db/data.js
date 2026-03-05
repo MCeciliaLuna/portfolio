@@ -41,8 +41,15 @@ const data = {
     },
     {
       id: uuidv4(),
+      "title": "Iglesia de Cristo Tucumán Web",
+      "description": "Landing page institucional desarrollada con ReactJs",
+      "imageUrl": "/images/projects/idc.webp",
+      "liveUrl": "https://iglesiadecristotuc.org/",
+    },
+    {
+      id: uuidv4(),
       "title": "Procrastinant APP",
-      "description": "WebApp checklist para gestionar tareas para cursado de Prompt Engineering",
+      "description": "WebApp checklist de gestión de tareas para cursado de Prompt Engineering",
       "imageUrl": "/images/projects/procrastinant-app.webp",
       "liveUrl": "https://procrastinant-app.vercel.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/procrastinant-app"
@@ -188,6 +195,12 @@ const data = {
       "name": "Instituto NOA",
       "logo": "/images/companies/instituto-noa.webp",
       "url": "https://institutonoa.com.ar/"
+    },
+    {
+      id: uuidv4(),
+      "name": "Iglesia de Cristo Tucumán",
+      "logo": "/images/companies/idc.webp",
+      "url": "https://blessinmobiliaria.com/"
     },
     {
       id: uuidv4(),

@@ -73,6 +73,10 @@
   transition: filter 0.3s ease;
 }
 
+.company-logo[src*="idc.webp"] {
+  height: 90px !important;
+}
+
 .company-name {
   font-size: 1rem;
   font-weight: 500;
