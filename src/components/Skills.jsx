@@ -1,13 +1,14 @@
 import React, { useMemo } from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Tooltip } from "antd";
 import {
   FaHtml5,
   FaCss3Alt,
   FaJs,
   FaReact,
   FaChalkboardTeacher,
+  FaGithub
 } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs, SiExpress } from "react-icons/si";
 import { MdGroup, MdDesignServices, MdSpeed } from "react-icons/md";
 import data from "../db/data.js";
 import "./Skills.css";
@@ -26,6 +27,8 @@ const Skills = () => {
       MdGroup: <MdGroup />,
       MdSpeed: <MdSpeed />,
       FaChalkboardTeacher: <FaChalkboardTeacher />,
+      SiExpress: <SiExpress />,
+      FaGithub: <FaGithub />,
     }),
     []
   );
@@ -41,10 +44,12 @@ const Skills = () => {
           <Row gutter={[30, 30]} justify="center">
             {skills.map((skill, index) => (
               <Col key={index} xs={12} sm={8} md={6} lg={6} xl={8}>
-                <div className="skill-item">
-                  <div className="skill-icon">{getIcon(skill.icon)}</div>
-                  <span className="skill-name">{skill.name}</span>
-                </div>
+                <Tooltip title={skill.tooltip}>
+                  <div className="skill-item">
+                    <div className="skill-icon">{getIcon(skill.icon)}</div>
+                    <span className="skill-name">{skill.name}</span>
+                  </div>
+                </Tooltip>
               </Col>
             ))}
           </Row>

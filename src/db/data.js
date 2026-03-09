@@ -117,27 +117,37 @@ const data = {
     {
       "name": "React",
       "icon": "FaReact",
-      "tooltip": "Librería para construir interfaces de usuario interactivas"
+      "tooltip": "Creación de interfaces dinámicas mediante componentes reutilizables"
     },
     {
       "name": "Next.js",
       "icon": "SiNextdotjs",
-      "tooltip": "Framework de React para aplicaciones web de producción"
+      "tooltip": "Aplicaciones de alto rendimiento con renderizado optimizado (SSR/SSG)"
+    },
+    {
+      "name": "Express.js",
+      "icon": "SiExpress",
+      "tooltip": "Desarrollo de APIs robustas y escalables del lado del servidor"
+    },
+    {
+      "name": "Git",
+      "icon": "FaGithub",
+      "tooltip": "Gestión eficiente de versiones y colaboración técnica en equipo"
     },
     {
       "name": "Diseño UX/UI",
       "icon": "MdDesignServices",
-      "tooltip": "Diseño de experiencia de usuario e interfaces intuitivas"
+      "tooltip": "Arquitectura de información y diseño de interfaces centradas en el usuario"
     },
     {
       "name": "Metodologías Ágiles",
       "icon": "MdSpeed",
-      "tooltip": "Enfoques iterativos para desarrollo de software eficiente"
+      "tooltip": "Gestión de proyectos con entregas iterativas y mejora continua"
     },
     {
       "name": "Docencia",
       "icon": "FaChalkboardTeacher",
-      "tooltip": "Experiencia en enseñanza y transferencia de conocimientos"
+      "tooltip": "Facilitación de aprendizaje y comunicación efectiva de conceptos técnicos"
     }
   ],
   "certifications": [
