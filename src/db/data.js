@@ -21,6 +21,13 @@ const data = {
   "projects": [
     {
       id: uuidv4(),
+      "title": "Fundación Valores Para Mi Ciudad",
+      "description": "Web institucional desarrollada con ReactJs, backend y DB propia",
+      "imageUrl": "/images/projects/fundacion-valores.webp",
+      "liveUrl": "https://valoresparamiciudadtuc.org/"
+    },
+    {
+      id: uuidv4(),
       "title": "Bless Inmobiliaria Web",
       "description": "Web empresarial desarrollada con ReactJs, backend y DB propia",
       "imageUrl": "/images/projects/blessinmobiliaria.webp",
