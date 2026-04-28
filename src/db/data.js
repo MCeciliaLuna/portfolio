@@ -203,12 +203,6 @@ const data = {
     },
     {
       id: uuidv4(),
-      "name": "Conti Latam",
-      "logo": "/images/companies/conti.webp",
-      "url": "https://contilatam.com/"
-    },
-    {
-      id: uuidv4(),
       "name": "Instituto NOA",
       "logo": "/images/companies/instituto-noa.webp",
       "url": "https://institutonoa.com.ar/"
@@ -221,10 +215,22 @@ const data = {
     },
     {
       id: uuidv4(),
-      "name": "BlessInmobiliaria",
+      "name": "Bless Inmobiliaria",
       "logo": "/images/companies/bless.webp",
       "url": "https://blessinmobiliaria.com/"
-    }
+    },
+    {
+      id: uuidv4(),
+      "name": "Fundacion Valores Para Mi Ciudad",
+      "logo": "/images/companies/valores.webp",
+      "url": "https://valoresparamiciudadtuc.org/"
+    },
+    {
+      id: uuidv4(),
+      "name": "Conti Latam",
+      "logo": "/images/companies/conti.webp",
+      "url": "https://contilatam.com/"
+    },
   ],
   "navigation": [
     {
