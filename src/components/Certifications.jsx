@@ -106,6 +106,7 @@ const Certifications = () => {
         /* VISTA DE ESCRITORIO: Stacked Cards con Scroll Pinning Nativo y Resortes */
         <div 
           ref={containerRef} 
+          id="certificaciones"
           className="cert-sticky-scroll-container"
           style={{ height: `${certifications.length * 100}vh` }}
         >

@@ -269,6 +269,7 @@
 .cert-sticky-scroll-container {
   position: relative;
   width: 100%;
+  scroll-margin-top: 80px;
 }
 
 /* Stacked Cards Desktop Layout */
