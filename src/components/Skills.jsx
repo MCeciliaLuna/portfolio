@@ -2,31 +2,22 @@ import React from "react";
 import { Tooltip } from "antd";
 import {
   FaReact,
-  FaJs,
-  FaHtml5,
-  FaGithub,
-  FaFigma,
   FaChalkboardTeacher,
   FaBrain
 } from "react-icons/fa";
 import { SiNextdotjs, SiExpress } from "react-icons/si";
-import { MdDesignServices, MdSpeed, MdGroup } from "react-icons/md";
+import { MdDesignServices, MdGroup } from "react-icons/md";
 import "./Skills.css";
 
 const Skills = () => {
   const codeSkills = [
     { name: "React", tooltip: "Creación de interfaces dinámicas mediante componentes reutilizables", color: "#f50062", icon: <FaReact /> },
     { name: "Next.js", tooltip: "Aplicaciones de alto rendimiento con renderizado optimizado (SSR/SSG)", color: "#7a0062", icon: <SiNextdotjs /> },
-    { name: "JavaScript", tooltip: "Desarrollo de lógica cliente y servidor moderna e interactiva", color: "#ffa033", icon: <FaJs /> },
     { name: "Express.js", tooltip: "Desarrollo de APIs robustas y escalables del lado del servidor", color: "#8a9200", icon: <SiExpress /> },
-    { name: "HTML & CSS", tooltip: "Estructuras semánticas accesibles y estilos visuales modernos y fluidos", color: "#f50062", icon: <FaHtml5 /> },
-    { name: "Git & GitHub", tooltip: "Gestión eficiente de versiones y colaboración técnica en equipo", color: "#7a0062", icon: <FaGithub /> },
   ];
 
   const designSkills = [
     { name: "Diseño UX/UI", tooltip: "Arquitectura de información y diseño de interfaces centradas en el usuario", color: "#f50062", icon: <MdDesignServices /> },
-    { name: "Figma", tooltip: "Creación de prototipos interactivos y sistemas de diseño colaborativos", color: "#ffa033", icon: <FaFigma /> },
-    { name: "Prototipado", tooltip: "Flujos de usuario rápidos y mockups interactivos de alta fidelidad", color: "#7a0062", icon: <MdSpeed /> },
     { name: "Metodologías Ágiles", tooltip: "Gestión de proyectos con entregas iterativas y mejora continua", color: "#8a9200", icon: <MdGroup /> },
     { name: "Docencia", tooltip: "Facilitación de aprendizaje y comunicación efectiva de conceptos técnicos", color: "#f50062", icon: <FaChalkboardTeacher /> },
     { name: "IA aplicada", tooltip: "Uso de herramientas de IA generativa para optimizar diseño y desarrollo", color: "#ffa033", icon: <FaBrain /> },
@@ -45,7 +36,7 @@ const Skills = () => {
             <p className="skills-column-title code-title">Código</p>
             <div className="skills-list">
               {codeSkills.map((skill, index) => (
-                <Tooltip key={index} title={skill.tooltip} placement="left">
+                <Tooltip key={index} title={skill.tooltip} placement="top">
                   <span
                     className="skill-span-item"
                     style={{ "--hover-color": skill.color }}
@@ -62,7 +53,7 @@ const Skills = () => {
             <p className="skills-column-title design-title">Diseño &amp; Proceso</p>
             <div className="skills-list">
               {designSkills.map((skill, index) => (
-                <Tooltip key={index} title={skill.tooltip} placement="right">
+                <Tooltip key={index} title={skill.tooltip} placement="top">
                   <span
                     className="skill-span-item"
                     style={{ "--hover-color": skill.color }}

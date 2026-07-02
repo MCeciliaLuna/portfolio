@@ -190,37 +190,4 @@
   transform: translateY(-3px);
 }
 
-/* Ticker Marquee */
-.hero-b-ticker-wrapper {
-  overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 16px 0;
-  background: var(--white);
-  width: 100%;
-}
 
-.hero-b-ticker-track {
-  display: flex;
-  width: max-content;
-  animation: cl-marquee 22s linear infinite;
-  font-family: var(--font-caveat);
-  font-size: 38px;
-  color: var(--purple-dark);
-  white-space: nowrap;
-}
-
-@media (max-width: 576px) {
-  .hero-b-ticker-track {
-    font-size: 28px;
-    animation-duration: 16s;
-  }
-}
-
-.ticker-item {
-  padding: 0 28px;
-}
-
-.ticker-separator {
-  font-size: 28px;
-}

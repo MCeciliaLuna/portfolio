@@ -60,28 +60,35 @@
 
 .skills-list {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
 }
 
 .skill-span-item {
-  font-family: var(--font-lora);
-  font-size: 27px;
-  color: var(--text-dark);
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
-  cursor: default;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  transition: color 0.3s, border-color 0.3s, transform 0.3s;
+  justify-content: flex-start;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  background-color: var(--white);
+  border: 1.5px solid rgba(122, 0, 98, 0.12);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.4s, 
+              box-shadow 0.4s,
+              background-color 0.4s;
+  will-change: width, box-shadow;
 }
 
-@media (max-width: 576px) {
-  .skill-span-item {
-    font-size: 22px;
-  }
+.skill-span-item:hover {
+  width: 240px;
+  border-color: var(--hover-color);
+  box-shadow: 0 10px 24px rgba(122, 0, 98, 0.08);
 }
 
 .skill-icon-prefix {
@@ -89,23 +96,49 @@
   align-items: center;
   justify-content: center;
   color: var(--text-mauve);
-  font-size: 24px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-@media (max-width: 576px) {
-  .skill-icon-prefix {
-    font-size: 20px;
-  }
-}
-
-.skill-span-item:hover {
-  color: var(--hover-color);
-  border-color: var(--hover-color);
-  transform: translateX(8px);
+  font-size: 28px;
+  width: 67px;
+  height: 67px;
+  flex-shrink: 0;
+  transition: color 0.4s ease, transform 0.4s ease;
 }
 
 .skill-span-item:hover .skill-icon-prefix {
   color: var(--hover-color);
   transform: scale(1.1);
+}
+
+.skill-name-text {
+  font-family: var(--font-lora);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-left: 6px;
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.skill-span-item:hover .skill-name-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 576px) {
+  .skill-span-item {
+    width: 60px;
+    height: 60px;
+  }
+  .skill-icon-prefix {
+    width: 57px;
+    height: 57px;
+    font-size: 24px;
+  }
+  .skill-span-item:hover {
+    width: 200px;
+  }
+  .skill-name-text {
+    font-size: 16px;
+  }
 }

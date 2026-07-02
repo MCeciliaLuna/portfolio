@@ -14,12 +14,6 @@ const Hero = () => {
     }
   };
 
-  const tickerItems = ["Diseño", "Código", "Experiencia", "Producto"];
-  const dotColors = ["#ffa033", "#f50062", "#c2cc00", "#ffa033"];
-
-  // Duplicate items for continuous marquee scroll
-  const marqueeItems = [...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems];
-
   return (
     <section id="inicio" className="hero-section-b">
       {/* Decorative blurred background shapes */}
@@ -71,23 +65,6 @@ const Hero = () => {
           >
             Trabajemos juntos
           </a>
-        </div>
-      </div>
-
-      {/* Marquee ticker */}
-      <div className="hero-b-ticker-wrapper">
-        <div className="hero-b-ticker-track">
-          {marqueeItems.map((item, index) => (
-            <React.Fragment key={index}>
-              <span className="ticker-item">{item}</span>
-              <span
-                className="ticker-separator"
-                style={{ color: dotColors[index % dotColors.length] }}
-              >
-                ✦
-              </span>
-            </React.Fragment>
-          ))}
         </div>
       </div>
     </section>
