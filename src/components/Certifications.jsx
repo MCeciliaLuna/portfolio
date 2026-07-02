@@ -220,9 +220,9 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
   const start = index / total;
   const targetScale = 1 - (total - index - 1) * 0.04;
 
-  const y = useTransform(progress, [start - 0.1, start], [400, 0]);
-  const scale = useTransform(progress, [start, 1], [1, targetScale]);
-  const overlayOpacity = useTransform(progress, [start, 1], [0, 0.6]);
+  const y = useTransform(progress, [start - 0.08, start], [800, 0], { clamp: true });
+  const scale = useTransform(progress, [start, 1], [1, targetScale], { clamp: true });
+  const overlayOpacity = useTransform(progress, [start, 1], [0, 0.6], { clamp: true });
 
   return (
     <motion.div
