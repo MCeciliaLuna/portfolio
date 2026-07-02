@@ -3,7 +3,7 @@ import { Modal } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import data from "../db/data.js";
 import "./Certifications.css";
 
@@ -12,13 +12,34 @@ const Certifications = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedCert, setSelectedCert] = useState(null);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef(null);
 
-  // 1. Framer Motion Scroll tracking (para escritorio)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  // 1. Scroll listener nativo para calcular progreso en escritorio de manera 100% fiable
+  useEffect(() => {
+    if (!isDesktop) return;
+
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const containerHeight = rect.height;
+      const windowHeight = window.innerHeight;
+
+      // El anclaje (pinning) inicia cuando el tope del contenedor está a 80px
+      const topOffset = 80;
+      const scrolled = topOffset - rect.top;
+      const maxScroll = containerHeight - (windowHeight - topOffset);
+
+      let progress = scrolled / maxScroll;
+      progress = Math.min(Math.max(progress, 0), 1);
+
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isDesktop]);
 
   // 2. Embla Carousel (para móviles)
   const autoplay = useRef(
@@ -82,7 +103,7 @@ const Certifications = () => {
   return (
     <>
       {isDesktop ? (
-        /* VISTA DE ESCRITORIO: Stacked Cards con Framer Motion (Vanilla CSS clases) */
+        /* VISTA DE ESCRITORIO: Stacked Cards con Scroll Pinning Nativo y Resortes */
         <div 
           ref={containerRef} 
           className="cert-sticky-scroll-container"
@@ -105,7 +126,7 @@ const Certifications = () => {
                   cert={cert}
                   index={index}
                   total={certifications.length}
-                  progress={scrollYProgress}
+                  progress={scrollProgress}
                   icon={icons[index % icons.length]}
                   onClick={() => handleImageClick(cert)}
                 />
@@ -215,20 +236,52 @@ const Certifications = () => {
   );
 };
 
-/* Componente de Tarjeta Stacked con Framer Motion (Vanilla CSS clases) */
+/* Componente de Tarjeta Stacked con Animación de Resorte Reactiva */
 const Card = ({ cert, index, total, progress, icon, onClick }) => {
   const start = index / total;
   const targetScale = 1 - (total - index - 1) * 0.04;
 
-  const y = useTransform(progress, [start - 0.08, start], [800, 0], { clamp: true });
-  const scale = useTransform(progress, [start, 1], [1, targetScale], { clamp: true });
-  const overlayOpacity = useTransform(progress, [start, 1], [0, 0.6], { clamp: true });
+  // Cálculo matemático del y vertical (Clamped de forma segura en JS)
+  let yVal = 800;
+  if (index === 0) {
+    yVal = 0; // La primera tarjeta inicia directamente en su lugar
+  } else if (progress >= start) {
+    yVal = 0;
+  } else if (progress >= start - 0.08) {
+    // Interpola progress de [start - 0.08, start] a [800, 0]
+    const p = (progress - (start - 0.08)) / 0.08;
+    yVal = 800 * (1 - p);
+  }
+
+  // Cálculo matemático de la escala (Clamped de forma segura en JS)
+  let scaleVal = 1;
+  if (progress >= start) {
+    // Interpola progress de [start, 1] a [1, targetScale]
+    const p = (progress - start) / (1 - start);
+    scaleVal = 1 - p * (1 - targetScale);
+  }
+
+  // Cálculo matemático de la opacidad de oscurecimiento
+  let overlayOpacityVal = 0;
+  if (progress >= start) {
+    // Interpola progress de [start, 1] a [0, 0.6]
+    const p = (progress - start) / (1 - start);
+    overlayOpacityVal = p * 0.6;
+  }
 
   return (
     <motion.div
+      animate={{
+        y: yVal,
+        scale: scaleVal,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        mass: 0.8,
+      }}
       style={{
-        y: index === 0 ? 0 : y,
-        scale,
         zIndex: index,
         top: `calc(5% + ${index * 16}px)`,
       }}
@@ -237,7 +290,8 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
     >
       {/* Capa de opacidad interactiva para profundidad */}
       <motion.div
-        style={{ opacity: overlayOpacity }}
+        animate={{ opacity: overlayOpacityVal }}
+        transition={{ duration: 0.2 }}
         className="cert-card-overlay"
       />
 
