@@ -1,414 +1,231 @@
-.certifications-section {
+.certifications-section-custom {
+  scroll-margin-top: 80px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 120px 40px;
+}
+
+@media (max-width: 768px) {
+  .certifications-section-custom {
+    padding: 80px 20px;
+  }
+}
+
+.cert-header {
+  margin: 0 0 66px;
+}
+
+.cert-subtitle {
+  font-family: var(--font-caveat);
+  font-size: 34px;
+  color: var(--purple-dark);
+  margin: 0 0 4px;
+}
+
+.cert-title {
+  font-family: var(--font-lora);
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--text-dark);
+}
+
+.certifications-carousel-wrapper {
   position: relative;
-  overflow: hidden;
-}
-
-.certifications-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(184, 208, 235, 0.9) 0%,
-    rgba(166, 99, 204, 0.6) 50%,
-    rgba(185, 250, 248, 0.8) 100%
-  );
-  z-index: 1;
-}
-
-.certifications-section .container {
-  position: relative;
-  z-index: 2;
-}
-
-.section-title {
-  font-weight: 10;
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 3rem;
-  color: var(--white);
-  font-family: var(--font-title);
-}
-
-.certifications-wrapper {
-  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  gap: 20px;
+}
+
+/* Embla Carousel styles */
+.embla-viewport {
   overflow: hidden;
   width: 100%;
+  padding: 30px 10px 40px 10px; /* spacing for polaroid tilt and hover shadow */
 }
 
-.scroll-button {
-  flex-shrink: 0;
-  width: 50px !important;
-  height: 50px !important;
-  background: transparent !important;
-  border: none !important;
-  color: white !important;
-  z-index: 10;
-  /* Desactivar todos los efectos visuales */
-  transition: none !important;
-  box-shadow: none !important;
-}
-
-.scroll-button:hover,
-.scroll-button:focus,
-.scroll-button:active {
-  background: transparent !important;
-  border: none !important;
-  color: white !important;
-  box-shadow: none !important;
-  transform: none !important;
-  outline: none !important;
-}
-
-/* Desactivar el efecto ripple de Ant Design */
-.scroll-button::after,
-.scroll-button .ant-wave,
-.scroll-button .ant-click-animating-node {
-  display: none !important;
-}
-
-/* Desactivar animaciones wave globalmente para estos botones */
-.scroll-button.ant-btn {
-  overflow: hidden !important;
-}
-
-/* Asegurar que no hay efectos de click */
-.scroll-button,
-.scroll-button.ant-btn,
-.scroll-button:not(.ant-btn-dangerous) {
-  animation: none !important;
-}
-
-.scroll-button .anticon {
-  font-size: 1.3rem !important;
-}
-
-/* Embla Carousel Styles */
-.embla {
+.embla-container {
   display: flex;
-  overflow: hidden;
-  width: 100%;
-  max-width: calc(100vw - 80px);
+  touch-action: pan-y pinch-zoom;
+  margin-left: -20px;
 }
 
-.embla__container {
-  display: flex;
-  padding: 1rem 0 2rem 0;
-  gap: 0; /* Eliminar gap para usar solo margin */
+.embla-slide-item {
+  flex: 0 0 33.333%;
+  min-width: 0;
+  padding-left: 20px;
 }
 
-.embla__slide {
-  flex: 0 0 auto;
-  min-width: 400px;
-  max-width: 400px;
-  margin-right: 2rem; /* Espacio consistente entre cards */
-}
-
-/* Asegurar que el último slide también tenga margen para el loop */
-.embla__slide:last-child {
-  margin-right: 2rem;
-}
-
-/* Media queries para diferentes tamaños de pantalla */
-@media (min-width: 1400px) {
-  .embla__slide {
-    min-width: 380px;
-    max-width: 380px;
-    margin-right: 2rem;
+@media (max-width: 991px) {
+  .embla-slide-item {
+    flex: 0 0 50%;
   }
 }
 
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .embla__slide {
-    min-width: 360px;
-    max-width: 360px;
-    margin-right: 2rem;
+@media (max-width: 768px) {
+  .embla-slide-item {
+    flex: 0 0 100%;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .embla__slide {
-    min-width: 340px;
-    max-width: 340px;
-    margin-right: 2rem;
-  }
-}
-
-/* Mantener estilos existentes para compatibilidad */
-.certifications-grid {
-  display: flex;
-  gap: 0; /* Eliminar gap para consistencia */
-  padding: 1rem 0 2rem 0;
-}
-
-.certifications-grid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
-}
-
-.certification-card {
-  min-width: 400px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(111, 45, 189, 0.12);
-  border: none;
+/* Polaroid Card Styles */
+.polaroid-card {
   background: var(--white);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.certification-image-wrapper {
-  position: relative;
+  padding: 16px 16px 24px 16px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  transform: rotate(var(--rotation, 0deg));
+  box-shadow: 0 18px 44px rgba(122, 0, 98, 0.1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s;
   cursor: pointer;
-  overflow: hidden;
-  height: 280px;
-  background: #f8f9fa;
 }
 
-.certification-image {
+.polaroid-card:hover {
+  transform: rotate(0deg) translateY(-10px);
+  box-shadow: 0 24px 60px rgba(122, 0, 98, 0.22);
+}
+
+.polaroid-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #eae8e4;
+  border-radius: 2px;
+}
+
+.polaroid-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s ease;
-  padding: 10px;
+  transition: transform 0.5s ease;
 }
 
-.image-overlay {
+.polaroid-card:hover .polaroid-image {
+  transform: scale(1.03);
+}
+
+.polaroid-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+  background: rgba(122, 0, 98, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 1.1rem;
-  font-family: var(--font-body);
-  backdrop-filter: blur(2px);
-  background: rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s;
 }
 
-.image-overlay span {
-  width: 60%;
-  text-align: center;
-  background-color: var(--secondary-purple);
-  padding: 8px;
-  border-radius: 55px;
-}
-
-.certification-image-wrapper:hover .image-overlay {
+.polaroid-card:hover .polaroid-overlay {
   opacity: 1;
 }
 
-.certification-image-wrapper:hover .certification-image {
-  transform: scale(1.02);
+.polaroid-overlay span {
+  color: var(--white);
+  font-family: var(--font-caveat);
+  font-size: 26px;
+  font-weight: 700;
 }
 
-.certification-info {
+.polaroid-caption {
   text-align: center;
-  padding: 0.5rem 0;
+  margin-top: 20px;
 }
 
-.certification-info .institution {
-  font-size: 1.1rem;
-  color: var(--primary-purple);
-  font-weight: 500;
-  margin: 0.5rem 0;
-  font-family: var(--font-body);
+.polaroid-institution {
+  font-family: var(--font-caveat);
+  font-size: 26px;
+  margin: 0 0 2px;
 }
 
-.certification-info .year {
-  font-size: 1rem;
-  color: var(--text-light);
-  margin: 0;
-  font-family: var(--font-body);
-}
-
-/* Modal Styles */
-.certification-modal .ant-modal-content {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(111, 45, 189, 0.3);
-  padding: 0 0 1rem 0;
-}
-
-.modal-content {
-  text-align: center;
-}
-
-.modal-image {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  background: #f8f9fa;
-  padding: 10px;
-}
-
-.modal-info h3 {
-  font-family: var(--font-body) !important;
-  color: var(--primary-purple);
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+.polaroid-cert-title {
+  font-family: var(--font-lora);
+  font-size: 17px;
   font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin: 0 0 4px;
+  height: 44px; /* fixed height to align years */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.modal-institution {
-  font-size: 1.2rem;
-  color: var(--secondary-purple);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-body);
-}
-
-.modal-year {
-  font-size: 1rem;
-  color: var(--text-light);
+.polaroid-year {
+  font-size: 13px;
+  color: var(--text-mauve);
+  letter-spacing: 0.14em;
   margin: 0;
-  font-family: var(--font-body);
 }
 
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .certifications-wrapper {
-    gap: 0;
-    padding: 0;
-    justify-content: center;
-  }
-
-  /* Ocultar botones en tablets y móviles */
-  .scroll-button {
-    display: none !important;
-  }
-
-  .embla {
-    max-width: calc(100vw - 40px);
-  }
-
-  .embla__container {
-    padding: 0.5rem 0 1.5rem 0;
-  }
-
-  .embla__slide {
-    min-width: 340px;
-    max-width: 340px;
-    margin-right: 1.5rem;
-  }
-
-  .certification-card {
-    min-width: 340px;
-  }
-
-  .certification-image-wrapper {
-    height: 240px;
-  }
-
-  .certification-modal {
-    margin: 0;
-  }
-
-  .modal-image {
-    max-height: 300px;
-  }
+/* Nav Buttons */
+.cert-nav-btn {
+  background: var(--white);
+  border: 1.5px solid rgba(122, 0, 98, 0.2);
+  color: var(--purple-dark);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .certifications-wrapper {
-    gap: 0;
-    padding: 0;
-  }
-
-  .embla {
-    max-width: calc(100vw - 20px);
-  }
-
-  .embla__container {
-    padding: 0 10px;
-  }
-
-  .embla__slide {
-    min-width: calc(100vw - 60px);
-    max-width: calc(100vw - 60px);
-    margin-right: 1rem; /* Espacio consistente en móvil */
-  }
-
-  .certification-card {
-    min-width: calc(100vw - 60px);
-    max-width: calc(100vw - 60px);
-  }
-
-  .certification-image-wrapper {
-    height: 200px;
-  }
-
-  .certification-info .institution {
-    font-size: 1rem;
-  }
-
-  .certification-info .year {
-    font-size: 0.9rem;
-  }
+.cert-nav-btn:hover {
+  background: var(--purple-dark);
+  color: var(--white);
+  border-color: var(--purple-dark);
 }
 
-/* iPhone SE y dispositivos extra pequeños */
-@media (max-width: 375px) {
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
+/* Modal styling */
+.certification-modal-custom .ant-modal-content {
+  background-color: var(--bg-main) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+}
 
-  .embla {
-    max-width: calc(100vw - 10px);
-  }
+.cert-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-  .embla__container {
-    padding: 0 5px;
-  }
+.cert-modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
 
-  .embla__slide {
-    min-width: calc(100vw - 40px);
-    max-width: calc(100vw - 40px);
-    margin-right: 0.8rem; /* Espacio consistente en pantallas pequeñas */
-  }
+.cert-modal-details {
+  padding-top: 10px;
+}
 
-  .certification-card {
-    min-width: calc(100vw - 40px);
-    max-width: calc(100vw - 40px);
-  }
+.cert-modal-institution {
+  font-family: var(--font-caveat);
+  font-size: 28px;
+  color: var(--accent-pink);
+}
 
-  .certification-image-wrapper {
-    height: 180px;
-  }
+.cert-modal-title {
+  font-family: var(--font-lora);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 4px 0 8px;
+  color: var(--text-dark);
+}
 
-  .certification-info {
-    padding: 1rem;
-  }
-
-  .certification-info .institution {
-    font-size: 0.9rem;
-  }
-
-  .certification-info .year {
-    font-size: 0.8rem;
-  }
+.cert-modal-year {
+  font-size: 14px;
+  color: var(--text-mauve);
+  letter-spacing: 0.1em;
 }

@@ -1,87 +1,154 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { Menu } from "antd";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import data from "../db/data.js";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [current, setCurrent] = useState("hero");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("inicio");
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Scroll event for styling
   useEffect(() => {
-    let ticking = false;
-    
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
+      setIsScrolled(window.scrollY > 24);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Set current page based on location
+  // Intersection Observer to highlight active link
   useEffect(() => {
-    if (location.pathname === '/blog') {
-      setCurrent('blog');
-    } else {
-      setCurrent('hero');
-    }
+    if (location.pathname !== "/") return;
+
+    const sections = ["inicio", "sobre", "certificaciones", "skills", "proyectos", "contacto"];
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, [location.pathname]);
 
-  const handleMenuClick = useCallback((e) => {
-    const clickedItem = data.navigation.find(item => 
-      item.href.replace("#", "").replace("/", "") === e.key
-    );
-    
-    setCurrent(e.key);
-    
-    if (clickedItem && clickedItem.isRoute) {
-      // Navigate to different route
-      navigate(clickedItem.href);
-    } else if (location.pathname === '/') {
-      // Scroll to section on home page
-      const element = document.getElementById(e.key);
+  const handleLinkClick = (e, href, isRoute) => {
+    e.preventDefault();
+    setMenuOpen(false);
+
+    if (isRoute) {
+      navigate(href);
+    } else if (location.pathname === "/") {
+      const id = href.replace("#", "");
+      const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Navigate to home and then scroll to section
-      navigate('/', { replace: true });
+      navigate("/");
       setTimeout(() => {
-        const element = document.getElementById(e.key);
+        const id = href.replace("#", "");
+        const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }
-  }, [location.pathname, navigate]);
+  };
 
-  const items = useMemo(() => 
-    data.navigation.map((item) => ({
-      key: item.isRoute ? item.href.replace("/", "") : item.href.replace("#", ""),
-      label: item.label,
-    })), []
-  );
+  const isHome = location.pathname === "/";
 
   return (
-    <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
-      <div className="navbar-container">
-        <Menu
-          onClick={handleMenuClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          items={items}
-          className="navbar-menu"
-        />
+    <nav className={`navbar-custom ${isScrolled ? "scrolled" : ""}`}>
+      <div className="navbar-brand">
+        <a href="#inicio" onClick={(e) => handleLinkClick(e, "#inicio", false)}>
+          <span className="brand-name">Cecilia Luna</span>
+          <span className="brand-subtitle">Frontend · UX/UI</span>
+        </a>
       </div>
+
+      {!isHome ? (
+        <button
+          className="navbar-back-button"
+          onClick={() => navigate("/")}
+          aria-label="Volver al inicio"
+        >
+          <ArrowLeftOutlined /> Volver atrás
+        </button>
+      ) : (
+        <>
+          <div className={`navbar-menu-container ${menuOpen ? "open" : ""}`}>
+            <a
+              href="#inicio"
+              className={`navbar-link ${activeSection === "inicio" ? "active" : ""}`}
+              onClick={(e) => handleLinkClick(e, "#inicio", false)}
+            >
+              Inicio
+            </a>
+            <a
+              href="#sobre"
+              className={`navbar-link ${activeSection === "sobre" ? "active" : ""}`}
+              onClick={(e) => handleLinkClick(e, "#sobre", false)}
+            >
+              Sobre mí
+            </a>
+            <a
+              href="#certificaciones"
+              className={`navbar-link ${activeSection === "certificaciones" ? "active" : ""}`}
+              onClick={(e) => handleLinkClick(e, "#certificaciones", false)}
+            >
+              Certificaciones
+            </a>
+            <a
+              href="#skills"
+              className={`navbar-link ${activeSection === "skills" ? "active" : ""}`}
+              onClick={(e) => handleLinkClick(e, "#skills", false)}
+            >
+              Skills
+            </a>
+            <a
+              href="#proyectos"
+              className={`navbar-link ${activeSection === "proyectos" ? "active" : ""}`}
+              onClick={(e) => handleLinkClick(e, "#proyectos", false)}
+            >
+              Proyectos
+            </a>
+            <a
+              href="#contacto"
+              className="navbar-cta-button"
+              onClick={(e) => handleLinkClick(e, "#contacto", false)}
+            >
+              Trabajemos
+            </a>
+          </div>
+
+          <button
+            className={`navbar-burger-button ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menú de navegación"
+            aria-expanded={menuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </>
+      )}
     </nav>
   );
 };

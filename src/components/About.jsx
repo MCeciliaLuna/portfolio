@@ -1,33 +1,38 @@
 import React from "react";
-import { Tag, Row, Col } from "antd";
 import data from "../db/data.js";
 import "./About.css";
 
 const About = () => {
   const { profile, tags } = data;
 
-  return (
-    <section id="about" className="section about-section">
-      <div className="container">
-        <Row gutter={[40, 40]} align="middle">
-          <Col xs={24} lg={24}>
-            <div className="about-content">
-              <div className="about-text">
-                <p>{profile.description}</p>
-              </div>
+  const tagColors = ["#f50062", "#ffa033", "#7a0062", "#8a9200", "#c98a00"];
 
-              <div className="about-tags">
-                {tags.map((tag, index) => (
-                  <div key={index} style={{ display: "inline-block" }}>
-                    <Tag className="custom-tag" color="purple">
-                      {tag}
-                    </Tag>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Col>
-        </Row>
+  return (
+    <section id="sobre" className="about-section-custom">
+      <div className="about-container">
+        <div data-reveal="left" className="about-title-col">
+          <p className="about-subtitle">sobre mí</p>
+          <h2 className="about-title">
+            Curiosa, creativa y <span className="about-highlight-border">obsesionada con el detalle.</span>
+          </h2>
+        </div>
+        
+        <div data-reveal="right" data-delay="120" className="about-details-col">
+          <p className="about-description">
+            {profile.description}
+          </p>
+          <div className="about-tags-wrapper">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="about-tag-item"
+                style={{ color: tagColors[index % tagColors.length] }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Modal, Card, Button } from "antd";
+import { Modal } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -12,44 +12,40 @@ const Certifications = () => {
   const [selectedCert, setSelectedCert] = useState(null);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
-  // Configuración de Embla Carousel
   const autoplay = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
-      align: isDesktop ? "start" : "center", // start en desktop, center en móvil
+      align: isDesktop ? "start" : "center",
       containScroll: false,
       skipSnaps: false,
       dragFree: false,
-      slidesToScroll: 1, // Siempre de a 1 para mejor control
+      slidesToScroll: 1,
     },
     [autoplay.current]
   );
 
-  // Detectar cambios en el tamaño de pantalla
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 768);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Configurar funciones de navegación de Embla
   const scrollPrev = () => {
     if (emblaApi) {
-      autoplay.current.stop(); // Detener autoplay al usar botones
+      autoplay.current.stop();
       emblaApi.scrollPrev();
     }
   };
 
   const scrollNext = () => {
     if (emblaApi) {
-      autoplay.current.stop(); // Detener autoplay al usar botones
+      autoplay.current.stop();
       emblaApi.scrollNext();
     }
   };
@@ -64,77 +60,83 @@ const Certifications = () => {
     setSelectedCert(null);
   };
 
-  return (
-    <section id="certifications" className="section certifications-section">
-      <div className="container flex-column">
-        <h2 className="section-title companies-title">Certificaciones</h2>
+  const getRotationStyle = (index) => {
+    const rotations = ["-2.5deg", "1.8deg", "-1.5deg", "2deg", "-2deg"];
+    return rotations[index % rotations.length];
+  };
 
-        <div className="certifications-wrapper">
+  const tagColors = ["#f50062", "#7a0062", "#ffa033", "#8a9200", "#c98a00"];
+
+  return (
+    <section id="certificaciones" className="certifications-section-custom">
+      <div className="container flex-column">
+        <div data-reveal="up" className="cert-header">
+          <p className="cert-subtitle">formación</p>
+          <h2 className="cert-title">Certificaciones</h2>
+        </div>
+
+        <div className="certifications-carousel-wrapper">
           {isDesktop && (
-            <Button
-              className="scroll-button scroll-button-left"
-              icon={<LeftOutlined />}
+            <button
+              className="cert-nav-btn cert-nav-btn-left"
               onClick={scrollPrev}
-              shape="circle"
-              size="large"
-              ghost
-            />
+              aria-label="Anterior certificado"
+            >
+              <LeftOutlined />
+            </button>
           )}
 
-          <div className="embla" ref={emblaRef}>
-            <div className="certifications-grid embla__container">
+          <div className="embla-viewport" ref={emblaRef}>
+            <div className="embla-container">
               {certifications.map((cert, index) => (
-                <div key={cert.id} className="embla__slide">
-                  <Card
-                    className="certification-card"
-                    cover={
-                      <div
-                        className="certification-image-wrapper"
-                        onClick={() => handleImageClick(cert)}
-                      >
-                        <img
-                          src={cert.imageUrl}
-                          alt={cert.title}
-                          className="certification-image"
-                          loading="lazy"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.parentElement.style.backgroundColor =
-                              "#6f2dbd";
-                            e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem;">${cert.title}</div>`;
-                          }}
-                        />
-                        <div className="image-overlay">
-                          <span>Ver certificado</span>
-                        </div>
-                      </div>
-                    }
-                    styles={{ body: { padding: "16px" } }}
+                <div key={cert.id} className="embla-slide-item">
+                  <figure
+                    className="polaroid-card"
+                    style={{
+                      "--rotation": getRotationStyle(index),
+                    }}
+                    onClick={() => handleImageClick(cert)}
                   >
-                    <Card.Meta
-                      title={cert.title}
-                      description={
-                        <div className="certification-info">
-                          <p className="institution">{cert.institution}</p>
-                          <p className="year">{cert.year}</p>
-                        </div>
-                      }
-                    />
-                  </Card>
+                    <div className="polaroid-image-wrapper">
+                      <img
+                        src={cert.imageUrl}
+                        alt={cert.title}
+                        className="polaroid-image"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                          e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
+                          e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.1rem; text-align: center; padding: 20px; font-family: var(--font-lora);">${cert.title}</div>`;
+                        }}
+                      />
+                      <div className="polaroid-overlay">
+                        <span>Ver certificado ✦</span>
+                      </div>
+                    </div>
+                    <figcaption className="polaroid-caption">
+                      <p
+                        className="polaroid-institution"
+                        style={{ color: tagColors[index % tagColors.length] }}
+                      >
+                        {cert.institution}
+                      </p>
+                      <p className="polaroid-cert-title">{cert.title}</p>
+                      <p className="polaroid-year">{cert.year}</p>
+                    </figcaption>
+                  </figure>
                 </div>
               ))}
             </div>
           </div>
 
           {isDesktop && (
-            <Button
-              className="scroll-button scroll-button-right"
-              icon={<RightOutlined />}
+            <button
+              className="cert-nav-btn cert-nav-btn-right"
               onClick={scrollNext}
-              shape="circle"
-              size="large"
-              ghost
-            />
+              aria-label="Siguiente certificado"
+            >
+              <RightOutlined />
+            </button>
           )}
         </div>
 
@@ -143,25 +145,25 @@ const Certifications = () => {
           onCancel={handleModalClose}
           footer={null}
           width={800}
-          className="certification-modal"
+          className="certification-modal-custom"
           centered
         >
           {selectedCert && (
-            <div className="modal-content">
+            <div className="cert-modal-body">
               <img
                 src={selectedCert.imageUrl}
                 alt={selectedCert.title}
-                className="modal-image"
+                className="cert-modal-img"
                 onError={(e) => {
                   e.target.style.display = "none";
-                  e.target.parentElement.style.backgroundColor = "#6f2dbd";
-                  e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem; text-align: center; padding: 20px;">${selectedCert.title}</div>`;
+                  e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
+                  e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem; text-align: center; padding: 40px; font-family: var(--font-lora);">${selectedCert.title}</div>`;
                 }}
               />
-              <div className="modal-info">
-                <h3>{selectedCert.title}</h3>
-                <p className="modal-institution">{selectedCert.institution}</p>
-                <p className="modal-year">{selectedCert.year}</p>
+              <div className="cert-modal-details">
+                <span className="cert-modal-institution">{selectedCert.institution}</span>
+                <h3 className="cert-modal-title">{selectedCert.title}</h3>
+                <span className="cert-modal-year">{selectedCert.year}</span>
               </div>
             </div>
           )}

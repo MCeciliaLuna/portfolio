@@ -1,3 +1,4 @@
+import { useScrollReveal } from "../utils/useScrollReveal";
 import SkipNavigation from "../components/SkipNavigation";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
@@ -11,6 +12,8 @@ import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
 
 const HomePage = () => {
+  useScrollReveal();
+
   return (
     <div className="home-page">
       <SkipNavigation />

@@ -255,7 +255,8 @@ const data = {
     },
     {
       "label": "Contacto",
-      "href": "#contact"
+      "href": "/contact",
+      "isRoute": true
     }
   ]
 };

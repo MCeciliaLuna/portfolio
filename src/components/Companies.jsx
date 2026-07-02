@@ -1,40 +1,45 @@
-import { Row, Col } from "antd";
+import React from "react";
 import data from "../db/data.js";
 import "./Companies.css";
 
 const Companies = () => {
   const { companies } = data;
 
-  return (
-    <section id="companies" className="section companies-section">
-      <div className="container flex-column">
-        <h2 className="section-title companies-title">Empresas</h2>
+  const dotColors = ["#ffa033", "#c2cc00", "#ffe15c", "#f50062"];
 
-        <div>
-          <Row gutter={[40, 40]} justify="center" align="middle">
-            {companies.map((company, index) => (
-              <Col key={company.id} xs={12} sm={8} md={6} lg={6} xl={6}>
-                <a
-                  href={company.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="company-link"
-                  aria-label={`Visitar sitio web de ${company.name}`}
-                >
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="company-logo"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.parentElement.style.backgroundColor = "#6f2dbd";
-                      e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1rem; text-align: center; padding: 10px;">${company.name}</div>`;
-                    }}
-                  />
-                </a>
-              </Col>
-            ))}
-          </Row>
+  // Duplicate the companies list to ensure continuous scrolling
+  const marqueeItems = [...companies, ...companies, ...companies];
+
+  return (
+    <section id="empresas" className="companies-section-custom">
+      <p data-reveal="up" className="companies-subtitle">confiaron en mí</p>
+      <h2 data-reveal="up" data-delay="80" className="companies-title">
+        Empresas &amp; colaboraciones
+      </h2>
+      
+      <div className="companies-marquee-wrapper">
+        <div className="companies-marquee-track">
+          {marqueeItems.map((company, index) => (
+            <React.Fragment key={index}>
+              <div className="marquee-company-logo-wrapper">
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className="marquee-company-logo"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    e.target.parentElement.innerHTML = `<span class="marquee-company-name-fallback">${company.name}</span>`;
+                  }}
+                />
+              </div>
+              <span
+                className="marquee-separator"
+                style={{ color: dotColors[index % dotColors.length] }}
+              >
+                •
+              </span>
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </section>

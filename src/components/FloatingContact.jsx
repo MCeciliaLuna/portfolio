@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import { FloatButton, Modal } from "antd";
-import {
-  MessageOutlined,
-  LinkedinOutlined,
-  GithubOutlined,
-} from "@ant-design/icons";
+import { MessageOutlined } from "@ant-design/icons";
 import ContactForm from "./ContactForm";
-import data from "../db/data.js";
 import "./FloatingContact.css";
 
 const FloatingContact = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const { profile } = data;
 
   const handleOpenModal = () => {
     setModalVisible(true);
@@ -33,8 +27,8 @@ const FloatingContact = () => {
         style={{
           right: 34,
           bottom: 34,
-          backgroundColor: "#6f2dbd",
-          borderColor: "#6f2dbd",
+          backgroundColor: "var(--accent-pink)",
+          borderColor: "var(--accent-pink)",
         }}
         tooltip={{
           title: "¡Trabajemos Juntos!",
@@ -51,11 +45,10 @@ const FloatingContact = () => {
         footer={null}
         width={600}
         className="floating-contact-modal"
-        closable={false}
         centered
       >
         <div className="floating-modal-content">
-          <ContactForm className="contact-form" onSuccess={handleFormSuccess} />
+          <ContactForm onSuccess={handleFormSuccess} buttonText="Enviar mensaje →" />
         </div>
       </Modal>
     </>

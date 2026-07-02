@@ -12,12 +12,14 @@ const MePage = () => {
 
   return (
     <div className="me-page">
-      <section>
-        <ProfileAvatar
-          src={profile.profileImage}
-          name={profile.name}
-          size={200}
-        />
+      <section className="me-avatar-section">
+        <div className="me-avatar-dashed">
+          <ProfileAvatar
+            src={profile.profileImage}
+            name={profile.name}
+            size={180}
+          />
+        </div>
       </section>
 
       <section className="me-name-section">
@@ -26,7 +28,7 @@ const MePage = () => {
 
       <section className="me-buttons-section">
         <div className="me-social-buttons">
-          {socialMedia.map((social, index) => (
+          {socialMedia.map((social) => (
             <div key={social.id}>
               <Button
                 icon={<DynamicIcon iconName={social.icon} />}
@@ -34,6 +36,7 @@ const MePage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="icon-button"
+                aria-label={`Ver ${social.title}`}
               ></Button>
             </div>
           ))}
@@ -42,7 +45,7 @@ const MePage = () => {
 
       <section className="me-links-section">
         <div className="website-buttons">
-          {websites.map((website, index) => (
+          {websites.map((website) => (
             <div key={website.id}>
               <Button
                 type="default"

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Row, Col, Card, Button } from "antd";
+import React, { useState } from "react";
 import {
   GlobalOutlined,
   GithubOutlined,
@@ -13,162 +12,179 @@ const Projects = () => {
   const { projects } = data;
   const [visibleCount, setVisibleCount] = useState(6);
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   const handleShowMore = () => {
     setVisibleCount((prev) => prev + 3);
   };
 
   const handleShowLess = () => {
     setVisibleCount(6);
-    setTimeout(() => {
-      scrollToProjects();
-    }, 100);
+    const projectsSection = document.getElementById("proyectos");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const visibleProjects = projects.slice(0, visibleCount);
   const hasMore = visibleCount < projects.length;
   const showingAll = visibleCount >= projects.length && projects.length > 6;
 
+  const formatIndex = (index) => {
+    return String(index + 1).padStart(2, "0");
+  };
+
+  const getProjectTags = (project) => {
+    if (project.figmaUrl) return ["UX/UI", "Figma"];
+    if (project.title.toLowerCase().includes("api")) return ["Backend", "Express"];
+    if (project.title.toLowerCase().includes("e-commerce")) return ["E-Commerce", "React"];
+    if (project.description.toLowerCase().includes("linktree")) return ["Landing", "React"];
+    if (project.title.toLowerCase().includes("panel")) return ["Producto", "Frontend"];
+    if (project.description.toLowerCase().includes("react")) return ["Frontend", "React"];
+    if (project.description.toLowerCase().includes("prompt")) return ["Producto", "Prompt Eng."];
+    return ["Frontend", "Web App"];
+  };
+
+  const getColorClass = (index) => {
+    const classes = ["pink-theme", "orange-theme", "purple-theme", "green-theme"];
+    return classes[index % classes.length];
+  };
+
+  const getPrimaryLink = (project) => {
+    return project.liveUrl || project.figmaUrl || project.repoUrl || project.youtubeUrl || "#";
+  };
+
   return (
-    <section
-      id="projects"
-      className="section projects-section"
-      aria-labelledby="projects-heading"
-    >
+    <section id="proyectos" className="projects-section-custom">
       <div className="container flex-column">
-        <h2 id="projects-heading" className="section-title title-projects">
-          Proyectos
-        </h2>
+        <div data-reveal="up" className="projects-header">
+          <p className="projects-subtitle">trabajo seleccionado</p>
+          <h2 className="projects-title">Proyectos</h2>
+        </div>
 
-        <Row
-          gutter={[30, 30]}
-          style={{ justifyContent: "center" }}
-          role="list"
-          aria-label="Lista de proyectos"
-        >
-          {visibleProjects.map((project, index) => (
-            <Col key={project.id} xs={24} sm={12} lg={8} role="listitem">
-              <div>
-                <Card
-                  className="project-card"
-                  cover={
-                    <div className="project-image-container">
-                      <img
-                        alt={project.title}
-                        src={project.imageUrl}
-                        className="project-image"
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                          e.target.parentElement.style.backgroundColor =
-                            "#6f2dbd";
-                          e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.1rem; text-align: center; padding: 20px;">${project.title}</div>`;
-                        }}
-                      />
-                      <div className="project-overlay">
-                        <div className="project-links">
-                          {project.figmaUrl ? (
-                            <a
-                              href={project.figmaUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="project-link"
-                              aria-label="Ver diseño en Figma"
-                            >
-                              <FaFigma className="link-icon" />
-                            </a>
-                          ) : (
-                            <>
-                              {project.liveUrl && (
-                                <a
-                                  href={project.liveUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="project-link"
-                                  aria-label="Ver demo en vivo"
-                                >
-                                  <GlobalOutlined className="link-icon" />
-                                </a>
-                              )}
-                              {project.repoUrl && (
-                                <a
-                                  href={project.repoUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="project-link"
-                                  aria-label="Ver repositorio en GitHub"
-                                >
-                                  <GithubOutlined className="link-icon" />
-                                </a>
-                              )}
-                              {project.youtubeUrl && (
-                                <a
-                                  href={project.youtubeUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="project-link youtube-link"
-                                  aria-label="Ver video en YouTube"
-                                >
-                                  <YoutubeOutlined className="link-icon" />
-                                </a>
-                              )}
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  }
-                  styles={{ body: { padding: "16px" } }}
-                >
-                  <Card.Meta
-                    title={
-                      <span className="project-title">{project.title}</span>
-                    }
-                    description={
-                      <p className="project-description">
-                        {project.description}
-                      </p>
-                    }
+        <div className="projects-list-wrapper">
+          {visibleProjects.map((project, index) => {
+            const themeClass = getColorClass(index);
+            const tags = getProjectTags(project);
+            const primaryLink = getPrimaryLink(project);
+
+            return (
+              <div
+                key={project.id}
+                data-reveal="up"
+                className={`project-row-item ${themeClass}`}
+              >
+                <span className="project-row-number">
+                  {formatIndex(index)}
+                </span>
+                
+                <div className="project-row-title-block">
+                  <h3 className="project-row-name">{project.title}</h3>
+                  <div className="project-row-tags">
+                    {tags.map((tag, idx) => (
+                      <React.Fragment key={idx}>
+                        {idx > 0 && <span className="tag-separator">·</span>}
+                        <span className="tag-span">{tag}</span>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+
+                <p className="project-row-desc">{project.description}</p>
+                
+                <div className="project-row-thumb-wrapper">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="project-row-thumb"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
+                      e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 0.8rem; font-family: var(--font-lora); text-align: center; padding: 5px;">${project.title}</div>`;
+                    }}
                   />
-                </Card>
-              </div>
-            </Col>
-          ))}
-        </Row>
+                </div>
 
-        <div
-          style={{ textAlign: "center", marginTop: "40px" }}
-          role="region"
-          aria-live="polite"
-          aria-atomic="true"
-        >
+                <div className="project-row-links-wrapper">
+                  <div className="project-row-social-links" onClick={(e) => e.stopPropagation()}>
+                    {project.figmaUrl && (
+                      <a
+                        href={project.figmaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-row-link-icon"
+                        aria-label="Ver en Figma"
+                      >
+                        <FaFigma />
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-row-link-icon"
+                        aria-label="Ver demo en vivo"
+                      >
+                        <GlobalOutlined />
+                      </a>
+                    )}
+                    {project.repoUrl && (
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-row-link-icon"
+                        aria-label="Ver repositorio"
+                      >
+                        <GithubOutlined />
+                      </a>
+                    )}
+                    {project.youtubeUrl && (
+                      <a
+                        href={project.youtubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-row-link-icon youtube-icon"
+                        aria-label="Ver video explicativo"
+                      >
+                        <YoutubeOutlined />
+                      </a>
+                    )}
+                  </div>
+                  <a
+                    href={primaryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-row-arrow-link"
+                    aria-label={`Ver detalles de ${project.title}`}
+                  >
+                    <span className="row-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="projects-actions-wrapper" role="region" aria-live="polite">
           {hasMore && (
-            <Button
-              type="primary"
-              size="large"
+            <button
               onClick={handleShowMore}
-              className="show-more-button"
+              className="projects-show-btn"
               aria-label={`Ver más proyectos. Mostrando ${visibleCount} de ${projects.length}`}
             >
-              <strong>Ver más</strong>
-            </Button>
+              Ver más proyectos
+            </button>
           )}
 
           {showingAll && (
-            <Button
-              type="primary"
-              size="large"
+            <button
               onClick={handleShowLess}
-              className="show-more-button"
-              aria-label="Ocultar proyectos adicionales"
+              className="projects-show-btn"
+              aria-label="Mostrar menos proyectos"
             >
-              <strong>Ocultar</strong>
-            </Button>
+              Mostrar menos
+            </button>
           )}
         </div>
       </div>

@@ -1,82 +1,104 @@
 .me-page {
-  background: linear-gradient(
-    135deg,
-    rgba(243, 250, 225, 0.9) 0%,
-    rgba(184, 208, 235, 0.8) 50%,
-    rgba(185, 250, 248, 0.9) 100%
-  );
+  background: radial-gradient(circle, var(--bg-main) 0%, #f5f1e4 100%);
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
 }
 
-.me-name-section,
-.me-buttons-section,
-.me-links-section,
-.me-span-section {
-  background: transparent !important;
+.me-avatar-section {
+  margin-bottom: 10px;
+}
+
+.me-avatar-dashed {
+  border: 2.5px dashed rgba(255, 160, 51, 0.6);
+  padding: 10px;
+  border-radius: 50%;
+  animation: cl-float 6s ease-in-out infinite;
 }
 
 .me-page-name {
-  margin: 0.5em 0;
-  font-weight: normal;
-  font-size: 2.8em;
-  background: transparent !important;
+  font-family: var(--font-caveat);
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+  margin: 10px 0 20px;
+  text-align: center;
 }
 
 .me-social-buttons {
   display: flex;
-  justify-content: space-evenly;
-  width: 200px;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
 }
 
 .icon-button {
-  width: 60px !important;
-  height: 60px !important;
+  width: 54px !important;
+  height: 54px !important;
   border-radius: 50%;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  border: none;
+  border: 1.5px solid rgba(122, 0, 98, 0.2) !important;
+  background-color: var(--white) !important;
+  transition: all 0.3s ease !important;
+}
+
+.icon-button:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-pink) !important;
+  box-shadow: 0 8px 20px rgba(245, 0, 98, 0.15);
 }
 
 .icon-button .anticon {
-  font-size: 2em !important;
+  font-size: 1.6em !important;
   color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+.icon-button:hover .anticon {
+  color: var(--accent-pink);
 }
 
 .me-links-section {
-  margin: 1em 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  max-width: 440px;
+  margin-bottom: 24px;
 }
 
 .website-buttons {
-  width: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .website-button {
-  background-color: var(--primary-purple) !important;
+  background-color: var(--accent-pink) !important;
   border: none !important;
   border-radius: 50px !important;
-  height: 50px !important;
-  font-size: 1.1rem !important;
-  padding: 0 2.5rem !important;
-  margin-bottom: 1rem !important;
-  transition: all 0.3s ease !important;
-  color: white !important;
+  height: 56px !important;
+  font-size: 1.15rem !important;
+  font-family: var(--font-lora) !important;
   font-weight: 600 !important;
+  color: var(--white) !important;
+  box-shadow: 0 6px 18px rgba(245, 0, 98, 0.2);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .website-button:hover {
-  background-color: var(--secondary-purple) !important;
-  color: white !important;
+  background-color: var(--purple-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(122, 0, 98, 0.3) !important;
 }
 
 .me-span-section {
-  color: var(--text-dark);
-  font-family: var(--font-title);
+  color: var(--text-mauve);
+  font-family: var(--font-caveat);
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
 }

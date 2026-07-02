@@ -1,53 +1,93 @@
 import React from "react";
-import { Button } from "antd";
-import { DownOutlined } from "@ant-design/icons";
 import data from "../db/data.js";
-import ProfileAvatar from "./ProfileAvatar";
 import "./Hero.css";
 
 const Hero = () => {
   const { profile } = data;
 
-  const scrollToNext = () => {
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
+  const handleLinkClick = (e, href) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  const tickerItems = ["Diseño", "Código", "Experiencia", "Producto"];
+  const dotColors = ["#ffa033", "#f50062", "#c2cc00", "#ffa033"];
+
+  // Duplicate items for continuous marquee scroll
+  const marqueeItems = [...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems];
+
   return (
-    <section id="hero" className="hero-section">
-      <div className="hero-overlay"></div>
+    <section id="inicio" className="hero-section-b">
+      {/* Decorative blurred background shapes */}
+      <div className="hero-b-shape-top"></div>
+      <div className="hero-b-shape-bottom"></div>
 
-      <div className="container">
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1 className="hero-title">
-              Hola! Soy <span className="hero-name">{profile.name}</span>
-            </h1>
-            <p className="hero-tagline">{profile.tagline}</p>
-          </div>
+      <div className="hero-b-content-wrapper">
+        <img
+          src={profile.profileImage}
+          alt={profile.name}
+          className="hero-b-avatar"
+          loading="eager"
+          onError={(e) => {
+            e.target.style.display = "none";
+            e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
+            e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem; font-family: var(--font-caveat);">${profile.name}</div>`;
+          }}
+        />
 
-          <div className="hero-image-container">
-            <ProfileAvatar
-              src={profile.profileImage}
-              name={profile.name}
-              size={300}
-              className="hero-profile-image"
-            />
-          </div>
-        </div>
+        <p data-reveal="up" className="hero-b-greeting">
+          ¡Hola! soy {profile.name}
+        </p>
 
-        <div>
-          <Button
-            type="text"
-            icon={<DownOutlined />}
-            className="scroll-down-btn"
-            onClick={scrollToNext}
-            size="large"
+        <h1 data-reveal="up" data-delay="80" className="hero-b-name">
+          {profile.name} Luna
+        </h1>
+
+        <p data-reveal="up" data-delay="160" className="hero-b-role">
+          Frontend Developer <span className="ampersand">&amp;</span> UX/UI Designer —{" "}
+          <span className="hero-b-underline">diseño con lógica, desarrollo con estética.</span>
+        </p>
+
+        <p data-reveal="up" data-delay="220" className="hero-b-bio">
+          Construyo productos donde el código funciona y la experiencia enamora — del wireframe al deploy.
+        </p>
+
+        <div data-reveal="up" data-delay="300" className="hero-b-buttons">
+          <a
+            href="#proyectos"
+            className="hero-b-btn-primary"
+            onClick={(e) => handleLinkClick(e, "#proyectos")}
           >
-            Conocé más
-          </Button>
+            Ver proyectos <span className="arrow">→</span>
+          </a>
+          <a
+            href="#contacto"
+            className="hero-b-btn-secondary"
+            onClick={(e) => handleLinkClick(e, "#contacto")}
+          >
+            Trabajemos juntos
+          </a>
+        </div>
+      </div>
+
+      {/* Marquee ticker */}
+      <div className="hero-b-ticker-wrapper">
+        <div className="hero-b-ticker-track">
+          {marqueeItems.map((item, index) => (
+            <React.Fragment key={index}>
+              <span className="ticker-item">{item}</span>
+              <span
+                className="ticker-separator"
+                style={{ color: dotColors[index % dotColors.length] }}
+              >
+                ✦
+              </span>
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </section>

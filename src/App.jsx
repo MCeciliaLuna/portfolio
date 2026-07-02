@@ -4,6 +4,7 @@ import { ConfigProvider } from "antd";
 import ErrorBoundary from "./components/ErrorBoundary";
 import PortfolioPage from "./pages/PortfolioPage";
 import MePage from "./pages/MePage";
+import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<PortfolioPage />} />
               <Route path="/me" element={<MePage />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
