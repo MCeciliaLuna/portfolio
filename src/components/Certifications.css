@@ -266,6 +266,11 @@
   }
 }
 
+.cert-sticky-scroll-container {
+  position: relative;
+  width: 100%;
+}
+
 /* Stacked Cards Desktop Layout */
 .cert-stacked-container {
   position: relative;
