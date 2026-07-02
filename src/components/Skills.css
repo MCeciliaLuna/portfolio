@@ -60,16 +60,17 @@
 
 .skills-list {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
 }
 
 .skill-span-item {
   font-family: var(--font-lora);
   font-size: 27px;
   color: var(--text-dark);
-  cursor: default;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   padding: 4px 0;
