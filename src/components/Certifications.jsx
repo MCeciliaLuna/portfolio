@@ -69,15 +69,6 @@ const Certifications = () => {
     setSelectedCert(null);
   };
 
-  // Mapeo dinámico de colores de fondo para las tarjetas stacked
-  const bgColors = [
-    "from-indigo-600 to-purple-700",
-    "from-cyan-600 to-blue-700",
-    "from-emerald-600 to-teal-700",
-    "from-amber-600 to-orange-700",
-    "from-rose-600 to-pink-700"
-  ];
-
   // Mapeo dinámico de emojis para las tarjetas stacked
   const icons = ["💻", "⚛️", "🟢", "🤖", "⚙️", "🎓"];
 
@@ -91,23 +82,23 @@ const Certifications = () => {
   return (
     <>
       {isDesktop ? (
-        /* VISTA DE ESCRITORIO: Stacked Cards con Framer Motion */
+        /* VISTA DE ESCRITORIO: Stacked Cards con Framer Motion (Vanilla CSS clases) */
         <div 
           ref={containerRef} 
-          className="relative w-full bg-purple-dark"
+          className="cert-sticky-scroll-container"
           style={{ height: `${certifications.length * 100}vh` }}
         >
-          {/* El div sticky retiene el viewport en top-20 (80px, justo debajo del navbar fijo) */}
-          <div className="sticky top-20 h-[calc(100vh-80px)] flex flex-col justify-center items-center overflow-hidden px-4">
+          {/* El div sticky retiene el viewport justo debajo del navbar fijo */}
+          <div className="cert-sticky-viewport-desktop">
             
             {/* Encabezado */}
-            <div className="text-center mb-12 z-10">
-              <span className="text-accent-yellow font-serif italic text-2xl block mb-2">Formación</span>
-              <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight text-white">Mis Certificaciones</h2>
+            <div className="cert-desktop-header">
+              <span className="cert-desktop-subtitle">Formación</span>
+              <h2 className="cert-desktop-title">Mis Certificaciones</h2>
             </div>
 
             {/* Contenedor central de apilamiento */}
-            <div className="relative w-full max-w-lg h-[400px] flex items-center justify-center">
+            <div className="cert-stacked-container">
               {certifications.map((cert, index) => (
                 <Card
                   key={cert.id}
@@ -115,7 +106,6 @@ const Certifications = () => {
                   index={index}
                   total={certifications.length}
                   progress={scrollYProgress}
-                  colorClass={bgColors[index % bgColors.length]}
                   icon={icons[index % icons.length]}
                   onClick={() => handleImageClick(cert)}
                 />
@@ -125,7 +115,7 @@ const Certifications = () => {
             {/* Botón de omisión (Bypass link) */}
             <a
               href="#skills"
-              className="absolute bottom-10 z-20 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full transition-all text-sm font-medium shadow-lg hover:shadow-xl no-underline"
+              className="cert-skip-link-btn"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
@@ -225,8 +215,8 @@ const Certifications = () => {
   );
 };
 
-/* Componente de Tarjeta Stacked con Framer Motion */
-const Card = ({ cert, index, total, progress, colorClass, icon, onClick }) => {
+/* Componente de Tarjeta Stacked con Framer Motion (Vanilla CSS clases) */
+const Card = ({ cert, index, total, progress, icon, onClick }) => {
   const start = index / total;
   const targetScale = 1 - (total - index - 1) * 0.04;
 
@@ -242,31 +232,31 @@ const Card = ({ cert, index, total, progress, colorClass, icon, onClick }) => {
         zIndex: index,
         top: `calc(5% + ${index * 16}px)`,
       }}
-      className={`absolute w-full max-w-md aspect-[4/3] rounded-3xl p-8 flex flex-col justify-between shadow-2xl overflow-hidden border border-white/10 cursor-pointer bg-gradient-to-br ${colorClass}`}
+      className={`cert-stacked-card cert-card-grad-${index % 5}`}
       onClick={onClick}
     >
-      {/* Capa negra de opacidad interactiva para profundidad */}
+      {/* Capa de opacidad interactiva para profundidad */}
       <motion.div
         style={{ opacity: overlayOpacity }}
-        className="absolute inset-0 bg-black pointer-events-none"
+        className="cert-card-overlay"
       />
 
       {/* Contenido Superior */}
-      <div className="relative z-10 flex justify-between items-start">
+      <div className="cert-card-top">
         <div>
-          <span className="text-white/80 font-mono text-xs tracking-wider uppercase">{cert.institution}</span>
-          <h3 className="text-2xl md:text-3xl font-bold mt-2 leading-tight text-white">{cert.title}</h3>
+          <span className="cert-card-institution">{cert.institution}</span>
+          <h3 className="cert-card-title">{cert.title}</h3>
         </div>
-        <span className="text-4xl select-none" role="img" aria-label="icon">{icon}</span>
+        <span className="cert-card-icon">{icon}</span>
       </div>
 
       {/* Contenido Inferior */}
-      <div className="relative z-10 flex justify-between items-end border-t border-white/15 pt-6">
+      <div className="cert-card-bottom">
         <div>
-          <p className="text-white/60 text-[10px] uppercase tracking-widest">Año de finalización</p>
-          <p className="text-lg font-semibold text-white">{cert.year}</p>
+          <p className="cert-card-year-label">Año de finalización</p>
+          <p className="cert-card-year">{cert.year}</p>
         </div>
-        <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-medium border border-white/10 hover:bg-white/20 text-white transition-all select-none">
+        <div className="cert-card-button">
           Ver certificado ✦
         </div>
       </div>
