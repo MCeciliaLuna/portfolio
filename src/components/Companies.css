@@ -33,6 +33,7 @@
 .companies-marquee-wrapper {
   overflow: hidden;
   width: 100%;
+  padding: 10px 0;
 }
 
 .companies-marquee-track {
@@ -53,35 +54,46 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 45px;
-  margin: 0 34px;
+  height: 70px;
+  padding: 8px 24px;
+  margin: 0 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              background-color 0.3s ease, 
+              box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 @media (max-width: 576px) {
   .marquee-company-logo-wrapper {
-    height: 35px;
-    margin: 0 20px;
+    height: 50px;
+    padding: 6px 16px;
+    margin: 0 12px;
+    border-radius: 8px;
   }
 }
 
 .marquee-company-logo {
   height: 100%;
   width: auto;
-  max-width: 140px;
+  max-width: 160px;
   object-fit: contain;
-  filter: brightness(0) invert(1) opacity(0.75);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: none; /* Keep original colors and details */
 }
 
-.marquee-company-logo-wrapper:hover .marquee-company-logo {
-  filter: brightness(0) invert(1) opacity(1);
-  transform: scale(1.05);
+@media (max-width: 576px) {
+  .marquee-company-logo {
+    max-width: 110px;
+  }
 }
 
 .marquee-company-name-fallback {
   font-family: var(--font-lora);
   font-size: 28px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--purple-dark);
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -93,10 +105,12 @@
 
 .marquee-separator {
   font-size: 34px;
+  margin: 0 12px;
 }
 
 @media (max-width: 576px) {
   .marquee-separator {
     font-size: 24px;
+    margin: 0 6px;
   }
 }
