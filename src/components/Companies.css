@@ -1,7 +1,7 @@
 .companies-section-custom {
   scroll-margin-top: 80px;
-  background: var(--purple-dark);
-  color: #fbf1f8;
+  background: var(--white);
+  color: var(--text-dark);
   padding: 80px 0;
   overflow: hidden;
 }
@@ -10,7 +10,7 @@
   text-align: center;
   font-family: var(--font-caveat);
   font-size: 36px;
-  color: var(--accent-yellow);
+  color: var(--accent-orange);
   margin: 0 0 8px;
 }
 
@@ -20,7 +20,7 @@
   font-size: 34px;
   font-weight: 600;
   margin: 0 0 44px;
-  color: var(--white);
+  color: var(--purple-dark);
 }
 
 @media (max-width: 576px) {
@@ -55,23 +55,19 @@
   align-items: center;
   justify-content: center;
   height: 70px;
-  padding: 8px 24px;
-  margin: 0 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-              background-color 0.3s ease, 
-              box-shadow 0.3s ease;
+  margin: 0 40px;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: pointer;
 }
 
 @media (max-width: 576px) {
   .marquee-company-logo-wrapper {
-    height: 50px;
-    padding: 6px 16px;
-    margin: 0 12px;
-    border-radius: 8px;
+    height: 45px;
+    margin: 0 24px;
   }
 }
 
@@ -80,7 +76,14 @@
   width: auto;
   max-width: 160px;
   object-fit: contain;
-  filter: none; /* Keep original colors and details */
+  filter: none; /* Keep original brand colors */
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.marquee-company-logo-wrapper:hover .marquee-company-logo {
+  opacity: 1;
+  transform: scale(1.08) translateY(-2px);
 }
 
 @media (max-width: 576px) {

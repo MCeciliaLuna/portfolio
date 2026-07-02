@@ -1,24 +1,25 @@
 .certifications-section-custom {
   scroll-margin-top: 80px;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 120px 40px;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--purple-dark);
+  padding: 120px 0;
 }
 
 @media (max-width: 768px) {
   .certifications-section-custom {
-    padding: 80px 20px;
+    padding: 80px 0;
   }
 }
 
 .cert-header {
-  margin: 0 0 66px;
+  margin: 0 0 50px;
 }
 
 .cert-subtitle {
   font-family: var(--font-caveat);
   font-size: 34px;
-  color: var(--purple-dark);
+  color: var(--accent-yellow);
   margin: 0 0 4px;
 }
 
@@ -28,64 +29,28 @@
   font-weight: 600;
   margin: 0;
   letter-spacing: -0.01em;
-  color: var(--text-dark);
+  color: var(--white);
 }
 
-.certifications-carousel-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Embla Carousel styles */
-.embla-viewport {
-  overflow: hidden;
-  width: 100%;
-  padding: 30px 10px 40px 10px; /* spacing for polaroid tilt and hover shadow */
-}
-
-.embla-container {
-  display: flex;
-  touch-action: pan-y pinch-zoom;
-  margin-left: -20px;
-}
-
-.embla-slide-item {
-  flex: 0 0 33.333%;
-  min-width: 0;
-  padding-left: 20px;
-}
-
-@media (max-width: 991px) {
-  .embla-slide-item {
-    flex: 0 0 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .embla-slide-item {
-    flex: 0 0 100%;
-  }
-}
-
-/* Polaroid Card Styles */
+/* Polaroid Card Style */
 .polaroid-card {
   background: var(--white);
-  padding: 16px 16px 24px 16px;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  transform: rotate(var(--rotation, 0deg));
-  box-shadow: 0 18px 44px rgba(122, 0, 98, 0.1);
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s;
+  padding: 16px 16px 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 0;
+  margin: 0;
   cursor: pointer;
+  transform: rotate(var(--rotation, 0deg));
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .polaroid-card:hover {
-  transform: rotate(0deg) translateY(-10px);
-  box-shadow: 0 24px 60px rgba(122, 0, 98, 0.22);
+  transform: rotate(0deg) translateY(-8px) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .polaroid-image-wrapper {
@@ -93,8 +58,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #eae8e4;
-  border-radius: 2px;
+  background-color: #f7f6f2;
 }
 
 .polaroid-image {
@@ -110,13 +74,17 @@
 
 .polaroid-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(122, 0, 98, 0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(122, 0, 98, 0.4);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .polaroid-card:hover .polaroid-overlay {
@@ -128,17 +96,26 @@
   font-family: var(--font-caveat);
   font-size: 26px;
   font-weight: 700;
+  transform: translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.polaroid-card:hover .polaroid-overlay span {
+  transform: translateY(0);
 }
 
 .polaroid-caption {
-  text-align: center;
-  margin-top: 20px;
+  padding-top: 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .polaroid-institution {
   font-family: var(--font-caveat);
-  font-size: 26px;
-  margin: 0 0 2px;
+  font-size: 22px;
+  margin: 0 0 4px;
 }
 
 .polaroid-cert-title {
@@ -146,86 +123,145 @@
   font-size: 17px;
   font-weight: 600;
   color: var(--text-dark);
+  margin: 0 0 10px;
   line-height: 1.3;
-  margin: 0 0 4px;
-  height: 44px; /* fixed height to align years */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  flex: 1;
 }
 
 .polaroid-year {
   font-size: 13px;
   color: var(--text-mauve);
-  letter-spacing: 0.14em;
   margin: 0;
+  align-self: flex-start;
 }
 
-/* Nav Buttons */
+/* Embla Carousel Navigation Buttons on Dark Background */
 .cert-nav-btn {
-  background: var(--white);
-  border: 1.5px solid rgba(122, 0, 98, 0.2);
-  color: var(--purple-dark);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
 }
 
 .cert-nav-btn:hover {
-  background: var(--purple-dark);
-  color: var(--white);
-  border-color: var(--purple-dark);
+  background: var(--white);
+  color: var(--purple-dark);
+  border-color: var(--white);
 }
 
-/* Modal styling */
+/* Mobile Embla Carousel Layout */
+.certifications-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.embla-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla-container {
+  display: flex;
+  user-select: none;
+  touch-action: pan-y pinch-zoom;
+  margin-left: -20px;
+}
+
+.embla-slide-item {
+  flex: 0 0 85%;
+  min-width: 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .embla-slide-item {
+    flex: 0 0 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  .embla-slide-item {
+    flex: 0 0 33.333%;
+  }
+}
+
+/* Custom modal styling */
 .certification-modal-custom .ant-modal-content {
-  background-color: var(--bg-main) !important;
-  border-radius: 20px !important;
-  padding: 24px !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0 !important;
+  background: var(--bg-main);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.certification-modal-custom .ant-modal-close {
+  color: var(--white);
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.certification-modal-custom .ant-modal-close:hover {
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .cert-modal-body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 100%;
 }
 
 .cert-modal-img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-height: 520px;
+  object-fit: contain;
+  background: #f7f6f2;
 }
 
 .cert-modal-details {
-  padding-top: 10px;
+  padding: 24px 32px;
+  background: var(--white);
 }
 
 .cert-modal-institution {
   font-family: var(--font-caveat);
-  font-size: 28px;
+  font-size: 26px;
   color: var(--accent-pink);
+  display: block;
+  margin-bottom: 4px;
 }
 
 .cert-modal-title {
   font-family: var(--font-lora);
   font-size: 24px;
   font-weight: 600;
-  margin: 4px 0 8px;
-  color: var(--text-dark);
+  color: var(--purple-dark);
+  margin: 0 0 12px;
+  line-height: 1.25;
 }
 
 .cert-modal-year {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-mauve);
-  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .cert-modal-details {
+    padding: 16px 20px;
+  }
+  .cert-modal-title {
+    font-size: 20px;
+  }
+  .cert-modal-institution {
+    font-size: 22px;
+  }
 }

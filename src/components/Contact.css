@@ -1,18 +1,21 @@
 .contact-section-custom {
   scroll-margin-top: 80px;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 120px 40px;
-  background-color: var(--bg-main);
+  width: 100%;
+  max-width: 100%;
+  padding: 120px 0;
+  background-color: #fdf4e7; /* Beautiful soft warm orange/cream accent from the palette */
 }
 
 @media (max-width: 768px) {
   .contact-section-custom {
-    padding: 80px 20px;
+    padding: 80px 0;
   }
 }
 
 .contact-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 70px;
@@ -23,6 +26,7 @@
   .contact-container {
     grid-template-columns: 1fr;
     gap: 50px;
+    padding: 0 20px;
   }
 }
 
