@@ -5,8 +5,12 @@ import "./Hero.css";
 const Hero = () => {
   const { profile } = data;
   const heroRef = useRef(null);
+  
+  // Refs for both wrappers (base animated position) and inner shapes (translated position)
   const shapeTopRef = useRef(null);
+  const shapeTopWrapperRef = useRef(null);
   const shapeBottomRef = useRef(null);
+  const shapeBottomWrapperRef = useRef(null);
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
@@ -22,14 +26,19 @@ const Hero = () => {
     if (!heroElement) return;
 
     const handleMouseMove = (e) => {
-      const threshold = 240;
-      const maxRepulsion = 130;
+      const threshold = 320; // Active radius from center
+      const maxRepulsion = 220; // Pixels to push away
 
-      [shapeTopRef, shapeBottomRef].forEach((ref) => {
-        const shape = ref.current;
-        if (!shape) return;
+      const shapes = [
+        { inner: shapeTopRef.current, wrapper: shapeTopWrapperRef.current },
+        { inner: shapeBottomRef.current, wrapper: shapeBottomWrapperRef.current }
+      ];
 
-        const rect = shape.getBoundingClientRect();
+      shapes.forEach(({ inner, wrapper }) => {
+        if (!inner || !wrapper) return;
+
+        // Measure parent wrapper to get base animated center, preventing translation feedback loops
+        const rect = wrapper.getBoundingClientRect();
         const shapeCenterX = rect.left + rect.width / 2;
         const shapeCenterY = rect.top + rect.height / 2;
 
@@ -39,13 +48,13 @@ const Hero = () => {
 
         if (distance < threshold) {
           const force = (threshold - distance) / threshold;
-          // Calculate exponential push force
+          // Apply proportional push force vector
           const pushX = (dx / (distance || 1)) * force * maxRepulsion;
           const pushY = (dy / (distance || 1)) * force * maxRepulsion;
 
-          shape.style.transform = `translate3d(${pushX}px, ${pushY}px, 0)`;
+          inner.style.transform = `translate3d(${pushX}px, ${pushY}px, 0)`;
         } else {
-          shape.style.transform = "translate3d(0px, 0px, 0)";
+          inner.style.transform = "translate3d(0px, 0px, 0)";
         }
       });
     };
@@ -83,10 +92,10 @@ const Hero = () => {
       </div>
 
       {/* Decorative blurred background shapes inside wrappers for slow animation */}
-      <div className="hero-b-shape-top-wrapper">
+      <div ref={shapeTopWrapperRef} className="hero-b-shape-top-wrapper">
         <div ref={shapeTopRef} className="hero-b-shape-top"></div>
       </div>
-      <div className="hero-b-shape-bottom-wrapper">
+      <div ref={shapeBottomWrapperRef} className="hero-b-shape-bottom-wrapper">
         <div ref={shapeBottomRef} className="hero-b-shape-bottom"></div>
       </div>
 
