@@ -10,28 +10,57 @@
   height: 100vh;
 }
 
-.hero-b-shape-top {
+@keyframes floatSlowTop {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  33% { transform: translate(30px, -20px) rotate(120deg); }
+  66% { transform: translate(-20px, 15px) rotate(240deg); }
+  100% { transform: translate(0px, 0px) rotate(360deg); }
+}
+
+@keyframes floatSlowBottom {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(-40px, 30px) rotate(-180deg); }
+  100% { transform: translate(0px, 0px) rotate(-360deg); }
+}
+
+.hero-b-shape-top-wrapper {
   position: absolute;
   top: 120px;
   left: 8%;
   width: 220px;
   height: 220px;
+  z-index: 1;
+  animation: floatSlowTop 18s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-b-shape-top {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(245, 0, 98, 0.16), transparent 70%);
   pointer-events: none;
-  z-index: 1;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.hero-b-shape-bottom {
+.hero-b-shape-bottom-wrapper {
   position: absolute;
   bottom: 60px;
   right: 10%;
   width: 260px;
   height: 260px;
+  z-index: 1;
+  animation: floatSlowBottom 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-b-shape-bottom {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 160, 51, 0.22), transparent 70%);
   pointer-events: none;
-  z-index: 1;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hero-b-content-wrapper {
