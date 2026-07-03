@@ -19,7 +19,6 @@
   background: rgba(251, 249, 244, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   padding: 12px 40px;
 }
 
@@ -73,14 +72,10 @@
   padding: 10px 20px;
   border-radius: 999px;
   font-size: 15px;
-  box-shadow: 0 6px 18px rgba(245, 0, 98, 0.28);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s, box-shadow 0.3s;
 }
 
 .navbar-cta-button:hover {
-  transform: translateY(-2px);
   background: var(--purple-dark);
-  box-shadow: 0 10px 26px rgba(122, 0, 98, 0.35);
   color: var(--white);
 }
 

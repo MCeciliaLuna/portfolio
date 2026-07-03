@@ -9,7 +9,6 @@ import Companies from "../components/Companies";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import FloatingContact from "../components/FloatingContact";
 
 const HomePage = () => {
   useScrollReveal();
@@ -28,7 +27,6 @@ const HomePage = () => {
         <Contact />
       </main>
       <Footer />
-      <FloatingContact />
     </div>
   );
 };

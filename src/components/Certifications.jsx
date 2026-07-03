@@ -143,7 +143,7 @@ const Certifications = () => {
                 document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Saltar recorrido ✦
+              Saltar
             </a>
           </div>
         </div>

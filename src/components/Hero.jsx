@@ -34,33 +34,28 @@ const Hero = () => {
 
       <div className="hero-b-content-wrapper">
         <p data-reveal="up" className="hero-b-greeting">
-          ¡Hola! soy {profile.name}
+          ¡Hola! soy
         </p>
 
         <h1 data-reveal="up" data-delay="80" className="hero-b-name">
-          {profile.name} Luna
+          {profile.name}
         </h1>
 
         <p data-reveal="up" data-delay="160" className="hero-b-role">
-          Frontend Developer <span className="ampersand">&amp;</span> UX/UI Designer —{" "}
-          <span className="hero-b-underline">diseño con lógica, desarrollo con estética.</span>
-        </p>
-
-        <p data-reveal="up" data-delay="220" className="hero-b-bio">
-          Construyo productos donde el código funciona y la experiencia enamora — del wireframe al deploy.
+          Frontend Developer <span className="ampersand">&amp;</span> UX/UI Designer
         </p>
 
         <div data-reveal="up" data-delay="300" className="hero-b-buttons">
           <a
             href="#proyectos"
-            className="hero-b-btn-primary"
+            className="hero-b-btn-secondary"
             onClick={(e) => handleLinkClick(e, "#proyectos")}
           >
-            Ver proyectos <span className="arrow">→</span>
+            Ver proyectos
           </a>
           <a
             href="#contacto"
-            className="hero-b-btn-secondary"
+            className="hero-b-btn-primary"
             onClick={(e) => handleLinkClick(e, "#contacto")}
           >
             Trabajemos juntos

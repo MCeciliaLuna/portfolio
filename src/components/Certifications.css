@@ -419,7 +419,6 @@
 
 .cert-desktop-header {
   text-align: center;
-  margin-bottom: 48px;
   z-index: 10;
 }
 
@@ -444,21 +443,16 @@
   bottom: 40px;
   z-index: 20;
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--white);
   border-radius: 9999px;
   transition: all 0.3s;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .cert-skip-link-btn:hover {
-  background: var(--white);
-  color: var(--purple-dark);
-  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
   text-decoration: none;
 }
 

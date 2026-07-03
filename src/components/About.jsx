@@ -21,17 +21,7 @@ const About = () => {
           <p className="about-description">
             {profile.description}
           </p>
-          <div className="about-tags-wrapper">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="about-tag-item"
-                style={{ color: tagColors[index % tagColors.length] }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          
         </div>
       </div>
     </section>

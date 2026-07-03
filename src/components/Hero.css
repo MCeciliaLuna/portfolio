@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .hero-b-shape-top {
@@ -214,14 +215,10 @@
   border-radius: 999px;
   font-size: 17px;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(245, 0, 98, 0.3);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s, box-shadow 0.3s;
 }
 
 .hero-b-btn-primary:hover {
-  transform: translateY(-3px);
   background: var(--purple-dark);
-  box-shadow: 0 14px 34px rgba(122, 0, 98, 0.4);
   color: var(--white);
 }
 
@@ -232,17 +229,14 @@
   padding: 16px 30px;
   background: transparent;
   color: var(--text-dark);
-  border: 1.5px solid rgba(32, 26, 30, 0.25);
   border-radius: 999px;
   font-size: 17px;
   text-decoration: none;
-  transition: border-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .hero-b-btn-secondary:hover {
   border-color: var(--accent-orange);
   color: var(--purple-dark);
-  transform: translateY(-3px);
 }
 
 

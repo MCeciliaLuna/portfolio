@@ -76,10 +76,6 @@ const Navbar = () => {
   return (
     <nav className={`navbar-custom ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-brand">
-        <a href="#inicio" onClick={(e) => handleLinkClick(e, "#inicio", false)}>
-          <span className="brand-name">Cecilia Luna</span>
-          <span className="brand-subtitle">Frontend · UX/UI</span>
-        </a>
       </div>
 
       {!isHome ? (
