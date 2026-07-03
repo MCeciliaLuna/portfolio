@@ -461,3 +461,28 @@
   border-color: var(--white);
   text-decoration: none;
 }
+
+/* Overrides para mobile Embla slide items */
+.embla-slide-item .cert-stacked-card {
+  position: relative;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 250px;
+}
+
+@media (max-width: 480px) {
+  .cert-card-blur-overlay {
+    padding: 16px 20px;
+  }
+  .cert-card-blur-title {
+    font-size: 17px !important;
+  }
+  .cert-card-blur-institution {
+    font-size: 18px !important;
+  }
+  .cert-card-eye-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}

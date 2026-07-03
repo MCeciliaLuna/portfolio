@@ -522,3 +522,47 @@
   transition: height 0.15s ease-out;
 }
 
+/* ========================================
+   Projects Mobile Card List styling
+   ======================================== */
+
+.projects-mobile-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+  gap: 24px;
+}
+
+.proj-mobile-card {
+  position: relative !important;
+  max-width: 100% !important;
+  height: 380px !important;
+}
+
+@media (max-width: 480px) {
+  .proj-mobile-card {
+    height: 420px !important; /* give slightly more height on small screens for vertical content */
+  }
+  .proj-card-blur-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .proj-card-blur-links {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+  .proj-card-blur-overlay {
+    padding: 16px 20px !important;
+    gap: 8px !important;
+  }
+  .proj-card-blur-title {
+    font-size: 18px !important;
+  }
+  .proj-card-blur-desc {
+    font-size: 13px !important;
+    -webkit-line-clamp: 2 !important;
+  }
+}
+

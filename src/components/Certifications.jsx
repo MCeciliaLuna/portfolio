@@ -148,7 +148,7 @@ const Certifications = () => {
           </div>
         </div>
       ) : (
-        /* VISTA MÓVIL: Embla Carousel clásico */
+        /* VISTA MÓVIL: Embla Carousel con el mismo diseño de tarjetas */
         <section id="certificaciones" className="certifications-section-custom">
           <div className="container flex-column">
             <div className="cert-header">
@@ -161,40 +161,43 @@ const Certifications = () => {
                 <div className="embla-container">
                   {certifications.map((cert, index) => (
                     <div key={cert.id} className="embla-slide-item">
-                      <figure
-                        className="polaroid-card"
-                        style={{
-                          "--rotation": getRotationStyle(index),
-                        }}
+                      <div
+                        className={`cert-stacked-card cert-card-grad-${index % 5}`}
                         onClick={() => handleImageClick(cert)}
                       >
-                        <div className="polaroid-image-wrapper">
-                          <img
-                            src={cert.imageUrl}
-                            alt={cert.title}
-                            className="polaroid-image"
-                            loading="lazy"
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
-                              e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.1rem; text-align: center; padding: 20px; font-family: var(--font-lora);">${cert.title}</div>`;
-                            }}
-                          />
-                          <div className="polaroid-overlay">
-                            <span>Ver certificado ✦</span>
+                        {/* Imagen de fondo de la certificación */}
+                        <img
+                          src={cert.imageUrl}
+                          alt={cert.title}
+                          className="cert-card-bg-img"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                          }}
+                        />
+
+                        {/* Capa de opacidad interactiva para profundidad */}
+                        <div className="cert-card-overlay" style={{ opacity: 0.1 }} />
+
+                        {/* Blur en blanco abajo con la data y ojo */}
+                        <div className="cert-card-blur-overlay">
+                          <div className="cert-card-blur-content">
+                            <span className="cert-card-blur-institution">{cert.institution}</span>
+                            <h3 className="cert-card-blur-title">{cert.title}</h3>
+                            <span className="cert-card-blur-year">{cert.year}</span>
                           </div>
-                        </div>
-                        <figcaption className="polaroid-caption">
-                          <p
-                            className="polaroid-institution"
-                            style={{ color: tagColors[index % tagColors.length] }}
+                          <button 
+                            className="cert-card-eye-btn"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleImageClick(cert);
+                            }}
+                            aria-label="Ver certificado completo"
                           >
-                            {cert.institution}
-                          </p>
-                          <p className="polaroid-cert-title">{cert.title}</p>
-                          <p className="polaroid-year">{cert.year}</p>
-                        </figcaption>
-                      </figure>
+                            <EyeOutlined />
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>

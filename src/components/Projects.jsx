@@ -148,75 +148,92 @@ const Projects = () => {
               <h2 className="projects-title">Proyectos</h2>
             </div>
 
-            <div className="projects-list-wrapper">
+            <div className="projects-mobile-list">
               {projects.map((project, index) => {
-                const themeClasses = ["pink-theme", "orange-theme", "purple-theme", "green-theme"];
-                const themeClass = themeClasses[index % themeClasses.length];
                 const tags = getProjectTags(project);
-                const primaryLink = getPrimaryLink(project);
-
                 return (
                   <div
                     key={project.id}
-                    data-reveal="up"
-                    className={`project-row-item ${themeClass}`}
+                    className="proj-stacked-card proj-mobile-card"
+                    style={{ background: gradients[index % gradients.length] }}
                   >
-                    <span className="project-row-number">
-                      {formatIndex(index)}
-                    </span>
+                    {/* Imagen de fondo del proyecto */}
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="proj-card-bg-img"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                      }}
+                    />
 
-                    <div className="project-row-title-block">
-                      <h3 className="project-row-name">{project.title}</h3>
-                      <div className="project-row-tags">
+                    {/* Overlay de oscurecimiento */}
+                    <div className="proj-card-overlay" style={{ opacity: 0.15 }} />
+
+                    {/* Frosted Glass Overlay con data y links */}
+                    <div className="proj-card-blur-overlay">
+                      <div className="proj-card-blur-header">
+                        <div className="proj-card-blur-title-row">
+                          <span className="proj-card-blur-number">{formatIndex(index)}</span>
+                          <h3 className="proj-card-blur-title">{project.title}</h3>
+                        </div>
+                        
+                        <div className="proj-card-blur-links">
+                          {project.liveUrl && (
+                            <a 
+                              href={project.liveUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="proj-card-blur-link-btn" 
+                              aria-label="Ver demo"
+                            >
+                              Ver proyecto ✦
+                            </a>
+                          )}
+                          {project.repoUrl && (
+                            <a 
+                              href={project.repoUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="proj-card-blur-link-icon" 
+                              aria-label="GitHub"
+                            >
+                              <GithubOutlined />
+                            </a>
+                          )}
+                          {project.figmaUrl && (
+                            <a 
+                              href={project.figmaUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="proj-card-blur-link-icon" 
+                              aria-label="Figma"
+                            >
+                              <FaFigma />
+                            </a>
+                          )}
+                          {project.youtubeUrl && (
+                            <a 
+                              href={project.youtubeUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="proj-card-blur-link-icon" 
+                              aria-label="YouTube"
+                            >
+                              <YoutubeOutlined />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+
+                      <p className="proj-card-blur-desc">{project.description}</p>
+
+                      <div className="proj-card-blur-tags">
                         {tags.map((tag, idx) => (
-                          <React.Fragment key={idx}>
-                            {idx > 0 && <span className="tag-separator">·</span>}
-                            <span className="tag-span">{tag}</span>
-                          </React.Fragment>
+                          <span key={idx} className="proj-card-blur-tag">{tag}</span>
                         ))}
                       </div>
-                    </div>
-
-                    <p className="project-row-desc">{project.description}</p>
-
-                    <div className="project-row-thumb-wrapper">
-                      <img
-                        src={project.imageUrl}
-                        alt={project.title}
-                        className="project-row-thumb"
-                        loading="lazy"
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                          e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
-                          e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 0.8rem; font-family: var(--font-lora); text-align: center; padding: 5px;">${project.title}</div>`;
-                        }}
-                      />
-                    </div>
-
-                    <div className="project-row-links-wrapper">
-                      <div className="project-row-social-links" onClick={(e) => e.stopPropagation()}>
-                        {project.figmaUrl && (
-                          <a href={project.figmaUrl} target="_blank" rel="noopener noreferrer" className="project-row-link-icon" aria-label="Ver en Figma"><FaFigma /></a>
-                        )}
-                        {project.liveUrl && (
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-row-link-icon" aria-label="Ver demo en vivo"><GlobalOutlined /></a>
-                        )}
-                        {project.repoUrl && (
-                          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="project-row-link-icon" aria-label="Ver repositorio"><GithubOutlined /></a>
-                        )}
-                        {project.youtubeUrl && (
-                          <a href={project.youtubeUrl} target="_blank" rel="noopener noreferrer" className="project-row-link-icon youtube-icon" aria-label="Ver video explicativo"><YoutubeOutlined /></a>
-                        )}
-                      </div>
-                      <a
-                        href={primaryLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-row-arrow-link"
-                        aria-label={`Ver detalles de ${project.title}`}
-                      >
-                        <span className="row-arrow">→</span>
-                      </a>
                     </div>
                   </div>
                 );
