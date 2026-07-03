@@ -70,14 +70,10 @@
   font-size: 17px;
   font-family: var(--font-lora);
   cursor: pointer;
-  box-shadow: 0 8px 22px rgba(245, 0, 98, 0.28);
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .form-submit-btn:hover:not(:disabled) {
   background: var(--purple-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(122, 0, 98, 0.36);
 }
 
 .form-submit-btn:disabled {

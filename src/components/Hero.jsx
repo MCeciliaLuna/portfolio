@@ -42,7 +42,7 @@ const Hero = () => {
         </h1>
 
         <p data-reveal="up" data-delay="160" className="hero-b-role">
-          Frontend Developer <span className="ampersand">&amp;</span> UX/UI Designer
+          Frontend Developer <span className="ampersand">,</span> UX/UI Designer <span className="ampersand">&amp;</span> Teaching
         </p>
 
         <div data-reveal="up" data-delay="300" className="hero-b-buttons">

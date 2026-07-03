@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "../db/data.js";
 import "./ContactForm.css";
 
-const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje →" }) => {
+const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
   const { profile } = data;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
