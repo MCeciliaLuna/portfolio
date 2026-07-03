@@ -41,9 +41,12 @@ const Contact = () => {
       <div className="contact-container">
         <div data-reveal="left" className="contact-info-col">
           <p className="contact-small-title">¿Charlamos?</p>
-          <h2 className="contact-main-title">¡Trabajemos juntos!</h2>
+          <h2 className="contact-main-title">¿Le damos vida a esa idea?</h2>
           <p className="contact-desc-text">
-            ¿Tenés un proyecto en mente? Contame. Me encantaría ayudarte a hacer realidad tu idea — desde el diseño de la experiencia hasta el producto final.
+            Si buscas crear un producto digital desde cero o potenciar tu negocio con buen diseño y tecnología, estoy lista para escucharte.
+          </p>
+          <p className="contact-desc-text">
+            Tomemos un café virtual y <strong>hablemos de tu próximo proyecto</strong>.
           </p>
           
           <div className="contact-social-rows">
@@ -71,7 +74,8 @@ const Contact = () => {
         </div>
 
         <div data-reveal="right" data-delay="120" className="contact-form-col">
-          <ContactForm />
+          <ContactForm buttonText="Escribime un mensaje →" />
+          <p className="contact-note-text">Siempre respondo en menos de 24 horas 😉</p>
         </div>
       </div>
     </section>

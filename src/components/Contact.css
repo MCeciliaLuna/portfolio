@@ -61,8 +61,12 @@
   font-size: 19px;
   line-height: 1.7;
   color: #3a3238;
-  max-width: 420px;
-  margin: 0 0 34px;
+  max-width: 460px;
+  margin: 0 0 20px;
+}
+
+.contact-desc-text strong {
+  color: var(--purple-dark);
 }
 
 @media (max-width: 576px) {
@@ -114,4 +118,13 @@
 
 .contact-row-link:hover .contact-row-arrow {
   transform: translateX(6px);
+}
+
+.contact-note-text {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--text-mauve);
+  margin-top: 14px;
+  text-align: center;
+  font-style: italic;
 }

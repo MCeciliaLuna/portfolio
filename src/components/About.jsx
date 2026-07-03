@@ -13,14 +13,20 @@ const About = () => {
         <div data-reveal="left" className="about-title-col">
           <p className="about-subtitle">sobre mí</p>
           <h2 className="about-title">
-            Curiosa, creativa y <span className="about-highlight-border">obsesionada con el detalle.</span>
+            Una visión integral: <span className="about-highlight-border">del diseño al código.</span>
           </h2>
         </div>
         
         <div data-reveal="right" data-delay="120" className="about-details-col">
           <p className="about-description">
-            {profile.description}
+            Soy una apasionada de la tecnología con un perfil multidisciplinario. Acompaño a mis clientes desde la idea en blanco hasta el producto terminado conectando cuatro pilares:
           </p>
+          <ul className="about-pillars-list">
+            <li>🎨 <strong>Diseño UX/UI:</strong> Interfaces empáticas, accesibles y centradas en el usuario.</li>
+            <li>💻 <strong>Desarrollo Frontend:</strong> Código limpio, escalable y funcional.</li>
+            <li>🤖 <strong>Inteligencia Artificial:</strong> Innovación y optimización aplicada a cada proceso.</li>
+            <li>📚 <strong>Docencia y formación:</strong> Enseñar me impulsa a estar en constante evolución.</li>
+          </ul>
           <div className="about-tags-wrapper">
             {tags.map((tag, index) => (
               <span
