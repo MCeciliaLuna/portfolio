@@ -109,7 +109,7 @@ const Projects = () => {
                   document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Saltar recorrido ✦
+                Saltar
               </a>
             </div>
 
@@ -188,7 +188,7 @@ const Projects = () => {
                               className="proj-card-blur-link-btn" 
                               aria-label="Ver demo"
                             >
-                              Ver proyecto ✦
+                              Ver proyecto
                             </a>
                           )}
                           {project.repoUrl && (
@@ -291,7 +291,6 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
       style={{
         zIndex: index,
         top: `calc(5% + ${index * 12}px)`,
-        background: gradient,
       }}
       className="proj-stacked-card"
     >
@@ -317,7 +316,6 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
       <div className="proj-card-blur-overlay">
         <div className="proj-card-blur-header">
           <div className="proj-card-blur-title-row">
-            <span className="proj-card-blur-number">{formatIndex(index)}</span>
             <h3 className="proj-card-blur-title">{project.title}</h3>
           </div>
           
@@ -330,7 +328,7 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
                 className="proj-card-blur-link-btn" 
                 aria-label="Ver demo"
               >
-                Ver proyecto ✦
+                Ver proyecto
               </a>
             )}
             {project.repoUrl && (

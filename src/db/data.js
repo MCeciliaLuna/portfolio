@@ -79,22 +79,6 @@ const data = {
     },
     {
       id: uuidv4(),
-      "title": "We Learn Web",
-      "description": "Foro web con temáticas educativas desarrollada con ReactJs",
-      "imageUrl": "/images/projects/welearn-web.webp",
-      "liveUrl": "https://welearnweb.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/EvaluativoReact-GL-MYB"
-    },
-    {
-      id: uuidv4(),
-      "title": "ACVA Mockup",
-      "description": "Web estilo Linktree para iglesia evangélica desarrollada con Reactjs",
-      "imageUrl": "/images/projects/va-mockup.webp",
-      "liveUrl": "https://iglesiavidaabundante.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/redes-VA"
-    },
-    {
-      id: uuidv4(),
       "title": "La Quiaqueña Drugstore E-Commerce",
       "description": "Plataforma de comercio electrónico completa con React y DB propia",
       "imageUrl": "/images/projects/laquiaquena-web.webp",
@@ -111,14 +95,6 @@ const data = {
       "repoUrl": "https://github.com/MCeciliaLuna/laquiaquena-herboristeria",
       "youtubeUrl": "https://youtu.be/J1vSzS8Q2f0?si=smmlQNSsjfu64ybU"
     },
-    {
-      id: uuidv4(),
-      "title": "Contacto Profesional Web",
-      "description": "Web estilo linktree de ejemplo para profesionales desarrollada con ReactJs",
-      "imageUrl": "/images/projects/mclsd-mockup.webp",
-      "liveUrl": "https://mclds-muestra-base.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/MCLDS-muestra-base"
-    }
   ],
   "skills": [
     {
