@@ -55,14 +55,11 @@ const Contact = () => {
                 className="contact-row-link"
                 style={{ "--hover-color": link.color }}
               >
-                <span className="contact-row-icon-wrapper" style={{ color: link.color }}>
+                <span className="contact-row-icon-wrapper">
                   {link.icon}
                 </span>
                 <span className="contact-row-name">
-                  {link.displayUrl || link.name}
-                </span>
-                <span className="contact-row-arrow" style={{ color: link.color }}>
-                  →
+                  {link.name}
                 </span>
               </a>
             ))}
