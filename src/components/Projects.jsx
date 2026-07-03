@@ -157,16 +157,28 @@ const Projects = () => {
                     className="proj-stacked-card proj-mobile-card"
                     style={{ background: gradients[index % gradients.length] }}
                   >
-                    {/* Imagen de fondo del proyecto */}
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="proj-card-bg-img"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                      }}
-                    />
+                    {/* Imagen de fondo del proyecto, linkeada opcionalmente a liveUrl o figmaUrl */}
+                    {(() => {
+                      const targetLink = project.liveUrl || project.figmaUrl;
+                      const cardImage = (
+                        <img
+                          src={project.imageUrl}
+                          alt={project.title}
+                          className="proj-card-bg-img"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                          }}
+                        />
+                      );
+                      return targetLink ? (
+                        <a href={targetLink} target="_blank" rel="noopener noreferrer" aria-label={project.title}>
+                          {cardImage}
+                        </a>
+                      ) : (
+                        cardImage
+                      );
+                    })()}
 
                     {/* Overlay de oscurecimiento */}
                     <div className="proj-card-overlay" style={{ opacity: 0.15 }} />
@@ -276,6 +288,20 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
     overlayOpacityVal = p * 0.55;
   }
 
+  const targetLink = project.liveUrl || project.figmaUrl;
+
+  const cardImage = (
+    <img
+      src={project.imageUrl}
+      alt={project.title}
+      className="proj-card-bg-img"
+      loading="lazy"
+      onError={(e) => {
+        e.target.style.display = "none";
+      }}
+    />
+  );
+
   return (
     <motion.div
       animate={{
@@ -291,19 +317,18 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
       style={{
         zIndex: index,
         top: `calc(5% + ${index * 12}px)`,
+        background: gradient,
       }}
       className="proj-stacked-card"
     >
-      {/* Imagen de fondo del proyecto */}
-      <img
-        src={project.imageUrl}
-        alt={project.title}
-        className="proj-card-bg-img"
-        loading="lazy"
-        onError={(e) => {
-          e.target.style.display = "none";
-        }}
-      />
+      {/* Imagen de fondo del proyecto, linkeada opcionalmente a liveUrl o figmaUrl */}
+      {targetLink ? (
+        <a href={targetLink} target="_blank" rel="noopener noreferrer" aria-label={project.title}>
+          {cardImage}
+        </a>
+      ) : (
+        cardImage
+      )}
 
       {/* Overlay de oscurecimiento */}
       <motion.div
@@ -316,49 +341,50 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
       <div className="proj-card-blur-overlay">
         <div className="proj-card-blur-header">
           <div className="proj-card-blur-title-row">
+            <span className="proj-card-blur-number">{formatIndex(index)}</span>
             <h3 className="proj-card-blur-title">{project.title}</h3>
           </div>
-          
+
           <div className="proj-card-blur-links">
             {project.liveUrl && (
-              <a 
-                href={project.liveUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="proj-card-blur-link-btn" 
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="proj-card-blur-link-btn"
                 aria-label="Ver demo"
               >
-                Ver proyecto
+                Ver proyecto ✦
               </a>
             )}
             {project.repoUrl && (
-              <a 
-                href={project.repoUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="proj-card-blur-link-icon" 
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="proj-card-blur-link-icon"
                 aria-label="GitHub"
               >
                 <GithubOutlined />
               </a>
             )}
             {project.figmaUrl && (
-              <a 
-                href={project.figmaUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="proj-card-blur-link-icon" 
+              <a
+                href={project.figmaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="proj-card-blur-link-icon"
                 aria-label="Figma"
               >
                 <FaFigma />
               </a>
             )}
             {project.youtubeUrl && (
-              <a 
-                href={project.youtubeUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="proj-card-blur-link-icon" 
+              <a
+                href={project.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="proj-card-blur-link-icon"
                 aria-label="YouTube"
               >
                 <YoutubeOutlined />
