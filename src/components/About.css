@@ -57,29 +57,7 @@
   font-size: 20px;
   line-height: 1.75;
   color: #3a3238;
-  margin: 0 0 24px;
-}
-
-.about-pillars-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  text-align: left;
-}
-
-.about-pillars-list li {
-  font-family: var(--font-lora);
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-mauve);
-}
-
-.about-pillars-list li strong {
-  color: var(--text-dark);
-  font-weight: 700;
+  margin: 0 0 30px;
 }
 
 @media (max-width: 576px) {
@@ -89,9 +67,6 @@
   }
   .about-title {
     font-size: 32px;
-  }
-  .about-pillars-list li {
-    font-size: 15px;
   }
 }
 
