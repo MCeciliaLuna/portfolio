@@ -276,8 +276,8 @@
 .cert-stacked-container {
   position: relative;
   width: 100%;
-  max-width: 512px;
-  height: 400px;
+  max-width: 680px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,17 +289,14 @@
   right: 0;
   margin: 0 auto;
   width: 100%;
-  max-width: 448px;
+  max-width: 600px;
   aspect-ratio: 4 / 3;
   border-radius: 24px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
+  background-color: var(--purple-very-dark);
 }
 
 .cert-card-grad-0 {
@@ -318,86 +315,93 @@
   background: linear-gradient(135deg, #e11d48, #db2777);
 }
 
+.cert-card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
 .cert-card-overlay {
   position: absolute;
   inset: 0;
   background-color: #000000;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
-.cert-card-top {
-  position: relative;
-  z-index: 10;
+/* White blur bottom overlay styles */
+.cert-card-blur-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 20px 28px;
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  text-align: left;
+  align-items: center;
+  z-index: 3;
+  gap: 16px;
 }
 
-.cert-card-institution {
-  color: rgba(255, 255, 255, 0.8) !important;
+.cert-card-blur-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
+}
+
+.cert-card-blur-institution {
   font-family: var(--font-caveat) !important;
-  font-size: 24px !important;
+  font-size: 22px !important;
+  color: var(--accent-pink) !important;
+  display: block;
+  line-height: 1.2;
+}
+
+.cert-card-blur-title {
+  font-family: var(--font-lora) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--purple-dark) !important;
+  margin: 4px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.cert-card-blur-year {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-mauve) !important;
   display: block;
 }
 
-.cert-card-title {
-  font-family: var(--font-lora) !important;
-  font-size: 26px !important;
-  font-weight: 700 !important;
-  margin-top: 8px !important;
-  line-height: 1.3 !important;
-  color: var(--white) !important;
-}
-
-.cert-card-icon {
-  font-size: 36px;
-  user-select: none;
-}
-
-.cert-card-bottom {
-  position: relative;
-  z-index: 10;
+.cert-card-eye-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--purple-dark);
+  color: var(--white);
+  border: none;
   display: flex;
-  justify-content: space-between;
-  align-items: end;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 24px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(122, 0, 98, 0.2);
+  flex-shrink: 0;
 }
 
-.cert-card-year-label {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0 0 2px;
-  text-align: left;
-}
-
-.cert-card-year {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--white);
-  margin: 0;
-  text-align: left;
-}
-
-.cert-card-button {
-  padding: 8px 16px;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--white);
-  transition: background-color 0.3s;
-  user-select: none;
-}
-
-.cert-card-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.cert-card-eye-btn:hover {
+  background-color: var(--accent-pink);
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(245, 0, 98, 0.35);
 }
 
 .cert-sticky-viewport-desktop {

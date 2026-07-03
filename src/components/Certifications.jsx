@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Modal } from "antd";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { LeftOutlined, RightOutlined, EyeOutlined } from "@ant-design/icons";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
@@ -289,6 +289,17 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
       className={`cert-stacked-card cert-card-grad-${index % 5}`}
       onClick={onClick}
     >
+      {/* Imagen de fondo de la certificación */}
+      <img
+        src={cert.imageUrl}
+        alt={cert.title}
+        className="cert-card-bg-img"
+        loading="lazy"
+        onError={(e) => {
+          e.target.style.display = "none";
+        }}
+      />
+
       {/* Capa de opacidad interactiva para profundidad */}
       <motion.div
         animate={{ opacity: overlayOpacityVal }}
@@ -296,24 +307,23 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
         className="cert-card-overlay"
       />
 
-      {/* Contenido Superior */}
-      <div className="cert-card-top">
-        <div>
-          <span className="cert-card-institution">{cert.institution}</span>
-          <h3 className="cert-card-title">{cert.title}</h3>
+      {/* Blur en blanco abajo con la data y ojo */}
+      <div className="cert-card-blur-overlay">
+        <div className="cert-card-blur-content">
+          <span className="cert-card-blur-institution">{cert.institution}</span>
+          <h3 className="cert-card-blur-title">{cert.title}</h3>
+          <span className="cert-card-blur-year">{cert.year}</span>
         </div>
-        <span className="cert-card-icon">{icon}</span>
-      </div>
-
-      {/* Contenido Inferior */}
-      <div className="cert-card-bottom">
-        <div>
-          <p className="cert-card-year-label">Año de finalización</p>
-          <p className="cert-card-year">{cert.year}</p>
-        </div>
-        <div className="cert-card-button">
-          Ver certificado ✦
-        </div>
+        <button 
+          className="cert-card-eye-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick();
+          }}
+          aria-label="Ver certificado completo"
+        >
+          <EyeOutlined />
+        </button>
       </div>
     </motion.div>
   );
