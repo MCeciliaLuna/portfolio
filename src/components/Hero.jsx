@@ -16,23 +16,23 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="hero-section-b">
+      {/* Imagen de perfil de fondo a la derecha */}
+      <div className="hero-b-bg-image-container">
+        <img
+          src="/images/perfil.png"
+          alt="Cecilia Luna"
+          className="hero-b-bg-image"
+          loading="eager"
+        />
+        <div className="hero-b-bg-image-white-filter"></div>
+        <div className="hero-b-bg-image-fade"></div>
+      </div>
+
       {/* Decorative blurred background shapes */}
       <div className="hero-b-shape-top"></div>
       <div className="hero-b-shape-bottom"></div>
 
       <div className="hero-b-content-wrapper">
-        <img
-          src={profile.profileImage}
-          alt={profile.name}
-          className="hero-b-avatar"
-          loading="eager"
-          onError={(e) => {
-            e.target.style.display = "none";
-            e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
-            e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem; font-family: var(--font-caveat);">${profile.name}</div>`;
-          }}
-        />
-
         <p data-reveal="up" className="hero-b-greeting">
           ¡Hola! soy {profile.name}
         </p>
