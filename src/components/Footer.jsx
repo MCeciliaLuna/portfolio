@@ -13,9 +13,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-main-row">
           <div className="footer-brand-col">
-            <p className="footer-brand-name">{profile.name} Luna</p>
+            <p className="footer-brand-name">{profile.name}</p>
             <p className="footer-brand-subtitle">
-              Frontend Developer &amp; UX/UI Designer
+              Frontend Developer, UX/UI Designer &amp; Teaching
             </p>
           </div>
           <div className="footer-links-col">
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom-row">
-          © {currentYear} María Cecilia Luna. Hecho con código y cariño.
+          © {currentYear} María Cecilia Luna
         </div>
       </div>
     </footer>

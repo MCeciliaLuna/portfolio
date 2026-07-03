@@ -21,7 +21,7 @@ const Companies = () => {
         <div className="companies-marquee-track">
           {marqueeItems.map((company, index) => (
             <React.Fragment key={index}>
-              <div className="marquee-company-logo-wrapper">
+              <a href={company.url} target="_blank" rel="noopener noreferrer" aria-label={company.name} className="marquee-company-logo-wrapper">
                 <img
                   src={company.logo}
                   alt={company.name}
@@ -31,7 +31,7 @@ const Companies = () => {
                     e.target.parentElement.innerHTML = `<span class="marquee-company-name-fallback">${company.name}</span>`;
                   }}
                 />
-              </div>
+              </a>
               <span
                 className="marquee-separator"
                 style={{ color: dotColors[index % dotColors.length] }}
