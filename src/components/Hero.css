@@ -12,55 +12,96 @@
 
 @keyframes floatSlowTop {
   0% { transform: translate(0px, 0px) rotate(0deg); }
-  33% { transform: translate(30px, -20px) rotate(120deg); }
-  66% { transform: translate(-20px, 15px) rotate(240deg); }
+  33% { transform: translate(25px, -20px) rotate(120deg); }
+  66% { transform: translate(-15px, 15px) rotate(240deg); }
   100% { transform: translate(0px, 0px) rotate(360deg); }
 }
 
 @keyframes floatSlowBottom {
   0% { transform: translate(0px, 0px) rotate(0deg); }
-  50% { transform: translate(-40px, 30px) rotate(-180deg); }
+  50% { transform: translate(-35px, 25px) rotate(-180deg); }
   100% { transform: translate(0px, 0px) rotate(-360deg); }
 }
 
-.hero-b-shape-top-wrapper {
+@keyframes floatSlowLeft {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  33% { transform: translate(30px, 20px) rotate(120deg); }
+  66% { transform: translate(-20px, -25px) rotate(240deg); }
+  100% { transform: translate(0px, 0px) rotate(360deg); }
+}
+
+@keyframes floatSlowRight {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(-25px, -30px) rotate(-180deg); }
+  100% { transform: translate(0px, 0px) rotate(-360deg); }
+}
+
+@keyframes floatSlowCenter {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  33% { transform: translate(-20px, 25px) rotate(120deg); }
+  66% { transform: translate(25px, -15px) rotate(240deg); }
+  100% { transform: translate(0px, 0px) rotate(360deg); }
+}
+
+/* Base style for wrapper containers */
+.hero-b-shape-wrapper {
   position: absolute;
-  top: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Base style for inner shape elements */
+.hero-b-shape {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Shape 1 - Pink (Top-Left) */
+.hero-b-shape-1-wrapper {
+  top: 12%;
   left: 8%;
   width: 220px;
   height: 220px;
-  z-index: 1;
   animation: floatSlowTop 18s ease-in-out infinite;
-  pointer-events: none;
 }
 
-.hero-b-shape-top {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 0, 98, 0.16), transparent 70%);
-  pointer-events: none;
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.hero-b-shape-bottom-wrapper {
-  position: absolute;
-  bottom: 60px;
-  right: 10%;
+/* Shape 2 - Orange (Bottom-Right) */
+.hero-b-shape-2-wrapper {
+  bottom: 8%;
+  right: 12%;
   width: 260px;
   height: 260px;
-  z-index: 1;
   animation: floatSlowBottom 20s ease-in-out infinite;
-  pointer-events: none;
 }
 
-.hero-b-shape-bottom {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 160, 51, 0.22), transparent 70%);
-  pointer-events: none;
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+/* Shape 3 - Purple (Middle-Left) */
+.hero-b-shape-3-wrapper {
+  top: 48%;
+  left: 3%;
+  width: 200px;
+  height: 200px;
+  animation: floatSlowLeft 22s ease-in-out infinite;
+}
+
+/* Shape 4 - Lime/Green (Top-Right) */
+.hero-b-shape-4-wrapper {
+  top: 6%;
+  right: 28%;
+  width: 240px;
+  height: 240px;
+  animation: floatSlowRight 24s ease-in-out infinite;
+}
+
+/* Shape 5 - Soft Orange (Bottom-Left) */
+.hero-b-shape-5-wrapper {
+  bottom: 22%;
+  left: 20%;
+  width: 190px;
+  height: 190px;
+  animation: floatSlowCenter 26s ease-in-out infinite;
 }
 
 .hero-b-content-wrapper {

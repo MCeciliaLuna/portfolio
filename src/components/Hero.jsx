@@ -5,12 +5,43 @@ import "./Hero.css";
 const Hero = () => {
   const { profile } = data;
   const heroRef = useRef(null);
-  
-  // Refs for both wrappers (base animated position) and inner shapes (translated position)
-  const shapeTopRef = useRef(null);
-  const shapeTopWrapperRef = useRef(null);
-  const shapeBottomRef = useRef(null);
-  const shapeBottomWrapperRef = useRef(null);
+
+  // Configuration for 5 shapes representing the color palette
+  const shapesData = [
+    {
+      id: 1,
+      wrapperClass: "hero-b-shape-1-wrapper",
+      color: "radial-gradient(circle, rgba(245, 0, 98, 0.16), transparent 70%)" // Pink
+    },
+    {
+      id: 2,
+      wrapperClass: "hero-b-shape-2-wrapper",
+      color: "radial-gradient(circle, rgba(255, 160, 51, 0.20), transparent 70%)" // Orange
+    },
+    {
+      id: 3,
+      wrapperClass: "hero-b-shape-3-wrapper",
+      color: "radial-gradient(circle, rgba(122, 0, 98, 0.18), transparent 70%)" // Purple
+    },
+    {
+      id: 4,
+      wrapperClass: "hero-b-shape-4-wrapper",
+      color: "radial-gradient(circle, rgba(138, 146, 0, 0.16), transparent 70%)" // Lime/Green
+    },
+    {
+      id: 5,
+      wrapperClass: "hero-b-shape-5-wrapper",
+      color: "radial-gradient(circle, rgba(255, 160, 51, 0.18), transparent 70%)" // Secondary Orange/Yellow
+    }
+  ];
+
+  // Dynamic ref arrays
+  const shapeRefs = useRef([]);
+  const wrapperRefs = useRef([]);
+
+  // Reset arrays on each render so they match the elements correctly
+  shapeRefs.current = [];
+  wrapperRefs.current = [];
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
@@ -29,12 +60,8 @@ const Hero = () => {
       const threshold = 320; // Active radius from center
       const maxRepulsion = 220; // Pixels to push away
 
-      const shapes = [
-        { inner: shapeTopRef.current, wrapper: shapeTopWrapperRef.current },
-        { inner: shapeBottomRef.current, wrapper: shapeBottomWrapperRef.current }
-      ];
-
-      shapes.forEach(({ inner, wrapper }) => {
+      shapeRefs.current.forEach((inner, idx) => {
+        const wrapper = wrapperRefs.current[idx];
         if (!inner || !wrapper) return;
 
         // Measure parent wrapper to get base animated center, preventing translation feedback loops
@@ -60,10 +87,9 @@ const Hero = () => {
     };
 
     const handleMouseLeave = () => {
-      [shapeTopRef, shapeBottomRef].forEach((ref) => {
-        const shape = ref.current;
-        if (shape) {
-          shape.style.transform = "translate3d(0px, 0px, 0)";
+      shapeRefs.current.forEach((inner) => {
+        if (inner) {
+          inner.style.transform = "translate3d(0px, 0px, 0)";
         }
       });
     };
@@ -92,12 +118,23 @@ const Hero = () => {
       </div>
 
       {/* Decorative blurred background shapes inside wrappers for slow animation */}
-      <div ref={shapeTopWrapperRef} className="hero-b-shape-top-wrapper">
-        <div ref={shapeTopRef} className="hero-b-shape-top"></div>
-      </div>
-      <div ref={shapeBottomWrapperRef} className="hero-b-shape-bottom-wrapper">
-        <div ref={shapeBottomRef} className="hero-b-shape-bottom"></div>
-      </div>
+      {shapesData.map((shape) => (
+        <div
+          key={shape.id}
+          ref={(el) => {
+            if (el) wrapperRefs.current.push(el);
+          }}
+          className={`hero-b-shape-wrapper ${shape.wrapperClass}`}
+        >
+          <div
+            ref={(el) => {
+              if (el) shapeRefs.current.push(el);
+            }}
+            className="hero-b-shape"
+            style={{ background: shape.color }}
+          ></div>
+        </div>
+      ))}
 
       <div className="hero-b-content-wrapper">
         <p data-reveal="up" className="hero-b-greeting">
