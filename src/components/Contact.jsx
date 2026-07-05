@@ -40,9 +40,9 @@ const Contact = () => {
     <section id="contacto" className="contact-section-custom">
       <div className="contact-container">
         <div data-reveal="left" className="contact-info-col">
-          <h2 className="contact-main-title">¡Trabajemos juntos!</h2>
+          <h2 className="contact-main-title">¡Hagámoslo junt@s!</h2>
           <p className="contact-desc-text">
-            ¿Tenés un proyecto en mente? Me encantaría ayudarte a hacer realidad tu idea — desde el diseño de la experiencia hasta el producto final.
+            Quiero formar parte de tu proyecto. Contame tu idea y encaremos el camino de su creación.
           </p>
           
           <div className="contact-social-rows">

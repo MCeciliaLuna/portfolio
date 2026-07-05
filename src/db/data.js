@@ -5,7 +5,7 @@ const data = {
     "name": "Cecilia",
     "nickname": "Ceci",
     "tagline": "desarrolladora web frontend",
-    "description": "Soy curiosa y creativa, me encanta aprender y colaborar en equipo. Me apasionan los proyectos desafiantes, el diseño cuidado al detalle y encontrar soluciones a todo. Siempre estoy buscando crecer, por lo que me capacito constantemente. También amo explorar cómo aplicar la IA para potenciar todo mi desarrollo.",
+    "description": "Soy de las que disfrutan el proceso creativo de principio a fin. Pongo todo mi stack y mi energía a disposición del proyecto porque amo sentir que cada paso que damos tiene un sentido real. Además, me apasiona compartir lo que aprendo y seguir sumando herramientas. Una gran convicción es que los mejores productos nacen cuando hay propósito claro, un buen equipo, una buena idea detrás, y un par de risas en el medio.",
     "profileImage": "/images/profile.webp",
     "linkedin": "https://www.linkedin.com/in/mcecilialuna1/",
     "github": "https://github.com/MCeciliaLuna",

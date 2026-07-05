@@ -27,8 +27,8 @@ const Skills = () => {
     <section id="skills" className="skills-section-custom">
       <div className="skills-container">
         <div data-reveal="up" className="skills-header">
-          <p className="skills-subtitle">lo que hago</p>
-          <h2 className="skills-title">Skills</h2>
+          <p className="skills-subtitle">mi caja de herramientas</p>
+          <h2 className="skills-title">Stack</h2>
         </div>
         
         <div className="skills-grid-columns">

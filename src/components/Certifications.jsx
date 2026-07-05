@@ -60,7 +60,7 @@ const Certifications = () => {
         <div className="cert-sticky-viewport">
           {/* Encabezado */}
           <div className="cert-desktop-header">
-            <span className="cert-desktop-subtitle">Formación</span>
+            <span className="cert-desktop-subtitle">siempre en modo aprendizaje</span>
             <h2 className="cert-desktop-title">Mis Certificaciones</h2>
           </div>
 

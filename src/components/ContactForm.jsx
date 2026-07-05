@@ -93,7 +93,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
               setName(e.target.value);
               if (errors.name) setErrors({ ...errors, name: false });
             }}
-            placeholder="Tu nombre completo"
+            placeholder="¿Cómo te llamás?"
             className={`form-input ${errors.name ? "error" : ""}`}
             disabled={loading || status === "success"}
           />
@@ -111,7 +111,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
               setEmail(e.target.value);
               if (errors.email) setErrors({ ...errors, email: false });
             }}
-            placeholder="tu@email.com"
+            placeholder="todaviaseusaelemail@mail.com"
             className={`form-input ${errors.email ? "error" : ""}`}
             disabled={loading || status === "success"}
           />
@@ -130,7 +130,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             }}
             maxLength={500}
             rows={4}
-            placeholder="Contame sobre tu proyecto…"
+            placeholder="Contame sobre tu proyecto, seguramente es una gran idea."
             className={`form-textarea ${errors.message ? "error" : ""}`}
             disabled={loading || status === "success"}
           ></textarea>

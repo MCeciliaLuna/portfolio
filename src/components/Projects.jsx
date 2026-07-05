@@ -85,7 +85,7 @@ const Projects = () => {
         {/* Encabezado */}
         <div className="proj-desktop-header">
           <div>
-            <span className="proj-desktop-subtitle">trabajo seleccionado</span>
+            <span className="proj-desktop-subtitle">no son sólo palabras</span>
             <h2 className="proj-desktop-title">Proyectos</h2>
           </div>
           <a
