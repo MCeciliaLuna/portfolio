@@ -95,3 +95,16 @@
 .about-tag-item:nth-child(even):hover {
   transform: rotate(4deg);
 }
+
+@media (max-width: 768px) {
+  .about-subtitle {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-subtitle {
+    font-size: 22px;
+  }
+}
+

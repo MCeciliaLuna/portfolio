@@ -9,7 +9,7 @@
 .companies-subtitle {
   text-align: center;
   font-family: var(--font-caveat);
-  font-size: 36px;
+  font-size: 34px;
   color: var(--accent-orange);
   margin: 0 0 8px;
 }
@@ -115,5 +115,17 @@
   .marquee-separator {
     font-size: 24px;
     margin: 0 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .companies-subtitle {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-subtitle {
+    font-size: 22px;
   }
 }

@@ -119,7 +119,7 @@
   z-index: 10;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-b-content-wrapper {
     padding: 100px 20px 60px 20px;
     min-height: auto;
@@ -148,7 +148,6 @@
   object-fit: cover;
   object-position: center top;
   filter: grayscale(100%) brightness(1.1) contrast(0.9);
-  opacity: 0.85;
 }
 
 .hero-b-bg-image-white-filter {
@@ -170,14 +169,27 @@
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-b-bg-image-container {
+    top:20%;
+    left: 90px;
+    bottom: 0;
     width: 100%;
-    opacity: 0.15;
+    height: 100%;
+    opacity: 0.45;
+  }
+  .hero-b-bg-image {
+    object-position: center bottom;
+  }
+  .hero-b-bg-image-white-filter {
+    background-color: rgba(251, 249, 244, 0.15);
   }
   .hero-b-bg-image-fade {
     width: 100%;
-    background: linear-gradient(to bottom, var(--bg-main) 0%, transparent 30%, transparent 70%, var(--bg-main) 100%);
+    height: 100%;
+    background: linear-gradient(to top, transparent 45%, var(--bg-main) 98%),
+                linear-gradient(to right, var(--bg-main) 0%, transparent 50%),
+                linear-gradient(to left, var(--bg-main) 0%, transparent 50%);
   }
 }
 
@@ -199,7 +211,7 @@
   letter-spacing: -0.01em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-b-name {
     font-size: 88px;
     margin-bottom: 20px;
@@ -226,9 +238,9 @@
   line-height: 1.35;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-b-role {
-    font-size: 22px;
+    font-size: 1.2em;
     max-width: 100%;
   }
 }
@@ -251,7 +263,7 @@
   margin: 0 0 32px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-b-bio {
     max-width: 100%;
   }
@@ -271,7 +283,7 @@
   margin: 0 0 46px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-b-buttons {
     justify-content: center;
   }
@@ -310,5 +322,17 @@
   border-color: var(--accent-orange);
   color: var(--purple-dark);
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-b-bg-image-container {
+    top: 250px;
+    left: 100px;
+    bottom: 0;
+    width: 100vw;
+    height: 75vh;
+    opacity: 0.45;
+  }
+}
+
 
 
