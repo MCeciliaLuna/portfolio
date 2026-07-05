@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import data from "../db/data.js";
+import HandwritingText from "./HandwritingText";
+import TypewriterText from "./TypewriterText";
 import "./Hero.css";
 
 const Hero = () => {
@@ -181,17 +183,33 @@ const Hero = () => {
       ))}
 
       <div className="hero-b-content-wrapper">
-        <p data-reveal="up" className="hero-b-greeting">
-          ¡Hola! soy
-        </p>
+        <HandwritingText
+          as="p"
+          text="¡Hola! soy"
+          className="hero-b-greeting"
+          delay={0.2}
+        />
 
-        <h1 data-reveal="up" data-delay="80" className="hero-b-name">
-          {profile.name}
-        </h1>
+        <HandwritingText
+          as="h1"
+          text={profile.name}
+          className="hero-b-name"
+          delay={0.5}
+          duration={2.5}
+        />
 
-        <p data-reveal="up" data-delay="160" className="hero-b-role">
-          Frontend Developer <span className="ampersand">,</span> UX/UI Designer <span className="ampersand">&amp;</span> Teaching
-        </p>
+        <TypewriterText
+          as="p"
+          segments={[
+            { text: "Frontend Developer " },
+            { text: ",", className: "ampersand" },
+            { text: " UX/UI Designer " },
+            { text: "&", className: "ampersand" },
+            { text: " Teaching" },
+          ]}
+          className="hero-b-role"
+          delay={0.8}
+        />
 
         <div data-reveal="up" data-delay="300" className="hero-b-buttons">
           <a

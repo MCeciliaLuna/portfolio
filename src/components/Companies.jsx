@@ -1,5 +1,7 @@
 import React from "react";
 import data from "../db/data.js";
+import HandwritingText from "./HandwritingText";
+import TypewriterText from "./TypewriterText";
 import "./Companies.css";
 
 const Companies = () => {
@@ -12,10 +14,17 @@ const Companies = () => {
 
   return (
     <section id="empresas" className="companies-section-custom">
-      <p data-reveal="up" className="companies-subtitle">confiaron en mí</p>
-      <h2 data-reveal="up" data-delay="80" className="companies-title">
-        Empresas &amp; colaboraciones
-      </h2>
+      <HandwritingText as="p" text="confiaron en mí" className="companies-subtitle" />
+      <TypewriterText
+        as="h2"
+        segments={[
+          { text: "Empresas " },
+          { text: "&", className: "companies-ampersand" },
+          { text: " colaboraciones" },
+        ]}
+        className="companies-title"
+        delay={0.3}
+      />
       
       <div className="companies-marquee-wrapper">
         <div className="companies-marquee-track">

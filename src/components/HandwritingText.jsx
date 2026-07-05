@@ -1,17 +1,65 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
-const HandwritingText = ({ text = "Handwriting Effect", className = "" }) => {
+const motionTags = {
+  p: motion.p,
+  h1: motion.h1,
+  h2: motion.h2,
+  h3: motion.h3,
+  span: motion.span,
+  div: motion.div,
+};
+
+/**
+ * HandwritingText — Stagger de caracteres para textos Caveat.
+ * Mismo mecanismo probado que TypewriterText.
+ */
+const HandwritingText = ({
+  text = "",
+  as = "p",
+  className = "",
+  delay = 0,
+  staggerSpeed = 0.05,
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const MotionTag = motionTags[as] || motion.p;
+
+  const chars = text.split("");
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerSpeed,
+        delayChildren: delay,
+      },
+    },
+  };
+
+  const charVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.12, ease: "easeOut" },
+    },
+  };
+
   return (
-    <motion.p
-      className={`font-['Caveat',cursive] text-5xl md:text-6xl lg:text-7xl leading-tight ${className}`}
-      initial={{ clipPath: "inset(0 100% 0 0)" }}
-      whileInView={{ clipPath: "inset(0 0% 0 0)" }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 2.2, ease: "easeInOut" }}
-      style={{ willChange: "clip-path" }}
+    <MotionTag
+      ref={ref}
+      className={className}
+      variants={containerVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
     >
-      {text}
-    </motion.p>
+      {chars.map((char, i) => (
+        <motion.span key={i} variants={charVariants} style={{ display: "inline-block" }}>
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </MotionTag>
   );
 };
 

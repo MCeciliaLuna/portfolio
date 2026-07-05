@@ -7,6 +7,8 @@ import {
 } from "react-icons/fa";
 import { SiNextdotjs, SiExpress } from "react-icons/si";
 import { MdDesignServices, MdGroup } from "react-icons/md";
+import HandwritingText from "./HandwritingText";
+import TypewriterText from "./TypewriterText";
 import "./Skills.css";
 
 const Skills = () => {
@@ -26,9 +28,9 @@ const Skills = () => {
   return (
     <section id="skills" className="skills-section-custom">
       <div className="skills-container">
-        <div data-reveal="up" className="skills-header">
-          <p className="skills-subtitle">mi caja de herramientas</p>
-          <h2 className="skills-title">Stack</h2>
+        <div className="skills-header">
+          <HandwritingText as="p" text="mi caja de herramientas" className="skills-subtitle" />
+          <TypewriterText as="h2" text="Stack" className="skills-title" />
         </div>
         
         <div className="skills-grid-columns">

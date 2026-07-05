@@ -1,5 +1,7 @@
 import React from "react";
 import data from "../db/data.js";
+import HandwritingText from "./HandwritingText";
+import TypewriterText from "./TypewriterText";
 import "./About.css";
 
 const About = () => {
@@ -10,11 +12,20 @@ const About = () => {
   return (
     <section id="sobre" className="about-section-custom">
       <div className="about-container">
-        <div data-reveal="left" className="about-title-col">
-          <p className="about-subtitle">me presento...</p>
-          <h2 className="about-title">
-            Mate o café, una pc y siempre <span className="about-highlight-border">buena onda.</span>
-          </h2>
+        <div className="about-title-col">
+          <HandwritingText
+            as="p"
+            text="me presento..."
+            className="about-subtitle"
+          />
+          <TypewriterText
+            as="h2"
+            segments={[
+              { text: "Mate o café, una pc y siempre " },
+              { text: "buena onda.", className: "about-highlight-border" },
+            ]}
+            className="about-title"
+          />
         </div>
 
         <div data-reveal="right" data-delay="120" className="about-details-col">

@@ -2,6 +2,7 @@ import React from "react";
 import { LinkedinOutlined, GithubOutlined, MailOutlined } from "@ant-design/icons";
 import { FaWhatsapp } from "react-icons/fa";
 import ContactForm from "./ContactForm";
+import HandwritingText from "./HandwritingText";
 import data from "../db/data.js";
 import "./Contact.css";
 
@@ -39,8 +40,13 @@ const Contact = () => {
   return (
     <section id="contacto" className="contact-section-custom">
       <div className="contact-container">
-        <div data-reveal="left" className="contact-info-col">
-          <h2 className="contact-main-title">¡Hagámoslo junt@s!</h2>
+        <div className="contact-info-col">
+          <HandwritingText
+            as="h2"
+            text="¡Hagámoslo junt@s!"
+            className="contact-main-title"
+            duration={2.5}
+          />
           <p className="contact-desc-text">
             Quiero formar parte de tu proyecto. Contame tu idea y encaremos el camino de su creación.
           </p>

@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { Modal } from "antd";
 import { EyeOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
+import HandwritingText from "./HandwritingText";
+import TypewriterText from "./TypewriterText";
 import data from "../db/data.js";
 import "./Certifications.css";
 
@@ -60,8 +62,8 @@ const Certifications = () => {
         <div className="cert-sticky-viewport">
           {/* Encabezado */}
           <div className="cert-desktop-header">
-            <span className="cert-desktop-subtitle">siempre en modo aprendizaje</span>
-            <h2 className="cert-desktop-title">Mis Certificaciones</h2>
+            <HandwritingText as="span" text="Formación" className="cert-desktop-subtitle" />
+            <TypewriterText as="h2" text="Mis Certificaciones" className="cert-desktop-title" />
           </div>
 
           {/* Contenedor central de apilamiento */}
