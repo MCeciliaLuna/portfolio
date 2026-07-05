@@ -35,7 +35,7 @@ const Skills = () => {
         
         <div className="skills-grid-columns">
           <div data-reveal="left" className="skills-column">
-            <p className="skills-column-title code-title">Código</p>
+            <p className="skills-column-title code-title">código</p>
             <div className="skills-list">
               {codeSkills.map((skill, index) => (
                 <Tooltip key={index} title={skill.tooltip} placement="top">
@@ -52,7 +52,7 @@ const Skills = () => {
           </div>
           
           <div data-reveal="right" data-delay="120" className="skills-column">
-            <p className="skills-column-title design-title">Diseño &amp; Proceso</p>
+            <p className="skills-column-title design-title">diseño &amp; enseñanza</p>
             <div className="skills-list">
               {designSkills.map((skill, index) => (
                 <Tooltip key={index} title={skill.tooltip} placement="top">

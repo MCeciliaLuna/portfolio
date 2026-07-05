@@ -62,7 +62,7 @@ const Certifications = () => {
         <div className="cert-sticky-viewport">
           {/* Encabezado */}
           <div className="cert-desktop-header">
-            <HandwritingText as="span" text="Formación" className="cert-desktop-subtitle" />
+            <HandwritingText as="span" text="modo aprendizaje on" className="cert-desktop-subtitle" />
             <TypewriterText as="h2" text="Mis Certificaciones" className="cert-desktop-title" />
           </div>
 

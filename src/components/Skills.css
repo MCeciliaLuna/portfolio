@@ -19,7 +19,7 @@
 .skills-subtitle {
   font-family: var(--font-caveat);
   font-size: 34px;
-  color: var(--accent-orange);
+  color: var(--accent-green);
   margin: 0 0 4px;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .skills-column-title.design-title {
-  color: var(--accent-orange);
+  color: var(--accent-pink);
 }
 
 .skills-list {
