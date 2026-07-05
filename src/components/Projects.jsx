@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   GlobalOutlined,
   GithubOutlined,
@@ -11,22 +11,11 @@ import "./Projects.css";
 
 const Projects = () => {
   const { projects } = data;
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 880);
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef(null);
 
+  // Scroll listener para calcular progreso del efecto stacked (todos los viewports)
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 880);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Scroll listener nativo para calcular progreso en escritorio
-  useEffect(() => {
-    if (!isDesktop) return;
-
     const handleScroll = () => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -46,7 +35,7 @@ const Projects = () => {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isDesktop]);
+  }, []);
 
   const getProjectTags = (project) => {
     if (project.figmaUrl) return ["UX/UI", "Figma"];
@@ -67,7 +56,7 @@ const Projects = () => {
     return String(index + 1).padStart(2, "0");
   };
 
-  // Gradientes para tarjetas de escritorio
+  // Gradientes para tarjetas
   const gradients = [
     "linear-gradient(135deg, #1a1a2e, #16213e)",
     "linear-gradient(135deg, #0f3460, #16213e)",
@@ -85,110 +74,58 @@ const Projects = () => {
   ];
 
   return (
-    <>
-      {isDesktop ? (
-        /* VISTA DE ESCRITORIO: Stacked Cards con Scroll Pinning */
-        <div
-          ref={containerRef}
-          id="proyectos"
-          className="proj-sticky-scroll-container"
-          style={{ height: `${projects.length * 100}vh` }}
-        >
-          <div className="proj-sticky-viewport">
-            {/* Encabezado */}
-            <div className="proj-desktop-header">
-              <div>
-                <span className="proj-desktop-subtitle">trabajo seleccionado</span>
-                <h2 className="proj-desktop-title">Proyectos</h2>
-              </div>
-              <a
-                href="#contacto"
-                className="proj-skip-link-btn"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Saltar
-              </a>
-            </div>
-
-            {/* Contenedor central de apilamiento */}
-            <div className="proj-stacked-container">
-              {projects.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  index={index}
-                  total={projects.length}
-                  progress={scrollProgress}
-                  gradient={gradients[index % gradients.length]}
-                  tags={getProjectTags(project)}
-                  primaryLink={getPrimaryLink(project)}
-                  formatIndex={formatIndex}
-                />
-              ))}
-            </div>
-
-            {/* Indicador de progreso */}
-            <div className="proj-progress-bar-wrapper">
-              <div
-                className="proj-progress-bar-fill"
-                style={{ height: `${scrollProgress * 100}%` }}
-              />
-            </div>
+    /* Layout unificado stacked para desktop y mobile */
+    <div
+      ref={containerRef}
+      id="proyectos"
+      className="proj-sticky-scroll-container"
+      style={{ height: `${projects.length * 70}vh` }}
+    >
+      <div className="proj-sticky-viewport">
+        {/* Encabezado */}
+        <div className="proj-desktop-header">
+          <div>
+            <span className="proj-desktop-subtitle">trabajo seleccionado</span>
+            <h2 className="proj-desktop-title">Proyectos</h2>
           </div>
+          <a
+            href="#contacto"
+            className="proj-skip-link-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Saltar
+          </a>
         </div>
-      ) : (
-        /* VISTA MÓVIL: Layout clásico de filas */
-        <section id="proyectos" className="projects-section-custom">
-          <div className="container flex-column">
-            <div data-reveal="up" className="projects-header">
-              <p className="projects-subtitle">trabajo seleccionado</p>
-              <h2 className="projects-title">Proyectos</h2>
-            </div>
 
-            <div className="projects-mobile-list">
-              {projects.map((project, index) => {
-                const tags = getProjectTags(project);
-                return (
-                  <div
-                    key={project.id}
-                    className="proj-stacked-card proj-mobile-card"
-                    style={{ background: gradients[index % gradients.length] }}
-                  >
-                    {/* Imagen de fondo del proyecto, linkeada opcionalmente a liveUrl o figmaUrl */}
-                    {(() => {
-                      const targetLink = project.liveUrl || project.figmaUrl;
-                      const cardImage = (
-                        <img
-                          src={project.imageUrl}
-                          alt={project.title}
-                          className="proj-card-bg-img"
-                          loading="lazy"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                          }}
-                        />
-                      );
-                      return targetLink ? (
-                        <a href={targetLink} target="_blank" rel="noopener noreferrer" aria-label={project.title}>
-                          {cardImage}
-                        </a>
-                      ) : (
-                        cardImage
-                      );
-                    })()}
+        {/* Contenedor central de apilamiento */}
+        <div className="proj-stacked-container">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              total={projects.length}
+              progress={scrollProgress}
+              gradient={gradients[index % gradients.length]}
+              tags={getProjectTags(project)}
+              primaryLink={getPrimaryLink(project)}
+              formatIndex={formatIndex}
+            />
+          ))}
+        </div>
 
-
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-    </>
+        {/* Indicador de progreso */}
+        <div className="proj-progress-bar-wrapper">
+          <div
+            className="proj-progress-bar-fill"
+            style={{ height: `${scrollProgress * 100}%` }}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -197,15 +134,15 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
   const start = index / total;
   const targetScale = 1 - (total - index - 1) * 0.03;
 
-  // Cálculo del y vertical
-  let yVal = 600;
+  // Cálculo del y vertical — reducido de 600 a 500 para mejor ajuste
+  let yVal = 500;
   if (index === 0) {
     yVal = 0;
   } else if (progress >= start) {
     yVal = 0;
   } else if (progress >= start - 0.06) {
     const p = (progress - (start - 0.06)) / 0.06;
-    yVal = 600 * (1 - p);
+    yVal = 500 * (1 - p);
   }
 
   // Cálculo de la escala
@@ -250,7 +187,7 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
       }}
       style={{
         zIndex: index,
-        top: `calc(5% + ${index * 12}px)`,
+        top: `calc(2% + ${index * 8}px)`,
         background: gradient,
       }}
       className="proj-stacked-card"

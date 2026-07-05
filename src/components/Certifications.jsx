@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Modal } from "antd";
-import { LeftOutlined, RightOutlined, EyeOutlined } from "@ant-design/icons";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import { EyeOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import data from "../db/data.js";
 import "./Certifications.css";
@@ -11,21 +9,17 @@ const Certifications = () => {
   const { certifications } = data;
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedCert, setSelectedCert] = useState(null);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef(null);
 
-  // 1. Scroll listener nativo para calcular progreso en escritorio de manera 100% fiable
+  // Scroll listener para calcular progreso del efecto stacked (todos los viewports)
   useEffect(() => {
-    if (!isDesktop) return;
-
     const handleScroll = () => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const containerHeight = rect.height;
       const windowHeight = window.innerHeight;
 
-      // El anclaje (pinning) inicia cuando el tope del contenedor está a 80px
       const topOffset = 80;
       const scrolled = topOffset - rect.top;
       const maxScroll = containerHeight - (windowHeight - topOffset);
@@ -39,46 +33,7 @@ const Certifications = () => {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isDesktop]);
-
-  // 2. Embla Carousel (para móviles)
-  const autoplay = useRef(
-    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
-  );
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-      align: "center",
-      containScroll: false,
-      skipSnaps: false,
-      dragFree: false,
-      slidesToScroll: 1,
-    },
-    [autoplay.current]
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const scrollPrev = () => {
-    if (emblaApi) {
-      autoplay.current.stop();
-      emblaApi.scrollPrev();
-    }
-  };
-
-  const scrollNext = () => {
-    if (emblaApi) {
-      autoplay.current.stop();
-      emblaApi.scrollNext();
-    }
-  };
 
   const handleImageClick = (cert) => {
     setSelectedCert(cert);
@@ -93,121 +48,52 @@ const Certifications = () => {
   // Mapeo dinámico de emojis para las tarjetas stacked
   const icons = ["💻", "⚛️", "🟢", "🤖", "⚙️", "🎓"];
 
-  const getRotationStyle = (index) => {
-    const rotations = ["-2.5deg", "1.8deg", "-1.5deg", "2deg", "-2deg"];
-    return rotations[index % rotations.length];
-  };
-
-  const tagColors = ["#f50062", "#7a0062", "#ffa033", "#8a9200", "#c98a00"];
-
   return (
     <>
-      {isDesktop ? (
-        /* VISTA DE ESCRITORIO: Stacked Cards con Scroll Pinning Nativo y Resortes */
-        <div 
-          ref={containerRef} 
-          id="certificaciones"
-          className="cert-sticky-scroll-container"
-          style={{ height: `${certifications.length * 100}vh` }}
-        >
-          {/* El div sticky retiene el viewport justo debajo del navbar fijo */}
-          <div className="cert-sticky-viewport-desktop">
-            
-            {/* Encabezado */}
-            <div className="cert-desktop-header">
-              <span className="cert-desktop-subtitle">Formación</span>
-              <h2 className="cert-desktop-title">Mis Certificaciones</h2>
-            </div>
-
-            {/* Contenedor central de apilamiento */}
-            <div className="cert-stacked-container">
-              {certifications.map((cert, index) => (
-                <Card
-                  key={cert.id}
-                  cert={cert}
-                  index={index}
-                  total={certifications.length}
-                  progress={scrollProgress}
-                  icon={icons[index % icons.length]}
-                  onClick={() => handleImageClick(cert)}
-                />
-              ))}
-            </div>
-
-            {/* Botón de omisión (Bypass link) */}
-            <a
-              href="#skills"
-              className="cert-skip-link-btn"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Saltar
-            </a>
+      {/* Layout unificado stacked para desktop y mobile */}
+      <div 
+        ref={containerRef} 
+        id="certificaciones"
+        className="cert-sticky-scroll-container"
+        style={{ height: `${certifications.length * 70}vh` }}
+      >
+        <div className="cert-sticky-viewport">
+          {/* Encabezado */}
+          <div className="cert-desktop-header">
+            <span className="cert-desktop-subtitle">Formación</span>
+            <h2 className="cert-desktop-title">Mis Certificaciones</h2>
           </div>
+
+          {/* Contenedor central de apilamiento */}
+          <div className="cert-stacked-container">
+            {certifications.map((cert, index) => (
+              <Card
+                key={cert.id}
+                cert={cert}
+                index={index}
+                total={certifications.length}
+                progress={scrollProgress}
+                icon={icons[index % icons.length]}
+                onClick={() => handleImageClick(cert)}
+              />
+            ))}
+          </div>
+
+          {/* Botón de omisión (Bypass link) */}
+          <a
+            href="#skills"
+            className="cert-skip-link-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Saltar
+          </a>
         </div>
-      ) : (
-        /* VISTA MÓVIL: Embla Carousel con el mismo diseño de tarjetas */
-        <section id="certificaciones" className="certifications-section-custom">
-          <div className="container flex-column">
-            <div className="cert-header">
-              <p className="cert-subtitle">formación</p>
-              <h2 className="cert-title">Certificaciones</h2>
-            </div>
+      </div>
 
-            <div className="certifications-carousel-wrapper">
-              <div className="embla-viewport" ref={emblaRef}>
-                <div className="embla-container">
-                  {certifications.map((cert, index) => (
-                    <div key={cert.id} className="embla-slide-item">
-                      <div
-                        className={`cert-stacked-card cert-card-grad-${index % 5}`}
-                        onClick={() => handleImageClick(cert)}
-                      >
-                        {/* Imagen de fondo de la certificación */}
-                        <img
-                          src={cert.imageUrl}
-                          alt={cert.title}
-                          className="cert-card-bg-img"
-                          loading="lazy"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                          }}
-                        />
-
-                        {/* Capa de opacidad interactiva para profundidad */}
-                        <div className="cert-card-overlay" style={{ opacity: 0.1 }} />
-
-                        {/* Blur en blanco abajo con la data y ojo */}
-                        <div className="cert-card-blur-overlay">
-                          <div className="cert-card-blur-content">
-                            <span className="cert-card-blur-institution">{cert.institution}</span>
-                            <h3 className="cert-card-blur-title">{cert.title}</h3>
-                            <span className="cert-card-blur-year">{cert.year}</span>
-                          </div>
-                          <button 
-                            className="cert-card-eye-btn"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleImageClick(cert);
-                            }}
-                            aria-label="Ver certificado completo"
-                          >
-                            <EyeOutlined />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Modal Reutilizado para ambas vistas */}
+      {/* Modal Reutilizado */}
       <Modal
         open={modalVisible}
         onCancel={handleModalClose}
@@ -245,16 +131,16 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
   const start = index / total;
   const targetScale = 1 - (total - index - 1) * 0.04;
 
-  // Cálculo matemático del y vertical (Clamped de forma segura en JS)
-  let yVal = 800;
+  // Cálculo del y vertical — reducido de 800 a 600 para mejor ajuste en viewport
+  let yVal = 600;
   if (index === 0) {
     yVal = 0; // La primera tarjeta inicia directamente en su lugar
   } else if (progress >= start) {
     yVal = 0;
   } else if (progress >= start - 0.08) {
-    // Interpola progress de [start - 0.08, start] a [800, 0]
+    // Interpola progress de [start - 0.08, start] a [600, 0]
     const p = (progress - (start - 0.08)) / 0.08;
-    yVal = 800 * (1 - p);
+    yVal = 600 * (1 - p);
   }
 
   // Cálculo matemático de la escala (Clamped de forma segura en JS)
@@ -287,7 +173,7 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
       }}
       style={{
         zIndex: index,
-        top: `calc(5% + ${index * 16}px)`,
+        top: `calc(2% + ${index * 10}px)`,
       }}
       className={`cert-stacked-card cert-card-grad-${index % 5}`}
       onClick={onClick}

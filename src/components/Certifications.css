@@ -269,12 +269,12 @@
   scroll-margin-top: 80px;
 }
 
-/* Stacked Cards Desktop Layout */
+/* Stacked Cards Layout — Responsive */
 .cert-stacked-container {
   position: relative;
   width: 100%;
   max-width: 680px;
-  height: 500px;
+  height: clamp(320px, 55vh, 480px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -286,7 +286,7 @@
   right: 0;
   margin: 0 auto;
   width: 100%;
-  max-width: 600px;
+  max-width: min(600px, 90vw);
   aspect-ratio: 4 / 3;
   border-radius: 24px;
   overflow: hidden;
@@ -380,7 +380,7 @@
   background-color: var(--accent-pink);
 }
 
-.cert-sticky-viewport-desktop {
+.cert-sticky-viewport {
   position: sticky;
   top: 80px;
   height: calc(100vh - 80px);
@@ -389,8 +389,9 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 0 16px;
+  padding: 20px 16px;
   background-color: var(--purple-dark);
+  gap: 12px;
 }
 
 .cert-desktop-header {
@@ -432,27 +433,70 @@
   text-decoration: none;
 }
 
-/* Overrides para mobile Embla slide items */
-.embla-slide-item .cert-stacked-card {
-  position: relative;
-  max-width: 100%;
-  aspect-ratio: 4 / 3;
-  min-height: 250px;
+/* Mobile responsive — stacked layout unificado */
+@media (max-width: 768px) {
+  .cert-sticky-viewport {
+    padding: 16px 12px;
+    gap: 8px;
+  }
+
+  .cert-stacked-container {
+    max-width: 100%;
+    height: clamp(260px, 48vh, 380px);
+  }
+
+  .cert-stacked-card {
+    border-radius: 18px;
+  }
+
+  .cert-desktop-header {
+    margin-bottom: 8px;
+  }
+
+  .cert-desktop-subtitle {
+    font-size: 26px !important;
+    margin-bottom: 4px;
+  }
+
+  .cert-desktop-title {
+    font-size: 30px !important;
+  }
+
+  .cert-skip-link-btn {
+    bottom: 24px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
-  .cert-card-blur-overlay {
-    padding: 16px 20px;
+  .cert-stacked-container {
+    height: clamp(220px, 45vh, 320px);
   }
+
+  .cert-card-blur-overlay {
+    padding: 14px 16px;
+  }
+
   .cert-card-blur-title {
+    font-size: 16px !important;
+  }
+
+  .cert-card-blur-institution {
     font-size: 17px !important;
   }
-  .cert-card-blur-institution {
-    font-size: 18px !important;
-  }
+
   .cert-card-eye-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .cert-desktop-subtitle {
+    font-size: 22px !important;
+  }
+
+  .cert-desktop-title {
+    font-size: 26px !important;
   }
 }

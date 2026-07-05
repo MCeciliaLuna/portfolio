@@ -293,8 +293,9 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 0 40px;
+  padding: 20px 40px;
   background-color: var(--bg-main);
+  gap: 12px;
 }
 
 .proj-desktop-header {
@@ -342,12 +343,12 @@
   text-decoration: none;
 }
 
-/* Stacked container */
+/* Stacked container — Responsive */
 .proj-stacked-container {
   position: relative;
   width: 100%;
   max-width: 680px;
-  height: 440px;
+  height: clamp(300px, 50vh, 420px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -359,8 +360,8 @@
   right: 0;
   margin: 0 auto;
   width: 100%;
-  max-width: 640px;
-  height: 400px;
+  max-width: min(640px, 90vw);
+  height: clamp(280px, 48vh, 380px);
   border-radius: 24px;
   overflow: hidden;
 }
@@ -518,46 +519,67 @@
 }
 
 /* ========================================
-   Projects Mobile Card List styling
+   Mobile responsive — stacked layout unificado
    ======================================== */
 
-.projects-mobile-list {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 30px;
-  gap: 24px;
-}
+@media (max-width: 880px) {
+  .proj-sticky-viewport {
+    padding: 16px 16px;
+    gap: 8px;
+  }
 
-.proj-mobile-card {
-  position: relative !important;
-  max-width: 100% !important;
-  height: 380px !important;
+  .proj-stacked-container {
+    max-width: 100%;
+    height: clamp(260px, 46vh, 360px);
+  }
+
+  .proj-stacked-card {
+    height: clamp(240px, 44vh, 340px);
+    border-radius: 18px;
+  }
+
+  .proj-desktop-header {
+    margin-bottom: 12px;
+  }
+
+  .proj-desktop-subtitle {
+    font-size: 26px;
+  }
+
+  .proj-desktop-title {
+    font-size: 30px;
+  }
+
+  .proj-skip-link-btn {
+    font-size: 22px;
+  }
+
+  .proj-progress-bar-wrapper {
+    right: 12px;
+    height: 80px;
+  }
 }
 
 @media (max-width: 480px) {
-  .proj-mobile-card {
-    height: 420px !important; /* give slightly more height on small screens for vertical content */
+  .proj-stacked-container {
+    height: clamp(200px, 42vh, 300px);
   }
-  .proj-card-blur-header {
-    flex-direction: column;
-    align-items: flex-start !important;
-    gap: 8px !important;
+
+  .proj-stacked-card {
+    height: clamp(180px, 40vh, 280px);
+    border-radius: 14px;
   }
-  .proj-card-blur-links {
-    width: 100%;
-    justify-content: flex-start !important;
+
+  .proj-desktop-subtitle {
+    font-size: 22px;
   }
-  .proj-card-blur-overlay {
-    padding: 16px 20px !important;
-    gap: 8px !important;
+
+  .proj-desktop-title {
+    font-size: 26px;
   }
-  .proj-card-blur-title {
-    font-size: 18px !important;
-  }
-  .proj-card-blur-desc {
-    font-size: 13px !important;
-    -webkit-line-clamp: 2 !important;
+
+  .proj-skip-link-btn {
+    font-size: 18px;
   }
 }
 

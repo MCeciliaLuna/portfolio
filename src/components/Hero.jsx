@@ -56,50 +56,94 @@ const Hero = () => {
     const heroElement = heroRef.current;
     if (!heroElement) return;
 
+    // Estado de repulsión persistente para cada shape — interpolado con lerp
+    const shapeStates = shapeRefs.current.map(() => ({
+      currentX: 0,
+      currentY: 0,
+      targetX: 0,
+      targetY: 0,
+    }));
+
+    const threshold = 350;      // Radio activo de detección del cursor (px)
+    const maxRepulsion = 180;   // Distancia máxima de empuje (px)
+    const lerpSpeed = 0.06;     // Factor de interpolación (más bajo = más suave/lento)
+    const returnSpeed = 0.03;   // Velocidad de retorno al soltar el mouse (más suave)
+
+    let mouseX = -9999;
+    let mouseY = -9999;
+    let isMouseInHero = false;
+    let rafId = null;
+
     const handleMouseMove = (e) => {
-      const threshold = 320; // Active radius from center
-      const maxRepulsion = 220; // Pixels to push away
-
-      shapeRefs.current.forEach((inner, idx) => {
-        const wrapper = wrapperRefs.current[idx];
-        if (!inner || !wrapper) return;
-
-        // Measure parent wrapper to get base animated center, preventing translation feedback loops
-        const rect = wrapper.getBoundingClientRect();
-        const shapeCenterX = rect.left + rect.width / 2;
-        const shapeCenterY = rect.top + rect.height / 2;
-
-        const dx = shapeCenterX - e.clientX;
-        const dy = shapeCenterY - e.clientY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < threshold) {
-          const force = (threshold - distance) / threshold;
-          // Apply proportional push force vector
-          const pushX = (dx / (distance || 1)) * force * maxRepulsion;
-          const pushY = (dy / (distance || 1)) * force * maxRepulsion;
-
-          inner.style.transform = `translate3d(${pushX}px, ${pushY}px, 0)`;
-        } else {
-          inner.style.transform = "translate3d(0px, 0px, 0)";
-        }
-      });
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      isMouseInHero = true;
     };
 
     const handleMouseLeave = () => {
-      shapeRefs.current.forEach((inner) => {
-        if (inner) {
+      isMouseInHero = false;
+    };
+
+    // Animation loop con requestAnimationFrame para movimiento fluido
+    const animate = () => {
+      shapeRefs.current.forEach((inner, idx) => {
+        const wrapper = wrapperRefs.current[idx];
+        const state = shapeStates[idx];
+        if (!inner || !wrapper || !state) return;
+
+        // Calcular target de repulsión basado en posición del cursor
+        if (isMouseInHero) {
+          const rect = wrapper.getBoundingClientRect();
+          const shapeCenterX = rect.left + rect.width / 2;
+          const shapeCenterY = rect.top + rect.height / 2;
+
+          const dx = shapeCenterX - mouseX;
+          const dy = shapeCenterY - mouseY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < threshold) {
+            // Fuerza proporcional inversa a la distancia — curva cuadrática para más naturalidad
+            const force = Math.pow((threshold - distance) / threshold, 1.5);
+            state.targetX = (dx / (distance || 1)) * force * maxRepulsion;
+            state.targetY = (dy / (distance || 1)) * force * maxRepulsion;
+          } else {
+            state.targetX = 0;
+            state.targetY = 0;
+          }
+        } else {
+          // Mouse fuera del hero: volver lentamente a la posición base
+          state.targetX = 0;
+          state.targetY = 0;
+        }
+
+        // Interpolación lineal (lerp) para movimiento suave
+        const speed = isMouseInHero ? lerpSpeed : returnSpeed;
+        state.currentX += (state.targetX - state.currentX) * speed;
+        state.currentY += (state.targetY - state.currentY) * speed;
+
+        // Solo aplicar transform si hay movimiento significativo (evitar micro-jitter)
+        if (Math.abs(state.currentX) > 0.1 || Math.abs(state.currentY) > 0.1) {
+          inner.style.transform = `translate3d(${state.currentX}px, ${state.currentY}px, 0)`;
+        } else {
+          state.currentX = 0;
+          state.currentY = 0;
           inner.style.transform = "translate3d(0px, 0px, 0)";
         }
       });
+
+      rafId = requestAnimationFrame(animate);
     };
 
     heroElement.addEventListener("mousemove", handleMouseMove);
     heroElement.addEventListener("mouseleave", handleMouseLeave);
 
+    // Iniciar el loop de animación
+    rafId = requestAnimationFrame(animate);
+
     return () => {
       heroElement.removeEventListener("mousemove", handleMouseMove);
       heroElement.removeEventListener("mouseleave", handleMouseLeave);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 
