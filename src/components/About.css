@@ -3,11 +3,13 @@
   max-width: 1180px;
   margin: 0 auto;
   padding: 120px 40px;
+  background-color: transparent !important;
 }
 
 @media (max-width: 768px) {
   .about-section-custom {
     padding: 80px 20px;
+    background-color: transparent !important;
   }
 }
 
