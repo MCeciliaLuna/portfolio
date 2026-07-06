@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 80px 20px 40px;
+  justify-content: flex-start;
+  padding: 120px 20px 40px;
   position: relative;
   overflow: hidden;
 }
@@ -293,7 +293,7 @@
 
 @media (max-width: 767px) {
   .me-page {
-    padding-top: 90px;
+    padding-top: 80px;
   }
   
   .me-content-wrapper {
