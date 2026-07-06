@@ -69,15 +69,21 @@
 .footer-link-item {
   color: #f3d9ec;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   font-family: var(--font-lora);
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  will-change: transform;
 }
 
 .footer-link-item:hover {
   color: var(--accent-yellow);
+  transform: translateY(-2px);
+}
+
+.footer-link-item:hover .footer-icon-prefix {
+  transform: scale(1.15);
 }
 
 .footer-icon-prefix {
@@ -85,6 +91,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .footer-bottom-row {

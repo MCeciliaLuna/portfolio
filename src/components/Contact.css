@@ -89,11 +89,13 @@
   display: inline-flex;
   align-items: center;
   padding: 4px 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 .contact-row-link:hover {
   color: var(--hover-color);
+  transform: translateX(4px);
 }
 
 .contact-row-icon-wrapper {
