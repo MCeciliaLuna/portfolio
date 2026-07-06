@@ -21,6 +21,13 @@ const data = {
   "projects": [
     {
       id: uuidv4(),
+      "title": "Sigmma.net Website",
+      "description": "Web institucional desarrollada con Nexjs",
+      "imageUrl": "/images/projects/sigmma-website.webp",
+      "liveUrl": "https://web.sigmma.net/"
+    },
+    {
+      id: uuidv4(),
       "title": "Fundación Valores Para Mi Ciudad",
       "description": "Web institucional desarrollada con ReactJs, backend y DB propia",
       "imageUrl": "/images/projects/fundacion-valores.webp",

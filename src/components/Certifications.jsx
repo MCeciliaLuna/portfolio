@@ -95,35 +95,6 @@ const Certifications = () => {
         </div>
       </div>
 
-      {/* Modal Reutilizado */}
-      <Modal
-        open={modalVisible}
-        onCancel={handleModalClose}
-        footer={null}
-        width={800}
-        className="certification-modal-custom"
-        centered
-      >
-        {selectedCert && (
-          <div className="cert-modal-body">
-            <img
-              src={selectedCert.imageUrl}
-              alt={selectedCert.title}
-              className="cert-modal-img"
-              onError={(e) => {
-                e.target.style.display = "none";
-                e.target.parentElement.style.backgroundColor = "var(--purple-dark)";
-                e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 1.2rem; text-align: center; padding: 40px; font-family: var(--font-lora);">${selectedCert.title}</div>`;
-              }}
-            />
-            <div className="cert-modal-details">
-              <span className="cert-modal-institution">{selectedCert.institution}</span>
-              <h3 className="cert-modal-title">{selectedCert.title}</h3>
-              <span className="cert-modal-year">{selectedCert.year}</span>
-            </div>
-          </div>
-        )}
-      </Modal>
     </>
   );
 };
@@ -197,25 +168,6 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
         transition={{ duration: 0.2 }}
         className="cert-card-overlay"
       />
-
-      {/* Blur en blanco abajo con la data y ojo */}
-      <div className="cert-card-blur-overlay">
-        <div className="cert-card-blur-content">
-          <span className="cert-card-blur-institution">{cert.institution}</span>
-          <h3 className="cert-card-blur-title">{cert.title}</h3>
-          <span className="cert-card-blur-year">{cert.year}</span>
-        </div>
-        <button 
-          className="cert-card-eye-btn"
-          onClick={(e) => {
-            e.stopPropagation();
-            onClick();
-          }}
-          aria-label="Ver certificado completo"
-        >
-          <EyeOutlined />
-        </button>
-      </div>
     </motion.div>
   );
 };

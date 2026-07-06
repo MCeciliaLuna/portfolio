@@ -300,14 +300,12 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 1;
 }
 
 .cert-card-overlay {
   position: absolute;
   inset: 0;
-  background-color: #000000;
   pointer-events: none;
   z-index: 2;
 }
