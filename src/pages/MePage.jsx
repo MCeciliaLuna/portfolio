@@ -225,7 +225,7 @@ const MePage = () => {
 
         <section className="me-span-section">
           <span>
-            Mate o café, una pc y <strong>siempre buena onda</strong>.
+            Mate o café, una pc y <strong style={{ color: "var(--accent-pink)" }}>siempre buena onda</strong>.
           </span>
         </section>
       </div>
