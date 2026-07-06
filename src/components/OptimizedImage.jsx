@@ -27,7 +27,7 @@ const OptimizedImage = memo(({ src, alt, className, fallbackSrc, loading = "lazy
           height: '100%',
           width: '100%'
         }}>
-          <span style={{ color: '#999' }}>Cargando...</span>
+          <span style={{ color: '#999' }}>Cargando…</span>
         </div>
       )}
       <img

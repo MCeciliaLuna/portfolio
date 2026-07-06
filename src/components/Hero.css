@@ -334,5 +334,11 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-b-shape-wrapper {
+    animation: none !important;
+  }
+}
+
 
 

@@ -11,6 +11,23 @@ import TypewriterText from "./TypewriterText";
 import data from "../db/data.js";
 import "./Projects.css";
 
+// Gradientes para tarjetas
+const gradients = [
+  "linear-gradient(135deg, #1a1a2e, #16213e)",
+  "linear-gradient(135deg, #0f3460, #16213e)",
+  "linear-gradient(135deg, #533483, #0b2239)",
+  "linear-gradient(135deg, #e94560, #0f3460)",
+  "linear-gradient(135deg, #1b1b2f, #162447)",
+  "linear-gradient(135deg, #2c003e, #512b58)",
+  "linear-gradient(135deg, #1f4068, #1a1a2e)",
+  "linear-gradient(135deg, #6a0572, #ab2e70)",
+  "linear-gradient(135deg, #0d7377, #14ffec)",
+  "linear-gradient(135deg, #e23e57, #522546)",
+  "linear-gradient(135deg, #2b2e4a, #e84545)",
+  "linear-gradient(135deg, #1e3163, #5c3d2e)",
+  "linear-gradient(135deg, #4a0e4e, #7a1ea1)",
+];
+
 const Projects = () => {
   const { projects } = data;
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -34,7 +51,7 @@ const Projects = () => {
       setScrollProgress(progress);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -57,23 +74,6 @@ const Projects = () => {
   const formatIndex = (index) => {
     return String(index + 1).padStart(2, "0");
   };
-
-  // Gradientes para tarjetas
-  const gradients = [
-    "linear-gradient(135deg, #1a1a2e, #16213e)",
-    "linear-gradient(135deg, #0f3460, #16213e)",
-    "linear-gradient(135deg, #533483, #0b2239)",
-    "linear-gradient(135deg, #e94560, #0f3460)",
-    "linear-gradient(135deg, #1b1b2f, #162447)",
-    "linear-gradient(135deg, #2c003e, #512b58)",
-    "linear-gradient(135deg, #1f4068, #1a1a2e)",
-    "linear-gradient(135deg, #6a0572, #ab2e70)",
-    "linear-gradient(135deg, #0d7377, #14ffec)",
-    "linear-gradient(135deg, #e23e57, #522546)",
-    "linear-gradient(135deg, #2b2e4a, #e84545)",
-    "linear-gradient(135deg, #1e3163, #5c3d2e)",
-    "linear-gradient(135deg, #4a0e4e, #7a1ea1)",
-  ];
 
   return (
     /* Layout unificado stacked para desktop y mobile */

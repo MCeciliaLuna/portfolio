@@ -261,8 +261,8 @@
   height: 52px !important;
   font-size: 1.05rem !important;
   font-family: var(--font-lora) !important;
-  font-weight: 600 !important;
-  color: var(--text-dark) !important;
+  font-weight: 400 !important;
+  color: var(--text-mauve) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -272,7 +272,7 @@
 }
 
 .website-button:hover {
-  background-color: var(--accent-pink) !important;
+  background-color: var(--accent-green) !important;
   color: var(--white) !important;
 }
 

@@ -58,6 +58,10 @@ const Hero = () => {
     const heroElement = heroRef.current;
     if (!heroElement) return;
 
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
     // Estado de repulsión persistente para cada shape — interpolado con lerp
     const shapeStates = shapeRefs.current.map(() => ({
       currentX: 0,
@@ -154,10 +158,13 @@ const Hero = () => {
       {/* Imagen de perfil de fondo a la derecha */}
       <div className="hero-b-bg-image-container">
         <img
-          src="/images/perfil.png"
+          src="/images/perfil_optimized.webp"
           alt="Cecilia Luna"
           className="hero-b-bg-image"
           loading="eager"
+          fetchPriority="high"
+          width={1000}
+          height={1333}
         />
         <div className="hero-b-bg-image-white-filter"></div>
         <div className="hero-b-bg-image-fade"></div>

@@ -4,14 +4,12 @@ import HandwritingText from "./HandwritingText";
 import TypewriterText from "./TypewriterText";
 import "./Companies.css";
 
+const dotColors = ["#ffa033", "#c2cc00", "#ffe15c", "#f50062"];
+
+// Duplicate the companies list to ensure continuous scrolling
+const marqueeItems = [...data.companies, ...data.companies, ...data.companies];
+
 const Companies = () => {
-  const { companies } = data;
-
-  const dotColors = ["#ffa033", "#c2cc00", "#ffe15c", "#f50062"];
-
-  // Duplicate the companies list to ensure continuous scrolling
-  const marqueeItems = [...companies, ...companies, ...companies];
-
   return (
     <section id="empresas" className="companies-section-custom">
       <HandwritingText as="p" text="confiaron en mí" className="companies-subtitle" />

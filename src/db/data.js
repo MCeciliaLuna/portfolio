@@ -23,21 +23,21 @@ const data = {
       id: uuidv4(),
       "title": "Sigmma.net Website",
       "description": "Web institucional desarrollada con Nexjs",
-      "imageUrl": "/images/projects/sigmma-website.webp",
+      "imageUrl": "/images/projects/sigmma-website_optimized.webp",
       "liveUrl": "https://web.sigmma.net/"
     },
     {
       id: uuidv4(),
       "title": "Fundación Valores Para Mi Ciudad",
       "description": "Web institucional desarrollada con ReactJs, backend y DB propia",
-      "imageUrl": "/images/projects/fundacion-valores.webp",
+      "imageUrl": "/images/projects/fundacion-valores_optimized.webp",
       "liveUrl": "https://valoresparamiciudadtuc.org/"
     },
     {
       id: uuidv4(),
       "title": "Bless Inmobiliaria Web",
       "description": "Web empresarial desarrollada con ReactJs, backend y DB propia",
-      "imageUrl": "/images/projects/blessinmobiliaria.webp",
+      "imageUrl": "/images/projects/blessinmobiliaria_optimized.webp",
       "liveUrl": "https://www.blessinmobiliaria.com"
     },
     {
@@ -57,14 +57,14 @@ const data = {
       id: uuidv4(),
       "title": "Iglesia de Cristo Tucumán Web",
       "description": "Landing page institucional desarrollada con ReactJs",
-      "imageUrl": "/images/projects/idc.webp",
+      "imageUrl": "/images/projects/idc_optimized.webp",
       "liveUrl": "https://iglesiadecristotuc.org/",
     },
     {
       id: uuidv4(),
       "title": "Procrastinant APP",
       "description": "WebApp checklist de gestión de tareas para cursado de Prompt Engineering",
-      "imageUrl": "/images/projects/procrastinant-app.webp",
+      "imageUrl": "/images/projects/procrastinant-app_optimized.webp",
       "liveUrl": "https://procrastinant-app.vercel.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/procrastinant-app"
     },

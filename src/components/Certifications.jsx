@@ -7,6 +7,9 @@ import TypewriterText from "./TypewriterText";
 import data from "../db/data.js";
 import "./Certifications.css";
 
+// Mapeo dinámico de emojis para las tarjetas stacked
+const icons = ["💻", "⚛️", "🟢", "🤖", "⚙️", "🎓"];
+
 const Certifications = () => {
   const { certifications } = data;
   const [modalVisible, setModalVisible] = useState(false);
@@ -32,7 +35,7 @@ const Certifications = () => {
       setScrollProgress(progress);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -46,9 +49,6 @@ const Certifications = () => {
     setModalVisible(false);
     setSelectedCert(null);
   };
-
-  // Mapeo dinámico de emojis para las tarjetas stacked
-  const icons = ["💻", "⚛️", "🟢", "🤖", "⚙️", "🎓"];
 
   return (
     <>

@@ -7,15 +7,13 @@ import "./About.css";
 const About = () => {
   const { profile, tags } = data;
 
-  const tagColors = ["#f50062", "#ffa033", "#7a0062", "#8a9200", "#c98a00"];
-
   return (
     <section id="sobre" className="about-section-custom">
       <div className="about-container">
         <div className="about-title-col">
           <HandwritingText
             as="p"
-            text="me presento..."
+            text="me presento…"
             className="about-subtitle"
           />
           <TypewriterText

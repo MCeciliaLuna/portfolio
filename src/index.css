@@ -77,6 +77,12 @@ input:focus, textarea:focus {
   outline: none;
 }
 
+input:focus-visible, textarea:focus-visible,
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent-pink);
+  outline-offset: 4px;
+}
+
 /* Keyframes animations */
 @keyframes cl-marquee {
   from { transform: translateX(0); }

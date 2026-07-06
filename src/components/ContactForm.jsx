@@ -10,6 +10,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null); // 'success' | 'error' | null
   const [errors, setErrors] = useState({});
+  const [copied, setCopied] = useState(false);
 
   const validate = () => {
     const tempErrors = {};
@@ -75,8 +76,14 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
     }
   };
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(profile.email);
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch (err) {
+      console.error("No se pudo copiar el email: ", err);
+    }
   };
 
   return (
@@ -88,12 +95,14 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             id="nombre"
             type="text"
             name="nombre"
+            autoComplete="name"
+            spellCheck={false}
             value={name}
             onChange={(e) => {
               setName(e.target.value);
               if (errors.name) setErrors({ ...errors, name: false });
             }}
-            placeholder="¿Cómo te llamás?"
+            placeholder="Ej. Cecilia Luna…"
             className={`form-input ${errors.name ? "error" : ""}`}
             disabled={loading || status === "success"}
           />
@@ -106,12 +115,14 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             id="email"
             type="email"
             name="email"
+            autoComplete="email"
+            spellCheck={false}
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
               if (errors.email) setErrors({ ...errors, email: false });
             }}
-            placeholder="todaviaseusaelemail@mail.com"
+            placeholder="Ej. correo@ejemplo.com…"
             className={`form-input ${errors.email ? "error" : ""}`}
             disabled={loading || status === "success"}
           />
@@ -130,7 +141,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             }}
             maxLength={500}
             rows={4}
-            placeholder="Contame sobre tu proyecto, seguramente es una gran idea."
+            placeholder="Ej. Hola, me gustaría diseñar una app…"
             className={`form-textarea ${errors.message ? "error" : ""}`}
             disabled={loading || status === "success"}
           ></textarea>
@@ -143,7 +154,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
           className="form-submit-btn"
           disabled={loading || status === "success"}
         >
-          {loading ? "Enviando..." : status === "success" ? "¡Enviado!" : buttonText}
+          {loading ? "Enviando…" : status === "success" ? "¡Enviado!" : buttonText}
         </button>
       </form>
 
@@ -164,7 +175,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             className="error-copy-btn"
             onClick={handleCopyEmail}
           >
-            Copiar email
+            {copied ? "¡Copiado!" : "Copiar email"}
           </button>
         </div>
       )}

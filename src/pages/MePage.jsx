@@ -8,40 +8,40 @@ import meData from "../db/me.json";
 import ProfileAvatar from "../components/ProfileAvatar";
 import DynamicIcon from "../components/DynamicIcon";
 
+// Configuration for 5 shapes representing the color palette (from Hero.jsx)
+const shapesData = [
+  {
+    id: 1,
+    wrapperClass: "hero-b-shape-1-wrapper",
+    color: "radial-gradient(circle, rgba(245, 0, 98, 0.16), transparent 70%)" // Pink
+  },
+  {
+    id: 2,
+    wrapperClass: "hero-b-shape-2-wrapper",
+    color: "radial-gradient(circle, rgba(255, 160, 51, 0.20), transparent 70%)" // Orange
+  },
+  {
+    id: 3,
+    wrapperClass: "hero-b-shape-3-wrapper",
+    color: "radial-gradient(circle, rgba(122, 0, 98, 0.18), transparent 70%)" // Purple
+  },
+  {
+    id: 4,
+    wrapperClass: "hero-b-shape-4-wrapper",
+    color: "radial-gradient(circle, rgba(138, 146, 0, 0.16), transparent 70%)" // Lime/Green
+  },
+  {
+    id: 5,
+    wrapperClass: "hero-b-shape-5-wrapper",
+    color: "radial-gradient(circle, rgba(255, 160, 51, 0.18), transparent 70%)" // Secondary Orange/Yellow
+  }
+];
+
 const MePage = () => {
   const { profile } = data;
   const { socialMedia, websites } = meData;
   
   const mePageRef = useRef(null);
-
-  // Configuration for 5 shapes representing the color palette (from Hero.jsx)
-  const shapesData = [
-    {
-      id: 1,
-      wrapperClass: "hero-b-shape-1-wrapper",
-      color: "radial-gradient(circle, rgba(245, 0, 98, 0.16), transparent 70%)" // Pink
-    },
-    {
-      id: 2,
-      wrapperClass: "hero-b-shape-2-wrapper",
-      color: "radial-gradient(circle, rgba(255, 160, 51, 0.20), transparent 70%)" // Orange
-    },
-    {
-      id: 3,
-      wrapperClass: "hero-b-shape-3-wrapper",
-      color: "radial-gradient(circle, rgba(122, 0, 98, 0.18), transparent 70%)" // Purple
-    },
-    {
-      id: 4,
-      wrapperClass: "hero-b-shape-4-wrapper",
-      color: "radial-gradient(circle, rgba(138, 146, 0, 0.16), transparent 70%)" // Lime/Green
-    },
-    {
-      id: 5,
-      wrapperClass: "hero-b-shape-5-wrapper",
-      color: "radial-gradient(circle, rgba(255, 160, 51, 0.18), transparent 70%)" // Secondary Orange/Yellow
-    }
-  ];
 
   // Dynamic ref arrays
   const shapeRefs = useRef([]);
@@ -54,6 +54,10 @@ const MePage = () => {
   useEffect(() => {
     const pageElement = mePageRef.current;
     if (!pageElement) return;
+
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
 
     // Estado de repulsión persistente para cada shape — interpolado con lerp
     const shapeStates = shapesData.map(() => ({
@@ -151,10 +155,13 @@ const MePage = () => {
       {/* Imagen de perfil de fondo a la derecha (estilo Hero.jsx) */}
       <div className="me-bg-image-container">
         <img
-          src="/images/perfil.png"
+          src="/images/perfil_optimized.webp"
           alt="Cecilia Luna"
           className="me-bg-image"
           loading="eager"
+          fetchPriority="high"
+          width={1000}
+          height={1333}
         />
         <div className="me-bg-image-white-filter"></div>
         <div className="me-bg-image-fade"></div>
@@ -182,7 +189,7 @@ const MePage = () => {
       <div className="me-content-wrapper">
         <section className="me-name-section">
           <h1 className="me-page-name">{profile.name} Luna</h1>
-          <p className="me-page-tagline">Frontend Developer & UX/UI Designer</p>
+          <p className="me-page-tagline">Frontend Developer, UX/UI Designer & Teaching</p>
         </section>
 
         <section className="me-buttons-section">
@@ -214,7 +221,6 @@ const MePage = () => {
                   rel="noopener noreferrer"
                   className="website-button"
                   block
-                  icon={website.icon ? <DynamicIcon iconName={website.icon} /> : null}
                 >
                   {website.title}
                 </Button>
