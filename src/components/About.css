@@ -62,11 +62,21 @@
   margin: 0 0 30px;
 }
 
+.about-description strong {
+  font-family: var(--font-caveat);
+  font-size: 1.25em;
+  font-weight: 700;
+  color:var(--purple-dark)
+}
+
 @media (max-width: 576px) {
   .about-description {
     font-size: 17px;
     line-height: 1.6;
   }
+  .about-description strong {
+  font-size: 1.30em;
+}
   .about-title {
     font-size: 32px;
   }

@@ -29,9 +29,7 @@ const About = () => {
         </div>
 
         <div data-reveal="right" data-delay="120" className="about-details-col">
-          <p className="about-description">
-            {profile.description}
-          </p>
+          <p className="about-description" dangerouslySetInnerHTML={{ __html: profile.description }} />
 
         </div>
       </div>

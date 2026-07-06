@@ -5,7 +5,7 @@ const data = {
     "name": "Cecilia",
     "nickname": "Ceci",
     "tagline": "desarrolladora web frontend",
-    "description": "Soy de las que disfrutan el proceso creativo de principio a fin. Pongo todo mi stack y mi energía a disposición del proyecto porque amo sentir que cada paso que damos tiene un sentido real. Además, me apasiona compartir lo que aprendo y seguir sumando herramientas. Una gran convicción es que los mejores productos nacen cuando hay propósito claro, un buen equipo, una buena idea detrás, y un par de risas en el medio.",
+    "description": "Soy de las que <strong>disfrutan</strong> el proceso creativo de principio a fin. Pongo todo mi stack y mi energía a disposición del proyecto porque <strong>amo sentir que cada paso que damos tiene un sentido real</strong>. Además, me apasiona compartir lo que aprendo y seguir sumando herramientas. Una gran convicción es que los mejores productos nacen cuando hay propósito claro, un buen equipo, una buena idea detrás, y <strong>un par de risas en el medio</strong>.",
     "profileImage": "/images/profile.webp",
     "linkedin": "https://www.linkedin.com/in/mcecilialuna1/",
     "github": "https://github.com/MCeciliaLuna",
