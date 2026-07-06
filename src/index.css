@@ -31,23 +31,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-main: #130a11;
-    --bg-navbar: rgba(19, 10, 17, 0.88);
-    --text-dark: #f6eff3;
-    --text-mauve: #b0a3ad;
-    --purple-dark: #e85ec6;
-    --purple-very-dark: #b82ca1;
-    --white: #20141d;
-    --glass-bg: rgba(32, 20, 29, 0.85);
-    --bg-filter: rgba(19, 10, 17, 0.75);
-    --bg-main-fade: rgba(19, 10, 17, 0.6);
-    --btn-bg: rgba(32, 20, 29, 0.8);
-    --border-color: rgba(255, 255, 255, 0.15);
-  }
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
