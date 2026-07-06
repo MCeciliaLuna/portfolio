@@ -5,7 +5,7 @@ const data = {
     "name": "Cecilia",
     "nickname": "Ceci",
     "tagline": "desarrolladora web frontend",
-    "description": "Soy curiosa y creativa, me encanta aprender y colaborar en equipo. Me apasionan los proyectos desafiantes, el diseño cuidado al detalle y encontrar soluciones a todo. Siempre estoy buscando crecer, por lo que me capacito constantemente. También amo explorar cómo aplicar la IA para potenciar todo mi desarrollo.",
+    "description": "Soy de las que <strong>disfrutan</strong> el proceso creativo de principio a fin. Pongo todo mi stack y mi energía a disposición del proyecto porque <strong>amo sentir que cada paso que damos tiene un sentido real</strong>. Además, me apasiona compartir lo que aprendo y seguir sumando herramientas. Una gran convicción es que los mejores productos nacen cuando hay propósito claro, un buen equipo, una buena idea detrás, y <strong>un par de risas en el medio</strong>.",
     "profileImage": "/images/profile.webp",
     "linkedin": "https://www.linkedin.com/in/mcecilialuna1/",
     "github": "https://github.com/MCeciliaLuna",
@@ -21,16 +21,23 @@ const data = {
   "projects": [
     {
       id: uuidv4(),
+      "title": "Sigmma.net Website",
+      "description": "Web institucional desarrollada con Nexjs",
+      "imageUrl": "/images/projects/sigmma-website_optimized.webp",
+      "liveUrl": "https://web.sigmma.net/"
+    },
+    {
+      id: uuidv4(),
       "title": "Fundación Valores Para Mi Ciudad",
       "description": "Web institucional desarrollada con ReactJs, backend y DB propia",
-      "imageUrl": "/images/projects/fundacion-valores.webp",
+      "imageUrl": "/images/projects/fundacion-valores_optimized.webp",
       "liveUrl": "https://valoresparamiciudadtuc.org/"
     },
     {
       id: uuidv4(),
       "title": "Bless Inmobiliaria Web",
       "description": "Web empresarial desarrollada con ReactJs, backend y DB propia",
-      "imageUrl": "/images/projects/blessinmobiliaria.webp",
+      "imageUrl": "/images/projects/blessinmobiliaria_optimized.webp",
       "liveUrl": "https://www.blessinmobiliaria.com"
     },
     {
@@ -50,14 +57,14 @@ const data = {
       id: uuidv4(),
       "title": "Iglesia de Cristo Tucumán Web",
       "description": "Landing page institucional desarrollada con ReactJs",
-      "imageUrl": "/images/projects/idc.webp",
+      "imageUrl": "/images/projects/idc_optimized.webp",
       "liveUrl": "https://iglesiadecristotuc.org/",
     },
     {
       id: uuidv4(),
       "title": "Procrastinant APP",
       "description": "WebApp checklist de gestión de tareas para cursado de Prompt Engineering",
-      "imageUrl": "/images/projects/procrastinant-app.webp",
+      "imageUrl": "/images/projects/procrastinant-app_optimized.webp",
       "liveUrl": "https://procrastinant-app.vercel.app/",
       "repoUrl": "https://github.com/MCeciliaLuna/procrastinant-app"
     },
@@ -79,22 +86,6 @@ const data = {
     },
     {
       id: uuidv4(),
-      "title": "We Learn Web",
-      "description": "Foro web con temáticas educativas desarrollada con ReactJs",
-      "imageUrl": "/images/projects/welearn-web.webp",
-      "liveUrl": "https://welearnweb.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/EvaluativoReact-GL-MYB"
-    },
-    {
-      id: uuidv4(),
-      "title": "ACVA Mockup",
-      "description": "Web estilo Linktree para iglesia evangélica desarrollada con Reactjs",
-      "imageUrl": "/images/projects/va-mockup.webp",
-      "liveUrl": "https://iglesiavidaabundante.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/redes-VA"
-    },
-    {
-      id: uuidv4(),
       "title": "La Quiaqueña Drugstore E-Commerce",
       "description": "Plataforma de comercio electrónico completa con React y DB propia",
       "imageUrl": "/images/projects/laquiaquena-web.webp",
@@ -111,14 +102,6 @@ const data = {
       "repoUrl": "https://github.com/MCeciliaLuna/laquiaquena-herboristeria",
       "youtubeUrl": "https://youtu.be/J1vSzS8Q2f0?si=smmlQNSsjfu64ybU"
     },
-    {
-      id: uuidv4(),
-      "title": "Contacto Profesional Web",
-      "description": "Web estilo linktree de ejemplo para profesionales desarrollada con ReactJs",
-      "imageUrl": "/images/projects/mclsd-mockup.webp",
-      "liveUrl": "https://mclds-muestra-base.netlify.app/",
-      "repoUrl": "https://github.com/MCeciliaLuna/MCLDS-muestra-base"
-    }
   ],
   "skills": [
     {
@@ -255,7 +238,8 @@ const data = {
     },
     {
       "label": "Contacto",
-      "href": "#contact"
+      "href": "/contact",
+      "isRoute": true
     }
   ]
 };

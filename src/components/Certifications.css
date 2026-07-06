@@ -1,414 +1,499 @@
-.certifications-section {
-  position: relative;
-  overflow: hidden;
+.certifications-section-custom {
+  scroll-margin-top: 80px;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--purple-dark);
+  padding: 120px 0;
 }
 
-.certifications-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(184, 208, 235, 0.9) 0%,
-    rgba(166, 99, 204, 0.6) 50%,
-    rgba(185, 250, 248, 0.8) 100%
-  );
-  z-index: 1;
+@media (max-width: 768px) {
+  .certifications-section-custom {
+    padding: 80px 0;
+  }
 }
 
-.certifications-section .container {
-  position: relative;
-  z-index: 2;
+.cert-header {
+  margin: 0 0 50px;
 }
 
-.section-title {
-  font-weight: 10;
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 3rem;
+.cert-subtitle {
+  font-family: var(--font-caveat);
+  font-size: 34px;
+  color: var(--accent-yellow);
+  margin: 0 0 4px;
+}
+
+.cert-title {
+  font-family: var(--font-lora);
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
   color: var(--white);
-  font-family: var(--font-title);
 }
 
-.certifications-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  overflow: hidden;
-  width: 100%;
-}
-
-.scroll-button {
-  flex-shrink: 0;
-  width: 50px !important;
-  height: 50px !important;
-  background: transparent !important;
-  border: none !important;
-  color: white !important;
-  z-index: 10;
-  /* Desactivar todos los efectos visuales */
-  transition: none !important;
-  box-shadow: none !important;
-}
-
-.scroll-button:hover,
-.scroll-button:focus,
-.scroll-button:active {
-  background: transparent !important;
-  border: none !important;
-  color: white !important;
-  box-shadow: none !important;
-  transform: none !important;
-  outline: none !important;
-}
-
-/* Desactivar el efecto ripple de Ant Design */
-.scroll-button::after,
-.scroll-button .ant-wave,
-.scroll-button .ant-click-animating-node {
-  display: none !important;
-}
-
-/* Desactivar animaciones wave globalmente para estos botones */
-.scroll-button.ant-btn {
-  overflow: hidden !important;
-}
-
-/* Asegurar que no hay efectos de click */
-.scroll-button,
-.scroll-button.ant-btn,
-.scroll-button:not(.ant-btn-dangerous) {
-  animation: none !important;
-}
-
-.scroll-button .anticon {
-  font-size: 1.3rem !important;
-}
-
-/* Embla Carousel Styles */
-.embla {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  max-width: calc(100vw - 80px);
-}
-
-.embla__container {
-  display: flex;
-  padding: 1rem 0 2rem 0;
-  gap: 0; /* Eliminar gap para usar solo margin */
-}
-
-.embla__slide {
-  flex: 0 0 auto;
-  min-width: 400px;
-  max-width: 400px;
-  margin-right: 2rem; /* Espacio consistente entre cards */
-}
-
-/* Asegurar que el último slide también tenga margen para el loop */
-.embla__slide:last-child {
-  margin-right: 2rem;
-}
-
-/* Media queries para diferentes tamaños de pantalla */
-@media (min-width: 1400px) {
-  .embla__slide {
-    min-width: 380px;
-    max-width: 380px;
-    margin-right: 2rem;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .embla__slide {
-    min-width: 360px;
-    max-width: 360px;
-    margin-right: 2rem;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .embla__slide {
-    min-width: 340px;
-    max-width: 340px;
-    margin-right: 2rem;
-  }
-}
-
-/* Mantener estilos existentes para compatibilidad */
-.certifications-grid {
-  display: flex;
-  gap: 0; /* Eliminar gap para consistencia */
-  padding: 1rem 0 2rem 0;
-}
-
-.certifications-grid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
-}
-
-.certification-card {
-  min-width: 400px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(111, 45, 189, 0.12);
-  border: none;
+/* Polaroid Card Style */
+.polaroid-card {
   background: var(--white);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.certification-image-wrapper {
-  position: relative;
+  padding: 16px 16px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 0;
+  margin: 0;
   cursor: pointer;
-  overflow: hidden;
-  height: 280px;
-  background: #f8f9fa;
+  transform: rotate(var(--rotation, 0deg));
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.certification-image {
+.polaroid-card:hover {
+  transform: rotate(0deg) translateY(-8px) !important;
+}
+
+.polaroid-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #f7f6f2;
+}
+
+.polaroid-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s ease;
-  padding: 10px;
+  transition: transform 0.5s ease;
 }
 
-.image-overlay {
+.polaroid-card:hover .polaroid-image {
+  transform: scale(1.03);
+}
+
+.polaroid-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(122, 0, 98, 0.4);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 1.1rem;
-  font-family: var(--font-body);
-  backdrop-filter: blur(2px);
-  background: rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s ease;
 }
 
-.image-overlay span {
-  width: 60%;
-  text-align: center;
-  background-color: var(--secondary-purple);
-  padding: 8px;
-  border-radius: 55px;
-}
-
-.certification-image-wrapper:hover .image-overlay {
+.polaroid-card:hover .polaroid-overlay {
   opacity: 1;
 }
 
-.certification-image-wrapper:hover .certification-image {
-  transform: scale(1.02);
+.polaroid-overlay span {
+  color: var(--white);
+  font-family: var(--font-caveat);
+  font-size: 26px;
+  font-weight: 700;
+  transform: translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.certification-info {
-  text-align: center;
-  padding: 0.5rem 0;
+.polaroid-card:hover .polaroid-overlay span {
+  transform: translateY(0);
 }
 
-.certification-info .institution {
-  font-size: 1.1rem;
-  color: var(--primary-purple);
-  font-weight: 500;
-  margin: 0.5rem 0;
-  font-family: var(--font-body);
+.polaroid-caption {
+  padding-top: 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.certification-info .year {
-  font-size: 1rem;
-  color: var(--text-light);
-  margin: 0;
-  font-family: var(--font-body);
+.polaroid-institution {
+  font-family: var(--font-caveat);
+  font-size: 22px;
+  margin: 0 0 4px;
 }
 
-/* Modal Styles */
-.certification-modal .ant-modal-content {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(111, 45, 189, 0.3);
-  padding: 0 0 1rem 0;
-}
-
-.modal-content {
-  text-align: center;
-}
-
-.modal-image {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  background: #f8f9fa;
-  padding: 10px;
-}
-
-.modal-info h3 {
-  font-family: var(--font-body) !important;
-  color: var(--primary-purple);
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+.polaroid-cert-title {
+  font-family: var(--font-lora);
+  font-size: 17px;
   font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 10px;
+  line-height: 1.3;
+  flex: 1;
 }
 
-.modal-institution {
-  font-size: 1.2rem;
-  color: var(--secondary-purple);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-body);
-}
-
-.modal-year {
-  font-size: 1rem;
-  color: var(--text-light);
+.polaroid-year {
+  font-size: 13px;
+  color: var(--text-mauve);
   margin: 0;
-  font-family: var(--font-body);
+  align-self: flex-start;
 }
 
+/* Embla Carousel Navigation Buttons on Dark Background */
+.cert-nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.cert-nav-btn:hover {
+  background: var(--white);
+  color: var(--purple-dark);
+  border-color: var(--white);
+}
+
+/* Mobile Embla Carousel Layout */
+.certifications-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.embla-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla-container {
+  display: flex;
+  user-select: none;
+  touch-action: pan-y pinch-zoom;
+  margin-left: -20px;
+}
+
+.embla-slide-item {
+  flex: 0 0 85%;
+  min-width: 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .embla-slide-item {
+    flex: 0 0 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  .embla-slide-item {
+    flex: 0 0 33.333%;
+  }
+}
+
+/* Custom modal styling */
+.certification-modal-custom .ant-modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0 !important;
+  background: var(--bg-main);
+}
+
+.certification-modal-custom .ant-modal-close {
+  color: var(--white);
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.certification-modal-custom .ant-modal-close:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.cert-modal-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cert-modal-img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  background: #f7f6f2;
+}
+
+.cert-modal-details {
+  padding: 24px 32px;
+  background: var(--white);
+}
+
+.cert-modal-institution {
+  font-family: var(--font-caveat);
+  font-size: 26px;
+  color: var(--accent-pink);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cert-modal-title {
+  font-family: var(--font-lora);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--purple-dark);
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+
+.cert-modal-year {
+  font-size: 15px;
+  color: var(--text-mauve);
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .cert-modal-details {
+    padding: 16px 20px;
+  }
+  .cert-modal-title {
+    font-size: 20px;
+  }
+  .cert-modal-institution {
+    font-size: 22px;
+  }
+}
+
+.cert-sticky-scroll-container {
+  position: relative;
+  width: 100%;
+  scroll-margin-top: 80px;
+}
+
+/* Stacked Cards Layout — Responsive */
+.cert-stacked-container {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  height: clamp(320px, 55vh, 480px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-stacked-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: min(600px, 90vw);
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: var(--purple-very-dark);
+}
+
+.cert-card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.cert-card-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* White blur bottom overlay styles */
+.cert-card-blur-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  gap: 16px;
+}
+
+.cert-card-blur-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
+}
+
+.cert-card-blur-institution {
+  font-family: var(--font-caveat) !important;
+  font-size: 22px !important;
+  color: var(--accent-pink) !important;
+  display: block;
+  line-height: 1.2;
+}
+
+.cert-card-blur-title {
+  font-family: var(--font-lora) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--purple-dark) !important;
+  margin: 4px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.cert-card-blur-year {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-mauve) !important;
+  display: block;
+}
+
+.cert-card-eye-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--purple-dark);
+  color: var(--white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cert-card-eye-btn:hover {
+  background-color: var(--accent-pink);
+}
+
+.cert-sticky-viewport {
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px 16px;
+  background-color: var(--purple-dark);
+  gap: 12px;
+}
+
+.cert-desktop-header {
+  text-align: center;
+  z-index: 10;
+}
+
+.cert-desktop-subtitle {
+  color: var(--accent-yellow) !important;
+  font-family: var(--font-caveat) !important;
+  font-size: 34px !important;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cert-desktop-title {
+  font-family: var(--font-lora) !important;
+  font-size: 40px !important;
+  font-weight: 600 !important;
+  color: var(--white) !important;
+  margin: 0 !important;
+}
+
+.cert-skip-link-btn {
+  position: absolute;
+  bottom: 40px;
+  z-index: 20;
+  padding: 12px 24px;
+  color: var(--white);
+  border-radius: 9999px;
+  transition: all 0.3s;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cert-skip-link-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Mobile responsive — stacked layout unificado */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  .cert-sticky-viewport {
+    padding: 16px 12px;
+    gap: 8px;
   }
 
-  .certifications-wrapper {
-    gap: 0;
-    padding: 0;
-    justify-content: center;
+  .cert-stacked-container {
+    max-width: 100%;
+    height: clamp(260px, 48vh, 380px);
   }
 
-  /* Ocultar botones en tablets y móviles */
-  .scroll-button {
-    display: none !important;
+  .cert-stacked-card {
+    border-radius: 18px;
   }
 
-  .embla {
-    max-width: calc(100vw - 40px);
+  .cert-desktop-header {
+    margin-bottom: 8px;
   }
 
-  .embla__container {
-    padding: 0.5rem 0 1.5rem 0;
+  .cert-desktop-subtitle {
+    font-size: 26px !important;
+    margin-bottom: 4px;
   }
 
-  .embla__slide {
-    min-width: 340px;
-    max-width: 340px;
-    margin-right: 1.5rem;
+  .cert-desktop-title {
+    font-size: 30px !important;
   }
 
-  .certification-card {
-    min-width: 340px;
-  }
-
-  .certification-image-wrapper {
-    height: 240px;
-  }
-
-  .certification-modal {
-    margin: 0;
-  }
-
-  .modal-image {
-    max-height: 300px;
+  .cert-skip-link-btn {
+    bottom: 24px;
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
+  .cert-stacked-container {
+    height: clamp(220px, 45vh, 320px);
   }
 
-  .certifications-wrapper {
-    gap: 0;
-    padding: 0;
+  .cert-card-blur-overlay {
+    padding: 14px 16px;
   }
 
-  .embla {
-    max-width: calc(100vw - 20px);
+  .cert-card-blur-title {
+    font-size: 16px !important;
   }
 
-  .embla__container {
-    padding: 0 10px;
+  .cert-card-blur-institution {
+    font-size: 17px !important;
   }
 
-  .embla__slide {
-    min-width: calc(100vw - 60px);
-    max-width: calc(100vw - 60px);
-    margin-right: 1rem; /* Espacio consistente en móvil */
+  .cert-card-eye-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
   }
 
-  .certification-card {
-    min-width: calc(100vw - 60px);
-    max-width: calc(100vw - 60px);
+  .cert-desktop-subtitle {
+    font-size: 22px !important;
   }
 
-  .certification-image-wrapper {
-    height: 200px;
-  }
-
-  .certification-info .institution {
-    font-size: 1rem;
-  }
-
-  .certification-info .year {
-    font-size: 0.9rem;
-  }
-}
-
-/* iPhone SE y dispositivos extra pequeños */
-@media (max-width: 375px) {
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .embla {
-    max-width: calc(100vw - 10px);
-  }
-
-  .embla__container {
-    padding: 0 5px;
-  }
-
-  .embla__slide {
-    min-width: calc(100vw - 40px);
-    max-width: calc(100vw - 40px);
-    margin-right: 0.8rem; /* Espacio consistente en pantallas pequeñas */
-  }
-
-  .certification-card {
-    min-width: calc(100vw - 40px);
-    max-width: calc(100vw - 40px);
-  }
-
-  .certification-image-wrapper {
-    height: 180px;
-  }
-
-  .certification-info {
-    padding: 1rem;
-  }
-
-  .certification-info .institution {
-    font-size: 0.9rem;
-  }
-
-  .certification-info .year {
-    font-size: 0.8rem;
+  .cert-desktop-title {
+    font-size: 26px !important;
   }
 }

@@ -8,8 +8,10 @@ import {
   PictureOutlined,
   FileTextOutlined,
   LinkedinOutlined,
-  GithubOutlined
+  GithubOutlined,
+  MailOutlined
 } from '@ant-design/icons';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export const iconMap = {
   'InstagramOutlined': InstagramOutlined,
@@ -21,5 +23,7 @@ export const iconMap = {
   'PictureOutlined': PictureOutlined,
   'FileTextOutlined': FileTextOutlined,
   'LinkedinOutlined': LinkedinOutlined,
-  'GithubOutlined': GithubOutlined
+  'GithubOutlined': GithubOutlined,
+  'MailOutlined': MailOutlined,
+  'FaWhatsapp': FaWhatsapp
 };

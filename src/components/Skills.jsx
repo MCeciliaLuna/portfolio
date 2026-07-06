@@ -1,58 +1,72 @@
-import React, { useMemo } from "react";
-import { Row, Col, Tooltip } from "antd";
+import React from "react";
+import { Tooltip } from "antd";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
   FaReact,
   FaChalkboardTeacher,
-  FaGithub
+  FaBrain
 } from "react-icons/fa";
 import { SiNextdotjs, SiExpress } from "react-icons/si";
-import { MdGroup, MdDesignServices, MdSpeed } from "react-icons/md";
-import data from "../db/data.js";
+import { MdDesignServices, MdGroup } from "react-icons/md";
+import HandwritingText from "./HandwritingText";
+import TypewriterText from "./TypewriterText";
 import "./Skills.css";
 
+const codeSkills = [
+  { name: "React", tooltip: "Creación de interfaces dinámicas mediante componentes reutilizables", color: "#f50062", icon: <FaReact /> },
+  { name: "Next.js", tooltip: "Aplicaciones de alto rendimiento con renderizado optimizado (SSR/SSG)", color: "#7a0062", icon: <SiNextdotjs /> },
+  { name: "Express.js", tooltip: "Desarrollo de APIs robustas y escalables del lado del servidor", color: "#8a9200", icon: <SiExpress /> },
+];
+
+const designSkills = [
+  { name: "Diseño UX/UI", tooltip: "Arquitectura de información y diseño de interfaces centradas en el usuario", color: "#f50062", icon: <MdDesignServices /> },
+  { name: "Metodologías Ágiles", tooltip: "Gestión de proyectos con entregas iterativas y mejora continua", color: "#8a9200", icon: <MdGroup /> },
+  { name: "Docencia", tooltip: "Facilitación de aprendizaje y comunicación efectiva de conceptos técnicos", color: "#f50062", icon: <FaChalkboardTeacher /> },
+  { name: "IA aplicada", tooltip: "Uso de herramientas de IA generativa para optimizar diseño y desarrollo", color: "#ffa033", icon: <FaBrain /> },
+];
+
 const Skills = () => {
-  const { skills } = data;
-
-  const iconMap = useMemo(
-    () => ({
-      FaHtml5: <FaHtml5 />,
-      FaCss3Alt: <FaCss3Alt />,
-      FaJs: <FaJs />,
-      FaReact: <FaReact />,
-      SiNextdotjs: <SiNextdotjs />,
-      MdDesignServices: <MdDesignServices />,
-      MdGroup: <MdGroup />,
-      MdSpeed: <MdSpeed />,
-      FaChalkboardTeacher: <FaChalkboardTeacher />,
-      SiExpress: <SiExpress />,
-      FaGithub: <FaGithub />,
-    }),
-    []
-  );
-
-  const getIcon = (iconName) => {
-    return iconMap[iconName] || <div className="default-icon">?</div>;
-  };
-
   return (
-    <section id="skills" className="section skills-section">
-      <div className="container">
-        <div>
-          <Row gutter={[30, 30]} justify="center">
-            {skills.map((skill, index) => (
-              <Col key={index} xs={12} sm={8} md={6} lg={6} xl={8}>
-                <Tooltip title={skill.tooltip}>
-                  <div className="skill-item">
-                    <div className="skill-icon">{getIcon(skill.icon)}</div>
-                    <span className="skill-name">{skill.name}</span>
-                  </div>
+    <section id="skills" className="skills-section-custom">
+      <div className="skills-container">
+        <div className="skills-header">
+          <HandwritingText as="p" text="mi caja de herramientas" className="skills-subtitle" />
+          <TypewriterText as="h2" text="Stack" className="skills-title" />
+        </div>
+        
+        <div className="skills-grid-columns">
+          <div data-reveal="left" className="skills-column">
+            <p className="skills-column-title code-title">código</p>
+            <div className="skills-list">
+              {codeSkills.map((skill, index) => (
+                <Tooltip key={index} title={skill.tooltip} placement="top">
+                  <span
+                    className="skill-span-item"
+                    style={{ "--hover-color": skill.color }}
+                  >
+                    <span className="skill-icon-prefix">{skill.icon}</span>
+                    <span className="skill-name-text">{skill.name}</span>
+                  </span>
                 </Tooltip>
-              </Col>
-            ))}
-          </Row>
+              ))}
+            </div>
+          </div>
+          
+          <div data-reveal="right" data-delay="120" className="skills-column">
+            <p className="skills-column-title design-title">diseño &amp; enseñanza</p>
+            <div className="skills-list">
+              {designSkills.map((skill, index) => (
+                <Tooltip key={index} title={skill.tooltip} placement="top">
+                  <span
+                    className="skill-span-item"
+                    style={{ "--hover-color": skill.color }}
+                  >
+                    <span className="skill-icon-prefix">{skill.icon}</span>
+                    <span className="skill-name-text">{skill.name}</span>
+                  </span>
+                </Tooltip>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

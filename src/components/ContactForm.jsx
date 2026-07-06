@@ -1,40 +1,45 @@
 import React, { useState } from "react";
-import { Form, Input, Button, message, Alert } from "antd";
-import {
-  CheckCircleOutlined,
-  ExclamationCircleOutlined,
-  MailOutlined,
-  CopyOutlined,
-} from "@ant-design/icons";
 import data from "../db/data.js";
+import "./ContactForm.css";
 
-const { TextArea } = Input;
-
-const ContactForm = ({
-  onSuccess,
-  className = "contact-form",
-  buttonText = "Enviar",
-}) => {
-  const [form] = Form.useForm();
-  const [loading, setLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-  const [errorDetails, setErrorDetails] = useState("");
+const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
   const { profile } = data;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [errors, setErrors] = useState({});
+  const [copied, setCopied] = useState(false);
 
-  const handleSubmit = async (values) => {
+  const validate = () => {
+    const tempErrors = {};
+    if (!name.trim()) tempErrors.name = "Ingresa tu nombre";
+    if (!email.trim()) {
+      tempErrors.email = "Ingresa tu email";
+    } else if (!/.+@.+\..+/.test(email)) {
+      tempErrors.email = "Ingresa un email válido";
+    }
+    if (!message.trim()) tempErrors.message = "Ingresa tu mensaje";
+    
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus(null);
+
+    if (!validate()) return;
+
     setLoading(true);
-    setSubmitStatus(null);
-    setErrorDetails("");
 
     try {
       const formData = new FormData();
-      formData.append("name", values.name);
-      formData.append("email", values.email);
-      formData.append("message", values.message);
-      formData.append(
-        "_subject",
-        `Nuevo mensaje de ${values.name} desde Portfolio`
-      );
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("message", message);
+      formData.append("_subject", `Nuevo mensaje de ${name} desde Portfolio`);
       formData.append("_captcha", "false");
       formData.append("_template", "table");
 
@@ -52,170 +57,128 @@ const ContactForm = ({
       const result = await response.json();
 
       if (response.ok && result.success !== false) {
-        setSubmitStatus("success");
-        message.success("¡Mensaje enviado exitosamente! Te responderé pronto.");
-        form.resetFields();
+        setStatus("success");
+        setName("");
+        setEmail("");
+        setMessage("");
         if (onSuccess) {
-          setTimeout(() => onSuccess(), 1500);
+          onSuccess();
         }
+        setTimeout(() => setStatus(null), 4500);
       } else {
-        throw new Error(
-          result.message || `Error ${response.status}: ${response.statusText}`
-        );
+        throw new Error(result.message || "Error submitting form");
       }
-    } catch (error) {
-      console.error("Error completo:", error);
-      setSubmitStatus("error");
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
     } finally {
       setLoading(false);
     }
   };
 
-  const resetStatus = () => {
-    setSubmitStatus(null);
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch (err) {
+      console.error("No se pudo copiar el email: ", err);
+    }
   };
 
   return (
-    <div className="contact-form-wrapper">
-      <Form
-        form={form}
-        layout="vertical"
-        onFinish={handleSubmit}
-        className={className}
-        requiredMark={false}
-        onChange={resetStatus}
-      >
-        <Form.Item
-          name="name"
-          label="Nombre"
-          rules={[{ required: true, message: "Ingresa tu nombre" }]}
-        >
-          <Input
-            size="large"
-            placeholder="Tu nombre completo"
-            aria-label="Nombre completo"
-            aria-required="true"
+    <div className="contact-form-container-custom">
+      <form onSubmit={handleSubmit} className="custom-contact-form">
+        <div className="form-group">
+          <label htmlFor="nombre" className="form-label">Nombre</label>
+          <input
+            id="nombre"
+            type="text"
+            name="nombre"
+            autoComplete="name"
+            spellCheck={false}
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+              if (errors.name) setErrors({ ...errors, name: false });
+            }}
+            placeholder="Ej. Cecilia Luna…"
+            className={`form-input ${errors.name ? "error" : ""}`}
+            disabled={loading || status === "success"}
           />
-        </Form.Item>
-
-        <Form.Item
-          name="email"
-          label="Email"
-          rules={[
-            { required: true, message: "Ingresa tu email" },
-            { type: "email", message: "Ingresa un email válido" },
-          ]}
-        >
-          <Input
-            size="large"
-            placeholder="tu.email@ejemplo.com"
-            aria-label="Dirección de correo electrónico"
-            aria-required="true"
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="message"
-          label="Mensaje"
-          rules={[{ required: true, message: "Ingresa tu mensaje" }]}
-        >
-          <TextArea
-            rows={6}
-            placeholder="Escribe tu idea aquí..."
-            maxLength={500}
-            showCount
-            aria-label="Mensaje"
-            aria-required="true"
-            aria-describedby="message-counter"
-          />
-        </Form.Item>
-
-        <div role="status" aria-live="polite" aria-atomic="true">
-          {submitStatus === "success" && (
-            <Alert
-              message="¡Mensaje Enviado!"
-              description="Tu mensaje ha sido enviado exitosamente. Te responderé a la brevedad."
-              type="success"
-              icon={<CheckCircleOutlined />}
-              showIcon
-              closable
-              onClose={resetStatus}
-              role="alert"
-              style={{
-                marginBottom: "1rem",
-                borderRadius: "8px",
-                border: "1px solid #52c41a",
-              }}
-            />
-          )}
+          {errors.name && <span className="field-error">{errors.name}</span>}
         </div>
 
-        {submitStatus === "error" && (
-          <Alert
-            description={
-              <div>
-                <div style={{ textAlign: "center", marginTop: "12px" }}>
-                  <p style={{ marginBottom: "8px", color: "#666" }}>
-                    Ups, ocurrió un error. Escribime directamente a mi email
-                  </p>
-                  <Button
-                    type="default"
-                    size="small"
-                    icon={<CopyOutlined />}
-                    onClick={() => {
-                      navigator.clipboard
-                        .writeText(profile.email)
-                        .then(() => {
-                          message.success("¡Copiado!");
-                        })
-                        .catch(() => {
-                          message.error(
-                            "No se pudo copiar. Email: " + profile.email
-                          );
-                        });
-                    }}
-                    aria-label="Copiar dirección de email al portapapeles"
-                    style={{
-                      backgroundColor: "var(--primary-purple)",
-                      color: "var(--white)",
-                      border: "none",
-                      fontSize: "1em",
-                    }}
-                  >
-                    Copiar email
-                  </Button>
-                </div>
-              </div>
-            }
-            type="error"
-            role="alert"
-            closable={false}
-            style={{
-              marginBottom: "1rem",
-              borderRadius: "10px",
-              border: "none",
+        <div className="form-group">
+          <label htmlFor="email" className="form-label">Email</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            autoComplete="email"
+            spellCheck={false}
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (errors.email) setErrors({ ...errors, email: false });
             }}
+            placeholder="Ej. correo@ejemplo.com…"
+            className={`form-input ${errors.email ? "error" : ""}`}
+            disabled={loading || status === "success"}
           />
-        )}
+          {errors.email && <span className="field-error">{errors.email}</span>}
+        </div>
 
-        <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            size="large"
-            loading={loading}
-            className="submit-button"
-            block
-            disabled={loading || submitStatus === "success"}
+        <div className="form-group">
+          <label htmlFor="mensaje" className="form-label">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+              if (errors.message) setErrors({ ...errors, message: false });
+            }}
+            maxLength={500}
+            rows={4}
+            placeholder="Ej. Hola, me gustaría diseñar una app…"
+            className={`form-textarea ${errors.message ? "error" : ""}`}
+            disabled={loading || status === "success"}
+          ></textarea>
+          {errors.message && <span className="field-error">{errors.message}</span>}
+          <span className="char-counter">{message.length} / 500</span>
+        </div>
+
+        <button
+          type="submit"
+          className="form-submit-btn"
+          disabled={loading || status === "success"}
+        >
+          {loading ? "Enviando…" : status === "success" ? "¡Enviado!" : buttonText}
+        </button>
+      </form>
+
+      {status === "success" && (
+        <div className="form-success-overlay">
+          <span className="success-heading">¡Mensaje Enviado!</span>
+          <span className="success-desc">¡Gracias! Tu mensaje fue enviado — te respondo pronto ✦</span>
+        </div>
+      )}
+
+      {status === "error" && (
+        <div className="form-error-overlay">
+          <span className="error-desc">
+            Ups, ocurrió un error. Podés escribirme a: <strong>{profile.email}</strong>
+          </span>
+          <button
+            type="button"
+            className="error-copy-btn"
+            onClick={handleCopyEmail}
           >
-            {loading
-              ? ""
-              : submitStatus === "success"
-              ? "¡Enviado!"
-              : buttonText}
-          </Button>
-        </Form.Item>
-      </Form>
+            {copied ? "¡Copiado!" : "Copiar email"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
