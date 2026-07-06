@@ -38,9 +38,16 @@
   border-bottom-color: var(--accent-pink);
 }
 
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
 .form-input.error,
 .form-textarea.error {
   border-bottom-color: #d32f2f;
+  animation: shake 0.4s ease-in-out;
 }
 
 .field-error {
@@ -70,10 +77,17 @@
   font-size: 17px;
   font-family: var(--font-lora);
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 .form-submit-btn:hover:not(:disabled) {
   background: var(--purple-dark);
+  transform: scale(1.03);
+}
+
+.form-submit-btn:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
 .form-submit-btn:disabled {

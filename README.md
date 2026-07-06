@@ -99,9 +99,9 @@ portfolio/
 │   │   ├── Skills.jsx
 │   │   ├── SkipNavigation.jsx
 │   │   └── __tests__/     # Tests de componentes
-│   ├── db/               # Archivos JSON con datos
-│   │   ├── data.json
-│   │   └── me.json
+│   ├── db/               # Archivos de datos y configuración
+│   │   ├── data.js       # Archivo de datos JavaScript (perfil, proyectos, skills)
+│   │   └── me.json       # Configuración del perfil de enlaces (redes, sitios web)
 │   ├── pages/            # Páginas principales
 │   │   ├── MePage.jsx
 │   │   ├── NotFound.jsx
@@ -131,16 +131,18 @@ portfolio/
 
 ## 📝 Cómo Agregar Contenido
 
+El portafolio consume datos dinámicos desde [data.js](file:///home/mcecilialuna/Escritorio/PERSONAL/portfolio/src/db/data.js).
+
 ### Agregar un Proyecto
 
-Edita `src/db/data.json` y agrega un objeto al array `projects`:
+Edita `src/db/data.js` y agrega un objeto al array `projects` utilizando `uuidv4()` para generar un ID único:
 
-```json
+```javascript
 {
-  "id": 8,
+  id: uuidv4(),
   "title": "Nombre del Proyecto",
   "description": "Descripción breve del proyecto",
-  "imageUrl": "/images/projects/proyecto.webp",
+  "imageUrl": "/images/projects/proyecto_optimized.webp",
   "liveUrl": "https://proyecto.com",
   "repoUrl": "https://github.com/usuario/repo",
   "youtubeUrl": "https://youtube.com/..." // Opcional
@@ -149,11 +151,11 @@ Edita `src/db/data.json` y agrega un objeto al array `projects`:
 
 ### Agregar una Certificación
 
-Edita `src/db/data.json` y agrega un objeto al array `certifications`:
+Edita `src/db/data.js` y agrega un objeto al array `certifications`:
 
-```json
+```javascript
 {
-  "id": 5,
+  id: uuidv4(),
   "title": "Nombre del Curso",
   "institution": "Instituto",
   "year": "2026",
@@ -163,9 +165,9 @@ Edita `src/db/data.json` y agrega un objeto al array `certifications`:
 
 ### Agregar una Skill
 
-Edita `src/db/data.json` y agrega un objeto al array `skills`:
+Edita `src/db/data.js` y agrega un objeto al array `skills`:
 
-```json
+```javascript
 {
   "name": "Tecnología",
   "icon": "NombreDelIcono",
@@ -204,14 +206,13 @@ El proyecto utiliza Vitest y React Testing Library. Los tests están organizados
 
 ## 📧 Contacto
 
-El formulario de contacto usa [FormSubmit](https://formsubmit.co/). El email de destino se configura en `src/db/data.json`:
+El formulario de contacto usa [FormSubmit](https://formsubmit.co/). El email de destino se configura en `src/db/data.js` dentro del objeto `profile`:
 
-```json
-{
+```javascript
   "profile": {
-    "email": "tu@email.com"
+    "email": "tu@email.com",
+    ...
   }
-}
 ```
 
 ## 📄 Licencia

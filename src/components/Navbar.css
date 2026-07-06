@@ -72,11 +72,18 @@
   padding: 10px 20px;
   border-radius: 999px;
   font-size: 15px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 .navbar-cta-button:hover {
   background: var(--purple-dark);
   color: var(--white);
+  transform: scale(1.03);
+}
+
+.navbar-cta-button:active {
+  transform: scale(0.97);
 }
 
 .navbar-back-button {
@@ -91,13 +98,19 @@
   font-size: 15px;
   font-family: var(--font-lora);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease, transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 .navbar-back-button:hover {
   background: var(--purple-dark);
   color: var(--white);
   border-color: var(--purple-dark);
+  transform: scale(1.03);
+}
+
+.navbar-back-button:active {
+  transform: scale(0.97);
 }
 
 /* Burger Button */
