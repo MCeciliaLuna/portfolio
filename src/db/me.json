@@ -1,6 +1,24 @@
 {
   "socialMedia": [
     {
+      "id": "linkedin",
+      "url": "https://www.linkedin.com/in/mcecilialuna1/",
+      "icon": "LinkedinOutlined",
+      "title": "LinkedIn"
+    },
+    {
+      "id": "github",
+      "url": "https://github.com/MCeciliaLuna",
+      "icon": "GithubOutlined",
+      "title": "GitHub"
+    },
+    {
+      "id": "whatsapp",
+      "url": "https://wa.me/5493816427068",
+      "icon": "FaWhatsapp",
+      "title": "WhatsApp"
+    },
+    {
       "id": "instagram",
       "url": "https://instagram.com/mcecilialuna_",
       "icon": "InstagramOutlined",
@@ -11,6 +29,12 @@
       "url": "https://twitter.com/mcecilialuna_",
       "icon": "TwitterOutlined",
       "title": "Twitter"
+    },
+    {
+      "id": "email",
+      "url": "mailto:lunama.cecilia@gmail.com",
+      "icon": "MailOutlined",
+      "title": "Email"
     }
   ],
   "websites": [
