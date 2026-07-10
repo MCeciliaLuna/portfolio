@@ -1,9 +1,12 @@
+import React from 'react';
 import HandwritingText from "../components/HandwritingText";
 import TypewriterText from "../components/TypewriterText";
+import SEO from '../components/SEO';
 
 const TypographyShowcase = () => {
   return (
     <div className="w-full">
+      <SEO title="Typography Showcase | Cecilia Luna" description="Visualizador de tipografías del portfolio" url="/typography" />
       {/* Sección de bienvenida — empuja al usuario a hacer scroll */}
       <section className="min-h-screen bg-slate-950 flex flex-col items-center justify-center px-6 text-center">
         <p className="text-slate-500 font-mono text-sm uppercase tracking-[0.3em] mb-6">

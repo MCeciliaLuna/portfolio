@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import SEO from "../components/SEO";
 import { Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
@@ -13,27 +14,27 @@ const shapesData = [
   {
     id: 1,
     wrapperClass: "hero-b-shape-1-wrapper",
-    color: "radial-gradient(circle, rgba(245, 0, 98, 0.16), transparent 70%)" // Pink
+    color: "radial-gradient(circle, rgba(var(--accent-pink-rgb), 0.16), transparent 70%)" // Pink
   },
   {
     id: 2,
     wrapperClass: "hero-b-shape-2-wrapper",
-    color: "radial-gradient(circle, rgba(255, 160, 51, 0.20), transparent 70%)" // Orange
+    color: "radial-gradient(circle, rgba(var(--accent-orange-rgb), 0.20), transparent 70%)" // Orange
   },
   {
     id: 3,
     wrapperClass: "hero-b-shape-3-wrapper",
-    color: "radial-gradient(circle, rgba(122, 0, 98, 0.18), transparent 70%)" // Purple
+    color: "radial-gradient(circle, rgba(var(--purple-dark-rgb), 0.18), transparent 70%)" // Purple
   },
   {
     id: 4,
     wrapperClass: "hero-b-shape-4-wrapper",
-    color: "radial-gradient(circle, rgba(138, 146, 0, 0.16), transparent 70%)" // Lime/Green
+    color: "radial-gradient(circle, rgba(var(--accent-green-rgb), 0.16), transparent 70%)" // Lime/Green
   },
   {
     id: 5,
     wrapperClass: "hero-b-shape-5-wrapper",
-    color: "radial-gradient(circle, rgba(255, 160, 51, 0.18), transparent 70%)" // Secondary Orange/Yellow
+    color: "radial-gradient(circle, rgba(var(--accent-orange-rgb), 0.18), transparent 70%)" // Secondary Orange/Yellow
   }
 ];
 
@@ -152,6 +153,11 @@ const MePage = () => {
 
   return (
     <div ref={mePageRef} className="me-page">
+      <SEO 
+        title="Sobre mí - Enlaces | Cecilia Luna"
+        description="Conoce mis redes, portfolio y enlaces de contacto directo. Frontend Developer, UX/UI Designer y docente en Tucumán, Argentina."
+        url="/me"
+      />
       {/* Imagen de perfil de fondo a la derecha (estilo Hero.jsx) */}
       <div className="me-bg-image-container">
         <img

@@ -150,6 +150,14 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
       }}
       className={`cert-stacked-card cert-card-grad-${index % 5}`}
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
     >
       {/* Imagen de fondo de la certificación */}
       <img
@@ -157,6 +165,8 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
         alt={cert.title}
         className="cert-card-bg-img"
         loading="lazy"
+        width={800}
+        height={600}
         onError={(e) => {
           e.target.style.display = "none";
         }}

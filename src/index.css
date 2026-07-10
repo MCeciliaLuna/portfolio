@@ -9,10 +9,15 @@
   --text-dark: #201a1e;
   --text-mauve: #6b6169;
   --accent-pink: #e00055;
+  --accent-pink-rgb: 224, 0, 85;
   --accent-orange: #ffa033;
+  --accent-orange-rgb: 255, 160, 51;
   --accent-yellow: #ffe15c;
+  --accent-yellow-rgb: 255, 225, 92;
   --accent-green: #c2cc00;
+  --accent-green-rgb: 194, 204, 0;
   --purple-dark: #7a0062;
+  --purple-dark-rgb: 122, 0, 98;
   --purple-very-dark: #4a003b;
   --white: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.88);
@@ -20,6 +25,21 @@
   --bg-main-fade: rgba(251, 249, 244, 0.6);
   --btn-bg: rgba(255, 255, 255, 0.8);
   --border-color: rgba(0, 0, 0, 0.12);
+
+  /* Project Card Gradients */
+  --proj-grad-0: linear-gradient(135deg, #1a1a2e, #16213e);
+  --proj-grad-1: linear-gradient(135deg, #0f3460, #16213e);
+  --proj-grad-2: linear-gradient(135deg, #533483, #0b2239);
+  --proj-grad-3: linear-gradient(135deg, #e94560, #0f3460);
+  --proj-grad-4: linear-gradient(135deg, #1b1b2f, #162447);
+  --proj-grad-5: linear-gradient(135deg, #2c003e, #512b58);
+  --proj-grad-6: linear-gradient(135deg, #1f4068, #1a1a2e);
+  --proj-grad-7: linear-gradient(135deg, #6a0572, #ab2e70);
+  --proj-grad-8: linear-gradient(135deg, #0d7377, #14ffec);
+  --proj-grad-9: linear-gradient(135deg, #e23e57, #522546);
+  --proj-grad-10: linear-gradient(135deg, #2b2e4a, #e84545);
+  --proj-grad-11: linear-gradient(135deg, #1e3163, #5c3d2e);
+  --proj-grad-12: linear-gradient(135deg, #4a0e4e, #7a1ea1);
   
   /* Fonts */
   --font-caveat: 'Caveat', cursive;
@@ -146,4 +166,13 @@ a:focus-visible, button:focus-visible {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -23,6 +23,15 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
     if (!message.trim()) tempErrors.message = "Ingresa tu mensaje";
     
     setErrors(tempErrors);
+
+    const firstError = Object.keys(tempErrors)[0];
+    if (firstError) {
+      setTimeout(() => {
+        const el = document.getElementById(firstError);
+        if (el) el.focus();
+      }, 0);
+    }
+
     return Object.keys(tempErrors).length === 0;
   };
 
@@ -97,6 +106,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             name="nombre"
             autoComplete="name"
             spellCheck={false}
+            maxLength={100}
             value={name}
             onChange={(e) => {
               setName(e.target.value);
@@ -117,6 +127,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             name="email"
             autoComplete="email"
             spellCheck={false}
+            maxLength={100}
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -159,14 +170,14 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
       </form>
 
       {status === "success" && (
-        <div className="form-success-overlay">
+        <div className="form-success-overlay" aria-live="polite">
           <span className="success-heading">¡Mensaje Enviado!</span>
           <span className="success-desc">¡Gracias! Tu mensaje fue enviado — te respondo pronto ✦</span>
         </div>
       )}
 
       {status === "error" && (
-        <div className="form-error-overlay">
+        <div className="form-error-overlay" aria-live="polite">
           <span className="error-desc">
             Ups, ocurrió un error. Podés escribirme a: <strong>{profile.email}</strong>
           </span>

@@ -306,11 +306,18 @@
   border-radius: 999px;
   font-size: 17px;
   text-decoration: none;
+  transition: background-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .hero-b-btn-primary:hover {
   background: var(--purple-dark);
   color: var(--white);
+  transform: scale(1.03);
+}
+
+.hero-b-btn-primary:active {
+  transform: scale(0.97);
 }
 
 .hero-b-btn-secondary {
@@ -323,11 +330,17 @@
   border-radius: 999px;
   font-size: 17px;
   text-decoration: none;
+  transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .hero-b-btn-secondary:hover {
-  border-color: var(--accent-orange);
   color: var(--purple-dark);
+  transform: scale(1.03);
+}
+
+.hero-b-btn-secondary:active {
+  transform: scale(0.97);
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

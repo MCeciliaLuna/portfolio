@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 
-const OptimizedImage = memo(({ src, alt, className, fallbackSrc, loading = "lazy", ...props }) => {
+const OptimizedImage = memo(({ src, alt, className, fallbackSrc, loading = "lazy", width = 800, height = 600, ...props }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -34,6 +34,8 @@ const OptimizedImage = memo(({ src, alt, className, fallbackSrc, loading = "lazy
         src={imageSrc}
         alt={alt}
         loading={loading}
+        width={width}
+        height={height}
         onError={handleError}
         onLoad={handleLoad}
         style={{

@@ -1,7 +1,7 @@
 .floating-contact-button {
   height: 70px;
   width: 70px;
-  transition: all 0.3s ease !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .floating-contact-button:hover {

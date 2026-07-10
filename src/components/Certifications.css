@@ -420,7 +420,7 @@
   padding: 12px 24px;
   color: var(--white);
   border-radius: 9999px;
-  transition: all 0.3s;
+  transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;

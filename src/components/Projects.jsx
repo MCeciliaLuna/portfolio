@@ -13,19 +13,19 @@ import "./Projects.css";
 
 // Gradientes para tarjetas
 const gradients = [
-  "linear-gradient(135deg, #1a1a2e, #16213e)",
-  "linear-gradient(135deg, #0f3460, #16213e)",
-  "linear-gradient(135deg, #533483, #0b2239)",
-  "linear-gradient(135deg, #e94560, #0f3460)",
-  "linear-gradient(135deg, #1b1b2f, #162447)",
-  "linear-gradient(135deg, #2c003e, #512b58)",
-  "linear-gradient(135deg, #1f4068, #1a1a2e)",
-  "linear-gradient(135deg, #6a0572, #ab2e70)",
-  "linear-gradient(135deg, #0d7377, #14ffec)",
-  "linear-gradient(135deg, #e23e57, #522546)",
-  "linear-gradient(135deg, #2b2e4a, #e84545)",
-  "linear-gradient(135deg, #1e3163, #5c3d2e)",
-  "linear-gradient(135deg, #4a0e4e, #7a1ea1)",
+  "var(--proj-grad-0)",
+  "var(--proj-grad-1)",
+  "var(--proj-grad-2)",
+  "var(--proj-grad-3)",
+  "var(--proj-grad-4)",
+  "var(--proj-grad-5)",
+  "var(--proj-grad-6)",
+  "var(--proj-grad-7)",
+  "var(--proj-grad-8)",
+  "var(--proj-grad-9)",
+  "var(--proj-grad-10)",
+  "var(--proj-grad-11)",
+  "var(--proj-grad-12)",
 ];
 
 const Projects = () => {
@@ -81,7 +81,7 @@ const Projects = () => {
       ref={containerRef}
       id="proyectos"
       className="proj-sticky-scroll-container"
-      style={{ height: `${projects.length * 70}vh` }}
+      style={{ height: `${projects.length * 45}vh` }}
     >
       <div className="proj-sticky-viewport">
         {/* Encabezado */}
@@ -169,6 +169,8 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
       alt={project.title}
       className="proj-card-bg-img"
       loading="lazy"
+      width={1200}
+      height={800}
       onError={(e) => {
         e.target.style.display = "none";
       }}
@@ -183,9 +185,9 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
       }}
       transition={{
         type: "spring",
-        stiffness: 120,
-        damping: 22,
-        mass: 0.7,
+        stiffness: 220,
+        damping: 25,
+        mass: 0.4,
       }}
       style={{
         zIndex: index,

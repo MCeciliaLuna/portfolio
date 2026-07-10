@@ -14,6 +14,15 @@ const motionTags = {
  * HandwritingText — Stagger de caracteres para textos Caveat.
  * Mismo mecanismo probado que TypewriterText.
  */
+const charVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.12, ease: "easeOut" },
+  },
+};
+
 const HandwritingText = ({
   text = "",
   as = "p",
@@ -37,14 +46,6 @@ const HandwritingText = ({
     },
   };
 
-  const charVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.12, ease: "easeOut" },
-    },
-  };
 
   return (
     <MotionTag

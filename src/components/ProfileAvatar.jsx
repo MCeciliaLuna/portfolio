@@ -22,6 +22,8 @@ const ProfileAvatar = ({
         alt={alt || `${name} - Perfil`}
         className={className}
         loading="eager"
+        width={size}
+        height={size}
         onError={handleError}
         style={{
           width: '100%',
@@ -29,7 +31,7 @@ const ProfileAvatar = ({
           borderRadius: '50%',
           objectFit: 'cover',
           border: '2px solid var(--white)',
-          transition: 'all 0.3s ease'
+          transition: 'transform 0.3s ease, border-color 0.3s ease'
         }}
       />
     </div>
