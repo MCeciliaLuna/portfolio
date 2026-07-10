@@ -5,7 +5,7 @@ import TypewriterText from "./TypewriterText";
 import "./About.css";
 
 const About = () => {
-  const { profile, tags } = data;
+  const { profile } = data;
 
   return (
     <section id="sobre" className="about-section-custom">
@@ -26,9 +26,8 @@ const About = () => {
           />
         </div>
 
-        <div data-reveal="right" data-delay="120" className="about-details-col">
+        <div className="about-details-col">
           <p className="about-description" dangerouslySetInnerHTML={{ __html: profile.description }} />
-
         </div>
       </div>
     </section>

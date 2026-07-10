@@ -37,8 +37,9 @@ const HandwritingText = ({
   const chars = text.split("");
 
   const containerVariants = {
-    hidden: {},
+    hidden: { opacity: 1 },
     visible: {
+      opacity: 1,
       transition: {
         staggerChildren: staggerSpeed,
         delayChildren: delay,

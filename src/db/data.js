@@ -5,19 +5,12 @@ const data = {
     "name": "Cecilia",
     "nickname": "Ceci",
     "tagline": "desarrolladora web frontend",
-    "description": "Soy de las que disfrutan el proceso creativo de principio a fin, residiendo en <strong>Tucumán, Argentina</strong>. Pongo todo mi stack y mi energía a disposición del proyecto porque amo sentir que cada paso que damos tiene un sentido real construyendo <strong>interfaces de usuario modernas</strong>. Además, me apasiona compartir lo que aprendo y seguir sumando herramientas en el desarrollo con <strong>React y Next.js</strong>. Una gran convicción es que los mejores productos nacen cuando hay propósito claro, un buen equipo y una sólida experiencia en <strong>diseño UX/UI</strong>.",
+    "description": "Soy de las que <strong>disfrutan el proceso creativo</strong> de principio a fin. Pongo todo mi stack y mi energía a disposición del proyecto porque amo sentir que cada paso que damos tiene un <strong>sentido real</strong>. Además, me apasiona <strong>compartir</strong> lo que sé y seguir <strong>sumando aprendizajes</strong> en el desarrollo. Una gran convicción es que <strong>los mejores productos nacen cuando hay propósito claro</strong>, un buen equipo, y un par de <strong>risas</strong> en el medio.",
     "profileImage": "/images/profile.webp",
     "linkedin": "https://www.linkedin.com/in/mcecilialuna1/",
     "github": "https://github.com/MCeciliaLuna",
     "email": "lunama.cecilia@gmail.com"
   },
-  "tags": [
-    "Creatividad",
-    "Adaptabilidad",
-    "Curiosidad",
-    "Colaboración",
-    "Detallismo"
-  ],
   "projects": [
     {
       id: uuidv4(),
