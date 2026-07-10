@@ -1,5 +1,5 @@
 import SEO from "../components/SEO";
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { useScrollReveal } from "../utils/useScrollReveal";
 import SkipNavigation from "../components/SkipNavigation";
 import Navbar from "../components/Navbar";

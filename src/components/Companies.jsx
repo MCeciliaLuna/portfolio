@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../db/data.js";
-import HandwritingText from "./HandwritingText";
+
 import TypewriterText from "./TypewriterText";
 import "./Companies.css";
 
@@ -31,7 +31,7 @@ const getLogoDimensions = (name) => {
 const Companies = () => {
   return (
     <section id="empresas" className="companies-section-custom">
-      <HandwritingText as="p" text="confiaron en mí" className="companies-subtitle" />
+      <p className="companies-subtitle">confiaron en mí</p>
       <TypewriterText
         as="h2"
         segments={[

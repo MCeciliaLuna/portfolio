@@ -257,30 +257,7 @@
   font-family: var(--font-caveat);
 }
 
-.hero-b-underline {
-  border-bottom: 4px solid var(--accent-yellow);
-  padding-bottom: 2px;
-}
 
-.hero-b-bio {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--text-mauve);
-  max-width: 520px;
-  margin: 0 0 32px;
-}
-
-@media (max-width: 767px) {
-  .hero-b-bio {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-b-bio {
-    font-size: 15px;
-  }
-}
 
 .hero-b-buttons {
   display: flex;
@@ -345,15 +322,19 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero-b-bg-image-container {
-    top: 300px;
-    left: 100px;
+    top: 250px;
+    left: auto;
+    right: 0;
     bottom: 0;
-    width: 100vw;
-    height: 75vh;
-    opacity: 0.45;
+    width: 60%;
+    height: calc(100vh - 250px);
+    opacity: 0.6;
+  }
+  .hero-b-bg-image {
+    object-position: center bottom;
   }
   .hero-b-content-wrapper {
-    margin-top: -80px;
+    margin-top: -150px;
   }
 }
 

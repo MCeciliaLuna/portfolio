@@ -22,28 +22,6 @@
   padding: 12px 40px;
 }
 
-.navbar-brand a {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  line-height: 0.95;
-}
-
-.brand-name {
-  font-family: var(--font-caveat);
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--purple-dark);
-}
-
-.brand-subtitle {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-mauve);
-  font-family: var(--font-lora);
-}
-
 .navbar-menu-container {
   display: flex;
   align-items: center;

@@ -3,10 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 const data = {
   "profile": {
     "name": "Cecilia",
-    "nickname": "Ceci",
-    "tagline": "desarrolladora web frontend",
     "description": "Soy de las que <strong>disfrutan el proceso creativo</strong> de principio a fin. Pongo todo mi stack y mi energía a disposición del proyecto porque amo sentir que cada paso que damos tiene un <strong>sentido real</strong>. Además, me apasiona <strong>compartir</strong> lo que sé y seguir <strong>sumando aprendizajes</strong> en el desarrollo. Una gran convicción es que <strong>los mejores productos nacen cuando hay propósito claro</strong>, un buen equipo, y un par de <strong>risas</strong> en el medio.",
-    "profileImage": "/images/profile.webp",
     "linkedin": "https://www.linkedin.com/in/mcecilialuna1/",
     "github": "https://github.com/MCeciliaLuna",
     "email": "lunama.cecilia@gmail.com"
@@ -207,32 +204,6 @@ const data = {
       "logo": "/images/companies/conti.webp",
       "url": "https://contilatam.com/"
     },
-  ],
-  "navigation": [
-    {
-      "label": "Inicio",
-      "href": "#hero"
-    },
-    {
-      "label": "Sobre mí",
-      "href": "#about"
-    },
-    {
-      "label": "Certificaciones",
-      "href": "#certifications"
-    },
-    {
-      "label": "Skills",
-      "href": "#skills"
-    },
-    {
-      "label": "Proyectos",
-      "href": "#projects"
-    },
-    {
-      "label": "Contacto",
-      "href": "#contacto"
-    }
   ]
 };
 

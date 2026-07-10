@@ -1,12 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import SEO from "../components/SEO";
 import { Button } from "antd";
-import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./MePage.css";
 import data from "../db/data.js";
 import meData from "../db/me.json";
-import ProfileAvatar from "../components/ProfileAvatar";
 import DynamicIcon from "../components/DynamicIcon";
 
 // Configuration for 5 shapes representing the color palette (from Hero.jsx)

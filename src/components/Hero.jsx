@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import data from "../db/data.js";
-import HandwritingText from "./HandwritingText";
+
 import TypewriterText from "./TypewriterText";
 import "./Hero.css";
 
@@ -190,20 +190,13 @@ const Hero = () => {
       ))}
 
       <div className="hero-b-content-wrapper">
-        <HandwritingText
-          as="p"
-          text="¡Hola! soy"
-          className="hero-b-greeting"
-          delay={0.2}
-        />
+        <p className="hero-b-greeting">
+          ¡Hola! soy
+        </p>
 
-        <HandwritingText
-          as="h1"
-          text={profile.name}
-          className="hero-b-name"
-          delay={0.5}
-          duration={2.5}
-        />
+        <h1 className="hero-b-name">
+          {profile.name}
+        </h1>
 
         <TypewriterText
           as="p"

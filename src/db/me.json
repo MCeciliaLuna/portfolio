@@ -41,20 +41,17 @@
     {
       "id": 1,
       "title": "Portfolio dev",
-      "url": "/",
-      "icon": "CodeOutlined"
+      "url": "/"
     },
     {
       "id": 2,
       "title": "Blog personal",
-      "url": "https://imperfectamentefiel.blogspot.com",
-      "icon": "EditOutlined"
+      "url": "https://imperfectamentefiel.blogspot.com"
     },
     {
       "id": 3,
       "title": "Blog de opinión",
-      "url": "https://cavernaluzypreguntas.blogspot.com",
-      "icon": "BulbOutlined"
+      "url": "https://cavernaluzypreguntas.blogspot.com"
     }
   ]
 }

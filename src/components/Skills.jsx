@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import { SiNextdotjs, SiExpress } from "react-icons/si";
 import { MdDesignServices, MdGroup } from "react-icons/md";
-import HandwritingText from "./HandwritingText";
+
 import TypewriterText from "./TypewriterText";
 import "./Skills.css";
 
@@ -29,7 +29,7 @@ const Skills = () => {
     <section id="skills" className="skills-section-custom">
       <div className="skills-container">
         <div className="skills-header">
-          <HandwritingText as="p" text="mi caja de herramientas" className="skills-subtitle" />
+          <p className="skills-subtitle">mi caja de herramientas</p>
           <TypewriterText as="h2" text="Stack" className="skills-title" />
         </div>
         

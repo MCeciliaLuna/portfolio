@@ -1,6 +1,5 @@
 import React from "react";
 import data from "../db/data.js";
-import HandwritingText from "./HandwritingText";
 import TypewriterText from "./TypewriterText";
 import "./About.css";
 
@@ -11,11 +10,9 @@ const About = () => {
     <section id="sobre" className="about-section-custom">
       <div className="about-container">
         <div className="about-title-col">
-          <HandwritingText
-            as="p"
-            text="me presento…"
-            className="about-subtitle"
-          />
+          <p className="about-subtitle">
+            me presento…
+          </p>
           <TypewriterText
             as="h2"
             segments={[

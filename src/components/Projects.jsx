@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import { FaFigma } from "react-icons/fa";
 import { motion } from "framer-motion";
-import HandwritingText from "./HandwritingText";
+
 import TypewriterText from "./TypewriterText";
 import data from "../db/data.js";
 import "./Projects.css";
@@ -87,7 +87,7 @@ const Projects = () => {
         {/* Encabezado */}
         <div className="proj-desktop-header">
           <div>
-            <HandwritingText as="span" text="no son sólo palabras" className="proj-desktop-subtitle" />
+            <span className="proj-desktop-subtitle">no son sólo palabras</span>
             <TypewriterText as="h2" text="Proyectos" className="proj-desktop-title" />
           </div>
           <a

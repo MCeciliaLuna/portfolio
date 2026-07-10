@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Modal } from "antd";
 import { EyeOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
-import HandwritingText from "./HandwritingText";
+
 import TypewriterText from "./TypewriterText";
 import data from "../db/data.js";
 import "./Certifications.css";
@@ -62,7 +62,7 @@ const Certifications = () => {
         <div className="cert-sticky-viewport">
           {/* Encabezado */}
           <div className="cert-desktop-header">
-            <HandwritingText as="span" text="modo aprendizaje on" className="cert-desktop-subtitle" />
+            <span className="cert-desktop-subtitle">modo aprendizaje on</span>
             <TypewriterText as="h2" text="Mis Certificaciones" className="cert-desktop-title" />
           </div>
 
