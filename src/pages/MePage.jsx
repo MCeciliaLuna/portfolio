@@ -211,21 +211,37 @@ const MePage = () => {
 
         <section className="me-links-section">
           <div className="website-buttons">
-            {websites.map((website) => (
-              <div key={website.id}>
-                <Button
-                  type="default"
-                  size="large"
-                  href={website.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="website-button"
-                  block
-                >
-                  {website.title}
-                </Button>
-              </div>
-            ))}
+            {websites.map((website) => {
+              const isInternal = website.url.startsWith("/");
+              return (
+                <div key={website.id}>
+                  {isInternal ? (
+                    <Link to={website.url} style={{ display: "block", textDecoration: "none" }}>
+                      <Button
+                        type="default"
+                        size="large"
+                        className="website-button"
+                        block
+                      >
+                        {website.title}
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button
+                      type="default"
+                      size="large"
+                      href={website.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="website-button"
+                      block
+                    >
+                      {website.title}
+                    </Button>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 

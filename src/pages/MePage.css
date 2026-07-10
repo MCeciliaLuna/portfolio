@@ -292,6 +292,9 @@
 }
 
 @media (max-width: 767px) {
+  .me-social-buttons {
+    gap: 0
+  }
   .me-page {
     padding-top: 80px;
   }
@@ -301,25 +304,7 @@
   }
   
   .me-bg-image-container {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.35;
-  }
-  
-  .me-bg-image {
-    object-position: center top;
-  }
-  
-  .me-bg-image-white-filter {
-    background-color: rgba(251, 249, 244, 0.45);
-  }
-  
-  .me-bg-image-fade {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, var(--bg-main) 10%, transparent 100%);
+    display: none;
   }
 
   .me-back-home {
