@@ -2,9 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ 
-  title = "Cecilia Luna | Desarrolladora Web Frontend, Diseñadora UX/UI & Teaching", 
-  description = "Portfolio de Cecilia Luna, desarrolladora web frontend especializada en React, Next.js y diseño UX/UI. Proyectos, certificaciones y experiencia profesional.",
-  keywords = "desarrolladora frontend, react, next.js, ux ui designer, portfolio, cecilia luna, desarrolladora web, developer, react, html, css, javascript, node.js, desarrollo, programacion",
+  title = "Cecilia Luna | Desarrolladora Web Frontend,Diseño UX/UI & Docente", 
+  description = "Portfolio de Cecilia Luna, desarrolladora web frontend y UX/UI Designer de Tucumán, Argentina. Especializada en React, Next.js y creación de experiencias digitales (Remoto/Local).",
+  keywords = "desarrolladora frontend argentina, frontend developer tucuman, react, next.js, ux ui designer tucuman, portfolio cecilia luna, desarrollo web remoto, javascript, css, node.js",
   url = "/",
   image = "/images/profile.webp",
   type = "website"

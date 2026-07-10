@@ -155,7 +155,7 @@ const MePage = () => {
     <div ref={mePageRef} className="me-page">
       <SEO 
         title="Sobre mí - Enlaces | Cecilia Luna"
-        description="Conoce mis redes, portfolio y enlaces de contacto directo. Frontend Developer, UX/UI Designer y docente en Tucumán, Argentina."
+        description="Conoce mis redes, portfolio y enlaces de contacto directo. Frontend Developer, UX/UI Designer y docente en Tucumán, Argentina. Disponible para trabajo remoto."
         url="/me"
       />
       {/* Imagen de perfil de fondo a la derecha (estilo Hero.jsx) */}
