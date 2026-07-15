@@ -25,12 +25,6 @@
       "title": "Instagram"
     },
     {
-      "id": "twitter", 
-      "url": "https://twitter.com/mcecilialuna_",
-      "icon": "TwitterOutlined",
-      "title": "Twitter"
-    },
-    {
       "id": "email",
       "url": "mailto:lunama.cecilia@gmail.com",
       "icon": "MailOutlined",
