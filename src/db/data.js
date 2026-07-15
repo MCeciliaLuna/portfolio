@@ -52,6 +52,14 @@ const data = {
     },
     {
       id: uuidv4(),
+      "title": "Fortín Tucumano Web",
+      "description": "Web para agrupación de hinchas velezanos en Tucumán con Claude Desig y React Vite",
+      "imageUrl": "/images/projects/fortin.png",
+      "liveUrl": "https://fortintucumano.netlify.app/",
+      "repoUrl": "hhttps://github.com/MCeciliaLuna/fortintucumano-frontend"
+    },
+    {
+      id: uuidv4(),
       "title": "Procrastinant APP",
       "description": "WebApp checklist de gestión de tareas para cursado de Prompt Engineering",
       "imageUrl": "/images/projects/procrastinant-app_optimized.webp",
