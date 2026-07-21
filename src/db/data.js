@@ -185,6 +185,12 @@ const data = {
       "logo": "/images/companies/conti.webp",
       "url": "https://contilatam.com/"
     },
+    {
+      id: uuidv4(),
+      "name": "Agrupación Fortín Tucumano",
+      "logo": "/images/companies/fortintucumano.png",
+      "url": "https://fortintucumano.netlify.app/"
+    }
   ]
 };
 

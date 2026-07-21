@@ -23,6 +23,8 @@ const getLogoDimensions = (name) => {
       return { width: 89, height: 79 };
     case "Iglesia de Cristo Tucumán":
       return { width: 89, height: 79 };
+    case "Agrupación Fortín Tucumano":
+      return { width: 79, height: 79 };
     default:
       return { width: 100, height: 40 };
   }
