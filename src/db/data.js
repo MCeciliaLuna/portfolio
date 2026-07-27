@@ -114,6 +114,13 @@ const data = {
   "certifications": [
     {
       id: uuidv4(),
+      "title": "Especialización en Claude Code",
+      "institution": "RollingCode School",
+      "year": "2026",
+      "imageUrl": "/images/certificates/claude-code-certificado.png"
+    },
+    {
+      id: uuidv4(),
       "title": "Curso de Prompt Engineering",
       "institution": "Centro de E-Learning UTN-BA",
       "year": "2026",
