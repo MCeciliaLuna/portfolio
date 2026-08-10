@@ -4,7 +4,7 @@ import data from "../db/data.js";
 import TypewriterText from "./TypewriterText";
 import "./Companies.css";
 
-const dotColors = ["#ffa033", "#c2cc00", "#ffe15c", "#f50062"];
+const dotColors = ["#FB4B4E", "#D10000", "#FFCBDD", "#7C0B2B"];
 
 // Duplicate the companies list to ensure continuous scrolling
 const marqueeItems = [...data.companies, ...data.companies, ...data.companies];

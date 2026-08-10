@@ -9,7 +9,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const antTheme = {
   token: {
-    colorPrimary: "#6f2dbd",
+    colorPrimary: "#7C0B2B",
     borderRadius: 10,
   },
 };

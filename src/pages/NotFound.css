@@ -16,14 +16,14 @@
   font-weight: 600 !important;
   padding: 0 2.5rem !important;
   color: var(--white) !important;
-  box-shadow: 0 6px 18px rgba(245, 0, 98, 0.2);
+  box-shadow: 0 6px 18px rgba(251, 75, 78, 0.2);
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .back-home-button:hover {
   background-color: var(--purple-dark) !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(122, 0, 98, 0.3) !important;
+  box-shadow: 0 10px 24px rgba(124, 11, 43, 0.3) !important;
 }
 
 /* Ant Design overrides for NotFound */

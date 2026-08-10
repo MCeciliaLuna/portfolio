@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 :root {
-  /* Color Palette */
+  /* Color Palette — Borgoña / Coral / Rosa / Vino / Rojo */
   --bg-main: #fbf9f4;
   --bg-navbar: rgba(251, 249, 244, 0.88);
   --text-dark: #201a1e;
   --text-mauve: #6b6169;
-  --accent-pink: #e00055;
-  --accent-pink-rgb: 224, 0, 85;
-  --accent-orange: #ffa033;
-  --accent-orange-rgb: 255, 160, 51;
-  --accent-yellow: #ffe15c;
-  --accent-yellow-rgb: 255, 225, 92;
-  --accent-green: #c2cc00;
-  --accent-green-rgb: 194, 204, 0;
-  --purple-dark: #7a0062;
-  --purple-dark-rgb: 122, 0, 98;
-  --purple-very-dark: #4a003b;
+  --accent-pink: #FB4B4E;
+  --accent-pink-rgb: 251, 75, 78;
+  --accent-orange: #D10000;
+  --accent-orange-rgb: 209, 0, 0;
+  --accent-yellow: #FFCBDD;
+  --accent-yellow-rgb: 255, 203, 221;
+  --accent-green: #FB4B4E;
+  --accent-green-rgb: 251, 75, 78;
+  --purple-dark: #7C0B2B;
+  --purple-dark-rgb: 124, 11, 43;
+  --purple-very-dark: #3E000C;
   --white: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.88);
   --bg-filter: rgba(251, 249, 244, 0.75);
@@ -27,19 +27,19 @@
   --border-color: rgba(0, 0, 0, 0.12);
 
   /* Project Card Gradients */
-  --proj-grad-0: linear-gradient(135deg, #1a1a2e, #16213e);
-  --proj-grad-1: linear-gradient(135deg, #0f3460, #16213e);
-  --proj-grad-2: linear-gradient(135deg, #533483, #0b2239);
-  --proj-grad-3: linear-gradient(135deg, #e94560, #0f3460);
-  --proj-grad-4: linear-gradient(135deg, #1b1b2f, #162447);
-  --proj-grad-5: linear-gradient(135deg, #2c003e, #512b58);
-  --proj-grad-6: linear-gradient(135deg, #1f4068, #1a1a2e);
-  --proj-grad-7: linear-gradient(135deg, #6a0572, #ab2e70);
-  --proj-grad-8: linear-gradient(135deg, #0d7377, #14ffec);
-  --proj-grad-9: linear-gradient(135deg, #e23e57, #522546);
-  --proj-grad-10: linear-gradient(135deg, #2b2e4a, #e84545);
-  --proj-grad-11: linear-gradient(135deg, #1e3163, #5c3d2e);
-  --proj-grad-12: linear-gradient(135deg, #4a0e4e, #7a1ea1);
+  --proj-grad-0: linear-gradient(135deg, #3E000C, #2A0008);
+  --proj-grad-1: linear-gradient(135deg, #7C0B2B, #3E000C);
+  --proj-grad-2: linear-gradient(135deg, #3E000C, #D10000);
+  --proj-grad-3: linear-gradient(135deg, #FB4B4E, #7C0B2B);
+  --proj-grad-4: linear-gradient(135deg, #2A0008, #4A0A15);
+  --proj-grad-5: linear-gradient(135deg, #3E000C, #5E0919);
+  --proj-grad-6: linear-gradient(135deg, #7C0B2B, #D10000);
+  --proj-grad-7: linear-gradient(135deg, #D10000, #FB4B4E);
+  --proj-grad-8: linear-gradient(135deg, #3E000C, #FB4B4E);
+  --proj-grad-9: linear-gradient(135deg, #FB4B4E, #3E000C);
+  --proj-grad-10: linear-gradient(135deg, #4A0A15, #D10000);
+  --proj-grad-11: linear-gradient(135deg, #7C0B2B, #2A0008);
+  --proj-grad-12: linear-gradient(135deg, #D10000, #7C0B2B);
   
   /* Fonts */
   --font-caveat: 'Caveat', cursive;

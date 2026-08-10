@@ -14,26 +14,26 @@ const Contact = () => {
       name: "LinkedIn",
       url: profile.linkedin,
       icon: <LinkedinOutlined />,
-      color: "#f50062",
+      color: "#FB4B4E",
     },
     {
       name: "GitHub",
       url: profile.github,
       icon: <GithubOutlined />,
-      color: "#ffa033",
+      color: "#D10000",
     },
     {
       name: "Email",
       url: `mailto:${profile.email}`,
       icon: <MailOutlined />,
-      color: "#7a0062",
+      color: "#7C0B2B",
       displayUrl: profile.email,
     },
     {
       name: "WhatsApp",
       url: "https://wa.me/5493816427068",
       icon: <FaWhatsapp />,
-      color: "#8a9200",
+      color: "#3E000C",
     },
   ];
 

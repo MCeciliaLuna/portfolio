@@ -3,7 +3,7 @@
   left: -9999px;
   z-index: 999;
   padding: 1em;
-  background-color: var(--primary-purple);
+  background-color: var(--purple-very-dark);
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -14,6 +14,6 @@
   left: 50%;
   transform: translateX(-50%);
   top: 10px;
-  outline: 3px solid var(--accent-cyan);
+  outline: 3px solid var(--accent-pink);
   outline-offset: 2px;
 }

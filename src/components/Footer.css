@@ -1,6 +1,6 @@
 .footer-custom {
   background: var(--purple-very-dark);
-  color: #f3d9ec;
+  color: #FFCBDD;
   padding: 64px 40px 40px;
 }
 
@@ -48,7 +48,7 @@
   font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(243, 217, 236, 0.7);
+  color: rgba(255, 203, 221, 0.7);
   margin: 0;
   font-family: var(--font-lora);
 }
@@ -67,7 +67,7 @@
 }
 
 .footer-link-item {
-  color: #f3d9ec;
+  color: #FFCBDD;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   font-family: var(--font-lora);
@@ -99,6 +99,6 @@
   padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 13px;
-  color: rgba(243, 217, 236, 0.6);
+  color: rgba(255, 203, 221, 0.6);
   font-family: var(--font-lora);
 }
