@@ -64,6 +64,30 @@
   transform: scale(0.97);
 }
 
+.navbar-cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--purple-dark);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.navbar-cv-button:hover {
+  background: var(--accent-pink);
+  color: var(--white);
+  transform: scale(1.03);
+}
+
+.navbar-cv-button:active {
+  transform: scale(0.97);
+}
+
 .navbar-back-button {
   display: inline-flex;
   align-items: center;
@@ -123,7 +147,7 @@
     top: 100%;
     right: 20px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 16px;
     background: var(--white);
     padding: 20px 24px;

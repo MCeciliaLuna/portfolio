@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import "./Navbar.css";
@@ -9,6 +9,20 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("inicio");
   const location = useLocation();
   const navigate = useNavigate();
+  const navbarRef = useRef(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   // Scroll event for styling
   useEffect(() => {
@@ -74,7 +88,7 @@ const Navbar = () => {
   const isHome = location.pathname === "/";
 
   return (
-    <nav className={`navbar-custom ${isScrolled ? "scrolled" : ""}`}>
+    <nav ref={navbarRef} className={`navbar-custom ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-brand">
       </div>
 
@@ -130,6 +144,15 @@ const Navbar = () => {
               onClick={(e) => handleLinkClick(e, "#contacto", false)}
             >
               Trabajemos
+            </a>
+            <a
+              href="/CV-cecilia.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-cv-button"
+              onClick={() => setMenuOpen(false)}
+            >
+              Mi CV
             </a>
           </div>
 
