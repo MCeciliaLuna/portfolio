@@ -1,6 +1,5 @@
 import React from "react";
 import { LinkedinOutlined, GithubOutlined, MailOutlined } from "@ant-design/icons";
-import { FaWhatsapp } from "react-icons/fa";
 import data from "../db/data.js";
 import "./Footer.css";
 
@@ -43,15 +42,6 @@ const Footer = () => {
             >
               <MailOutlined className="footer-icon-prefix" />
               Email
-            </a>
-            <a
-              href="https://wa.me/5493816427068"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link-item"
-            >
-              <FaWhatsapp className="footer-icon-prefix" />
-              WhatsApp
             </a>
           </div>
         </div>

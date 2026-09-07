@@ -13,12 +13,6 @@
       "title": "GitHub"
     },
     {
-      "id": "whatsapp",
-      "url": "https://wa.me/5493816427068",
-      "icon": "FaWhatsapp",
-      "title": "WhatsApp"
-    },
-    {
       "id": "instagram",
       "url": "https://instagram.com/mcecilialuna_",
       "icon": "InstagramOutlined",
@@ -36,6 +30,11 @@
       "id": 1,
       "title": "Portfolio dev",
       "url": "/"
+    },
+    {
+      "id": 4,
+      "title": "Entrevista \"Exit Case\"",
+      "url": "https://www.youtube.com/watch?v=4pwIPI3ecD8"
     },
     {
       "id": 2,

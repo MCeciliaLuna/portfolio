@@ -1,6 +1,5 @@
 import React from "react";
 import { LinkedinOutlined, GithubOutlined, MailOutlined } from "@ant-design/icons";
-import { FaWhatsapp } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 
 import data from "../db/data.js";
@@ -28,12 +27,6 @@ const Contact = () => {
       icon: <MailOutlined />,
       color: "#7C0B2B",
       displayUrl: profile.email,
-    },
-    {
-      name: "WhatsApp",
-      url: "https://wa.me/5493816427068",
-      icon: <FaWhatsapp />,
-      color: "#3E000C",
     },
   ];
 
