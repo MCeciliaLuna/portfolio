@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="footer-brand-col">
             <p className="footer-brand-name">{profile.name}</p>
             <p className="footer-brand-subtitle">
-              Frontend Developer, UX/UI Designer &amp; Teaching
+              Full Stack Developer, UX/UI Designer &amp; Docente
             </p>
           </div>
           <div className="footer-links-col">

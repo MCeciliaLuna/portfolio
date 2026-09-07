@@ -151,15 +151,17 @@ const MePage = () => {
 
   return (
     <div ref={mePageRef} className="me-page">
-      <SEO 
+      <SEO
         title="Sobre mí - Enlaces | Cecilia Luna"
-        description="Conoce mis redes, portfolio y enlaces de contacto directo. Frontend Developer, UX/UI Designer y docente en Tucumán, Argentina. Disponible para trabajo remoto."
+        description="Conoce mis redes, portfolio y enlaces de contacto directo. Full Stack Developer, UX/UI Designer y docente en Tucumán, Argentina. Disponible para trabajo remoto."
         url="/me"
       />
       {/* Imagen de perfil de fondo a la derecha (estilo Hero.jsx) */}
       <div className="me-bg-image-container">
         <img
           src="/images/perfil_optimized.webp"
+          srcSet="/images/perfil-mobile.webp 700w, /images/perfil_optimized.webp 1200w"
+          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 60vw, 45vw"
           alt="Cecilia Luna"
           className="me-bg-image"
           loading="eager"
@@ -193,7 +195,7 @@ const MePage = () => {
       <div className="me-content-wrapper">
         <section className="me-name-section">
           <h1 className="me-page-name">{profile.name} Luna</h1>
-          <p className="me-page-tagline">Frontend Developer, UX/UI Designer & Teaching</p>
+          <p className="me-page-tagline">Full Stack Developer, UX/UI Designer & Docente</p>
         </section>
 
         <section className="me-buttons-section">

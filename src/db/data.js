@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 const data = {
   "profile": {
     "name": "Cecilia",
-    "description": "Soy de las que <strong>disfrutan el proceso creativo</strong> de principio a fin. Pongo todo mi stack y mi energía a disposición del proyecto porque amo sentir que cada paso que damos tiene un <strong>sentido real</strong>. Además, me apasiona <strong>compartir</strong> lo que sé y seguir <strong>sumando aprendizajes</strong> en el desarrollo. Una gran convicción es que <strong>los mejores productos nacen cuando hay propósito claro</strong>, un buen equipo, y un par de <strong>risas</strong> en el medio.",
+    "description": "Disfruto de todo el <strong>proceso creativo</strong> de principio a fin y me encanta estar siempre aprendiendo y actualizándome. Pongo todo mi stack, mi energía y mi compromiso a disposición del equipo porque amo sentir que cada paso tiene un <strong>sentido real</strong>. Me adapto súper fácil a las dinámicas grupales, pero también soy bastante <strong>autogestionable</strong> y (dato de color) ¡no tengo miedo a aparecer en cámaras, ja! Por último, me apasiona <strong>compartir</strong> lo que sé, y una gran convicción es que <strong>los mejores productos nacen cuando hay un propósito claro</strong>, un gran equipo y, obvio, un par de <strong>risas</strong> en el medio.",
     "linkedin": "https://www.linkedin.com/in/mcecilialuna1/",
     "github": "https://github.com/MCeciliaLuna",
     "email": "lunama.cecilia@gmail.com"
@@ -54,7 +54,7 @@ const data = {
       id: uuidv4(),
       "title": "Fortín Tucumano Web",
       "description": "Web para agrupación de hinchas velezanos en Tucumán con Claude Desig y React Vite",
-      "imageUrl": "/images/projects/fortin.png",
+      "imageUrl": "/images/projects/fortin.webp",
       "liveUrl": "https://fortintucumano.netlify.app/",
       "repoUrl": "hhttps://github.com/MCeciliaLuna/fortintucumano-frontend"
     },
@@ -109,15 +109,35 @@ const data = {
       "name": "Docencia",
       "icon": "FaChalkboardTeacher",
       "tooltip": "Facilitación de aprendizaje y comunicación efectiva de conceptos técnicos"
+    },
+    {
+      "name": "Node.js",
+      "icon": "SiNodedotjs",
+      "tooltip": "Desarrollo de servicios backend eficientes y escalables"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "SiMongodb",
+      "tooltip": "Modelado y gestión de bases de datos NoSQL"
+    },
+    {
+      "name": "IA aplicada",
+      "icon": "FaBrain",
+      "tooltip": "Uso de herramientas de IA generativa (Claude Code, Antigravity) para optimizar diseño y desarrollo"
+    },
+    {
+      "name": "Automatización",
+      "icon": "MdBolt",
+      "tooltip": "Automatización de flujos de marketing y gestión con GoHighLevel (GHL)"
     }
   ],
   "certifications": [
     {
       id: uuidv4(),
       "title": "Especialización en Claude Code",
-      "institution": "RollingCode School",
+      "institution": "Rolling Code School",
       "year": "2026",
-      "imageUrl": "/images/certificates/claude-code-certificado.png"
+      "imageUrl": "/images/certificates/claude-code-certificado.webp"
     },
     {
       id: uuidv4(),
@@ -128,22 +148,22 @@ const data = {
     },
     {
       id: uuidv4(),
-      "title": "Diplomatura en Diseño UX-UI",
+      "title": "Diplomatura en Desarrollo Web UX/UI",
       "institution": "Centro de E-Learning UTN-BA",
       "year": "2025",
       "imageUrl": "/images/certificates/ux-ui-certificado.webp"
     },
     {
       id: uuidv4(),
-      "title": "Diplomatura en Agile Managment",
-      "institution": "Agencia I",
+      "title": "Diplomatura Universitaria en Agile Management",
+      "institution": "Agencia I + UTN Tucumán",
       "year": "2024",
       "imageUrl": "/images/certificates/agile-managment-certificado.webp"
     },
     {
       id: uuidv4(),
       "title": "JS y React Avanzado",
-      "institution": "Global Learning",
+      "institution": "Global Learning Digital Empowerment",
       "year": "2023",
       "imageUrl": "/images/certificates/global-learning-certificado.webp"
     },
@@ -160,43 +180,55 @@ const data = {
       id: uuidv4(),
       "name": "Sigmma.Net",
       "logo": "/images/companies/sigmma.webp",
-      "url": "https://sigmma.net/"
+      "url": "https://sigmma.net/",
+      "role": "Desarrolladora Front-end",
+      "startDate": "2024-05",
+      "endDate": null
     },
     {
       id: uuidv4(),
       "name": "Instituto NOA",
       "logo": "/images/companies/instituto-noa.webp",
-      "url": "https://institutonoa.com.ar/"
+      "url": "https://institutonoa.com.ar/",
+      "role": "Profesora",
+      "startDate": "2025-08",
+      "endDate": null
     },
     {
       id: uuidv4(),
       "name": "Iglesia de Cristo Tucumán",
       "logo": "/images/companies/idc.webp",
-      "url": "https://iglesiadecristotuc.org/"
+      "url": "https://iglesiadecristotuc.org/",
+      "role": "Desarrolladora Front-end",
+      "startDate": "2025-11",
+      "endDate": null
     },
     {
       id: uuidv4(),
       "name": "Bless Inmobiliaria",
       "logo": "/images/companies/bless.webp",
-      "url": "https://blessinmobiliaria.com/"
+      "url": "https://blessinmobiliaria.com/",
+      "role": "Programadora Full Stack",
+      "startDate": "2026-02",
+      "endDate": null
     },
     {
       id: uuidv4(),
       "name": "Fundacion Valores Para Mi Ciudad",
       "logo": "/images/companies/valores.webp",
-      "url": "https://valoresparamiciudadtuc.org/"
+      "url": "https://valoresparamiciudadtuc.org/",
+      "role": "Programadora Full Stack",
+      "startDate": "2026-03",
+      "endDate": null
     },
     {
       id: uuidv4(),
       "name": "Conti Latam",
       "logo": "/images/companies/conti.webp",
-      "url": "https://contilatam.com/"
-    },
-    {
-      id: uuidv4(),
-      "name": "Agrupación Fortín Tucumano",
-      "logo": "/images/companies/fortintucumano.png",
-      "url": "https://fortintucumano.netlify.app/"
+      "url": "https://contilatam.com/",
+      "role": "Desarrolladora de Front-end",
+      "startDate": "2024-11",
+      "endDate": "2025-12"
     }
   ]
 };

@@ -5,8 +5,8 @@ import {
   FaChalkboardTeacher,
   FaBrain
 } from "react-icons/fa";
-import { SiNextdotjs, SiExpress } from "react-icons/si";
-import { MdDesignServices, MdGroup } from "react-icons/md";
+import { SiNextdotjs, SiExpress, SiNodedotjs, SiMongodb } from "react-icons/si";
+import { MdDesignServices, MdGroup, MdBolt } from "react-icons/md";
 
 import TypewriterText from "./TypewriterText";
 import "./Skills.css";
@@ -15,13 +15,16 @@ const codeSkills = [
   { name: "React", tooltip: "Creación de interfaces dinámicas mediante componentes reutilizables", color: "#FB4B4E", icon: <FaReact aria-hidden="true" /> },
   { name: "Next.js", tooltip: "Aplicaciones de alto rendimiento con renderizado optimizado (SSR/SSG)", color: "#7C0B2B", icon: <SiNextdotjs aria-hidden="true" /> },
   { name: "Express.js", tooltip: "Desarrollo de APIs robustas y escalables del lado del servidor", color: "#D10000", icon: <SiExpress aria-hidden="true" /> },
+  { name: "Node.js", tooltip: "Desarrollo de servicios backend eficientes y escalables", color: "#7C0B2B", icon: <SiNodedotjs aria-hidden="true" /> },
+  { name: "MongoDB", tooltip: "Modelado y gestión de bases de datos NoSQL", color: "#FB4B4E", icon: <SiMongodb aria-hidden="true" /> },
 ];
 
 const designSkills = [
   { name: "Diseño UX/UI", tooltip: "Arquitectura de información y diseño de interfaces centradas en el usuario", color: "#FB4B4E", icon: <MdDesignServices aria-hidden="true" /> },
   { name: "Metodologías Ágiles", tooltip: "Gestión de proyectos con entregas iterativas y mejora continua", color: "#D10000", icon: <MdGroup aria-hidden="true" /> },
   { name: "Docencia", tooltip: "Facilitación de aprendizaje y comunicación efectiva de conceptos técnicos", color: "#FB4B4E", icon: <FaChalkboardTeacher aria-hidden="true" /> },
-  { name: "IA aplicada", tooltip: "Uso de herramientas de IA generativa para optimizar diseño y desarrollo", color: "#D10000", icon: <FaBrain aria-hidden="true" /> },
+  { name: "IA aplicada", tooltip: "Uso de herramientas de IA generativa (Claude Code, Antigravity) para optimizar diseño y desarrollo", color: "#D10000", icon: <FaBrain aria-hidden="true" /> },
+  { name: "Automatización", tooltip: "Automatización de flujos de marketing y gestión con GoHighLevel (GHL)", color: "#7C0B2B", icon: <MdBolt aria-hidden="true" /> },
 ];
 
 const Skills = () => {

@@ -2,30 +2,39 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/ico" href="/images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="preload"
+      as="image"
+      href="/images/perfil_optimized.webp"
+      imagesrcset="/images/perfil-mobile.webp 700w, /images/perfil_optimized.webp 1200w"
+      imagesizes="(max-width: 767px) 100vw, (max-width: 1023px) 60vw, 45vw"
+      fetchpriority="high"
+    />
 
     <title>Cecilia Luna | Portfolio</title>
     <meta name="author" content="Cecilia Luna" />
-    <meta name="description" content="Portfolio de Cecilia Luna — Frontend Developer & UX/UI Designer. Proyectos con React, Next.js, JavaScript y diseño de interfaces." />
+    <meta name="description" content="Portfolio de Cecilia Luna — Full Stack Developer & UX/UI Designer. Proyectos con React, Next.js, Node.js y diseño de interfaces." />
     <meta name="theme-color" content="#7C0B2B" />
 
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn, Discord…) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mcecilialuna-dev.netlify.app/" />
     <meta property="og:title" content="Cecilia Luna | Portfolio" />
-    <meta property="og:description" content="Portfolio de Cecilia Luna — Frontend Developer & UX/UI Designer. Proyectos con React, Next.js, JavaScript y diseño de interfaces." />
+    <meta property="og:description" content="Portfolio de Cecilia Luna — Full Stack Developer & UX/UI Designer. Proyectos con React, Next.js, Node.js y diseño de interfaces." />
     <meta property="og:image" content="https://mcecilialuna-dev.netlify.app/images/miniature.png" />
-    <meta property="og:image:alt" content="Cecilia Luna — Frontend Developer & UX/UI Designer" />
+    <meta property="og:image:alt" content="Cecilia Luna — Full Stack Developer & UX/UI Designer" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:site_name" content="Cecilia Luna | Portfolio" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Cecilia Luna | Portfolio" />
-    <meta name="twitter:description" content="Portfolio de Cecilia Luna — Frontend Developer & UX/UI Designer." />
+    <meta name="twitter:description" content="Portfolio de Cecilia Luna — Full Stack Developer & UX/UI Designer." />
     <meta name="twitter:image" content="https://mcecilialuna-dev.netlify.app/images/miniature.png" />
-    <meta name="twitter:image:alt" content="Cecilia Luna — Frontend Developer & UX/UI Designer" />
+    <meta name="twitter:image:alt" content="Cecilia Luna — Full Stack Developer & UX/UI Designer" />
 
     <script type="application/ld+json">
       {
@@ -39,7 +48,7 @@
           "https://www.linkedin.com/in/mcecilialuna1/",
           "https://github.com/MCeciliaLuna"
         ],
-        "jobTitle": "Frontend Developer & UX/UI Designer",
+        "jobTitle": "Full Stack Developer, UX/UI Designer & Docente",
         "email": "lunama.cecilia@gmail.com",
         "address": {
           "@type": "PostalAddress",
@@ -51,13 +60,37 @@
           "React",
           "Next.js",
           "Express.js",
+          "Node.js",
+          "MongoDB",
           "JavaScript",
-          "TypeScript",
           "CSS",
           "HTML",
+          "Git",
           "UX/UI Design",
-          "Web Design",
-          "Agile Methodologies"
+          "Agile Methodologies",
+          "Prompt Engineering",
+          "Teaching"
+        ],
+        "alumniOf": [
+          { "@type": "EducationalOrganization", "name": "Rolling Code School" },
+          { "@type": "EducationalOrganization", "name": "UTN.BA (Centro de e-Learning, Facultad Regional Buenos Aires)" },
+          { "@type": "EducationalOrganization", "name": "Agencia I + UTN Tucumán" },
+          { "@type": "EducationalOrganization", "name": "Global Learning Digital Empowerment" }
+        ],
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "name": "Especialización en Claude Code", "credentialCategory": "certificate", "dateCreated": "2026", "recognizedBy": { "@type": "Organization", "name": "Rolling Code School" } },
+          { "@type": "EducationalOccupationalCredential", "name": "Curso de Prompt Engineering para desarrolladores FrontEnd", "credentialCategory": "certificate", "dateCreated": "2026", "recognizedBy": { "@type": "Organization", "name": "UTN.BA" } },
+          { "@type": "EducationalOccupationalCredential", "name": "Diplomatura en Desarrollo Web UX/UI", "credentialCategory": "diploma", "dateCreated": "2025", "recognizedBy": { "@type": "Organization", "name": "UTN.BA" } },
+          { "@type": "EducationalOccupationalCredential", "name": "Diplomatura Universitaria en Agile Management", "credentialCategory": "diploma", "dateCreated": "2024", "recognizedBy": { "@type": "Organization", "name": "Agencia I + UTN Tucumán" } },
+          { "@type": "EducationalOccupationalCredential", "name": "JavaScript / React - Nivel Avanzado", "credentialCategory": "certificate", "dateCreated": "2023", "recognizedBy": { "@type": "Organization", "name": "Global Learning Digital Empowerment" } },
+          { "@type": "EducationalOccupationalCredential", "name": "Full Stack Web Developer", "credentialCategory": "certificate", "dateCreated": "2022", "recognizedBy": { "@type": "Organization", "name": "Rolling Code School" } }
+        ],
+        "worksFor": [
+          { "@type": "Organization", "name": "SIGMMA.net", "url": "https://sigmma.net/" },
+          { "@type": "Organization", "name": "Instituto NOA", "url": "https://institutonoa.com.ar/" },
+          { "@type": "Organization", "name": "Iglesia de Cristo Tucumán", "url": "https://iglesiadecristotuc.org/" },
+          { "@type": "Organization", "name": "Bless Inmobiliaria", "url": "https://blessinmobiliaria.com/" },
+          { "@type": "Organization", "name": "Fundación Valores Para Mi Ciudad", "url": "https://valoresparamiciudadtuc.org/" }
         ]
       }
     </script>

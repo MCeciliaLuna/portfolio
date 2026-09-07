@@ -1,13 +1,13 @@
 # Cecilia Luna - Portfolio
 
-> Portfolio profesional de Cecilia Luna, Desarrolladora Web Frontend especializada en React, Next.js y Diseño UX/UI.
+> Portfolio profesional de Cecilia Luna, Desarrolladora Full Stack especializada en React, Next.js, Node.js y Diseño UX/UI.
 
 ## Navegación Principal
 
 - [Inicio](https://mcecilialuna-dev.netlify.app/#hero): Presentación y perfil profesional.
 - [Sobre mí](https://mcecilialuna-dev.netlify.app/#about): Descripción de perfil y aptitudes clave (Creatividad, Adaptabilidad, Curiosidad, Colaboración, Detallismo).
-- [Certificaciones](https://mcecilialuna-dev.netlify.app/#certifications): Formación y certificados (Prompt Engineering, Diseño UX-UI, Agile Management, JS y React Avanzado).
-- [Skills](https://mcecilialuna-dev.netlify.app/#skills): Tecnologías y habilidades principales (React, Next.js, Express.js, Git, UX/UI, Agile).
+- [Certificaciones](https://mcecilialuna-dev.netlify.app/#certifications): Formación y certificados (Especialización en Claude Code, Prompt Engineering, Desarrollo Web UX/UI, Agile Management, JS y React Avanzado, Full Stack Web Developer).
+- [Skills](https://mcecilialuna-dev.netlify.app/#skills): Tecnologías y habilidades principales (React, Next.js, Express.js, Node.js, MongoDB, Git, UX/UI, Agile, Docencia, IA aplicada, Automatización).
 - [Proyectos](https://mcecilialuna-dev.netlify.app/#projects): Galería de proyectos destacados (Sigmma.net, Bless Inmobiliaria, Procrastinant APP, etc.).
 - [Contacto](https://mcecilialuna-dev.netlify.app/#contacto): Medios de contacto y redes sociales.
 

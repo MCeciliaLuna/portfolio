@@ -159,6 +159,8 @@ const Hero = () => {
       <div className="hero-b-bg-image-container">
         <img
           src="/images/perfil_optimized.webp"
+          srcSet="/images/perfil-mobile.webp 700w, /images/perfil_optimized.webp 1200w"
+          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 60vw, 45vw"
           alt="Cecilia Luna"
           className="hero-b-bg-image"
           loading="eager"
@@ -201,11 +203,11 @@ const Hero = () => {
         <TypewriterText
           as="p"
           segments={[
-            { text: "Frontend Developer " },
+            { text: "Full Stack Developer " },
             { text: ",", className: "ampersand" },
             { text: " UX/UI Designer " },
             { text: "&", className: "ampersand" },
-            { text: " Teaching" },
+            { text: " Docente" },
           ]}
           className="hero-b-role"
           delay={0.8}
