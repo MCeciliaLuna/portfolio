@@ -8,7 +8,7 @@ const Interview = () => {
       <div className="interview-container">
         {/* Header */}
         <div className="interview-header" data-reveal style={{ transform: "translateY(24px)" }}>
-          <p className="interview-subtitle">en los medios…</p>
+          <p className="interview-subtitle">todo empezó como un juego</p>
           <TypewriterText
             as="h2"
             text="Entrevista como CASO DE ÉXITO para Rolling Code School"
