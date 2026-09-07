@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import "./Navbar.css";
@@ -38,7 +38,7 @@ const Navbar = () => {
   useEffect(() => {
     if (location.pathname !== "/") return;
 
-    const sections = ["inicio", "sobre", "certificaciones", "skills", "proyectos", "contacto"];
+    const sections = ["inicio", "sobre", "certificaciones", "skills", "proyectos", "entrevista", "contacto"];
     const observerOptions = {
       root: null,
       rootMargin: "-20% 0px -60% 0px",
@@ -137,6 +137,13 @@ const Navbar = () => {
               onClick={(e) => handleLinkClick(e, "#proyectos", false)}
             >
               Proyectos
+            </a>
+            <a
+              href="#entrevista"
+              className={`navbar-link ${activeSection === "entrevista" ? "active" : ""}`}
+              onClick={(e) => handleLinkClick(e, "#entrevista", false)}
+            >
+              Entrevista
             </a>
             <a
               href="#contacto"

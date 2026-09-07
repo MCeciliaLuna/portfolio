@@ -9,6 +9,7 @@ import About from "../components/About";
 const Certifications = lazy(() => import("../components/Certifications"));
 const Skills = lazy(() => import("../components/Skills"));
 const Companies = lazy(() => import("../components/Companies"));
+const Interview = lazy(() => import("../components/Interview"));
 const Projects = lazy(() => import("../components/Projects"));
 const Contact = lazy(() => import("../components/Contact"));
 const Footer = lazy(() => import("../components/Footer"));
@@ -29,6 +30,7 @@ const HomePage = () => {
           <Skills />
           <Companies />
           <Projects />
+          <Interview />
           <Contact />
         </Suspense>
       </main>
