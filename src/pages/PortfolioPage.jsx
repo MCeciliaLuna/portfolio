@@ -10,6 +10,7 @@ const Certifications = lazy(() => import("../components/Certifications"));
 const Skills = lazy(() => import("../components/Skills"));
 const Companies = lazy(() => import("../components/Companies"));
 const Interview = lazy(() => import("../components/Interview"));
+const References = lazy(() => import("../components/References"));
 const Projects = lazy(() => import("../components/Projects"));
 const Contact = lazy(() => import("../components/Contact"));
 const Footer = lazy(() => import("../components/Footer"));
@@ -31,6 +32,7 @@ const HomePage = () => {
           <Companies />
           <Projects />
           <Interview />
+          <References />
           <Contact />
         </Suspense>
       </main>

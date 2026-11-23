@@ -9,6 +9,7 @@
 - [Certificaciones](https://mcecilialuna-dev.netlify.app/#certifications): Formación y certificados (Especialización en Claude Code, Prompt Engineering, Desarrollo Web UX/UI, Agile Management, JS y React Avanzado, Full Stack Web Developer).
 - [Skills](https://mcecilialuna-dev.netlify.app/#skills): Tecnologías y habilidades principales (React, Next.js, Express.js, Node.js, MongoDB, Git, UX/UI, Agile, Docencia, IA aplicada, Automatización).
 - [Proyectos](https://mcecilialuna-dev.netlify.app/#projects): Galería de proyectos destacados (Sigmma.net, Bless Inmobiliaria, Procrastinant APP, etc.).
+- [Referencias](https://mcecilialuna-dev.netlify.app/#referencias): Testimonios de empleadores, compañeros y estudiantes, publicados con su consentimiento.
 - [Contacto](https://mcecilialuna-dev.netlify.app/#contacto): Medios de contacto y redes sociales.
 
 ## Redes y Contacto

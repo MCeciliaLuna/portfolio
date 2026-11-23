@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeftOutlined } from "@ant-design/icons";
+import { usePublishedReferences } from "../utils/usePublishedReferences";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -10,6 +11,8 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const navbarRef = useRef(null);
+  const { references } = usePublishedReferences();
+  const hasReferences = references.length > 0;
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -38,7 +41,7 @@ const Navbar = () => {
   useEffect(() => {
     if (location.pathname !== "/") {return;}
 
-    const sections = ["inicio", "sobre", "certificaciones", "skills", "proyectos", "entrevista", "contacto"];
+    const sections = ["inicio", "sobre", "certificaciones", "skills", "proyectos", "entrevista", "referencias", "contacto"];
     const observerOptions = {
       root: null,
       rootMargin: "-20% 0px -60% 0px",
@@ -59,7 +62,8 @@ const Navbar = () => {
     });
 
     return () => observer.disconnect();
-  }, [location.pathname]);
+    // hasReferences: la sección Referencias se monta recién cuando llega el fetch
+  }, [location.pathname, hasReferences]);
 
   const handleLinkClick = (e, href, isRoute) => {
     e.preventDefault();
@@ -145,6 +149,15 @@ const Navbar = () => {
             >
               Entrevista
             </a>
+            {hasReferences && (
+              <a
+                href="#referencias"
+                className={`navbar-link ${activeSection === "referencias" ? "active" : ""}`}
+                onClick={(e) => handleLinkClick(e, "#referencias", false)}
+              >
+                Referencias
+              </a>
+            )}
             <a
               href="#contacto"
               className="navbar-cta-button"
