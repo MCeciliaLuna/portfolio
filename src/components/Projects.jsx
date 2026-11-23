@@ -36,7 +36,7 @@ const Projects = () => {
   // Scroll listener para calcular progreso del efecto stacked (todos los viewports)
   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current) {return;}
       const rect = containerRef.current.getBoundingClientRect();
       const containerHeight = rect.height;
       const windowHeight = window.innerHeight;
@@ -55,25 +55,6 @@ const Projects = () => {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const getProjectTags = (project) => {
-    if (project.figmaUrl) return ["UX/UI", "Figma"];
-    if (project.title.toLowerCase().includes("api")) return ["Backend", "Express"];
-    if (project.title.toLowerCase().includes("e-commerce")) return ["E-Commerce", "React"];
-    if (project.description.toLowerCase().includes("linktree")) return ["Landing", "React"];
-    if (project.title.toLowerCase().includes("panel")) return ["Producto", "Frontend"];
-    if (project.description.toLowerCase().includes("react")) return ["Frontend", "React"];
-    if (project.description.toLowerCase().includes("prompt")) return ["Producto", "Prompt Eng."];
-    return ["Frontend", "Web App"];
-  };
-
-  const getPrimaryLink = (project) => {
-    return project.liveUrl || project.figmaUrl || project.repoUrl || project.youtubeUrl || "#";
-  };
-
-  const formatIndex = (index) => {
-    return String(index + 1).padStart(2, "0");
-  };
 
   return (
     /* Layout unificado stacked para desktop y mobile */
@@ -112,9 +93,6 @@ const Projects = () => {
               total={projects.length}
               progress={scrollProgress}
               gradient={gradients[index % gradients.length]}
-              tags={getProjectTags(project)}
-              primaryLink={getPrimaryLink(project)}
-              formatIndex={formatIndex}
             />
           ))}
         </div>
@@ -132,7 +110,7 @@ const Projects = () => {
 };
 
 /* Componente de Tarjeta de Proyecto Stacked con Animación de Resorte */
-const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryLink, formatIndex }) => {
+const ProjectCard = ({ project, index, total, progress, gradient }) => {
   const start = index / total;
   const targetScale = 1 - (total - index - 1) * 0.03;
 
@@ -152,13 +130,6 @@ const ProjectCard = ({ project, index, total, progress, gradient, tags, primaryL
   if (progress >= start) {
     const p = (progress - start) / (1 - start);
     scaleVal = 1 - p * (1 - targetScale);
-  }
-
-  // Cálculo de la opacidad de oscurecimiento
-  let overlayOpacityVal = 0;
-  if (progress >= start) {
-    const p = (progress - start) / (1 - start);
-    overlayOpacityVal = p * 0.55;
   }
 
   const targetLink = project.liveUrl || project.figmaUrl;

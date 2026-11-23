@@ -36,7 +36,7 @@ const Navbar = () => {
 
   // Intersection Observer to highlight active link
   useEffect(() => {
-    if (location.pathname !== "/") return;
+    if (location.pathname !== "/") {return;}
 
     const sections = ["inicio", "sobre", "certificaciones", "skills", "proyectos", "entrevista", "contacto"];
     const observerOptions = {
@@ -55,7 +55,7 @@ const Navbar = () => {
 
     sections.forEach((id) => {
       const el = document.getElementById(id);
-      if (el) observer.observe(el);
+      if (el) {observer.observe(el);}
     });
 
     return () => observer.disconnect();

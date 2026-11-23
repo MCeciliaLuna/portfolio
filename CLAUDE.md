@@ -18,13 +18,17 @@ npx vitest run src/components/__tests__/ContactForm.test.jsx   # Un archivo
 npx vitest run -t "muestra errores de validación"              # Un test por nombre
 npm run test:coverage    # Cobertura (v8)
 
-npm run lint             # ⚠️ actualmente falla — ver "Estado conocido"
+npm run lint             # ESLint 9 flat config, --max-warnings 0 (el pre-push lo exige)
 ```
 
-## Estado conocido (verificado el 07/09/2026)
+## Estado conocido
 
-- **`npm run lint` está roto.** `eslint.config.js` usa `reactHooks.configs["recommended-latest"]`, que en `eslint-plugin-react-hooks` v7 es el preset estilo eslintrc (`plugins` como array de strings) y ESLint 9 flat config lo rechaza. El preset flat es `reactHooks.configs.flat["recommended-latest"]`. Con ese cambio el lint corre, pero afloran **54 errores preexistentes** (mayormente `curly`, `no-undef` sobre `global` en `src/test/setup.js`, `react-hooks/refs`). Si tocás esto, tratalo como tarea propia y no lo mezcles con un cambio funcional.
-- El script declara `--ext js,jsx`, flag que flat config ignora.
+- **`npm run lint` pasa con 0 errores y 0 warnings** (verificado el 23/11/2026 con `npm run lint`). Claves de `eslint.config.js`:
+  - Preset `reactHooks.configs.flat["recommended-latest"]` (el de la raíz de `configs` es estilo eslintrc y ESLint 9 lo rechaza). Incluye reglas del React Compiler como `react-hooks/refs`: no leas ni escribas `ref.current` durante el render.
+  - `globalIgnores` excluye `dist`, `coverage`, `ds-bundle` y `.design-sync`: ESLint no lee `.gitignore`.
+  - Tests (`src/test/**`, `**/__tests__/**`) tienen globals de Node para poder usar `global.fetch = vi.fn()`.
+  - No hay `eslint-plugin-react`, así que `no-unused-vars` no ve usos en JSX: por eso ignora nombres PascalCase y `motion`. Un import de componente sin uso **no** lo detecta el lint.
+- `curly: all` obliga a llaves en todo `if`; como no hay formateador, `eslint --fix` las deja en una línea (`if (x) {return;}`).
 - Los 7 tests de `ContactForm` pasan. El bloque `Error:` que aparece en la salida es un `console.error` esperado del caso de fetch rechazado.
 - El build imprime un chunk `antd` de ~407 kB (~134 kB gzip): es la dependencia más pesada del bundle.
 
