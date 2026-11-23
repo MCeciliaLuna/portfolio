@@ -56,14 +56,30 @@ const Navbar = () => {
       });
     }, observerOptions);
 
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) {observer.observe(el);}
-    });
+    // Casi todas las secciones son React.lazy y Referencias espera al fetch: no
+    // existen al montar el Navbar. Se vuelve a buscar cada vez que cambia el DOM
+    // (mismo enfoque que useScrollReveal) y se observa cada elemento una sola vez.
+    const observed = new Set();
+    const observeSections = () => {
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !observed.has(el)) {
+          observed.add(el);
+          observer.observe(el);
+        }
+      });
+    };
 
-    return () => observer.disconnect();
-    // hasReferences: la sección Referencias se monta recién cuando llega el fetch
-  }, [location.pathname, hasReferences]);
+    observeSections();
+
+    const mutationObserver = new MutationObserver(observeSections);
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
+  }, [location.pathname]);
 
   const handleLinkClick = (e, href, isRoute) => {
     e.preventDefault();
