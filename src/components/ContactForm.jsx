@@ -14,13 +14,13 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
 
   const validate = () => {
     const tempErrors = {};
-    if (!name.trim()) tempErrors.name = "Ingresa tu nombre";
+    if (!name.trim()) {tempErrors.name = "Ingresa tu nombre";}
     if (!email.trim()) {
       tempErrors.email = "Ingresa tu email";
     } else if (!/.+@.+\..+/.test(email)) {
       tempErrors.email = "Ingresa un email válido";
     }
-    if (!message.trim()) tempErrors.message = "Ingresa tu mensaje";
+    if (!message.trim()) {tempErrors.message = "Ingresa tu mensaje";}
     
     setErrors(tempErrors);
 
@@ -28,7 +28,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
     if (firstError) {
       setTimeout(() => {
         const el = document.getElementById(firstError);
-        if (el) el.focus();
+        if (el) {el.focus();}
       }, 0);
     }
 
@@ -39,7 +39,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
     e.preventDefault();
     setStatus(null);
 
-    if (!validate()) return;
+    if (!validate()) {return;}
 
     setLoading(true);
 
@@ -110,7 +110,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             value={name}
             onChange={(e) => {
               setName(e.target.value);
-              if (errors.name) setErrors({ ...errors, name: false });
+              if (errors.name) {setErrors({ ...errors, name: false });}
             }}
             placeholder="Ej. Cecilia Luna…"
             className={`form-input ${errors.name ? "error" : ""}`}
@@ -131,7 +131,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
-              if (errors.email) setErrors({ ...errors, email: false });
+              if (errors.email) {setErrors({ ...errors, email: false });}
             }}
             placeholder="Ej. correo@ejemplo.com…"
             className={`form-input ${errors.email ? "error" : ""}`}
@@ -148,7 +148,7 @@ const ContactForm = ({ onSuccess, buttonText = "Enviar mensaje" }) => {
             value={message}
             onChange={(e) => {
               setMessage(e.target.value);
-              if (errors.message) setErrors({ ...errors, message: false });
+              if (errors.message) {setErrors({ ...errors, message: false });}
             }}
             maxLength={500}
             rows={4}

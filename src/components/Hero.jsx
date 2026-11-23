@@ -37,13 +37,10 @@ const Hero = () => {
     }
   ];
 
-  // Dynamic ref arrays
+  // Dynamic ref arrays: cada shape se asigna por índice en su callback ref,
+  // así no hace falta vaciarlos durante el render
   const shapeRefs = useRef([]);
   const wrapperRefs = useRef([]);
-
-  // Reset arrays on each render so they match the elements correctly
-  shapeRefs.current = [];
-  wrapperRefs.current = [];
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
@@ -56,11 +53,11 @@ const Hero = () => {
 
   useEffect(() => {
     const heroElement = heroRef.current;
-    if (!heroElement) return;
+    if (!heroElement) {return;}
 
     // Respect prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion) {return;}
 
     // Estado de repulsión persistente para cada shape — interpolado con lerp
     const shapeStates = shapeRefs.current.map(() => ({
@@ -95,7 +92,7 @@ const Hero = () => {
       shapeRefs.current.forEach((inner, idx) => {
         const wrapper = wrapperRefs.current[idx];
         const state = shapeStates[idx];
-        if (!inner || !wrapper || !state) return;
+        if (!inner || !wrapper || !state) {return;}
 
         // Calcular target de repulsión basado en posición del cursor
         if (isMouseInHero) {
@@ -149,7 +146,7 @@ const Hero = () => {
     return () => {
       heroElement.removeEventListener("mousemove", handleMouseMove);
       heroElement.removeEventListener("mouseleave", handleMouseLeave);
-      if (rafId) cancelAnimationFrame(rafId);
+      if (rafId) {cancelAnimationFrame(rafId);}
     };
   }, []);
 
@@ -173,17 +170,21 @@ const Hero = () => {
       </div>
 
       {/* Decorative blurred background shapes inside wrappers for slow animation */}
-      {shapesData.map((shape) => (
+      {shapesData.map((shape, index) => (
         <div
           key={shape.id}
           ref={(el) => {
-            if (el) wrapperRefs.current.push(el);
+            if (el) {
+              wrapperRefs.current[index] = el;
+            }
           }}
           className={`hero-b-shape-wrapper ${shape.wrapperClass}`}
         >
           <div
             ref={(el) => {
-              if (el) shapeRefs.current.push(el);
+              if (el) {
+                shapeRefs.current[index] = el;
+              }
             }}
             className="hero-b-shape"
             style={{ background: shape.color }}

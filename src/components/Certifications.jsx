@@ -1,26 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Modal } from "antd";
-import { EyeOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 
 import TypewriterText from "./TypewriterText";
 import data from "../db/data.js";
 import "./Certifications.css";
 
-// Mapeo dinámico de emojis para las tarjetas stacked
-const icons = ["💻", "⚛️", "🟢", "🤖", "⚙️", "🎓"];
-
 const Certifications = () => {
   const { certifications } = data;
-  const [modalVisible, setModalVisible] = useState(false);
-  const [selectedCert, setSelectedCert] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef(null);
 
   // Scroll listener para calcular progreso del efecto stacked (todos los viewports)
   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current) {return;}
       const rect = containerRef.current.getBoundingClientRect();
       const containerHeight = rect.height;
       const windowHeight = window.innerHeight;
@@ -39,16 +32,6 @@ const Certifications = () => {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleImageClick = (cert) => {
-    setSelectedCert(cert);
-    setModalVisible(true);
-  };
-
-  const handleModalClose = () => {
-    setModalVisible(false);
-    setSelectedCert(null);
-  };
 
   return (
     <>
@@ -75,8 +58,6 @@ const Certifications = () => {
                 index={index}
                 total={certifications.length}
                 progress={scrollProgress}
-                icon={icons[index % icons.length]}
-                onClick={() => handleImageClick(cert)}
               />
             ))}
           </div>
@@ -100,7 +81,7 @@ const Certifications = () => {
 };
 
 /* Componente de Tarjeta Stacked con Animación de Resorte Reactiva */
-const Card = ({ cert, index, total, progress, icon, onClick }) => {
+const Card = ({ cert, index, total, progress }) => {
   const start = index / total;
   const targetScale = 1 - (total - index - 1) * 0.04;
 
@@ -149,15 +130,6 @@ const Card = ({ cert, index, total, progress, icon, onClick }) => {
         top: `calc(2% + ${index * 10}px)`,
       }}
       className={`cert-stacked-card cert-card-grad-${index % 5}`}
-      onClick={onClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onClick();
-        }
-      }}
     >
       {/* Imagen de fondo de la certificación */}
       <img
