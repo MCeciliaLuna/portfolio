@@ -32,6 +32,7 @@
   text-decoration: none;
   color: var(--text-mauve);
   font-size: 15px;
+  white-space: nowrap;
   transition: color 0.25s;
 }
 
@@ -133,6 +134,18 @@
   height: 2px;
   background: var(--text-dark);
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-cta-button,
+.navbar-cv-button {
+  white-space: nowrap;
+}
+
+/* Tablet ancha / laptop chica: con el link Referencias, gap 30px no entra en una línea */
+@media (max-width: 1040px) {
+  .navbar-menu-container {
+    gap: 12px;
+  }
 }
 
 /* Mobile responsive menu */

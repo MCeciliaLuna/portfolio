@@ -35,7 +35,7 @@ npm run lint             # ESLint 9 flat config, --max-warnings 0 (el pre-push l
 ## Arquitectura
 
 ### Rutas y carga diferida (`src/App.jsx`)
-Tres rutas: `/` (`PortfolioPage`, carga eager), `/me` (`MePage`, tipo linktree) y `*` (`NotFound`). `MePage` y `NotFound` van con `React.lazy`. Dentro de `PortfolioPage`, sólo `Navbar`, `Hero` y `About` son eager; el resto de las secciones (`Certifications`, `Skills`, `Companies`, `Projects`, `Interview`, `Contact`, `Footer`) son `lazy` bajo `Suspense`. **Al agregar una sección nueva, seguí ese patrón**: eager sólo lo que entra en el primer viewport.
+Tres rutas: `/` (`PortfolioPage`, carga eager), `/me` (`MePage`, tipo linktree) y `*` (`NotFound`). `MePage` y `NotFound` van con `React.lazy`. Dentro de `PortfolioPage`, sólo `Navbar`, `Hero` y `About` son eager; el resto de las secciones (`Certifications`, `Skills`, `Companies`, `Projects`, `Interview`, `References`, `Contact`, `Footer`) son `lazy` bajo `Suspense`. **Al agregar una sección nueva, seguí ese patrón**: eager sólo lo que entra en el primer viewport.
 
 Todo cuelga de `ErrorBoundary` → `ConfigProvider` (tema antd: `colorPrimary: #7C0B2B`, `borderRadius: 10`) → `Router`.
 
@@ -44,6 +44,13 @@ Todo cuelga de `ErrorBoundary` → `ConfigProvider` (tema antd: `colorPrimary: #
 - `me.json` — `socialMedia` y `websites` que consume `/me`.
 
 **No hardcodees contenido en los componentes**: agregá o editá el objeto en `src/db/` y el componente lo renderiza. Algunos strings de `data.js` contienen HTML (`<strong>`) y se inyectan con `dangerouslySetInnerHTML`.
+
+### Referencias: única sección con datos de una API externa
+`References.jsx` no lee `src/db/`: muestra las referencias publicadas del Portal de Referencias (repo `referencias-web-monorepo`) vía `GET {VITE_REFERENCES_API_URL}/api/public/references` (`src/services/referencesApi.js`).
+- La variable va en `.env.local` para desarrollo (plantilla en `.env.example`) y en las Environment variables de Netlify para producción; Vite la fija en el build, así que un cambio requiere redeploy.
+- La petición se memoiza a nivel de módulo: `Navbar` y la sección comparten un único fetch vía `usePublishedReferences()`. En tests, llamá a `resetReferencesCache()` en `beforeEach` y usá `vi.stubEnv`.
+- Sin variable, con error, timeout (10 s) o lista vacía, la sección y su link del Navbar no se renderizan.
+- **El texto lo escriben terceros: renderizalo siempre plano, nunca con `dangerouslySetInnerHTML`.** LinkedIn sólo se enlaza si es una URL `https://` de `linkedin.com`.
 
 ### Iconos: indirección por nombre (`src/utils/iconMap.js`)
 Los datos referencian iconos por string (`"LinkedinOutlined"`), y `DynamicIcon` los resuelve contra `iconMap`. **Un icono nuevo en `data.js`/`me.json` requiere importarlo y registrarlo en `iconMap.js`**, si no `DynamicIcon` emite un `console.warn` y no renderiza nada.
