@@ -13,7 +13,9 @@ let cachedRequest = null;
 
 const buildEndpoint = () => {
   const raw = (import.meta.env.VITE_REFERENCES_API_URL || "").trim().replace(/\/+$/, "");
-  if (!raw) return null;
+  if (!raw) {
+    return null;
+  }
   const base = raw.endsWith("/api") ? raw : `${raw}/api`;
   return `${base}/public/references`;
 };
@@ -34,7 +36,9 @@ const sortReferences = (a, b) => {
 
 const fetchReferences = async () => {
   const endpoint = buildEndpoint();
-  if (!endpoint) return [];
+  if (!endpoint) {
+    return [];
+  }
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);

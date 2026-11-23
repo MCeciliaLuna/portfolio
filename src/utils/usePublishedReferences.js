@@ -12,7 +12,9 @@ export const usePublishedReferences = () => {
   useEffect(() => {
     let active = true;
     getPublishedReferences().then((references) => {
-      if (active) setState({ status: "ready", references });
+      if (active) {
+        setState({ status: "ready", references });
+      }
     });
     return () => {
       active = false;

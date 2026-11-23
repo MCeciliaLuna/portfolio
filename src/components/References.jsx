@@ -12,7 +12,9 @@ const roleLabels = {
 
 // El texto lo escriben terceros: sólo se enlaza si es un perfil https de LinkedIn
 const getSafeLinkedinUrl = (value) => {
-  if (typeof value !== "string" || !value.trim()) return null;
+  if (typeof value !== "string" || !value.trim()) {
+    return null;
+  }
   try {
     const url = new URL(value.trim());
     const host = url.hostname.toLowerCase();
@@ -26,7 +28,9 @@ const getSafeLinkedinUrl = (value) => {
 const References = () => {
   const { status, references } = usePublishedReferences();
 
-  if (status !== "ready" || references.length === 0) return null;
+  if (status !== "ready" || references.length === 0) {
+    return null;
+  }
 
   return (
     <section id="referencias" className="references-section" aria-labelledby="references-title">
