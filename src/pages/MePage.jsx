@@ -156,15 +156,13 @@ const MePage = () => {
       {/* Imagen de perfil de fondo a la derecha (estilo Hero.jsx) */}
       <div className="me-bg-image-container">
         <img
-          src="/images/perfil_optimized.webp"
-          srcSet="/images/perfil-mobile.webp 700w, /images/perfil_optimized.webp 1200w"
-          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 60vw, 45vw"
+          src="/images/perfil.png"
           alt="Cecilia Luna"
           className="me-bg-image"
           loading="eager"
           fetchPriority="high"
-          width={1000}
-          height={1333}
+          width={1600}
+          height={2400}
         />
         <div className="me-bg-image-white-filter"></div>
         <div className="me-bg-image-fade"></div>

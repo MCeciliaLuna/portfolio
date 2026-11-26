@@ -154,17 +154,18 @@ const Hero = () => {
     <section ref={heroRef} id="inicio" className="hero-section-b">
       {/* Imagen de perfil de fondo a la derecha */}
       <div className="hero-b-bg-image-container">
-        <img
-          src="/images/perfil_optimized.webp"
-          srcSet="/images/perfil-mobile.webp 700w, /images/perfil_optimized.webp 1200w"
-          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 60vw, 45vw"
-          alt="Cecilia Luna"
-          className="hero-b-bg-image"
-          loading="eager"
-          fetchPriority="high"
-          width={1000}
-          height={1333}
-        />
+        <picture style={{ display: "contents" }}>
+          <source media="(max-width: 767px)" srcSet="/images/perfil-mobile.png" />
+          <img
+            src="/images/perfil.png"
+            alt="Cecilia Luna"
+            className="hero-b-bg-image"
+            loading="eager"
+            fetchPriority="high"
+            width={1600}
+            height={2400}
+          />
+        </picture>
         <div className="hero-b-bg-image-white-filter"></div>
         <div className="hero-b-bg-image-fade"></div>
       </div>
